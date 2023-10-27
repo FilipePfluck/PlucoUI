@@ -218,4 +218,8 @@ export const tokens: Tokens = {
       value: 'swipeOutToast 0.1s',
     },
   },
+  fonts: {
+    nunito: { value: 'var(--font-nunito), sans-serif' },
+    inter: { value: 'var(--font-inter), sans-serif' },
+  },
 }
