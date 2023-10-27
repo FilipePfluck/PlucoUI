@@ -71,8 +71,8 @@ export const tokens: Tokens = {
       6: { value: '#6E56CF' },
       7: { value: '#7D66D9' },
       8: { value: '#B7A3FF' },
-      9: { value: '#CFC2FF' },
-      10: { value: '#E6E1FE' },
+      9: { value: '#C7B8FF' },
+      10: { value: '#D5CDFE' },
     },
     blue: {
       1: { value: '#EDF2FE' },
