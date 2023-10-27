@@ -7,19 +7,32 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "panda codegen"
+    "prepare": "panda codegen",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "next": "14.0.0",
+    "next": "13.4.13",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.17.0",
     "@rocketseat/eslint-config": "^1.2.0",
+    "@storybook/addon-a11y": "^7.0.24",
+    "@storybook/addon-essentials": "^7.2.1",
+    "@storybook/addon-interactions": "^7.2.1",
+    "@storybook/addon-links": "^7.2.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.2.1",
+    "@storybook/nextjs": "^7.2.1",
+    "@storybook/react": "^7.2.1",
+    "@storybook/testing-library": "^0.2.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.5.1",
     "typescript": "^5"
   }
 }
