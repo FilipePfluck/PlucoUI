@@ -6,6 +6,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: '2xl',
       lineHeight: '120%',
+      fontFamily: 'nunito',
     },
   },
   headingMd: {
@@ -13,6 +14,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'xl',
       lineHeight: '120%',
+      fontFamily: 'nunito',
     },
   },
   headingSm: {
@@ -20,6 +22,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'lg',
       lineHeight: '120%',
+      fontFamily: 'nunito',
     },
   },
   headingXs: {
@@ -27,6 +30,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'md',
       lineHeight: '120%',
+      fontFamily: 'nunito',
     },
   },
   textLg: {
@@ -34,6 +38,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'regular',
       fontSize: 'lg',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
   textMd: {
@@ -41,6 +46,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'regular',
       fontSize: 'md',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
   textSm: {
@@ -48,6 +54,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'regular',
       fontSize: 'sm',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
   buttonLg: {
@@ -55,6 +62,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'lg',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
   buttonMd: {
@@ -62,6 +70,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'md',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
   buttonSm: {
@@ -69,6 +78,7 @@ export const textStyles = defineTextStyles({
       fontWeight: 'semibold',
       fontSize: 'sm',
       lineHeight: '160%',
+      fontFamily: 'inter',
     },
   },
 })
