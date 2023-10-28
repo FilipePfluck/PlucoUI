@@ -10,13 +10,15 @@ const withBackground = (StoryFn) => {
     <div className={cx(css({
       position: 'fixed',
       inset: '0px',
-      bg: 'appBg',
+      bg: 'bg.app',
       p: '4',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'flex-start',
-      overflowY: 'auto'
-    })) }>
+      overflowY: 'auto',
+      w: '100vw',
+      h: '100vh'
+    }), 'dark') }>
        <StoryFn/>
     </div>
   )

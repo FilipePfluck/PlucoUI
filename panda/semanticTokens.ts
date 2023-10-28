@@ -37,7 +37,20 @@ export const semanticTokens = defineSemanticTokens({
           },
         },
       },
-
+      disabled: {
+        DEFAULT: {
+          value: {
+            base: '{colors.mauve.8}',
+            _dark: '{colors.mauveDark.8}',
+          },
+        },
+        hovered: {
+          value: {
+            base: '{colors.mauve.9}',
+            _dark: '{colors.mauveDark.9}',
+          },
+        },
+      },
       brand: {
         DEFAULT: {
           value: {
