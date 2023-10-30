@@ -21,16 +21,20 @@ export const ButtonStory: Story = {
   },
 }
 
+const className = css({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '4',
+  p: '4',
+  rounded: 'lg',
+  bg: 'bg.card',
+  boxShadow: 'md',
+})
+
 export const Primary: Story = {
   render: () => (
-    <div
-      className={css({
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '4',
-      })}
-    >
+    <div className={className}>
       <Button intent="primary" size="sm">
         <p>Hello Storybook</p>
       </Button>
@@ -49,14 +53,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   render: () => (
-    <div
-      className={css({
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '4',
-      })}
-    >
+    <div className={className}>
       <Button intent="secondary" size="sm">
         <p>Hello Storybook</p>
       </Button>
@@ -75,14 +72,7 @@ export const Secondary: Story = {
 
 export const Danger: Story = {
   render: () => (
-    <div
-      className={css({
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '4',
-      })}
-    >
+    <div className={className}>
       <Button intent="danger" size="sm">
         <p>Hello Storybook</p>
       </Button>

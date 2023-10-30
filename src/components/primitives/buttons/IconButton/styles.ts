@@ -8,7 +8,7 @@ import {
   secondaryButtonBaseStyles,
 } from '../css.raw'
 
-const buttonStyles = cva({
+const iconButtonStyles = cva({
   base: {
     ...buttonBaseStyles,
   },
@@ -23,42 +23,40 @@ const buttonStyles = cva({
       danger: {
         ...dangerButtonBaseStyles,
       },
+      ghost: {
+        bg: {
+          base: 'transparent',
+          _hover: 'bg.card.hovered',
+        },
+        borderColor: 'transparent',
+        color: 'fg.subtle',
+      },
     },
 
     size: {
       sm: {
+        p: '1',
+        gap: '1',
+        fontSize: 'xs',
+      },
+      md: {
         p: '2',
         gap: '2',
         fontSize: 'sm',
       },
-      md: {
+      lg: {
         p: '3',
         gap: '3',
         fontSize: 'md',
-      },
-      lg: {
-        p: '4',
-        gap: '4',
-        fontSize: 'lg',
-      },
-    },
-
-    full: {
-      true: {
-        w: 'full',
-      },
-      false: {
-        w: 'max-content',
       },
     },
   },
   defaultVariants: {
     intent: 'primary',
     size: 'md',
-    full: false,
   },
 })
 
-export type ButtonVariants = RecipeVariantProps<typeof buttonStyles>
+export type IconButtonVariants = RecipeVariantProps<typeof iconButtonStyles>
 
-export const ButtonContainer = styled('button', buttonStyles)
+export const IconButtonContainer = styled('button', iconButtonStyles)

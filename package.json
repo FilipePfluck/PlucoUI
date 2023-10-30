@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "lucide-react": "^0.290.0",
     "next": "13.4.13",
     "react": "^18",
     "react-dom": "^18"

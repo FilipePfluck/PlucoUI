@@ -5,7 +5,7 @@ export const tokens: Tokens = {
     mauve: {
       1: { value: '#F2EFF3' },
       2: { value: '#FDFCFD' },
-      3: { value: '#FAF9FB' },
+      3: { value: '#F9F8FA' },
       4: { value: '#EAE7EC' },
       5: { value: '#E3DFE6' },
       6: { value: '#D0CDD7' },
