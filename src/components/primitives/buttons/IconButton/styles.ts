@@ -24,10 +24,7 @@ const iconButtonStyles = cva({
         ...dangerButtonBaseStyles,
       },
       ghost: {
-        bg: {
-          base: 'transparent',
-          _hover: 'bg.card.hovered',
-        },
+        bg: 'transparent',
         borderColor: 'transparent',
         color: 'fg.subtle',
       },

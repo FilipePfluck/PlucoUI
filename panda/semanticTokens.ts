@@ -245,8 +245,8 @@ export const semanticTokens = defineSemanticTokens({
       },
       brand: {
         value: {
-          base: '{colors.violet.6}',
-          _dark: '{colors.violetDark.6}',
+          base: '{colors.violet.7}',
+          _dark: '{colors.violetDark.7}',
         },
       },
       danger: {
