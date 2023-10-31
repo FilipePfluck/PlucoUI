@@ -215,10 +215,10 @@ export const tokens: Tokens = {
       value: 'slideLeftAndFadeOut 0.2s',
     },
     check: {
-      value: 'check 0.2s',
+      value: 'check 0.2s forwards',
     },
     unCheck: {
-      value: 'unCheck 0.2s',
+      value: 'unCheck 0.2s forwards',
     },
     drawerSlideIn: {
       value: 'drawerSlideIn 0.2s cubic-bezier(0.22, 1, 0.36, 1)',

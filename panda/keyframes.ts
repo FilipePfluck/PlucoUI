@@ -89,17 +89,6 @@ export const keyframes: CssKeyframes = {
     '100%': { opacity: 0, transform: 'translateX(2px)' },
   },
 
-  // check and uncheck
-
-  check: {
-    '0%': { opacity: 0, transform: 'scale(0%)' },
-    '100%': { opacity: 1, transform: 'scale(100%)' },
-  },
-  unCheck: {
-    '0%': { opacity: 1, transform: 'scale(100%)' },
-    '100%': { opacity: 0, transform: 'scale(0%)' },
-  },
-
   // drawer animations
   drawerSlideIn: {
     '0%': { transform: 'var(--drawer-transform)' },
