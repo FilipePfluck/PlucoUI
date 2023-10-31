@@ -8,6 +8,7 @@ interface ExtraInputProps {
   icon?: ReactNode
   leftElement?: ReactNode
   rightElement?: ReactNode
+  // TODO use panda variant props here
   size?: 'sm' | 'md'
   width?: 'auto' | 'sm' | 'md' | 'lg' | 'full'
   roundedCorners?: 'none' | 'right' | 'left' | 'all'
