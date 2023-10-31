@@ -61,7 +61,7 @@ export const Control = styled(Checkbox.Control, {
 
 export const Label = styled(Checkbox.Label, {
   base: {
-    color: 'mauve.11',
+    color: 'fg',
     textStyle: 'textSm',
   },
 })
