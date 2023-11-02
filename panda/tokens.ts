@@ -13,7 +13,7 @@ export const tokens: Tokens = {
       8: { value: '#8E8C99' },
       9: { value: '#84828E' },
       10: { value: '#4F4E56' },
-      11: { value: '#211F26' },
+      11: { value: '#36353B' },
       12: { value: '#18171C' },
     },
     mauveDark: {
