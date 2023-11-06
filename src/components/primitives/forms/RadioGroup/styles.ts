@@ -77,8 +77,8 @@ export const Control = styled(RadioGroup.RadioControl, {
 
     _after: {
       content: '""',
-      h: '3',
-      w: '3',
+      h: '4',
+      w: '4',
       rounded: 'full',
       bg: 'border.brand',
       transition: '0.2s',

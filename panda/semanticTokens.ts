@@ -262,5 +262,135 @@ export const semanticTokens = defineSemanticTokens({
         },
       },
     },
+    brand: {
+      DEFAULT: {
+        value: {
+          base: '{colors.violet.8}',
+          _dark: '{colors.violetDark.8}',
+        },
+      },
+      hovered: {
+        value: {
+          base: '{colors.violet.9}',
+          _dark: '{colors.violetDark.9}',
+        },
+      },
+      subtle: {
+        value: {
+          base: '{colors.violet.5}',
+          _dark: '{colors.violetDark.5}',
+        },
+      },
+      fg: {
+        value: {
+          base: '{colors.violet.11}',
+          _dark: '{colors.violetDark.11}',
+        },
+      },
+    },
+    danger: {
+      DEFAULT: {
+        value: {
+          base: '{colors.red.8}',
+          _dark: '{colors.redDark.8}',
+        },
+      },
+      hovered: {
+        value: {
+          base: '{colors.red.9}',
+          _dark: '{colors.redDark.9}',
+        },
+      },
+      subtle: {
+        value: {
+          base: '{colors.red.5}',
+          _dark: '{colors.redDark.5}',
+        },
+      },
+      fg: {
+        value: {
+          base: '{colors.red.11}',
+          _dark: '{colors.redDark.11}',
+        },
+      },
+    },
+    warning: {
+      DEFAULT: {
+        value: {
+          base: '{colors.yellow.8}',
+          _dark: '{colors.yellowDark.8}',
+        },
+      },
+      hovered: {
+        value: {
+          base: '{colors.yellow.9}',
+          _dark: '{colors.yellowDark.9}',
+        },
+      },
+      subtle: {
+        value: {
+          base: '{colors.yellow.5}',
+          _dark: '{colors.yellowDark.5}',
+        },
+      },
+      fg: {
+        value: {
+          base: '{colors.yellow.11}',
+          _dark: '{colors.yellowDark.11}',
+        },
+      },
+    },
+    success: {
+      DEFAULT: {
+        value: {
+          base: '{colors.green.8}',
+          _dark: '{colors.greenDark.8}',
+        },
+      },
+      hovered: {
+        value: {
+          base: '{colors.green.9}',
+          _dark: '{colors.greenDark.9}',
+        },
+      },
+      subtle: {
+        value: {
+          base: '{colors.green.5}',
+          _dark: '{colors.greenDark.5}',
+        },
+      },
+      fg: {
+        value: {
+          base: '{colors.green.11}',
+          _dark: '{colors.greenDark.11}',
+        },
+      },
+    },
+    info: {
+      DEFAULT: {
+        value: {
+          base: '{colors.blue.8}',
+          _dark: '{colors.blueDark.8}',
+        },
+      },
+      hovered: {
+        value: {
+          base: '{colors.blue.9}',
+          _dark: '{colors.blueDark.9}',
+        },
+      },
+      subtle: {
+        value: {
+          base: '{colors.blue.5}',
+          _dark: '{colors.blueDark.5}',
+        },
+      },
+      fg: {
+        value: {
+          base: '{colors.blue.11}',
+          _dark: '{colors.blueDark.11}',
+        },
+      },
+    },
   },
 })
