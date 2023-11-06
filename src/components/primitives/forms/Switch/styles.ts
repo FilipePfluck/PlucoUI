@@ -32,16 +32,16 @@ export const Control = styled(Switch.Control, {
 export const Thumb = styled(Switch.Thumb, {
   base: {
     display: 'block',
-    width: '5',
-    height: '5',
+    width: '18px',
+    height: '18px',
     bg: 'bg.card',
     rounded: 'full',
     boxShadow: `sm`,
 
     transitionDuration: 'normal',
-    transitionProperty: 'transform',
+    transitionProperty: 'transform, background',
     transform: 'translateX(2px)',
-    '&[data-state="checked"]': { transform: 'translateX(18px)' },
+    '&[data-state="checked"]': { transform: 'translateX(18px)', bg: 'white' },
   },
 })
 

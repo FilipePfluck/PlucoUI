@@ -87,7 +87,7 @@ export const Control = styled(RadioGroup.RadioControl, {
       _checked: { base: 'bg.brand', _hover: 'bg.brand.hovered' },
     },
     borderStyle: 'solid',
-    borderWidth: '2px',
+    borderWidth: '1px',
 
     transitionDuration: 'normal',
     transitionProperty: 'background, border-color, color, box-shadow',

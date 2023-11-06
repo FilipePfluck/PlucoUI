@@ -66,7 +66,7 @@ export const Control = styled(RadioGroup.RadioControl, {
     bg: { base: 'bg.component', _disabled: 'bg.card' },
     borderColor: { base: 'border', _checked: 'border.brand' },
     borderStyle: 'solid',
-    borderWidth: '2px',
+    borderWidth: '1px',
     transition: '0.2s border-color',
     w: '6',
     h: '6',

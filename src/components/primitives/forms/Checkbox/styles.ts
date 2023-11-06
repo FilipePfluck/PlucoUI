@@ -19,7 +19,7 @@ export const Control = styled(Checkbox.Control, {
     display: 'flex',
     center: 'flex',
     boxShadow: 'sm',
-    borderWidth: '2px',
+    borderWidth: '1px',
     borderStyle: 'solid',
     borderColor: 'border',
     transition: '0.2s border-color',

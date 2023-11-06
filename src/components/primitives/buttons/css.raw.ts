@@ -6,7 +6,7 @@ export const buttonBaseStyles = css.raw({
   rounded: 'md',
   transition: 'background, border-color 0.2s',
   cursor: 'pointer',
-  borderWidth: '2px',
+  borderWidth: '1px',
   borderStyle: 'solid',
   _disabled: {
     bg: {

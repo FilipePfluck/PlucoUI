@@ -3,7 +3,7 @@ import { IconButton } from '../../buttons/IconButton'
 
 export const InputIconButton = styled(IconButton, {
   base: {
-    color: 'border.brand',
+    color: 'fg.subtle',
     '.group:has(:disabled) &': {
       color: 'fg.muted',
     },

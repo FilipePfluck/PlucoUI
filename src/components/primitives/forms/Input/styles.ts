@@ -11,7 +11,7 @@ export const InputContainer = styled('label', {
     align: 'center',
     gap: '2',
 
-    borderWidth: '2px',
+    borderWidth: '1px',
     borderColor: {
       base: 'border',
       _focusWithin: 'border.brand',
@@ -118,11 +118,11 @@ export const InputIcon = styled('div', {
   base: {
     fontSize: 'md',
     transition: '0.2s',
-    color: {
+    color: 'fg.subtle' /* {
       base: 'border.brand',
       '.group:has(:disabled) &': 'fg.muted',
       '.group:has([aria-invalid="true"]) &': 'border.danger',
       '.group:has(:focus-within) &': 'border.brand',
-    },
+    } */,
   },
 })

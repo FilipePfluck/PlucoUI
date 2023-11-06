@@ -3,6 +3,7 @@ import { Mail } from 'lucide-react'
 
 import { Input } from './index'
 import { PasswordInput } from '../PasswordInput'
+import { Box } from '@/styled-system/jsx'
 
 const meta: Meta<typeof Input> = {
   component: Input,
@@ -12,7 +13,11 @@ export default meta
 type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
-  render: () => <Input placeholder="This is an input" />,
+  render: () => (
+    <Box bg="bg.card" p="4" rounded="md" shadow="md">
+      <Input placeholder="This is an input" />
+    </Box>
+  ),
 }
 
 export const Disabled: Story = {
@@ -23,11 +28,13 @@ export const Disabled: Story = {
 
 export const Error: Story = {
   render: () => (
-    <Input
-      placeholder="I have an error"
-      aria-invalid={true}
-      icon={<Mail size={18} />}
-    />
+    <Box bg="bg.card" p="4" rounded="md" shadow="md">
+      <Input
+        placeholder="I have an error"
+        aria-invalid={true}
+        icon={<Mail strokeWidth={1.5} size={18} />}
+      />
+    </Box>
   ),
 }
 

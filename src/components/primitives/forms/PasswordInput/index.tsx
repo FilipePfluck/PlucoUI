@@ -20,7 +20,7 @@ const PasswordInputComponent = (
     <Input
       placeholder="Password"
       type={shouldShowPassowrd ? 'text' : 'password'}
-      icon={<Lock size={16} />}
+      icon={<Lock strokeWidth={1.5} size={16} />}
       rightElement={
         <S.InputIconButton
           aria-label={buttonAriaLabel}
@@ -29,7 +29,11 @@ const PasswordInputComponent = (
           intent="ghost"
           size="sm"
         >
-          {shouldShowPassowrd ? <EyeOff size={16} /> : <Eye size={16} />}
+          {shouldShowPassowrd ? (
+            <EyeOff strokeWidth={1.5} size={16} />
+          ) : (
+            <Eye strokeWidth={1.5} size={16} />
+          )}
         </S.InputIconButton>
       }
       ref={ref}

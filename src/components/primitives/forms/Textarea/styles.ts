@@ -12,7 +12,7 @@ export const TextareaContainer = styled('textarea', {
     gap: '2',
     rounded: 'md',
 
-    borderWidth: '2px',
+    borderWidth: '1px',
     borderColor: {
       base: 'border',
       _focus: 'border.brand',
