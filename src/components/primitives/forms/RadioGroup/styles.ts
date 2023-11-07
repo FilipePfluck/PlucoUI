@@ -5,7 +5,7 @@ import { styled } from '@/styled-system/jsx'
 export const Root = styled(RadioGroup.Root, {
   base: {
     display: 'flex',
-    gap: '4',
+    gap: '3',
   },
   variants: {
     orientation: {
@@ -26,6 +26,7 @@ export const Root = styled(RadioGroup.Root, {
 export const Label = styled(RadioGroup.Label, {
   base: {
     textStyle: 'headingXs',
+    color: 'fg',
   },
 })
 
@@ -37,12 +38,12 @@ export const Group = styled('div', {
     orientation: {
       horizontal: {
         align: 'center',
-        gap: '4',
+        gap: '2',
       },
       vertical: {
         flexDir: 'column',
         align: 'start',
-        gap: '4',
+        gap: '2',
       },
     },
   },

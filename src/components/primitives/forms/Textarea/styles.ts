@@ -24,7 +24,7 @@ export const TextareaContainer = styled('textarea', {
     outline: 'none',
     _placeholder: {
       color: {
-        base: 'fg.muted',
+        base: 'fg.subtle',
       },
       fontSize: 'sm',
     },

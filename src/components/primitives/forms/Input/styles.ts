@@ -79,13 +79,13 @@ export const Input = styled('input', {
     outline: 'none',
     _placeholder: {
       color: {
-        base: 'fg.muted',
+        base: 'fg.subtle',
       },
       fontSize: 'sm',
     },
     _disabled: {
       cursor: 'not-allowed',
-      color: 'mauve.10',
+      color: 'fg.muted',
     },
     _autofill: {
       boxShadow: '0 0 0px 1000px token(colors.bg.component) inset',
