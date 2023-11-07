@@ -4,7 +4,6 @@ import { ToggleGroup } from '@ark-ui/react'
 export const Root = styled(ToggleGroup.Root, {
   base: {
     display: 'flex',
-    overflow: 'hidden',
     position: 'relative',
     gap: '1',
     _vertical: {
@@ -41,9 +40,9 @@ export const Toggle = styled(ToggleGroup.Toggle, {
       bg: { base: 'bg.brand.subtle', _hover: 'bg.brand.subtle' },
       color: 'fg.brand',
     },
-    _pressed: {
-      bg: { base: 'bg.brand.subtle', _hover: 'bg.brand.subtle' },
-      color: 'fg.brand',
+    _focusVisible: {
+      zIndex: 20,
+      outline: '2px solid token(colors.border.ring)',
     },
   },
 })

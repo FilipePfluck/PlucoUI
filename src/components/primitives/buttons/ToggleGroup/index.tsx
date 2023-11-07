@@ -1,18 +1,33 @@
-import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react'
+import {
+  ToggleGroupProps as ArkToggleGroupProps,
+  HTMLArkProps,
+} from '@ark-ui/react'
+
 import * as S from './styles'
 
-export const ToggleGroup = () => {
+export type ToggleProps = HTMLArkProps<'button'> & {
+  disabled?: boolean
+  id: string
+  'aria-label': string
+}
+
+interface ToggleGroupProps extends ArkToggleGroupProps {
+  orientation?: 'vertical' | 'horizontal'
+  items: ToggleProps[]
+}
+
+export const ToggleGroup = ({
+  orientation,
+  items,
+  ...props
+}: ToggleGroupProps) => {
   return (
-    <S.Root>
-      <S.Toggle value="left">
-        <AlignLeft size={16} />
-      </S.Toggle>
-      <S.Toggle value="center">
-        <AlignCenter size={16} />
-      </S.Toggle>
-      <S.Toggle value="right">
-        <AlignRight size={16} />
-      </S.Toggle>
+    <S.Root orientation={orientation} {...props}>
+      {items.map(({ id, children, ...props }) => (
+        <S.Toggle key={id} {...props} value={id}>
+          {children}
+        </S.Toggle>
+      ))}
     </S.Root>
   )
 }
