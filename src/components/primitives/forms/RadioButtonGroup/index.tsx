@@ -1,15 +1,16 @@
+import { HTMLArkProps } from '@ark-ui/react'
 import * as S from './styles'
 
-// TODO - improve typings
+type RadioItemProps = HTMLArkProps<'label'> & {
+  id: string
+  label: string
+}
 
 interface RadioButtonGroupProps {
   orientation?: 'vertical' | 'horizontal'
   labelOrientation?: 'vertical' | 'horizontal'
   label?: string
-  items: {
-    id: string
-    label: string
-  }[]
+  items: RadioItemProps[]
 }
 
 export const RadioButtonGroup = ({
