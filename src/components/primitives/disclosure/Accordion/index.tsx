@@ -102,6 +102,7 @@ export const Accordion = ({
 }: AccordionProps) => {
   const [value, setValue] = useState<string[]>(defaultValue || [])
 
+  // check this console.log out
   console.log(value)
 
   return (
