@@ -6,7 +6,7 @@ export const Overlay = styled(
   Dialog.Backdrop,
   cva({
     base: {
-      bg: 'rgb(0, 0, 0, 0.25)',
+      bg: 'rgb(0, 0, 0, 0.4)',
       position: 'fixed',
       inset: '0px',
       _dataOpen: {
