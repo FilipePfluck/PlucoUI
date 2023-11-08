@@ -69,8 +69,8 @@ export const tokens: Tokens = {
       8: { value: '#6E56CF' },
       9: { value: '#654DC4' },
       10: { value: '#5340A0' },
-      11: { value: '#352966' },
-      12: { value: '#282050' },
+      11: { value: '#38326A' },
+      12: { value: '#292151' },
     },
     violetDark: {
       1: { value: '#13111D' },
