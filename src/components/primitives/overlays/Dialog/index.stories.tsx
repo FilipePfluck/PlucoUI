@@ -37,9 +37,11 @@ const AlertExample = () => {
         description="This is a description"
       >
         <Flex w="full" gap="4" mt="8">
-          <Button intent="secondary" full>
-            Cancel
-          </Button>
+          <Dialog.CloseTrigger asChild>
+            <Button intent="secondary" full>
+              Cancel
+            </Button>
+          </Dialog.CloseTrigger>
           <Button intent="primary" full>
             Confirm
           </Button>
