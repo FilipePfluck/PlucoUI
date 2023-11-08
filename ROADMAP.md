@@ -43,8 +43,8 @@
     [] HoverCard
   
   DISCLOSURE 
-    [] Tabs
-    [] Accordion
+    [x] Tabs
+    [x] Accordion
     [] Collapsible
     [] ReadMore
 
