@@ -18,7 +18,7 @@ const withBackground = (StoryFn) => {
       overflowY: 'auto',
       w: '100vw',
       h: '100vh'
-    }), 'dark') }>
+    })) }>
        <StoryFn/>
     </div>
   )
