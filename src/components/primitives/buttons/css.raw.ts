@@ -20,6 +20,7 @@ export const buttonBaseStyles = css.raw({
     },
     cursor: 'not-allowed',
   },
+  textStyle: 'buttonMd',
 })
 
 export const primaryButtonBaseStyles = css.raw({

@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import type { Preview } from "@storybook/react";
+import { Inter, Nunito } from 'next/font/google'
 
 import { css, cx } from '../styled-system/css'
 import '../src/app/globals.css'
 
 import { Switch } from '../src/components/primitives/forms/Switch'
+import { useEffect } from 'react';
 
-import type { Preview } from "@storybook/react";
-import { useState } from 'react';
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  display: 'swap',
+  variable: '--font-nunito',
+})
 
 const WithBackground = (StoryFn) => {
   const [isChecked, setIsChecked] = useState(false)
@@ -19,7 +32,10 @@ const WithBackground = (StoryFn) => {
     html.classList.remove('dark')
   }
 
-  console.log({isChecked})
+  useEffect(()=>{
+    html.classList.add(inter.variable)
+    html.classList.add(nunito.variable)
+  },[])
 
   return (
     <div className={cx(css({
