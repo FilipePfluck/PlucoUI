@@ -220,12 +220,6 @@ export const tokens: Tokens = {
     unCheck: {
       value: 'unCheck 0.2s forwards',
     },
-    drawerSlideIn: {
-      value: 'drawerSlideIn 0.2s cubic-bezier(0.22, 1, 0.36, 1)',
-    },
-    drawerSlideOut: {
-      value: 'drawerSlideOut 0.2s cubic-bezier(0.22, 1, 0.36, 1)',
-    },
     expand: {
       value: 'expand 0.3s',
     },

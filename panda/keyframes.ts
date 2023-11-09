@@ -89,16 +89,6 @@ export const keyframes: CssKeyframes = {
     '100%': { opacity: 0, transform: 'translateX(2px)' },
   },
 
-  // drawer animations
-  drawerSlideIn: {
-    '0%': { transform: 'var(--drawer-transform)' },
-    '100%': { transform: 'translate3d(0,0,0)' },
-  },
-  drawerSlideOut: {
-    '0%': { transform: 'translate3d(0,0,0)' },
-    '100%': { transform: 'var(--drawer-transform)' },
-  },
-
   // collapsible
   expand: {
     '0%': {

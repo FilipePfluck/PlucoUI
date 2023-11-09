@@ -26,7 +26,7 @@ export const Content = styled(Dialog.Content, {
 
     bg: 'bg.card',
     rounded: 'lg',
-    boxShadow: 'md',
+    boxShadow: 'lg',
     p: '6',
 
     w: '90vw',
