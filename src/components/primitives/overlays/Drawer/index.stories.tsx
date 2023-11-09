@@ -9,6 +9,8 @@ const meta: Meta<typeof DrawerContent> = {
   component: DrawerContent,
 }
 
+// TODO - add controls to this story
+
 export default meta
 type Story = StoryObj<typeof DrawerContent>
 

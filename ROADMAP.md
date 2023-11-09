@@ -35,8 +35,8 @@
     [] DatePicker
 
   OVERLAY
-    [] Dialog
-    [] Drawer
+    [x] Dialog
+    [x] Drawer
     [] Menu
     [] Popover
     [] Tooltip
