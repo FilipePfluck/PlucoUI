@@ -191,28 +191,28 @@ export const tokens: Tokens = {
       value: 'accordionSlideUp 0.2s',
     },
     slideUpAndFadeIn: {
-      value: 'slideUpAndFadeIn 0.4s',
+      value: 'slideUpAndFadeIn 0.4s forwards',
     },
     slideRightAndFadeIn: {
-      value: 'slideRightAndFadeIn 0.4s',
+      value: 'slideRightAndFadeIn 0.4s forwards',
     },
     slideDownAndFadeIn: {
-      value: 'slideDownAndFadeIn 0.4s',
+      value: 'slideDownAndFadeIn 0.4s forwards',
     },
     slideLeftAndFadeIn: {
-      value: 'slideLeftAndFadeIn 0.4s',
+      value: 'slideLeftAndFadeIn 0.4s forwards',
     },
     slideUpAndFadeOut: {
-      value: 'slideUpAndFadeOut 0.2s',
+      value: 'slideUpAndFadeOut 0.2s forwards',
     },
     slideRightAndFadeOut: {
-      value: 'slideRightAndFadeOut 0.2s',
+      value: 'slideRightAndFadeOut 0.2s forwards',
     },
     slideDownAndFadeOut: {
-      value: 'slideDownAndFadeOut 0.2s',
+      value: 'slideDownAndFadeOut 0.2s forwards',
     },
     slideLeftAndFadeOut: {
-      value: 'slideLeftAndFadeOut 0.2s',
+      value: 'slideLeftAndFadeOut 0.2s forwards',
     },
     check: {
       value: 'check 0.2s forwards',
