@@ -11,10 +11,10 @@ export const conditions = {
     dataVertical: '&[data-orientation="vertical"]',
     dataHorizontal: '&[data-orientation="horizontal"]',
 
-    top: '&[data-side="top"]',
-    right: '&[data-side="right"]',
-    bottom: '&[data-side="bottom"]',
-    left: '&[data-side="left"]',
+    top: '&[data-placement="top"]',
+    right: '&[data-placement="right"]',
+    bottom: '&[data-placement="bottom"]',
+    left: '&[data-placement="left"]',
 
     ariaInvalid: '&[aria-invalid="true"]',
     invalidWithin: '&:has([aria-invalid="true"])',

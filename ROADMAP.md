@@ -38,8 +38,8 @@
     [x] Dialog
     [x] Drawer
     [] Menu
-    [] Popover
-    [] Tooltip
+    [x] Popover
+    [x] Tooltip
     [] HoverCard
   
   DISCLOSURE 
