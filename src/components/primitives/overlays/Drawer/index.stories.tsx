@@ -18,7 +18,7 @@ const ExampleDialog = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>Open modal</Button>
+        <Button>Open drawer</Button>
       </Dialog.Trigger>
       <DrawerContent
         title="This is a title"
@@ -32,7 +32,7 @@ const AlertExample = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>Open modal</Button>
+        <Button>Open drawer</Button>
       </Dialog.Trigger>
       <DrawerContent
         title="This is a title"
