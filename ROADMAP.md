@@ -40,7 +40,7 @@
     [] Menu
     [x] Popover
     [x] Tooltip
-    [] HoverCard
+    [x] HoverCard
   
   DISCLOSURE 
     [x] Tabs
