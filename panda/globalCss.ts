@@ -5,4 +5,8 @@ export const globalCss = defineGlobalStyles({
     cursor: 'pointer',
     ring: '2px',
   },
+  '*': {
+    color: 'fg.subtle',
+    textStyle: 'textMd',
+  },
 })
