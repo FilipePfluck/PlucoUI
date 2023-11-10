@@ -35,7 +35,6 @@ export const Control = styled(Checkbox.Control, {
     borderStyle: 'solid',
     borderColor: 'border',
     transition: '0.2s border-color',
-    // ring: '2px',
     position: 'relative',
 
     _after: {

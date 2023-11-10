@@ -13,7 +13,7 @@ const CheckboxComponent = (
 ) => {
   return (
     <S.CheckboxContainer>
-      <S.Root className="group" id={id} ref={ref} {...props}>
+      <S.Root id={id} ref={ref} {...props}>
         <S.Control />
         <S.Label>{label}</S.Label>
       </S.Root>
