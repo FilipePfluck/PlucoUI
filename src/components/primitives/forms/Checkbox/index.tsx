@@ -12,12 +12,10 @@ const CheckboxComponent = (
   ref: ForwardedRef<HTMLLabelElement>,
 ) => {
   return (
-    <S.CheckboxContainer>
-      <S.Root id={id} ref={ref} {...props}>
-        <S.Control />
-        <S.Label>{label}</S.Label>
-      </S.Root>
-    </S.CheckboxContainer>
+    <S.Root id={id} ref={ref} {...props}>
+      <S.Control />
+      <S.Label>{label}</S.Label>
+    </S.Root>
   )
 }
 

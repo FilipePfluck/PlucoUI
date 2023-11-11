@@ -1,18 +1,6 @@
 import { styled } from '@/styled-system/jsx'
 import { Checkbox } from '@ark-ui/react'
 
-export const CheckboxContainer = styled('div', {
-  base: {
-    // apply outline to a descendent element that has [data-scope='checkbox'] and [data-part='control']
-    // only when this also has a descendent with [data-scope='checkbox'] and [data-part='root']
-    // immediatelly followed by an input with [type='checkbox'] and is visibly focused
-    "&:has([data-scope='checkbox'][data-part='root'] + input[type='checkbox']:focus-visible) [data-scope='checkbox'][data-part='control']":
-      {
-        outline: '2px solid token(colors.border.ring)',
-      },
-  },
-})
-
 export const Root = styled(Checkbox.Root, {
   base: {
     display: 'flex',
@@ -62,6 +50,10 @@ export const Control = styled(Checkbox.Control, {
 
     _ariaInvalid: {
       borderColor: 'border.danger',
+    },
+
+    _siblingFocusVisible: {
+      outline: '2px solid token(colors.border.ring)',
     },
   },
 })

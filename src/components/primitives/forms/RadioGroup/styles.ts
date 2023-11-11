@@ -99,7 +99,7 @@ export const Control = styled(RadioGroup.ItemControl, {
       },
     },
 
-    '.group[data-focus] &': {
+    _siblingFocusVisible: {
       outline: '2px solid token(colors.border.ring)',
     },
   },

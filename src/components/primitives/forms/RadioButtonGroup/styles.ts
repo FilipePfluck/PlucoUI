@@ -94,9 +94,9 @@ export const Control = styled(RadioGroup.ItemControl, {
     transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',
 
-    /* '.group[data-focus] &': {
+    _siblingFocusVisible: {
       outline: '2px solid token(colors.border.ring)',
-    }, */
+    },
   },
 })
 

@@ -25,7 +25,10 @@ export const Control = styled(Switch.Control, {
     transitionDuration: 'normal',
     transitionProperty: 'background',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-    ring: '2px',
+
+    _siblingFocusVisible: {
+      outline: '2px solid token(colors.border.ring)',
+    },
   },
 })
 
