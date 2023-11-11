@@ -107,7 +107,7 @@ export const Accordion = ({
 
   return (
     <S.Root
-      onChange={({ value }) => setValue(value)}
+      onValueChange={({ value }) => setValue(value)}
       defaultValue={defaultValue}
       {...props}
     >

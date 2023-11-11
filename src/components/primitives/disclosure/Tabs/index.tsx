@@ -27,7 +27,7 @@ export const Tabs = ({
     <S.Root
       value={value}
       defaultValue={defaultValue}
-      onChange={({ value }) => setValue(value)}
+      onValueChange={({ value }) => setValue(value)}
       orientation={orientation}
       {...props}
     >

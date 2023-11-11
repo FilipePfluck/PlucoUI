@@ -42,6 +42,7 @@ export const Content = styled(Dialog.Content, {
     },
     "&[data-state='closed']": {
       animation: 'closeModal',
+      visibility: 'hidden',
     },
   },
 })

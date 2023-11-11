@@ -43,7 +43,7 @@ export const DialogContent = ({
   return (
     <Portal>
       <S.Overlay />
-      <Dialog.Container>
+      <Dialog.Positioner>
         <S.Content {...props}>
           <DialogHeader title={title} description={description} />
           {children}
@@ -53,7 +53,7 @@ export const DialogContent = ({
             </IconButton>
           </S.CloseButton>
         </S.Content>
-      </Dialog.Container>
+      </Dialog.Positioner>
     </Portal>
   )
 }

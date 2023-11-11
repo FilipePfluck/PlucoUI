@@ -52,7 +52,7 @@ const WithBackground = (StoryFn) => {
       h: '100vh'
     })) }>
       <div className={css({position: 'absolute', top: '6', right: '6'})}>
-        <Switch onChange={({checked})=>{setIsChecked(checked)}}/>
+        <Switch onCheckedChange={({checked})=>{setIsChecked(checked)}}/>
       </div>
        <StoryFn/>
     </div>
