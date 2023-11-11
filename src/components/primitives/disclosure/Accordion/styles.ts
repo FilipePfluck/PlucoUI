@@ -31,7 +31,7 @@ export const Item = styled(Accordion.Item, {
   },
 })
 
-export const Trigger = styled(Accordion.Trigger, {
+export const Trigger = styled(Accordion.ItemTrigger, {
   base: {
     cursor: 'pointer',
     bg: 'bg.card',
@@ -50,7 +50,7 @@ export const Trigger = styled(Accordion.Trigger, {
   },
 })
 
-export const Content = styled(Accordion.Content, {
+export const Content = styled(Accordion.ItemContent, {
   base: {
     color: 'fg.subtle',
     bg: 'bg.card.hovered',

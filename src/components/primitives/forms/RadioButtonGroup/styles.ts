@@ -52,7 +52,7 @@ export const Group = styled('div', {
   },
 })
 
-export const Item = styled(RadioGroup.Radio, {
+export const Item = styled(RadioGroup.Item, {
   base: {
     display: 'flex',
     alignItems: 'center',
@@ -60,7 +60,7 @@ export const Item = styled(RadioGroup.Radio, {
   },
 })
 
-export const Control = styled(RadioGroup.RadioControl, {
+export const Control = styled(RadioGroup.ItemControl, {
   base: {
     w: '10',
     h: '10',
@@ -100,7 +100,7 @@ export const Control = styled(RadioGroup.RadioControl, {
   },
 })
 
-export const Text = styled(RadioGroup.RadioLabel, {
+export const Text = styled(RadioGroup.ItemText, {
   base: {
     textStyle: 'textMd',
     color: { base: 'fg', _checked: 'white', _disabled: 'fg.muted' },

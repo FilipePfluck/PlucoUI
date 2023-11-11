@@ -12,7 +12,7 @@ export const Root = styled(ToggleGroup.Root, {
   },
 })
 
-export const Toggle = styled(ToggleGroup.Toggle, {
+export const Toggle = styled(ToggleGroup.Item, {
   base: {
     alignItems: 'center',
     appearance: 'none',
