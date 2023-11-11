@@ -178,12 +178,6 @@ export const tokens: Tokens = {
     fadeOut: {
       value: 'fadeOut 150ms',
     },
-    openModal: {
-      value: 'openModal 150ms forwards',
-    },
-    closeModal: {
-      value: 'closeModal 150ms forwards',
-    },
     accordionSlideDown: {
       value: 'accordionSlideDown 0.2s',
     },

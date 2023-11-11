@@ -10,28 +10,6 @@ export const keyframes: CssKeyframes = {
     '100%': { opacity: '0' },
   },
 
-  // modal
-  openModal: {
-    '0%': {
-      opacity: '0',
-      transform: 'translate(-50%, -48%) scale(.96)',
-    },
-    '100%': {
-      opacity: '1',
-      transform: 'translate(-50%, -50%) scale(1)',
-    },
-  },
-  closeModal: {
-    '0%': {
-      opacity: '1',
-      transform: 'translate(-50%, -50%) scale(1)',
-    },
-    '100%': {
-      opacity: '0',
-      transform: 'translate(-50%, -48%) scale(.96)',
-    },
-  },
-
   // accordion
   accordionSlideDown: {
     '0%': {

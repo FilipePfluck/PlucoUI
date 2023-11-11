@@ -37,12 +37,15 @@ export const Content = styled(Dialog.Content, {
       outline: 'none',
     },
 
+    transition: '0.2s',
+
     "&[data-state='open']": {
-      animation: 'openModal',
+      opacity: '1',
+      transform: 'translate(-50%, -50%) scale(1)',
     },
     "&[data-state='closed']": {
-      animation: 'closeModal',
-      visibility: 'hidden',
+      opacity: '0',
+      transform: 'translate(-50%, -48%) scale(.96)',
     },
   },
 })
