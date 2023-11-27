@@ -4,6 +4,7 @@ import { Select } from '@ark-ui/react'
 export const Root = styled(Select.Root, {
   base: {
     display: 'flex',
+    flexDirection: 'column',
     gap: '3',
   },
 })
@@ -42,6 +43,33 @@ export const Trigger = styled(Select.Trigger, {
       color: 'fg.subtle',
     },
   },
+  variants: {
+    width: {
+      auto: {},
+      sm: {
+        w: '24',
+        p: '1',
+      },
+      md: {
+        w: '40',
+        px: '2',
+        py: '1',
+      },
+      lg: {
+        w: '64',
+        px: '4',
+        py: '2',
+      },
+      full: {
+        w: 'full',
+        px: '4',
+        py: '2',
+      },
+    },
+  },
+  defaultVariants: {
+    width: 'md',
+  },
 })
 
 export const ClearTrigger = styled(Select.ClearTrigger, {})
@@ -60,8 +88,11 @@ export const Content = styled(Select.Content, {
     shadow: 'lg',
     display: 'flex',
     flexDirection: 'column',
+    gap: 2,
+    p: 2,
+
     zIndex: '10',
-    _hidden: {
+    '&[hidden]': {
       display: 'none',
     },
     _open: {
@@ -71,6 +102,27 @@ export const Content = styled(Select.Content, {
       animation: 'fadeOut',
     },
   },
+
+  variants: {
+    width: {
+      auto: {},
+      sm: {
+        w: '24',
+      },
+      md: {
+        w: '40',
+      },
+      lg: {
+        w: '64',
+      },
+      full: {
+        w: 'full',
+      },
+    },
+  },
+  defaultVariants: {
+    width: 'md',
+  },
 })
 
 export const ItemGroup = styled(Select.ItemGroup, {})
@@ -79,6 +131,8 @@ export const ItemGroupLabel = styled(Select.ItemGroupLabel, {
   base: {
     textStyle: 'headingXs',
     color: 'fg',
+    mb: 1,
+    px: 1,
   },
 })
 
@@ -87,6 +141,7 @@ export const Item = styled(Select.Item, {
     display: 'flex',
     align: 'center',
     justify: 'space-between',
+    px: 1,
 
     borderRadius: 'sm',
     cursor: 'pointer',

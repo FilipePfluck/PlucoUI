@@ -25,7 +25,7 @@ export const Select = () => {
         <S.Trigger>
           <S.ValueText />
           <S.Indicator>
-            <ChevronsUpDown />
+            <ChevronsUpDown strokeWidth={1.5} size={18} />
           </S.Indicator>
         </S.Trigger>
       </S.Control>
