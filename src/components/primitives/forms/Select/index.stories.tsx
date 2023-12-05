@@ -58,6 +58,7 @@ const items = [
       {
         label: 'Aubergine',
         value: 'aubergine',
+        disabled: true,
       },
       {
         label: 'Broccoli',
@@ -94,5 +95,12 @@ const items = [
 ]
 
 export const Default: Story = {
-  render: () => <Select items={items} label="food" itemsValues={itemsValues} />,
+  render: () => (
+    <Select
+      items={items}
+      label="food"
+      itemsValues={itemsValues}
+      placeholder="Pick a food"
+    />
+  ),
 }

@@ -1,8 +1,8 @@
 import { ChevronsUpDown } from 'lucide-react'
 import * as S from './styles'
-import { Portal } from '@ark-ui/react'
+import { Portal, SelectItemProps as ArkSelectItemProps } from '@ark-ui/react'
 
-interface SelectItemProps {
+interface SelectItemProps extends Partial<ArkSelectItemProps> {
   label: string
   value: string
 }
@@ -15,15 +15,23 @@ interface SelectProps {
   }[]
   itemsValues: string[]
   label?: string
+  placeholder?: string
 }
 
-export const Select = ({ items, itemsValues, label }: SelectProps) => {
+// TODO - revise this whole component
+
+export const Select = ({
+  items,
+  itemsValues,
+  label,
+  placeholder,
+}: SelectProps) => {
   return (
     <S.Root items={itemsValues}>
       {label && <S.Label>{label}</S.Label>}
       <S.Control>
         <S.Trigger>
-          <S.ValueText />
+          <S.ValueText placeholder={placeholder} />
           <S.Indicator>
             <ChevronsUpDown strokeWidth={1.5} size={18} />
           </S.Indicator>
@@ -37,8 +45,8 @@ export const Select = ({ items, itemsValues, label }: SelectProps) => {
                 {groupLabel && (
                   <S.ItemGroupLabel htmlFor={id}>{groupLabel}</S.ItemGroupLabel>
                 )}
-                {items.map(({ label, value }) => (
-                  <S.Item item={value} key={value}>
+                {items.map(({ label, value, ...props }) => (
+                  <S.Item item={value} key={value} {...props}>
                     <S.ItemText>{label}</S.ItemText>
                   </S.Item>
                 ))}
