@@ -20,6 +20,7 @@ export const conditions = {
     ariaInvalid: '&[aria-invalid="true"]',
     invalidWithin: '&:has([aria-invalid="true"])',
 
-    hidden: '[hidden="true"]',
+    hidden: '&[hidden="true"]',
+    highlighted: '&[data-highlighted="true"]',
   },
 }
