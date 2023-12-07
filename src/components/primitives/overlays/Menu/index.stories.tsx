@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Menu } from './index'
+import { Menu } from './implementations/Example'
 
 const meta: Meta<typeof Menu> = {
   component: Menu,
