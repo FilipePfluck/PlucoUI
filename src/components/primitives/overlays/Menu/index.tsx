@@ -1,14 +1,16 @@
 import { ReactNode, useState } from 'react'
 import {
   Menu as ArkMenu,
+  MenuProps as ArkMenuProps,
   MenuItemGroupProps as ArkMenuItemGroupProps,
   MenuOptionItemProps as ArkMenuOptionItemProps,
+  MenuTriggerItemProps as ArkMenuTriggerItemProps,
   Portal,
 } from '@ark-ui/react'
 
 import { Button } from '../../buttons/Button'
 import * as S from './styles'
-import { Check, Dot } from 'lucide-react'
+import { Check, ChevronRight, Dot } from 'lucide-react'
 
 type MenuItemGroupProps = ArkMenuItemGroupProps & {
   id: string
@@ -16,7 +18,16 @@ type MenuItemGroupProps = ArkMenuItemGroupProps & {
   children?: ReactNode
 }
 
-type MenuOptionItemProps = Omit<ArkMenuOptionItemProps, 'type'>
+type MenuOptionItemProps = Omit<ArkMenuOptionItemProps, 'type'> & {
+  rightSlot?: ReactNode
+}
+
+type MenuTriggerItemProps = ArkMenuProps & {
+  triggerLabel: string
+  triggerProps?: ArkMenuTriggerItemProps
+  children: ReactNode
+  rightSlot?: ReactNode
+}
 
 export const MenuItemGroup = ({
   id,
@@ -34,6 +45,7 @@ export const MenuItemGroup = ({
 
 export const MenuCheckboxItem = ({
   children,
+  rightSlot,
   ...props
 }: MenuOptionItemProps) => {
   return (
@@ -46,13 +58,18 @@ export const MenuCheckboxItem = ({
             </S.OptionIndicator>
           )}
           {children}
+          {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
         </>
       )}
     </S.OptionItem>
   )
 }
 
-export const MenuRadioItem = ({ children, ...props }: MenuOptionItemProps) => {
+export const MenuRadioItem = ({
+  children,
+  rightSlot,
+  ...props
+}: MenuOptionItemProps) => {
   return (
     <S.OptionItem closeOnSelect={false} {...props} type="radio">
       {({ isChecked }) => (
@@ -63,9 +80,31 @@ export const MenuRadioItem = ({ children, ...props }: MenuOptionItemProps) => {
             </S.OptionIndicator>
           )}
           {children}
+          {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
         </>
       )}
     </S.OptionItem>
+  )
+}
+
+export const MenuTriggerItem = ({
+  children,
+  triggerLabel,
+  triggerProps,
+  rightSlot,
+  ...props
+}: MenuTriggerItemProps) => {
+  return (
+    <ArkMenu positioning={{ gutter: 16 }} {...props}>
+      <S.TriggerItem {...triggerProps}>
+        {triggerLabel} {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
+      </S.TriggerItem>
+      <Portal>
+        <S.Positioner>
+          <S.Content>{children}</S.Content>
+        </S.Positioner>
+      </Portal>
+    </ArkMenu>
   )
 }
 
@@ -124,7 +163,9 @@ export const Menu = () => {
           <MenuItemGroup id="profile" label="Profile Options">
             <S.Item id="editProfile">Edit Profile</S.Item>
             <S.Item id="friendList">Friend List</S.Item>
-            <ArkMenu
+            <MenuTriggerItem
+              triggerLabel="Languages"
+              rightSlot={<ChevronRight size={14} />}
               onValueChange={(data) => {
                 setLanguages((prev) => ({
                   ...prev,
@@ -132,53 +173,50 @@ export const Menu = () => {
                 }))
               }}
               value={languages}
-              positioning={{ gutter: 16 }}
             >
-              <S.TriggerItem>Languages</S.TriggerItem>
-              <Portal>
-                <S.Positioner>
-                  <S.Content>
-                    <MenuItemGroup id="languages">
-                      <MenuRadioItem
-                        name="languages"
-                        id="english"
-                        value="english"
-                      >
-                        English
-                      </MenuRadioItem>
-                      <MenuRadioItem
-                        name="languages"
-                        id="portuguese"
-                        value="portuguese"
-                      >
-                        Portuguese
-                      </MenuRadioItem>
-                      <MenuRadioItem
-                        name="languages"
-                        id="spanish"
-                        value="spanish"
-                      >
-                        Spanish
-                      </MenuRadioItem>
-                      <MenuRadioItem
-                        name="languages"
-                        id="french"
-                        value="french"
-                      >
-                        French
-                      </MenuRadioItem>
-                      <MenuRadioItem
-                        name="languages"
-                        id="german"
-                        value="german"
-                      >
-                        German
-                      </MenuRadioItem>
-                    </MenuItemGroup>
-                  </S.Content>
-                </S.Positioner>
-              </Portal>
-            </ArkMenu>
+              <MenuItemGroup id="languages">
+                <MenuRadioItem
+                  name="languages"
+                  id="english"
+                  value="english"
+                  rightSlot="🇺🇸"
+                >
+                  English
+                </MenuRadioItem>
+                <MenuRadioItem
+                  name="languages"
+                  id="portuguese"
+                  value="portuguese"
+                  rightSlot="🇧🇷"
+                >
+                  Portuguese
+                </MenuRadioItem>
+                <MenuRadioItem
+                  name="languages"
+                  id="spanish"
+                  value="spanish"
+                  rightSlot="🇪🇸"
+                >
+                  Spanish
+                </MenuRadioItem>
+                <MenuRadioItem
+                  name="languages"
+                  id="french"
+                  value="french"
+                  rightSlot="🇫🇷"
+                >
+                  French
+                </MenuRadioItem>
+                <MenuRadioItem
+                  name="languages"
+                  id="german"
+                  value="german"
+                  rightSlot="🇩🇪"
+                >
+                  German
+                </MenuRadioItem>
+              </MenuItemGroup>
+            </MenuTriggerItem>
           </MenuItemGroup>
 
           <S.Arrow>

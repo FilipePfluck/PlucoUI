@@ -21,6 +21,11 @@ const menuItemBaseStyles = css.raw({
   },
   transition: '0.12s',
   position: 'relative',
+
+  display: 'flex',
+  align: 'center',
+  justify: 'space-between',
+  gap: '2',
 })
 
 export const Root = styled(Menu.Root, {})
@@ -104,6 +109,17 @@ export const OptionIndicator = styled('div', {
     left: '2',
     top: '50%',
     transform: 'translateY(-50%)',
+  },
+})
+
+export const RightSlot = styled('div', {
+  base: {
+    position: 'absolute',
+    right: '2',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    textStyle: 'textSm',
+    color: 'fg.subtle',
   },
 })
 
