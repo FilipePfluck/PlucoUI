@@ -1,4 +1,3 @@
-import { slideAnimation } from '@/panda/utils'
 import { css } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { Menu } from '@ark-ui/react'
@@ -44,9 +43,20 @@ export const Content = styled(Menu.Content, {
     display: 'flex',
     '&[hidden]': { display: 'none' },
     flexDir: 'column',
-    gap: '4',
+    gap: '2',
 
-    ...slideAnimation,
+    _dataOpen: {
+      _top: { animation: 'slideDownAndFadeIn' },
+      _right: { animation: 'slideLeftAndFadeIn' },
+      _bottom: { animation: 'slideUpAndFadeIn' },
+      _left: { animation: 'slideRightAndFadeIn' },
+    },
+    _dataClosed: {
+      _top: { animation: 'slideDownAndFadeOut' },
+      _right: { animation: 'slideLeftAndFadeOut' },
+      _bottom: { animation: 'slideUpAndFadeOut' },
+      _left: { animation: 'slideRightAndFadeOut' },
+    },
   },
 })
 
@@ -71,7 +81,7 @@ export const Separator = styled(Menu.Separator, {
   base: {
     h: '1px',
     w: 'full',
-    bg: 'bg.card.hovered',
+    color: 'border',
   },
 })
 
@@ -87,6 +97,7 @@ export const OptionItem = styled(Menu.OptionItem, {
   },
 })
 
+// TODO - fix icon color when highlighted
 export const OptionIndicator = styled('div', {
   base: {
     position: 'absolute',

@@ -37,7 +37,7 @@ export const MenuCheckboxItem = ({
   ...props
 }: MenuOptionItemProps) => {
   return (
-    <S.OptionItem {...props} type="checkbox">
+    <S.OptionItem closeOnSelect={false} {...props} type="checkbox">
       {({ isChecked }) => (
         <>
           {isChecked && (
@@ -54,7 +54,7 @@ export const MenuCheckboxItem = ({
 
 export const MenuRadioItem = ({ children, ...props }: MenuOptionItemProps) => {
   return (
-    <S.OptionItem {...props} type="radio">
+    <S.OptionItem closeOnSelect={false} {...props} type="radio">
       {({ isChecked }) => (
         <>
           {isChecked && (
@@ -72,7 +72,11 @@ export const MenuRadioItem = ({ children, ...props }: MenuOptionItemProps) => {
 export const Menu = () => {
   const [value, setValue] = useState({
     userSettings: [],
-    subscriptionPlan: '',
+    subscriptionPlan: 'basic',
+  })
+
+  const [languages, setLanguages] = useState({
+    languages: 'english',
   })
 
   return (
@@ -120,17 +124,56 @@ export const Menu = () => {
           <MenuItemGroup id="profile" label="Profile Options">
             <S.Item id="editProfile">Edit Profile</S.Item>
             <S.Item id="friendList">Friend List</S.Item>
-            <ArkMenu positioning={{ gutter: 16 }}>
+            <ArkMenu
+              onValueChange={(data) => {
+                setLanguages((prev) => ({
+                  ...prev,
+                  [data.name]: data.value,
+                }))
+              }}
+              value={languages}
+              positioning={{ gutter: 16 }}
+            >
               <S.TriggerItem>Languages</S.TriggerItem>
               <Portal>
                 <S.Positioner>
                   <S.Content>
                     <MenuItemGroup id="languages">
-                      <S.Item id="english">English</S.Item>
-                      <S.Item id="portuguese">Portuguese</S.Item>
-                      <S.Item id="spanish">Spanish</S.Item>
-                      <S.Item id="french">French</S.Item>
-                      <S.Item id="german">German</S.Item>
+                      <MenuRadioItem
+                        name="languages"
+                        id="english"
+                        value="english"
+                      >
+                        English
+                      </MenuRadioItem>
+                      <MenuRadioItem
+                        name="languages"
+                        id="portuguese"
+                        value="portuguese"
+                      >
+                        Portuguese
+                      </MenuRadioItem>
+                      <MenuRadioItem
+                        name="languages"
+                        id="spanish"
+                        value="spanish"
+                      >
+                        Spanish
+                      </MenuRadioItem>
+                      <MenuRadioItem
+                        name="languages"
+                        id="french"
+                        value="french"
+                      >
+                        French
+                      </MenuRadioItem>
+                      <MenuRadioItem
+                        name="languages"
+                        id="german"
+                        value="german"
+                      >
+                        German
+                      </MenuRadioItem>
                     </MenuItemGroup>
                   </S.Content>
                 </S.Positioner>

@@ -12,15 +12,15 @@ export const conditions = {
     dataVertical: '&[data-orientation="vertical"]',
     dataHorizontal: '&[data-orientation="horizontal"]',
 
-    top: '&[data-placement="top"]',
-    right: '&[data-placement="right"]',
-    bottom: '&[data-placement="bottom"]',
-    left: '&[data-placement="left"]',
+    top: '&[data-placement^="top"]',
+    right: '&[data-placement^="right"]',
+    bottom: '&[data-placement^="bottom"]',
+    left: '&[data-placement^="left"]',
 
     ariaInvalid: '&[aria-invalid="true"]',
     invalidWithin: '&:has([aria-invalid="true"])',
 
-    hidden: '&[hidden="true"]',
-    highlighted: '&[data-highlighted="true"]',
+    hidden: '&[hidden]',
+    highlighted: '&[data-highlighted]',
   },
 }
