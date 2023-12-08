@@ -37,7 +37,7 @@
   OVERLAY
     [x] Dialog
     [x] Drawer
-    [] Menu
+    [x] Menu
     [x] Popover
     [x] Tooltip
     [x] HoverCard

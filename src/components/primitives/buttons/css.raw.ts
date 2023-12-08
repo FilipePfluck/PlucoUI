@@ -37,6 +37,15 @@ export const primaryButtonBaseStyles = css.raw({
 
 export const secondaryButtonBaseStyles = css.raw({
   bg: {
+    base: 'bg.card',
+    _hover: 'bg.card.hovered',
+  },
+  borderColor: 'border',
+  color: 'fg.subtle',
+})
+
+export const tertiaryButtonBaseStyles = css.raw({
+  bg: {
     base: 'transparent',
     _hover: 'bg.card.hovered',
   },
