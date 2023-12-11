@@ -135,6 +135,7 @@ export const TableRow = styled(DatePicker.TableRow, {
     w: 'full',
     display: 'grid',
     gridColumns: 'repeat(7, 1fr)',
+    gap: '1',
   },
 })
 
@@ -150,7 +151,6 @@ export const TableHeader = styled(DatePicker.TableHeader, {
     display: 'flex',
     align: 'center',
     justify: 'center',
-
     textStyle: 'headingXs',
     color: 'fg',
 
@@ -160,12 +160,24 @@ export const TableHeader = styled(DatePicker.TableHeader, {
 
 export const TableBody = styled(DatePicker.TableBody, {})
 
-export const TableCell = styled(DatePicker.TableCell, {
+export const TableCell = styled(DatePicker.TableCell, {})
+
+export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
   base: {
     display: 'flex',
     center: 'flex',
+    w: 'full',
     p: '1',
+    rounded: 'sm',
+    _hover: {
+      bg: 'bg.card.hovered',
+    },
+    '&[data-selected]': {
+      bg: 'bg.brand',
+      _hover: {
+        bg: 'bg.brand.hovered',
+      },
+    },
+    transition: 'background 0.2s',
   },
 })
-
-export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {})

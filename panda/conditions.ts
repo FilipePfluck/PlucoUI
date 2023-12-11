@@ -7,6 +7,7 @@ export const conditions = {
     dataClosed: '&[data-state="closed"]',
     dataDisabled: '&[data-disabled]',
     dataHighlighted: '&[data-highlighted]',
+    dataSelected: '&[data-selected]',
     dataOn: '&[data-state="on"]',
     dataOff: '&[data-state="off"]',
     dataVertical: '&[data-orientation="vertical"]',
