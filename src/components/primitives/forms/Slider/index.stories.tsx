@@ -16,3 +16,25 @@ export const Primary: Story = {
     </Flex>
   ),
 }
+
+export const Range: Story = {
+  render: () => (
+    <Flex gap="4">
+      <Slider defaultValue={[20, 80]} min={0} max={100} label="Range" />
+    </Flex>
+  ),
+}
+
+export const Markers: Story = {
+  render: () => (
+    <Flex gap="4">
+      <Slider
+        defaultValue={[80]}
+        markers={[0, 25, 50, 75, 100]}
+        min={0}
+        max={100}
+        label="Volume"
+      />
+    </Flex>
+  ),
+}

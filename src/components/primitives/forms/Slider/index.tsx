@@ -4,9 +4,10 @@ import * as S from './styles'
 
 type SliderProps = ArkSliderProps & {
   label?: string
+  markers?: number[]
 }
 
-export const Slider = ({ label, ...props }: SliderProps) => {
+export const Slider = ({ label, markers = [], ...props }: SliderProps) => {
   const value = props.value || props.defaultValue || [0]
 
   return (
@@ -20,6 +21,13 @@ export const Slider = ({ label, ...props }: SliderProps) => {
           <S.Thumb key={i} index={i} />
         ))}
       </S.Control>
+      <S.MarkerGroup>
+        {markers.map((value) => (
+          <S.Marker key={value} value={value}>
+            {value}
+          </S.Marker>
+        ))}
+      </S.MarkerGroup>
     </S.Root>
   )
 }

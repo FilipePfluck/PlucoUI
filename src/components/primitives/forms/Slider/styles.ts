@@ -38,7 +38,7 @@ export const Range = styled(Slider.Range, {
 
 export const Thumb = styled(Slider.Thumb, {
   base: {
-    bg: 'border',
+    bg: 'bg.card',
     borderColor: 'brand',
     rounded: 'full',
     borderWidth: '2px',
@@ -47,10 +47,34 @@ export const Thumb = styled(Slider.Thumb, {
     w: '4',
     h: '4',
     '--slider-thumb-transform': 'translate(-50%, -50%)',
-    outlineColor: 'border.ring  q',
+    outlineColor: 'border.ring',
+    cursor: 'pointer',
   },
 })
 
-export const MarkerGroup = styled(Slider.MarkerGroup, {})
+export const MarkerGroup = styled(Slider.MarkerGroup, {
+  base: {
+    mt: '1',
+  },
+})
 
-export const Marker = styled(Slider.Marker, {})
+export const Marker = styled(Slider.Marker, {
+  base: {
+    textStyle: 'textSm',
+    color: 'fg.subtle',
+    '--before-background': 'colors.fg',
+    _before: {
+      bg: 'white',
+      content: "''",
+      display: 'block',
+      left: '50%',
+      position: 'relative',
+      transform: 'translateX(-50%)',
+      h: '1',
+      w: '1',
+      rounded: 'full',
+      mt: '-16px',
+      mb: '12px',
+    },
+  },
+})
