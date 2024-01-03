@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Slider>
 export const Primary: Story = {
   render: () => (
     <Flex gap="4">
-      <Slider defaultValue={[0, 100]} />
+      <Slider defaultValue={[80]} min={0} max={100} label="Volume" />
     </Flex>
   ),
 }
