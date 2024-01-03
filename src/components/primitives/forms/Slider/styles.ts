@@ -4,8 +4,16 @@ import { Slider } from '@ark-ui/react'
 export const Root = styled(Slider.Root, {
   base: {
     display: 'flex',
-    flexDir: 'column',
     gap: '2',
+    w: 'full',
+    h: 'full',
+
+    _horizontal: {
+      flexDir: 'column',
+    },
+    _vertical: {
+      flexDir: 'row',
+    },
   },
 })
 
@@ -13,26 +21,48 @@ export const Label = styled(Slider.Label, {})
 
 export const ValueText = styled(Slider.ValueText, {})
 
-export const Control = styled(Slider.Control, {})
+export const Control = styled(Slider.Control, {
+  base: {
+    _horizontal: {
+      w: 'full',
+    },
+    _vertical: {
+      h: 'full',
+    },
+  },
+})
 
 export const Track = styled(Slider.Track, {
   base: {
     bg: 'border',
-    w: 'full',
-    minW: '400px',
-    h: '1',
+
     rounded: 'full',
     display: 'flex',
     align: 'center',
     flex: 1,
     overflow: 'hidden',
+
+    _horizontal: {
+      w: 'full',
+      h: '1',
+    },
+    _vertical: {
+      w: '1',
+      h: 'full',
+    },
   },
 })
 
 export const Range = styled(Slider.Range, {
   base: {
     bg: 'brand',
-    h: 'full',
+
+    _horizontal: {
+      h: 'full',
+    },
+    _vertical: {
+      w: 'full',
+    },
   },
 })
 
@@ -55,6 +85,7 @@ export const Thumb = styled(Slider.Thumb, {
 export const MarkerGroup = styled(Slider.MarkerGroup, {
   base: {
     mt: '1',
+    zIndex: '0',
   },
 })
 
