@@ -8,7 +8,7 @@
 
   FORMS
     [x] Switch
-    [] Slider
+    [x] Slider
     [x] Checkbox
     [x] RadioGroup
     [x] RadioButtonGroup
@@ -27,12 +27,12 @@
     [] Mention
     [] Upload
     [Selects]
-    [] Select
-    [] ComboBox / AutoComplete
+    [-] Select
+    [-] ComboBox / AutoComplete
     [] Tags input
     [Pickers]
     [] ColorPicker
-    [] DatePicker
+    [-] DatePicker
 
   OVERLAY
     [x] Dialog
@@ -49,11 +49,11 @@
     [] ReadMore
 
   NAVIGATION
-    [] SegmentGroup
+    [-] SegmentGroup
     [] NavigationMenu
     [] Stepper
     [] BreadCrumb
-    [] Pagination
+    [x] Pagination
     [] Tree
 
   FEEDBACK
