@@ -11,7 +11,11 @@ export const Slider = ({ label, markers = [], ...props }: SliderProps) => {
   const value = props.value || props.defaultValue || [0]
 
   return (
-    <S.Root {...props}>
+    <S.Root
+      thumbAlignment="center"
+      thumbSize={{ width: 4, height: 4 }}
+      {...props}
+    >
       <S.Label>{label}</S.Label>
       <S.Control>
         <S.Track>

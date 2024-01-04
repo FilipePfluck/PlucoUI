@@ -76,9 +76,16 @@ export const Thumb = styled(Slider.Thumb, {
     zIndex: 1,
     w: '4',
     h: '4',
-    '--slider-thumb-transform': 'translate(-50%, -50%)',
     outlineColor: 'border.ring',
     cursor: 'pointer',
+
+    // 2px is half of 4px which is the size of the slider track
+    _horizontal: {
+      '--slider-thumb-transform': 'translate(-50%, calc(-50% - 2px))',
+    },
+    _vertical: {
+      '--slider-thumb-transform': 'translate(calc(-50% + 2px), -50%)',
+    },
   },
 })
 
@@ -98,14 +105,26 @@ export const Marker = styled(Slider.Marker, {
       bg: 'white',
       content: "''",
       display: 'block',
-      left: '50%',
-      position: 'relative',
-      transform: 'translateX(-50%)',
       h: '1',
       w: '1',
       rounded: 'full',
-      mt: '-16px',
-      mb: '12px',
+      position: 'relative',
+    },
+
+    _horizontal: {
+      _before: {
+        left: '50%',
+        transform: 'translateX(-50%)',
+        mt: '-16px',
+        mb: '12px',
+      },
+    },
+
+    _vertical: {
+      _before: {
+        ml: '-12px',
+        mb: '-12px',
+      },
     },
   },
 })
