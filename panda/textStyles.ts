@@ -57,6 +57,14 @@ export const textStyles = defineTextStyles({
       fontFamily: 'inter',
     },
   },
+  textXs: {
+    value: {
+      fontWeight: 'regular',
+      fontSize: 'xs',
+      lineHeight: '160%',
+      fontFamily: 'inter',
+    },
+  },
   buttonLg: {
     value: {
       fontWeight: 'semibold',
