@@ -21,7 +21,7 @@ interface SelectProps {
 // TODO - revise this whole component
 
 export const Select = ({
-  items,
+  items: groups,
   itemsValues,
   label,
   placeholder,
@@ -40,11 +40,12 @@ export const Select = ({
       <Portal>
         <S.Positioner>
           <S.Content>
-            {items.map(({ id, items, groupLabel }) => (
+            {groups.map(({ id, items, groupLabel }) => (
               <S.ItemGroup id={id} key={id}>
                 {groupLabel && (
                   <S.ItemGroupLabel htmlFor={id}>{groupLabel}</S.ItemGroupLabel>
                 )}
+                <S.Separator />
                 {items.map(({ label, value, ...props }) => (
                   <S.Item item={value} key={value} {...props}>
                     <S.ItemText>{label}</S.ItemText>

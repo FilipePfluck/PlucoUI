@@ -84,7 +84,7 @@ export const Thumb = styled(Slider.Thumb, {
       '--slider-thumb-transform': 'translate(-50%, calc(-50% - 2px))',
     },
     _vertical: {
-      '--slider-thumb-transform': 'translate(calc(-50% + 2px), -50%)',
+      '--slider-thumb-transform': 'translate(calc(-50% + 2px), 50%)',
     },
   },
 })

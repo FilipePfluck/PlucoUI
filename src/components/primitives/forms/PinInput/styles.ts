@@ -28,9 +28,9 @@ export const Input = styled(PinInput.Input, {
     h: '12',
     w: '10',
     p: '14px',
-    bg: 'bg.component',
-    rounded: 'md',
+    bg: 'bg.card',
     boxShadow: 'sm',
+    rounded: 'md',
     transition: '0.2s',
     color: 'fg',
 

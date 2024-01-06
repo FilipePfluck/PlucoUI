@@ -30,6 +30,9 @@ export const Trigger = styled(Select.Trigger, {
     borderRadius: 'md',
     cursor: 'pointer',
 
+    bg: 'bg.card',
+    boxShadow: 'sm',
+
     outline: 0,
     position: 'relative',
     transitionDuration: 'normal',
@@ -125,7 +128,13 @@ export const Content = styled(Select.Content, {
   },
 })
 
-export const ItemGroup = styled(Select.ItemGroup, {})
+export const ItemGroup = styled(Select.ItemGroup, {
+  base: {
+    display: 'flex',
+    flexDir: 'column',
+    gap: 1,
+  },
+})
 
 export const ItemGroupLabel = styled(Select.ItemGroupLabel, {
   base: {
@@ -133,6 +142,7 @@ export const ItemGroupLabel = styled(Select.ItemGroupLabel, {
     color: 'fg',
     mb: 1,
     px: 1,
+    pt: 1,
   },
 })
 
@@ -151,17 +161,18 @@ export const Item = styled(Select.Item, {
     transitionTimingFunction: 'default',
 
     _hover: {
-      background: 'bg.card.hovered',
-      color: 'fg',
+      background: 'bg.brand',
+      color: 'white',
     },
     _highlighted: {
-      background: 'bg.card.hovered',
-      color: 'fg',
+      background: 'bg.brand',
+      color: 'white',
     },
     _selected: {
-      color: 'fg',
+      color: 'white',
     },
     _disabled: {
+      bg: 'transparent',
       color: 'fg.muted',
       cursor: 'not-allowed',
       _hover: {
@@ -173,11 +184,21 @@ export const Item = styled(Select.Item, {
 })
 
 export const ItemText = styled(Select.ItemText, {
-  base: {},
+  base: {
+    color: 'inherit',
+  },
 })
 
 export const ItemIndicator = styled(Select.ItemIndicator, {
   base: {
     color: 'brand',
+  },
+})
+
+export const Separator = styled('div', {
+  base: {
+    w: 'full',
+    h: '1px',
+    bg: 'border',
   },
 })
