@@ -92,6 +92,7 @@ export const Multiple: Story = {
       width="lg"
       multiple
       clearable
+      showIndicator
     />
   ),
 }

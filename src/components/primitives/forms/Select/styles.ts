@@ -178,6 +178,17 @@ export const ItemGroupLabel = styled(Select.ItemGroupLabel, {
     px: 1,
     pt: 1,
   },
+  variants: {
+    showIndicator: {
+      true: {
+        pl: '8',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    showIndicator: false,
+  },
 })
 
 export const Item = styled(Select.Item, {
@@ -186,6 +197,7 @@ export const Item = styled(Select.Item, {
     align: 'center',
     justify: 'space-between',
     px: 1,
+    position: 'relative',
 
     borderRadius: 'sm',
     cursor: 'pointer',
@@ -215,6 +227,17 @@ export const Item = styled(Select.Item, {
       },
     },
   },
+  variants: {
+    showIndicator: {
+      true: {
+        pl: '8',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    showIndicator: false,
+  },
 })
 
 export const ItemText = styled(Select.ItemText, {
@@ -225,7 +248,10 @@ export const ItemText = styled(Select.ItemText, {
 
 export const ItemIndicator = styled(Select.ItemIndicator, {
   base: {
-    color: 'brand',
+    position: 'absolute',
+    left: '2',
+    top: '50%',
+    transform: 'translateY(-50%)',
   },
 })
 

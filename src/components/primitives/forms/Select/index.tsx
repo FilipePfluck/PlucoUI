@@ -1,4 +1,4 @@
-import { ChevronsUpDown, X } from 'lucide-react'
+import { Check, ChevronsUpDown, X } from 'lucide-react'
 import * as S from './styles'
 import {
   Portal,
@@ -21,6 +21,7 @@ type BaseSelectProps = {
   label?: string
   placeholder?: string
   clearable?: boolean
+  showIndicator?: boolean
   width?: 'auto' | 'sm' | 'md' | 'lg' | 'full'
 }
 
@@ -35,6 +36,7 @@ export const Select = ({
   placeholder,
   width,
   clearable = false,
+  showIndicator = false,
   ...props
 }: SelectProps) => {
   let items: SelectItemProps[] = []
@@ -65,11 +67,23 @@ export const Select = ({
             {groups.map(({ id, items, groupLabel }) => (
               <S.ItemGroup id={id} key={id}>
                 {groupLabel && (
-                  <S.ItemGroupLabel htmlFor={id}>{groupLabel}</S.ItemGroupLabel>
+                  <S.ItemGroupLabel showIndicator={showIndicator} htmlFor={id}>
+                    {groupLabel}
+                  </S.ItemGroupLabel>
                 )}
                 <S.Separator />
                 {items.map(({ label, value, ...props }) => (
-                  <S.Item item={value} key={value} {...props}>
+                  <S.Item
+                    item={value}
+                    key={value}
+                    showIndicator={showIndicator}
+                    {...props}
+                  >
+                    {showIndicator && (
+                      <S.ItemIndicator>
+                        <Check size={14} />
+                      </S.ItemIndicator>
+                    )}
                     <S.ItemText>{label}</S.ItemText>
                   </S.Item>
                 ))}
