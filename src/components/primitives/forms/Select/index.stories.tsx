@@ -9,21 +9,6 @@ const meta: Meta<typeof Select> = {
 export default meta
 type Story = StoryObj<typeof Select>
 
-const itemsValues = [
-  'apple',
-  'banana',
-  'blueberry',
-  'grapes',
-  'pineapple',
-  'aubergine',
-  'broccoli',
-  'carrot',
-  'beef',
-  'chicken',
-  'lamb',
-  'pork',
-]
-
 const items = [
   {
     groupLabel: 'Fruits',
@@ -95,12 +80,18 @@ const items = [
 ]
 
 export const Default: Story = {
+  render: () => <Select items={items} label="food" placeholder="Pick a food" />,
+}
+
+export const Multiple: Story = {
   render: () => (
     <Select
       items={items}
       label="food"
-      itemsValues={itemsValues}
       placeholder="Pick a food"
+      width="lg"
+      multiple
+      clearable
     />
   ),
 }

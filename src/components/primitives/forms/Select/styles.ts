@@ -16,13 +16,18 @@ export const Label = styled(Select.Label, {
   },
 })
 
-export const Control = styled(Select.Control, {})
+export const Control = styled(Select.Control, {
+  base: {
+    position: 'relative',
+  },
+})
 
 export const Trigger = styled(Select.Trigger, {
   base: {
     display: 'inline-flex',
     justify: 'space-between',
     align: 'center',
+    gap: '4',
 
     borderWidth: '1px',
     borderStyle: 'solid',
@@ -52,21 +57,33 @@ export const Trigger = styled(Select.Trigger, {
       sm: {
         w: '24',
         p: '1',
+        '& + button': {
+          '--select-clear-trigger-right': '0px',
+        },
       },
       md: {
         w: '40',
         px: '2',
         py: '1',
+        '& + button': {
+          '--select-clear-trigger-right': '4px',
+        },
       },
       lg: {
         w: '64',
         px: '4',
         py: '2',
+        '& + button': {
+          '--select-clear-trigger-right': '12px',
+        },
       },
       full: {
         w: 'full',
         px: '4',
         py: '2',
+        '& + button': {
+          '--select-clear-trigger-right': '12px',
+        },
       },
     },
   },
@@ -75,11 +92,28 @@ export const Trigger = styled(Select.Trigger, {
   },
 })
 
-export const ClearTrigger = styled(Select.ClearTrigger, {})
+export const ClearTrigger = styled(Select.ClearTrigger, {
+  base: {
+    p: '1',
+    position: 'absolute',
+    right: 'var(--select-clear-trigger-right) !important',
+    top: '50%',
+    transform: 'translateY(-50%)',
+  },
+})
 
 export const ValueText = styled(Select.ValueText, {})
 
-export const Indicator = styled(Select.Indicator, {})
+export const Indicator = styled(Select.Indicator, {
+  base: {
+    visibility: 'visible',
+    // when the trigger is clearable and the placeholder is not shown (i.e there is a selected item)
+    // the indicator will be hidden to create space to show the clear button
+    '[data-clearable]:not([data-placeholder-shown]) &': {
+      visibility: 'hidden',
+    },
+  },
+})
 
 export const Positioner = styled(Select.Positioner, {})
 
