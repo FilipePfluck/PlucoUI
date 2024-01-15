@@ -6,6 +6,7 @@ export const Root = styled(Combobox.Root, {
     display: 'flex',
     flexDirection: 'column',
     gap: '3',
+    position: 'relative',
   },
 })
 
@@ -16,7 +17,11 @@ export const Label = styled(Combobox.Label, {
   },
 })
 
-export const Control = styled(Combobox.Label, {})
+export const Control = styled(Combobox.Label, {
+  base: {
+    position: 'relative',
+  },
+})
 
 export const Input = styled(Combobox.Input, {
   base: {
