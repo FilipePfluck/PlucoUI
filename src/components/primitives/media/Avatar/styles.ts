@@ -1,15 +1,10 @@
 import { styled } from '@/styled-system/jsx'
 import { Avatar } from '@ark-ui/react'
 
-export const Root = styled(Avatar.Root, {
+export const Background = styled('div', {
   base: {
-    borderRadius: 'full',
-    borderWidth: '1px',
-    borderColor: 'border',
-    borderStyle: 'solid',
-    shadow: 'md',
-    display: 'flex',
-    center: 'flex',
+    rounded: 'full',
+    position: 'relative',
   },
   variants: {
     size: {
@@ -34,9 +29,67 @@ export const Root = styled(Avatar.Root, {
         w: '24',
       },
     },
+    colorScheme: {
+      gray: {
+        bg: 'border',
+      },
+      gradient: {
+        bg: 'linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))',
+      },
+    },
   },
   defaultVariants: {
     size: 'md',
+    colorScheme: 'gradient',
+  },
+})
+
+export const Root = styled(Avatar.Root, {
+  base: {
+    borderRadius: 'full',
+    borderStyle: 'solid',
+    shadow: 'md',
+    display: 'flex',
+    center: 'flex',
+    position: 'relative',
+  },
+  variants: {
+    size: {
+      xs: {
+        h: '8',
+        w: '8',
+      },
+      sm: {
+        h: '10',
+        w: '10',
+      },
+      md: {
+        h: '12',
+        w: '12',
+      },
+      lg: {
+        h: '16',
+        w: '16',
+      },
+      xl: {
+        h: '24',
+        w: '24',
+      },
+    },
+    gradientBorder: {
+      true: {
+        borderWidth: '2px',
+        borderColor: 'transparent',
+      },
+      false: {
+        borderWidth: '1px',
+        borderColor: 'border',
+      },
+    },
+  },
+  defaultVariants: {
+    size: 'md',
+    gradientBorder: false,
   },
 })
 
@@ -56,35 +109,35 @@ export const Fallback = styled(Avatar.Fallback, {
   variants: {
     size: {
       xs: {
-        textStyle: 'textXs',
+        fontSize: '12px',
         '& svg': {
           w: '4',
           h: '4',
         },
       },
       sm: {
-        textStyle: 'textSm',
+        fontSize: '14px',
         '& svg': {
           w: '5',
           h: '5',
         },
       },
       md: {
-        textStyle: 'textMd',
+        fontSize: '16px',
         '& svg': {
           w: '6',
           h: '6',
         },
       },
       lg: {
-        textStyle: 'textMd',
+        fontSize: '24px',
         '& svg': {
           w: '8',
           h: '8',
         },
       },
       xl: {
-        textStyle: 'textLg',
+        fontSize: '36px',
         '& svg': {
           w: '12',
           h: '12',
@@ -127,5 +180,58 @@ export const Image = styled(Avatar.Image, {
   },
   defaultVariants: {
     size: 'md',
+  },
+})
+
+export const StatusBadge = styled('div', {
+  base: {
+    rounded: 'full',
+    borderColor: 'bg.card',
+    position: 'absolute',
+    bottom: '0',
+    right: '0',
+  },
+  variants: {
+    status: {
+      online: {
+        bg: 'green.500',
+      },
+      idle: {
+        bg: 'yellow.500',
+      },
+      doNotDisturb: {
+        bg: 'red.500',
+      },
+      offline: {
+        bg: 'gray.500',
+      },
+    },
+    size: {
+      xs: {
+        h: '3',
+        w: '3',
+        borderWidth: '2px',
+      },
+      sm: {
+        h: '4',
+        w: '4',
+        borderWidth: '2px',
+      },
+      md: {
+        h: '5',
+        w: '5',
+        borderWidth: '2px',
+      },
+      lg: {
+        h: '6',
+        w: '6',
+        borderWidth: '3px',
+      },
+      xl: {
+        h: '7',
+        w: '7',
+        borderWidth: '3px',
+      },
+    },
   },
 })

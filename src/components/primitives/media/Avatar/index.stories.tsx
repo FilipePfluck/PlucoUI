@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Avatar } from './index'
+import { Avatar, AvatarProps } from './index'
 import { Flex } from '@/styled-system/jsx'
 
 const meta: Meta<typeof Avatar> = {
@@ -9,58 +9,71 @@ const meta: Meta<typeof Avatar> = {
 export default meta
 type Story = StoryObj<typeof Avatar>
 
+const AvatarList = ({ ...props }: AvatarProps) => (
+  <Flex gap="4" w="400px" align="center">
+    <Avatar size="xs" name="Filipe Pfluck" fallback="initials" {...props} />
+    <Avatar size="sm" name="Filipe Pfluck" fallback="initials" {...props} />
+    <Avatar size="md" name="Filipe Pfluck" fallback="initials" {...props} />
+    <Avatar size="lg" name="Filipe Pfluck" fallback="initials" {...props} />
+    <Avatar size="xl" name="Filipe Pfluck" fallback="initials" {...props} />
+  </Flex>
+)
+
 export const Primary: Story = {
   render: () => (
-    <Flex gap="4" w="400px" align="center">
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/62773200?v=4"
-        size="xs"
-        name="Filipe Pfluck"
-      />
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/62773200?v=4"
-        size="sm"
-        name="Filipe Pfluck"
-      />
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/62773200?v=4"
-        size="md"
-        name="Filipe Pfluck"
-      />
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/62773200?v=4"
-        size="lg"
-        name="Filipe Pfluck"
-      />
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/62773200?v=4"
-        size="xl"
-        name="Filipe Pfluck"
-      />
-    </Flex>
+    <AvatarList src="https://avatars.githubusercontent.com/u/62773200?v=4" />
+  ),
+}
+
+export const Gradient: Story = {
+  render: () => (
+    <AvatarList
+      src="https://avatars.githubusercontent.com/u/62773200?v=4"
+      gradientBorder
+    />
   ),
 }
 
 export const Fallback: Story = {
-  render: () => (
-    <Flex gap="4" w="400px" align="center">
-      <Avatar src="" size="xs" name="Filipe Pfluck" fallback="initials" />
-      <Avatar src="" size="sm" name="Filipe Pfluck" fallback="initials" />
-      <Avatar src="" size="md" name="Filipe Pfluck" fallback="initials" />
-      <Avatar src="" size="lg" name="Filipe Pfluck" fallback="initials" />
-      <Avatar src="" size="xl" name="Filipe Pfluck" fallback="initials" />
-    </Flex>
-  ),
+  render: () => <AvatarList src="" fallback="initials" />,
 }
 
 export const IconFallback: Story = {
+  render: () => <AvatarList src="" fallback="icon" />,
+}
+
+export const Online: Story = {
   render: () => (
-    <Flex gap="4" w="400px" align="center">
-      <Avatar src="" size="xs" name="Filipe Pfluck" />
-      <Avatar src="" size="sm" name="Filipe Pfluck" />
-      <Avatar src="" size="md" name="Filipe Pfluck" />
-      <Avatar src="" size="lg" name="Filipe Pfluck" />
-      <Avatar src="" size="xl" name="Filipe Pfluck" />
-    </Flex>
+    <AvatarList
+      src="https://avatars.githubusercontent.com/u/62773200?v=4"
+      status="online"
+    />
+  ),
+}
+
+export const DoNotDisturb: Story = {
+  render: () => (
+    <AvatarList
+      src="https://avatars.githubusercontent.com/u/62773200?v=4"
+      status="doNotDisturb"
+    />
+  ),
+}
+
+export const Idle: Story = {
+  render: () => (
+    <AvatarList
+      src="https://avatars.githubusercontent.com/u/62773200?v=4"
+      status="idle"
+    />
+  ),
+}
+
+export const Offline: Story = {
+  render: () => (
+    <AvatarList
+      src="https://avatars.githubusercontent.com/u/62773200?v=4"
+      status="offline"
+    />
   ),
 }
