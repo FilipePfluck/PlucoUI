@@ -81,7 +81,16 @@ export const Input = styled(Combobox.Input, {
   },
 })
 
-export const Trigger = styled(Combobox.Trigger, {})
+export const Trigger = styled(Combobox.Trigger, {
+  base: {
+    bottom: '0',
+    color: 'fg.subtle',
+    position: 'absolute',
+    // TODO - improve this later
+    right: '2',
+    top: '0',
+  },
+})
 
 export const ClearTrigger = styled(Combobox.ClearTrigger, {})
 
