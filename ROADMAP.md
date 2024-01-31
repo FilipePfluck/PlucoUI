@@ -65,7 +65,9 @@
     [] Skeleton
   
   MEDIA
-    [] Avatar
+    [x] Avatar
+    [] Avatar Group
+    [] Status (like whatsapp)
     [] Carousel
 
   DISPLAY
