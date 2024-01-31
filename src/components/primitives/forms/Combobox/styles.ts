@@ -6,7 +6,6 @@ export const Root = styled(Combobox.Root, {
     display: 'flex',
     flexDirection: 'column',
     gap: '3',
-    position: 'relative',
   },
 })
 
@@ -17,7 +16,7 @@ export const Label = styled(Combobox.Label, {
   },
 })
 
-export const Control = styled(Combobox.Label, {
+export const Control = styled(Combobox.Control, {
   base: {
     position: 'relative',
   },
@@ -106,6 +105,7 @@ export const Content = styled(Combobox.Content, {
     flexDirection: 'column',
     gap: 2,
     p: 2,
+    w: 'full',
 
     zIndex: '10',
     '&[hidden]': {
@@ -117,27 +117,6 @@ export const Content = styled(Combobox.Content, {
     _closed: {
       animation: 'fadeOut',
     },
-  },
-
-  variants: {
-    width: {
-      auto: {},
-      sm: {
-        w: '24',
-      },
-      md: {
-        w: '40',
-      },
-      lg: {
-        w: '64',
-      },
-      full: {
-        w: 'full',
-      },
-    },
-  },
-  defaultVariants: {
-    width: 'md',
   },
 })
 
