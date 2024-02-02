@@ -26,6 +26,7 @@ export const Control = styled(Switch.Control, {
     transitionProperty: 'background',
     WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
 
+    // this makes focus indication work
     _siblingFocusVisible: {
       outline: '2px solid token(colors.border.ring)',
     },
@@ -37,14 +38,14 @@ export const Thumb = styled(Switch.Thumb, {
     display: 'block',
     width: '18px',
     height: '18px',
-    bg: 'bg.card',
+    bg: 'white',
     rounded: 'full',
     boxShadow: `sm`,
 
     transitionDuration: 'normal',
     transitionProperty: 'transform, background',
-    transform: 'translateX(2px)',
-    '&[data-state="checked"]': { transform: 'translateX(18px)', bg: 'white' },
+    transform: 'translateX(4px)',
+    '&[data-state="checked"]': { transform: 'translateX(18px)' },
   },
 })
 
