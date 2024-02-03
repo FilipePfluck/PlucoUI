@@ -1,4 +1,4 @@
-# PRIMITIVES
+;# PRIMITIVES
 
   BUTTONS
     [x] Button
