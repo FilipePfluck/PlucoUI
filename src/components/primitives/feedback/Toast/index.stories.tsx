@@ -15,7 +15,11 @@ export const Primary: Story = {
     <>
       <Button
         onClick={() =>
-          toast.create({ title: 'Title', description: 'Description' })
+          toast.create({
+            title: 'Title',
+            description: 'Description',
+            removeDelay: 190,
+          })
         }
       >
         Open toast
