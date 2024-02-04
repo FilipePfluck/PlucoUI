@@ -57,10 +57,10 @@
     [] Tree
 
   FEEDBACK
-    [] Toast
+    [x] Toast
     [] Alert
-    [] Progress
-    [] CircularProgress
+    [x] Progress
+    [x] CircularProgress
     [] Spinner
     [] Skeleton
   
