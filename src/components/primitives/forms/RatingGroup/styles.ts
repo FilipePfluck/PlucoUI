@@ -21,5 +21,8 @@ export const Control = styled(RatingGroup.Control, {
 export const Item = styled(RatingGroup.Item, {
   base: {
     transition: '0.2s',
+    '&:not([data-readonly])': {
+      cursor: 'pointer',
+    },
   },
 })
