@@ -12,8 +12,7 @@
     [x] Checkbox
     [x] RadioGroup
     [x] RadioButtonGroup
-    [] RatingGroup
-    [] TagsGroup
+    [x] RatingGroup
     [Inputs]
     [] FormControl
     [x] Input
@@ -27,8 +26,8 @@
     [] Mention
     [] Upload
     [Selects]
-    [-] Select
-    [-] ComboBox / AutoComplete
+    [x] Select
+    [x] ComboBox / AutoComplete
     [] Tags input
     [Pickers]
     [] ColorPicker
