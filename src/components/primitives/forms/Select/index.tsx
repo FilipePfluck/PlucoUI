@@ -64,30 +64,35 @@ export const Select = ({
       <Portal>
         <S.Positioner>
           <S.Content width={width}>
-            {groups.map(({ id, items, groupLabel }) => (
-              <S.ItemGroup id={id} key={id}>
-                {groupLabel && (
-                  <S.ItemGroupLabel showIndicator={showIndicator} htmlFor={id}>
-                    {groupLabel}
-                  </S.ItemGroupLabel>
-                )}
-                <S.Separator />
-                {items.map(({ label, value, ...props }) => (
-                  <S.Item
-                    item={value}
-                    key={value}
-                    showIndicator={showIndicator}
-                    {...props}
-                  >
-                    {showIndicator && (
-                      <S.ItemIndicator>
-                        <Check size={14} />
-                      </S.ItemIndicator>
-                    )}
-                    <S.ItemText>{label}</S.ItemText>
-                  </S.Item>
-                ))}
-              </S.ItemGroup>
+            {groups.map(({ id, items, groupLabel }, index) => (
+              <>
+                <S.ItemGroup id={id} key={id}>
+                  {groupLabel && (
+                    <S.ItemGroupLabel
+                      showIndicator={showIndicator}
+                      htmlFor={id}
+                    >
+                      {groupLabel}
+                    </S.ItemGroupLabel>
+                  )}
+                  {items.map(({ label, value, ...props }) => (
+                    <S.Item
+                      item={value}
+                      key={value}
+                      showIndicator={showIndicator}
+                      {...props}
+                    >
+                      {showIndicator && (
+                        <S.ItemIndicator>
+                          <Check size={14} />
+                        </S.ItemIndicator>
+                      )}
+                      <S.ItemText>{label}</S.ItemText>
+                    </S.Item>
+                  ))}
+                </S.ItemGroup>
+                {index + 1 !== groups.length && <S.Separator />}
+              </>
             ))}
           </S.Content>
         </S.Positioner>

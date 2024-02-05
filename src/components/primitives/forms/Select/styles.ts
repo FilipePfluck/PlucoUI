@@ -28,6 +28,7 @@ export const Trigger = styled(Select.Trigger, {
     justify: 'space-between',
     align: 'center',
     gap: '4',
+    minH: '10',
 
     borderWidth: '1px',
     borderStyle: 'solid',
@@ -56,31 +57,32 @@ export const Trigger = styled(Select.Trigger, {
       auto: {},
       sm: {
         w: '24',
-        p: '1',
+        py: '2',
+        px: '2',
         '& + button': {
-          '--select-clear-trigger-right': '0px',
+          '--select-clear-trigger-right': '6px',
         },
       },
       md: {
         w: '40',
-        px: '2',
-        py: '1',
+        py: '2',
+        px: '3',
         '& + button': {
-          '--select-clear-trigger-right': '4px',
+          '--select-clear-trigger-right': '9px',
         },
       },
       lg: {
         w: '64',
-        px: '4',
         py: '2',
+        px: '4',
         '& + button': {
           '--select-clear-trigger-right': '12px',
         },
       },
       full: {
         w: 'full',
-        px: '4',
         py: '2',
+        px: '4',
         '& + button': {
           '--select-clear-trigger-right': '12px',
         },
@@ -109,7 +111,7 @@ export const Indicator = styled(Select.Indicator, {
     visibility: 'visible',
     // when the trigger is clearable and the placeholder is not shown (i.e there is a selected item)
     // the indicator will be hidden to create space to show the clear button
-    '[data-clearable]:not([data-placeholder-shown]) &': {
+    '[data-clearable="true"]:not([data-placeholder-shown]) &': {
       visibility: 'hidden',
     },
   },
@@ -206,15 +208,15 @@ export const Item = styled(Select.Item, {
     transitionProperty: 'background, color',
     transitionTimingFunction: 'default',
 
+    _selected: {
+      color: 'fg',
+    },
     _hover: {
       background: 'bg.brand',
       color: 'white',
     },
     _highlighted: {
       background: 'bg.brand',
-      color: 'white',
-    },
-    _selected: {
       color: 'white',
     },
     _disabled: {
