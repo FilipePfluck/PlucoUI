@@ -8,6 +8,13 @@ const meta: Meta<typeof Combobox> = {
 export default meta
 type Story = StoryObj<typeof Combobox>
 
+const data = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+  { label: 'Vue', value: 'vue' },
+]
+
 export const Primary: Story = {
-  render: () => <Combobox />,
+  render: () => <Combobox items={data} data={data} />,
 }

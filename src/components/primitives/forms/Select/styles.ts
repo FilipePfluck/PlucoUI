@@ -168,7 +168,7 @@ export const ItemGroup = styled(Select.ItemGroup, {
   base: {
     display: 'flex',
     flexDir: 'column',
-    gap: 1,
+    gap: '0.5',
   },
 })
 
@@ -199,6 +199,7 @@ export const Item = styled(Select.Item, {
     align: 'center',
     justify: 'space-between',
     px: 1,
+    py: '0.5',
     position: 'relative',
 
     borderRadius: 'sm',

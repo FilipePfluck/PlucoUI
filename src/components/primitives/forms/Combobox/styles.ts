@@ -28,6 +28,7 @@ export const Input = styled(Combobox.Input, {
     justify: 'space-between',
     align: 'center',
     gap: '4',
+    minH: '10',
 
     borderWidth: '1px',
     borderStyle: 'solid',
@@ -120,12 +121,89 @@ export const Content = styled(Combobox.Content, {
   },
 })
 
-export const ItemGroup = styled(Combobox.ItemGroup, {})
+export const ItemGroup = styled(Combobox.ItemGroup, {
+  base: {
+    display: 'flex',
+    flexDir: 'column',
+    gap: '0.5',
+  },
+})
 
-export const ItemGroupLabel = styled(Combobox.ItemGroupLabel, {})
+export const ItemGroupLabel = styled(Combobox.ItemGroupLabel, {
+  base: {
+    textStyle: 'headingXs',
+    color: 'fg',
+    mb: 1,
+    px: 1,
+    pt: 1,
+  },
+  variants: {
+    showIndicator: {
+      true: {
+        pl: '8',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    showIndicator: false,
+  },
+})
 
-export const Item = styled(Combobox.Item, {})
+export const Item = styled(Combobox.Item, {
+  base: {
+    display: 'flex',
+    align: 'center',
+    justify: 'space-between',
+    px: 1,
+    py: '0.5',
+    position: 'relative',
 
-export const ItemText = styled(Combobox.ItemText, {})
+    borderRadius: 'sm',
+    cursor: 'pointer',
+
+    transitionDuration: 'fast',
+    transitionProperty: 'background, color',
+    transitionTimingFunction: 'default',
+
+    _selected: {
+      color: 'fg',
+    },
+    _hover: {
+      background: 'bg.brand',
+      color: 'white',
+    },
+    _highlighted: {
+      background: 'bg.brand',
+      color: 'white',
+    },
+    _disabled: {
+      bg: 'transparent',
+      color: 'fg.muted',
+      cursor: 'not-allowed',
+      _hover: {
+        background: 'transparent',
+        color: 'fg.muted',
+      },
+    },
+  },
+  variants: {
+    showIndicator: {
+      true: {
+        pl: '8',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    showIndicator: false,
+  },
+})
+
+export const ItemText = styled(Combobox.ItemText, {
+  base: {
+    color: 'inherit',
+  },
+})
 
 export const ItemIndicator = styled(Combobox.ItemIndicator, {})

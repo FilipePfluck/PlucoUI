@@ -1,12 +1,42 @@
-import { Portal } from '@ark-ui/react'
+import { useState } from 'react'
+import {
+  ComboboxInputValueChangeDetails,
+  Portal,
+  ComboboxProps as ArkComboboxProps,
+  ComboboxItemProps as ArkComboboxItemProps,
+  CollectionItem,
+} from '@ark-ui/react'
 import * as S from './styles'
 import { ChevronsUpDown } from 'lucide-react'
 
-export const Combobox = () => {
-  const items = ['React', 'Solid', 'Vue']
+interface ComboboxItemProps extends Partial<ArkComboboxItemProps> {
+  label: string
+  value: string
+}
+
+type ComboboxProps = ArkComboboxProps<CollectionItem> & {
+  data: ComboboxItemProps[]
+}
+
+export const Combobox = ({ data, ...props }: ComboboxProps) => {
+  const [items, setItems] = useState(data)
+
+  const handleChange = (e: ComboboxInputValueChangeDetails) => {
+    const filtered = data.filter((item) =>
+      item.label.toLowerCase().includes(e.value.toLowerCase()),
+    )
+    setItems(filtered.length > 0 ? filtered : data)
+  }
 
   return (
-    <S.Root items={items} lazyMount unmountOnExit allowCustomValue>
+    <S.Root
+      onInputValueChange={handleChange}
+      lazyMount
+      unmountOnExit
+      allowCustomValue
+      {...props}
+      items={items}
+    >
       <S.Label>Framework</S.Label>
       <S.Control>
         <S.Input width="lg" />
@@ -23,8 +53,8 @@ export const Combobox = () => {
                 Frameworks
               </S.ItemGroupLabel>
               {items.map((item) => (
-                <S.Item key={item} item={item}>
-                  <S.ItemText>{item}</S.ItemText>
+                <S.Item key={item.value} item={item}>
+                  <S.ItemText>{item.label}</S.ItemText>
                 </S.Item>
               ))}
             </S.ItemGroup>
