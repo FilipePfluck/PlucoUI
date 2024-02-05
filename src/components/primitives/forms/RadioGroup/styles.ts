@@ -64,7 +64,8 @@ export const Control = styled(RadioGroup.ItemControl, {
   base: {
     display: 'flex',
     center: 'flex',
-    bg: { base: 'bg.component', _disabled: 'bg.card' },
+    bg: { base: 'bg.card', _disabled: 'bg.component.hovered' },
+    cursor: { base: 'pointer', _disabled: 'not-allowed' },
     borderColor: { base: 'border', _checked: 'border.brand' },
     borderStyle: 'solid',
     borderWidth: '1px',
@@ -109,5 +110,6 @@ export const Text = styled(RadioGroup.ItemText, {
   base: {
     textStyle: 'textMd',
     color: { base: 'fg', _disabled: 'fg.muted' },
+    cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },
 })

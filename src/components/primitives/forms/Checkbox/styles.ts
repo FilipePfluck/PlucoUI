@@ -12,7 +12,7 @@ export const Root = styled(Checkbox.Root, {
 export const Control = styled(Checkbox.Control, {
   base: {
     cursor: 'pointer',
-    bg: 'bg.component',
+    bg: 'bg.card',
     h: '6',
     w: '6',
     rounded: 'md',
@@ -62,5 +62,6 @@ export const Label = styled(Checkbox.Label, {
   base: {
     color: 'fg',
     textStyle: 'textSm',
+    cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },
 })
