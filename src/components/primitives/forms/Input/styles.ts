@@ -3,6 +3,7 @@ import { styled } from '@/styled-system/jsx'
 export const InputContainer = styled('label', {
   base: {
     maxW: 'full',
+    h: '10',
     bg: 'bg.card',
     boxShadow: 'sm',
     transition: '0.2s',
