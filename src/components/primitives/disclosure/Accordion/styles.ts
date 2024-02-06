@@ -57,6 +57,8 @@ export const Content = styled(Accordion.ItemContent, {
     overflow: 'hidden',
     p: '4',
 
+    transitionProperty: 'height, padding',
+
     _dataOpen: {
       animation: 'accordionSlideDown',
     },
