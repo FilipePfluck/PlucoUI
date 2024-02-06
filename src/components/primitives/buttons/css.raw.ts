@@ -64,3 +64,17 @@ export const dangerButtonBaseStyles = css.raw({
   },
   color: 'white',
 })
+
+export const ghostButtonBaseStyles = css.raw({
+  bg: {
+    base: 'transparent',
+    _hover: 'bg.card.hovered',
+  },
+  borderColor: 'transparent',
+  color: 'fg.subtle',
+  _disabled: {
+    bg: { base: 'transparent', _hover: 'transparent' },
+    color: 'fg.muted',
+    borderColor: 'transparent',
+  },
+})

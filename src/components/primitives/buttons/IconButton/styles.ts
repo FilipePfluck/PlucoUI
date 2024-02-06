@@ -7,6 +7,7 @@ import {
   primaryButtonBaseStyles,
   secondaryButtonBaseStyles,
   tertiaryButtonBaseStyles,
+  ghostButtonBaseStyles,
 } from '../css.raw'
 
 const iconButtonStyles = cva({
@@ -28,14 +29,7 @@ const iconButtonStyles = cva({
         ...dangerButtonBaseStyles,
       },
       ghost: {
-        bg: 'transparent',
-        borderColor: 'transparent',
-        color: 'fg.subtle',
-        _disabled: {
-          bg: 'transparent',
-          color: 'fg.muted',
-          borderColor: 'transparent',
-        },
+        ...ghostButtonBaseStyles,
       },
     },
 
