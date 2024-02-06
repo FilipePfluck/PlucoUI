@@ -112,10 +112,12 @@ export const Indicator = styled(
 
       _horizontal: {
         height: '2px',
+        width: 'var(--width)',
         bottom: '0',
       },
       _vertical: {
         width: '2px',
+        height: 'var(--height)',
         right: '0',
       },
     },
