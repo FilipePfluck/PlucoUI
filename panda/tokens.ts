@@ -19,7 +19,7 @@ export const tokens: Tokens = {
     mauveDark: {
       1: { value: '#121113' },
       2: { value: '#1A191B' },
-      3: { value: '#232225' },
+      3: { value: '#212022' },
       4: { value: '#2A282C' },
       5: { value: '#313033' },
       6: { value: '#49474E' },
