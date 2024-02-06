@@ -10,5 +10,13 @@ export default meta
 type Story = StoryObj<typeof DatePicker>
 
 export const Primary: Story = {
-  render: DatePicker,
+  render: () => <DatePicker />,
+}
+
+export const Range: Story = {
+  render: () => <DatePicker selectionMode="range" />,
+}
+
+export const Standalone: Story = {
+  render: () => <DatePicker open closeOnSelect={false} />,
 }

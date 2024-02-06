@@ -158,12 +158,19 @@ export const TableHeader = styled(DatePicker.TableHeader, {
   },
 })
 
-export const TableBody = styled(DatePicker.TableBody, {})
+export const TableBody = styled(DatePicker.TableBody, {
+  base: {
+    display: 'flex',
+    flexDir: 'column',
+    gap: '1',
+  },
+})
 
 export const TableCell = styled(DatePicker.TableCell, {})
 
 export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
   base: {
+    position: 'relative',
     display: 'flex',
     center: 'flex',
     w: 'full',
@@ -172,11 +179,39 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
     _hover: {
       bg: 'bg.card.hovered',
     },
+    '&[data-in-range]': {
+      bg: 'bg.card.hovered',
+    },
+    '&[data-today]': {
+      _before: {
+        content: '""',
+        position: 'absolute',
+        bottom: '1',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        rounded: 'full',
+
+        w: '2',
+        h: '0.5',
+        bg: 'fg',
+      },
+    },
     '&[data-selected]': {
       bg: 'bg.brand',
+      color: 'white',
       _hover: {
         bg: 'bg.brand.hovered',
       },
+      '&[data-today]': {
+        _before: {
+          bg: 'white',
+        },
+      },
+    },
+    _disabled: {
+      color: 'fg.muted',
+      bg: 'bg.card !important',
+      cursor: 'not-allowed',
     },
     transition: 'background 0.2s',
   },
