@@ -137,6 +137,17 @@ export const TableRow = styled(DatePicker.TableRow, {
     gridColumns: 'repeat(7, 1fr)',
     gap: '1',
   },
+  variants: {
+    fewerColumns: {
+      true: {
+        gridColumns: 'repeat(4, 1fr)',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    fewerColumns: false,
+  },
 })
 
 export const TableHead = styled(DatePicker.TableHead, {
