@@ -61,7 +61,7 @@ export const Trigger = styled(
       display: 'flex',
       center: 'flex',
       cursor: 'pointer',
-      color: 'fg.subtle',
+      color: 'fg',
       textStyle: 'bodyLg',
       flexShrink: '0',
       gap: '2',
@@ -74,7 +74,7 @@ export const Trigger = styled(
       whiteSpace: 'nowrap',
 
       _hover: {
-        color: 'fg',
+        color: 'fg.important',
       },
 
       _disabled: {
@@ -86,9 +86,9 @@ export const Trigger = styled(
       },
 
       _selected: {
-        color: 'brand.fg',
+        color: 'fg.brand',
         _hover: {
-          color: 'brand.fg',
+          color: 'fg.brand',
         },
       },
 
@@ -108,7 +108,7 @@ export const Indicator = styled(
   Tabs.Indicator,
   cva({
     base: {
-      bg: 'brand',
+      bg: 'border.focused',
 
       _horizontal: {
         height: '2px',

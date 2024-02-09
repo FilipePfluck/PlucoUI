@@ -42,7 +42,7 @@ export const Trigger = styled(Accordion.ItemTrigger, {
     display: 'flex',
     align: 'center',
     justify: 'space-between',
-    color: 'fg',
+    color: 'fg.important',
     textStyle: 'headingXS',
     boxShadow: 'md',
     zIndex: '2',
@@ -52,7 +52,7 @@ export const Trigger = styled(Accordion.ItemTrigger, {
 
 export const Content = styled(Accordion.ItemContent, {
   base: {
-    color: 'fg.subtle',
+    color: 'fg',
     bg: 'bg.card.hovered',
     overflow: 'hidden',
     p: '4',

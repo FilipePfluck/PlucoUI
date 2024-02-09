@@ -30,7 +30,7 @@ export const Control = styled(Checkbox.Control, {
       h: '4',
       w: '4',
       rounded: 'sm',
-      bg: 'border.brand',
+      bg: 'border.focused',
       transition: '0.2s',
       position: 'absolute',
       center: 'absolute',
@@ -40,7 +40,7 @@ export const Control = styled(Checkbox.Control, {
     },
 
     _checked: {
-      borderColor: 'border.brand',
+      borderColor: 'border.focused',
 
       _after: {
         opacity: 1,
@@ -60,7 +60,7 @@ export const Control = styled(Checkbox.Control, {
 
 export const Label = styled(Checkbox.Label, {
   base: {
-    color: 'fg',
+    color: 'fg.important',
     textStyle: 'textSm',
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },

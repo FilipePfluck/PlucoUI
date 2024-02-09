@@ -20,7 +20,7 @@ export const Control = styled(Switch.Control, {
     boxShadow: 'sm',
     position: 'relative',
     bg: 'border',
-    '&[data-state="checked"]': { bg: 'border.brand' },
+    '&[data-state="checked"]': { bg: 'border.focused' },
 
     transitionDuration: 'normal',
     transitionProperty: 'background',
@@ -52,6 +52,6 @@ export const Thumb = styled(Switch.Thumb, {
 export const Label = styled(Switch.Label, {
   base: {
     textStyle: 'textMd',
-    color: { base: 'fg', _disabled: 'fg.muted' },
+    color: { base: 'fg.important', _disabled: 'fg.muted' },
   },
 })

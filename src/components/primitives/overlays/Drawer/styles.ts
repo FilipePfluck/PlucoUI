@@ -97,14 +97,14 @@ export const Header = styled('header', {
 export const Title = styled(Dialog.Title, {
   base: {
     textStyle: 'headingSm',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
 export const Description = styled(Dialog.Description, {
   base: {
     textStyle: 'textMd',
-    color: 'fg.subtle',
+    color: 'fg',
   },
 })
 

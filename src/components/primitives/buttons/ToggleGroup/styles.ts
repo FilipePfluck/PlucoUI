@@ -18,7 +18,7 @@ export const Toggle = styled(ToggleGroup.Item, {
     appearance: 'none',
     bg: 'bg.card',
     cursor: 'pointer',
-    color: 'fg.subtle',
+    color: 'fg',
     display: 'flex',
     fontWeight: 'semibold',
     justifyContent: 'center',

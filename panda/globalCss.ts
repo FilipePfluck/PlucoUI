@@ -6,7 +6,7 @@ export const globalCss = defineGlobalStyles({
     ring: '2px',
   },
   '*': {
-    color: 'fg.subtle',
+    color: 'fg',
     textStyle: 'textMd',
   },
 })

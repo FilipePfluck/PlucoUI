@@ -22,14 +22,14 @@ export const Root = styled(Toast.Root, {
 
 export const Title = styled(Toast.Title, {
   base: {
-    color: 'fg',
+    color: 'fg.important',
     textStyle: 'headingXs',
   },
 })
 
 export const Description = styled(Toast.Description, {
   base: {
-    color: 'fg.subtle',
+    color: 'fg',
     textStyle: 'textSm',
   },
 })

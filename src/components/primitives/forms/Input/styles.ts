@@ -15,11 +15,11 @@ export const InputContainer = styled('label', {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focusWithin: 'border.brand',
+      _focusWithin: 'border.focused',
       _invalidWithin: 'border.danger',
     },
     '&:has(:disabled)': {
-      bg: 'bg.component.hovered',
+      bg: 'bg.disabled',
       cursor: 'not-allowed',
     },
   },
@@ -80,7 +80,7 @@ export const Input = styled('input', {
     outline: 'none',
     _placeholder: {
       color: {
-        base: 'fg.subtle',
+        base: 'fg.unimportant',
       },
       fontSize: 'sm',
     },
@@ -119,7 +119,7 @@ export const InputIcon = styled('div', {
   base: {
     fontSize: 'md',
     transition: '0.2s',
-    color: 'fg.subtle' /* {
+    color: 'fg' /* {
       base: 'border.brand',
       '.group:has(:disabled) &': 'fg.muted',
       '.group:has([aria-invalid="true"]) &': 'border.danger',

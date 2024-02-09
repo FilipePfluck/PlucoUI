@@ -26,7 +26,7 @@ export const Root = styled(RadioGroup.Root, {
 export const Label = styled(RadioGroup.Label, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
@@ -79,7 +79,7 @@ export const Control = styled(RadioGroup.ItemControl, {
       _disabled: {
         _hover: 'transparent',
       },
-      _checked: { base: 'bg.brand', _hover: 'bg.brand.hovered' },
+      _checked: { base: 'bg.brand.solid', _hover: 'bg.brand.solid.hovered' },
     },
 
     borderColor: {

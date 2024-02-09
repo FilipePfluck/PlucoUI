@@ -194,16 +194,16 @@ export const StatusBadge = styled('div', {
   variants: {
     status: {
       online: {
-        bg: 'green.500',
+        bg: 'bg.success.solid',
       },
       idle: {
-        bg: 'yellow.500',
+        bg: 'bg.warning.solid',
       },
       doNotDisturb: {
-        bg: 'red.500',
+        bg: 'bg.danger.solid',
       },
       offline: {
-        bg: 'gray.500',
+        bg: 'border',
       },
     },
     size: {

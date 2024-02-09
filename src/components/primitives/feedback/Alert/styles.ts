@@ -23,19 +23,19 @@ export const Root = styled('div', {
       },
       success: {
         bg: 'bg.success.subtle',
-        borderColor: 'bg.success',
+        borderColor: 'border.success',
       },
       info: {
         bg: 'bg.info.subtle',
-        borderColor: 'bg.info',
+        borderColor: 'border.info',
       },
       warning: {
         bg: 'bg.warning.subtle',
-        borderColor: 'bg.warning',
+        borderColor: 'border.warning',
       },
       danger: {
         bg: 'bg.danger.subtle',
-        borderColor: 'bg.danger',
+        borderColor: 'border.danger',
       },
     },
   },
@@ -87,7 +87,7 @@ export const Title = styled('h4', {
 
 export const Description = styled('p', {
   base: {
-    color: 'fg.subtle',
+    color: 'fg',
     textStyle: 'textMd',
   },
 })

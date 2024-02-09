@@ -12,7 +12,7 @@ export const Root = styled(Combobox.Root, {
 export const Label = styled(Combobox.Label, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
@@ -32,7 +32,7 @@ export const Input = styled(Combobox.Input, {
 
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderColor: { base: 'border', _focus: 'brand' },
+    borderColor: { base: 'border', _focus: 'border.focused' },
     borderRadius: 'md',
     cursor: 'pointer',
 
@@ -44,12 +44,13 @@ export const Input = styled(Combobox.Input, {
     transitionDuration: 'normal',
     transitionProperty: 'background, box-shadow, border-color',
     transitionTimingFunction: 'default',
+    color: 'fg',
     width: 'full',
     _placeholder: {
-      color: 'fg.subtle',
+      color: 'fg',
     },
     '& :where(svg)': {
-      color: 'fg.subtle',
+      color: 'fg',
     },
   },
   variants: {
@@ -84,7 +85,7 @@ export const Input = styled(Combobox.Input, {
 export const Trigger = styled(Combobox.Trigger, {
   base: {
     bottom: '0',
-    color: 'fg.subtle',
+    color: 'fg',
     position: 'absolute',
     // TODO - improve this later
     right: '2',
@@ -132,7 +133,7 @@ export const ItemGroup = styled(Combobox.ItemGroup, {
 export const ItemGroupLabel = styled(Combobox.ItemGroupLabel, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
     mb: 1,
     px: 1,
     pt: 1,
@@ -167,14 +168,14 @@ export const Item = styled(Combobox.Item, {
     transitionTimingFunction: 'default',
 
     _selected: {
-      color: 'fg',
+      color: 'fg.important',
     },
     _hover: {
-      background: 'bg.brand',
+      background: 'bg.brand.solid',
       color: 'white',
     },
     _highlighted: {
-      background: 'bg.brand',
+      background: 'bg.brand.solid',
       color: 'white',
     },
     _disabled: {

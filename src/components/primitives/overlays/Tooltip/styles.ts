@@ -9,7 +9,7 @@ export const Content = styled(Tooltip.Content, {
     px: '4',
     py: '2',
     fontSize: 'sm',
-    color: 'fg.subtle',
+    color: 'fg',
     bg: 'bg.card',
     boxShadow: 'sm',
     userSelect: 'none',

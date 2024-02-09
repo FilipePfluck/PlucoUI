@@ -34,7 +34,7 @@ export const Root = styled(SegmentGroup.Root, {
 
 export const Indicator = styled(SegmentGroup.Indicator, {
   base: {
-    bg: 'brand',
+    bg: 'bg.brand.solid',
     _horizontal: {
       height: '2px',
       width: 'var(--width)',
@@ -53,11 +53,11 @@ export const Item = styled(SegmentGroup.Item, {
     display: 'flex',
     center: 'flex',
     cursor: 'pointer',
-    color: 'fg.subtle',
+    color: 'fg',
     textStyle: 'bodyLg',
     flexShrink: '0',
     px: '2',
-    outlineColor: 'brand',
+    outlineColor: 'border.ring',
 
     transitionDuration: 'normal',
     transitionProperty: 'color, background, border-color',
@@ -77,9 +77,9 @@ export const Item = styled(SegmentGroup.Item, {
     },
 
     _selected: {
-      color: 'brand.fg',
+      color: 'fg.brand',
       _hover: {
-        color: 'brand.fg',
+        color: 'fg.brand',
       },
     },
 

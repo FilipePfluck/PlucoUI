@@ -30,11 +30,11 @@ export const Input = styled(DatePicker.Input, {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focusWithin: 'border.brand',
+      _focusWithin: 'border.focused',
       _invalidWithin: 'border.danger',
     },
     _disabled: {
-      bg: 'bg.component.hovered',
+      bg: 'bg.disabled',
       cursor: 'not-allowed',
     },
   },
@@ -163,7 +163,7 @@ export const TableHeader = styled(DatePicker.TableHeader, {
     align: 'center',
     justify: 'center',
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
 
     pb: '3',
   },
@@ -208,10 +208,10 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
       },
     },
     '&[data-selected]': {
-      bg: 'bg.brand',
+      bg: 'bg.brand.solid',
       color: 'white',
       _hover: {
-        bg: 'bg.brand.hovered',
+        bg: 'bg.brand.solid.hovered',
       },
       '&[data-today]': {
         _before: {

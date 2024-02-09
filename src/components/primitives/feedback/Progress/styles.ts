@@ -36,7 +36,7 @@ export const Track = styled(Progress.Track, {
 
 export const Range = styled(Progress.Range, {
   base: {
-    bg: 'brand',
+    bg: 'bg.brand.solid',
     h: 'full',
     transition: 'width 0.2s ease-in-out',
     '--translate-x': '-100%',
@@ -58,7 +58,7 @@ export const CircleTrack = styled(Progress.CircleTrack, {
 
 export const CircleRange = styled(Progress.CircleRange, {
   base: {
-    stroke: 'brand',
+    stroke: 'bg.brand.solid',
     transitionProperty: 'stroke-dasharray, stroke',
     transitionDuration: '0.6s',
   },

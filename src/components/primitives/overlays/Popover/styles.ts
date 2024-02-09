@@ -67,13 +67,13 @@ export const Header = styled('header', {
 export const Title = styled(Popover.Title, {
   base: {
     textStyle: 'headingSm',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
 export const Description = styled(Popover.Description, {
   base: {
     textStyle: 'textMd',
-    color: 'fg.subtle',
+    color: 'fg',
   },
 })

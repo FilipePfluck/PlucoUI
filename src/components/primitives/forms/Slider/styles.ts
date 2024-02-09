@@ -55,7 +55,7 @@ export const Track = styled(Slider.Track, {
 
 export const Range = styled(Slider.Range, {
   base: {
-    bg: 'brand',
+    bg: 'bg.brand.solid',
 
     _horizontal: {
       h: 'full',
@@ -69,7 +69,7 @@ export const Range = styled(Slider.Range, {
 export const Thumb = styled(Slider.Thumb, {
   base: {
     bg: 'bg.card',
-    borderColor: 'brand',
+    borderColor: 'border.focused',
     rounded: 'full',
     borderWidth: '2px',
     shadow: 'sm',
@@ -102,7 +102,7 @@ export const Marker = styled(Slider.Marker, {
     color: 'fg.subtle',
     '--before-background': 'colors.fg',
     _before: {
-      bg: 'white',
+      bg: 'fg.important',
       content: "''",
       display: 'block',
       h: '1',

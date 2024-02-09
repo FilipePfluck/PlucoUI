@@ -35,12 +35,12 @@ export const Primary: Story = {
         icon={<Info />}
         intent="info"
       />
-      {/* <Alert
+      <Alert
         title="This is a warning"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         icon={<AlertCircle />}
         intent="warning"
-      /> */}
+      />
       <Alert
         title="This is an error"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."

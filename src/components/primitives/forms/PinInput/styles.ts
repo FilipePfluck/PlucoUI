@@ -12,7 +12,7 @@ export const Root = styled(PinInput.Root, {
 export const Label = styled(PinInput.Label, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
@@ -40,7 +40,7 @@ export const Input = styled(PinInput.Input, {
 
     _placeholder: {
       color: {
-        base: 'fg.subtle',
+        base: 'fg.unimportant',
       },
       fontSize: 'sm',
     },
@@ -49,7 +49,7 @@ export const Input = styled(PinInput.Input, {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focus: 'border.brand',
+      _focus: 'border.focused',
       _invalid: 'border.danger',
     },
     _disabled: {

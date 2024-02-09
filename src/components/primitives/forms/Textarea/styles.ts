@@ -3,7 +3,7 @@ import { styled } from '@/styled-system/jsx'
 export const TextareaContainer = styled('textarea', {
   base: {
     maxW: 'full',
-    bg: 'bg.component',
+    bg: 'bg.card',
     boxShadow: 'sm',
     transition: '0.2s',
 
@@ -15,7 +15,7 @@ export const TextareaContainer = styled('textarea', {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focus: 'border.brand',
+      _focus: 'border.focused',
     },
     '&[aria-invalid]': { borderColor: 'border.danger' },
 
@@ -24,17 +24,17 @@ export const TextareaContainer = styled('textarea', {
     outline: 'none',
     _placeholder: {
       color: {
-        base: 'fg.subtle',
+        base: 'fg.unimportant',
       },
       fontSize: 'sm',
     },
     _autofill: {
-      boxShadow: '0 0 0px 1000px token(colors.bg.component) inset',
-      WebkitTextFillColor: 'token(colors.fg)',
+      boxShadow: '0 0 0px 1000px token(colors.bg.card) inset',
+      WebkitTextFillColor: 'token(colors.fg.important)',
       caretColor: 'fg',
     },
     _disabled: {
-      bg: 'bg.component.hovered',
+      bg: 'bg.disabled',
       cursor: 'not-allowed',
       color: 'fg.muted',
     },

@@ -12,7 +12,7 @@ export const Root = styled(Select.Root, {
 export const Label = styled(Select.Label, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
@@ -32,7 +32,7 @@ export const Trigger = styled(Select.Trigger, {
 
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderColor: { base: 'border', _focus: 'brand' },
+    borderColor: { base: 'border', _focus: 'border.focused' },
     borderRadius: 'md',
     cursor: 'pointer',
 
@@ -46,10 +46,10 @@ export const Trigger = styled(Select.Trigger, {
     transitionTimingFunction: 'default',
     width: 'full',
     _placeholder: {
-      color: 'fg.subtle',
+      color: 'fg',
     },
     '& :where(svg)': {
-      color: 'fg.subtle',
+      color: 'fg',
     },
   },
   variants: {
@@ -175,7 +175,7 @@ export const ItemGroup = styled(Select.ItemGroup, {
 export const ItemGroupLabel = styled(Select.ItemGroupLabel, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
     mb: 1,
     px: 1,
     pt: 1,
@@ -210,14 +210,14 @@ export const Item = styled(Select.Item, {
     transitionTimingFunction: 'default',
 
     _selected: {
-      color: 'fg',
+      color: 'fg.important',
     },
     _hover: {
-      background: 'bg.brand',
+      background: 'bg.brand.solid',
       color: 'white',
     },
     _highlighted: {
-      background: 'bg.brand',
+      background: 'bg.brand.solid',
       color: 'white',
     },
     _disabled: {

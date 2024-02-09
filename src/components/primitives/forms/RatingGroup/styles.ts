@@ -24,5 +24,8 @@ export const Item = styled(RatingGroup.Item, {
     '&:not([data-readonly])': {
       cursor: 'pointer',
     },
+    '&[data-highlighted="true"]': {
+      color: 'bg.brand.solid',
+    },
   },
 })

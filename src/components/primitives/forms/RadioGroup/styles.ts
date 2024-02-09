@@ -26,7 +26,7 @@ export const Root = styled(RadioGroup.Root, {
 export const Label = styled(RadioGroup.Label, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
   },
 })
 
@@ -66,7 +66,7 @@ export const Control = styled(RadioGroup.ItemControl, {
     center: 'flex',
     bg: { base: 'bg.card', _disabled: 'bg.component.hovered' },
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
-    borderColor: { base: 'border', _checked: 'border.brand' },
+    borderColor: { base: 'border', _checked: 'border.focused' },
     borderStyle: 'solid',
     borderWidth: '1px',
     transition: '0.2s border-color',
@@ -82,7 +82,7 @@ export const Control = styled(RadioGroup.ItemControl, {
       h: '4',
       w: '4',
       rounded: 'full',
-      bg: 'border.brand',
+      bg: 'bg.brand.solid',
       transition: '0.2s',
       position: 'absolute',
       center: 'absolute',

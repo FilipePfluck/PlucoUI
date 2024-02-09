@@ -8,15 +8,15 @@ const menuItemBaseStyles = css.raw({
   rounded: 'sm',
   cursor: 'pointer',
   _highlighted: {
-    bg: 'brand',
+    bg: 'bg.brand.solid',
     color: 'white',
   },
   '&[aria-expanded="true"]': {
     bg: 'bg.card.hovered',
-    color: 'fg',
+    color: 'fg.important',
   },
   _hover: {
-    bg: 'brand',
+    bg: 'bg.brand.solid',
     color: 'white',
   },
   transition: '0.12s',
@@ -70,7 +70,7 @@ export const ItemGroup = styled(Menu.ItemGroup, {})
 export const ItemGroupLabel = styled(Menu.ItemGroupLabel, {
   base: {
     textStyle: 'headingXs',
-    color: 'fg',
+    color: 'fg.important',
     pl: '8',
     mb: '1',
   },
@@ -119,7 +119,7 @@ export const RightSlot = styled('div', {
     top: '50%',
     transform: 'translateY(-50%)',
     textStyle: 'textSm',
-    color: 'fg.subtle',
+    color: 'fg',
   },
 })
 
