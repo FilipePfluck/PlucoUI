@@ -4,6 +4,36 @@ import { IconButton } from '../../buttons/IconButton'
 import * as S from './styles'
 import { Button } from '../../buttons/Button'
 
+const PrevTrigger = ({ label }: { label: string }) => {
+  return (
+    <S.PrevTrigger asChild>
+      <IconButton intent="ghost" aria-label={label}>
+        <ChevronLeft size={16} />
+      </IconButton>
+    </S.PrevTrigger>
+  )
+}
+
+const NextTrigger = ({ label }: { label: string }) => {
+  return (
+    <S.NextTrigger asChild>
+      <IconButton intent="ghost" aria-label={label}>
+        <ChevronRight size={16} />
+      </IconButton>
+    </S.NextTrigger>
+  )
+}
+
+const ViewTrigger = () => {
+  return (
+    <S.ViewTrigger asChild>
+      <Button intent="ghost" size="sm">
+        <S.RangeText />
+      </Button>
+    </S.ViewTrigger>
+  )
+}
+
 export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
   return (
     <S.Root {...props}>
@@ -19,25 +49,14 @@ export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
       <Portal>
         <S.Positioner>
           <S.Content>
+            {/* DAY  */}
             <S.View view="day">
               {(api) => (
                 <>
                   <S.ViewControl>
-                    <S.PrevTrigger asChild>
-                      <IconButton intent="ghost" aria-label="Previous month">
-                        <ChevronLeft size={16} />
-                      </IconButton>
-                    </S.PrevTrigger>
-                    <S.ViewTrigger asChild>
-                      <Button intent="ghost" size="sm">
-                        <S.RangeText />
-                      </Button>
-                    </S.ViewTrigger>
-                    <S.NextTrigger asChild>
-                      <IconButton intent="ghost" aria-label="Next month">
-                        <ChevronRight size={16} />
-                      </IconButton>
-                    </S.NextTrigger>
+                    <PrevTrigger label="Previous month" />
+                    <ViewTrigger />
+                    <NextTrigger label="Next month" />
                   </S.ViewControl>
                   <S.Table>
                     <S.TableHead>
@@ -64,15 +83,15 @@ export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
                 </>
               )}
             </S.View>
+
+            {/* MONTH  */}
             <S.View view="month">
               {(api) => (
                 <>
                   <S.ViewControl>
-                    <S.PrevTrigger>Prev</S.PrevTrigger>
-                    <S.ViewTrigger>
-                      <S.RangeText />
-                    </S.ViewTrigger>
-                    <S.NextTrigger>Next</S.NextTrigger>
+                    <PrevTrigger label="Previous year" />
+                    <ViewTrigger />
+                    <NextTrigger label="Next year" />
                   </S.ViewControl>
                   <S.Table>
                     <S.TableBody>
@@ -94,15 +113,15 @@ export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
                 </>
               )}
             </S.View>
+
+            {/* YEAR  */}
             <S.View view="year">
               {(api) => (
                 <>
                   <S.ViewControl>
-                    <S.PrevTrigger>Prev</S.PrevTrigger>
-                    <S.ViewTrigger>
-                      <S.RangeText />
-                    </S.ViewTrigger>
-                    <S.NextTrigger>Next</S.NextTrigger>
+                    <PrevTrigger label="Previous decade" />
+                    <ViewTrigger />
+                    <NextTrigger label="Next decade" />
                   </S.ViewControl>
                   <S.Table>
                     <S.TableBody>
