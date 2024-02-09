@@ -1,7 +1,7 @@
 import { Config } from '@pandacss/dev'
 
 import { tokens } from './tokens'
-import { semanticTokens } from './semanticTokens'
+import { semanticTokens } from './tokens/semantic'
 import { conditions } from './conditions'
 import { utilities } from './utilities'
 import { keyframes } from './keyframes'
