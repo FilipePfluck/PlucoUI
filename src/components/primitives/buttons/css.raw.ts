@@ -4,34 +4,37 @@ export const buttonBaseStyles = css.raw({
   display: 'flex',
   center: 'flex',
   rounded: 'md',
+  textStyle: 'buttonMd',
+
   transition: 'background, border-color 0.2s',
   cursor: 'pointer',
+
   borderWidth: '1px',
   borderStyle: 'solid',
+})
+
+export const primaryButtonBaseStyles = css.raw({
+  bg: {
+    base: 'bg.brand.solid',
+    _hover: 'bg.brand.solid.hovered',
+  },
+  color: 'white',
+  borderColor: {
+    base: 'bg.brand.solid',
+    _hover: 'bg.brand.solid.hovered',
+  },
+
   _disabled: {
     bg: {
       base: 'bg.disabled',
       _hover: 'bg.disabled',
     },
-    color: 'white',
+    color: 'fg.muted',
     borderColor: {
-      base: 'bg.disabled',
-      _hover: 'bg.disabled',
+      base: 'border.disabled',
+      _hover: 'border.disabled',
     },
     cursor: 'not-allowed',
-  },
-  textStyle: 'buttonMd',
-})
-
-export const primaryButtonBaseStyles = css.raw({
-  bg: {
-    base: 'bg.brand',
-    _hover: 'bg.brand.hovered',
-  },
-  color: 'white',
-  borderColor: {
-    base: 'bg.brand',
-    _hover: 'bg.brand.hovered',
   },
 })
 
@@ -41,7 +44,20 @@ export const secondaryButtonBaseStyles = css.raw({
     _hover: 'bg.card.hovered',
   },
   borderColor: 'border',
-  color: 'fg.subtle',
+  color: 'fg',
+
+  _disabled: {
+    bg: {
+      base: 'transparent',
+      _hover: 'transparent',
+    },
+    color: 'fg.muted',
+    borderColor: {
+      base: 'border.disabled',
+      _hover: 'border.disabled',
+    },
+    cursor: 'not-allowed',
+  },
 })
 
 export const tertiaryButtonBaseStyles = css.raw({
@@ -50,19 +66,45 @@ export const tertiaryButtonBaseStyles = css.raw({
     _hover: 'bg.card.hovered',
   },
   borderColor: 'border',
-  color: 'fg.subtle',
+  color: 'fg',
+
+  _disabled: {
+    bg: {
+      base: 'transparent',
+      _hover: 'transparent',
+    },
+    color: 'fg.muted',
+    borderColor: {
+      base: 'border.disabled',
+      _hover: 'border.disabled',
+    },
+    cursor: 'not-allowed',
+  },
 })
 
 export const dangerButtonBaseStyles = css.raw({
   bg: {
-    base: 'bg.danger',
-    _hover: 'bg.danger.hovered',
+    base: 'bg.danger.solid',
+    _hover: 'bg.danger.solid.hovered',
   },
   borderColor: {
-    base: 'bg.danger',
-    _hover: 'bg.danger.hovered',
+    base: 'bg.danger.solid',
+    _hover: 'bg.danger.solid.hovered',
   },
   color: 'white',
+
+  _disabled: {
+    bg: {
+      base: 'bg.disabled',
+      _hover: 'bg.disabled',
+    },
+    color: 'fg.muted',
+    borderColor: {
+      base: 'border.disabled',
+      _hover: 'border.disabled',
+    },
+    cursor: 'not-allowed',
+  },
 })
 
 export const ghostButtonBaseStyles = css.raw({
@@ -71,7 +113,7 @@ export const ghostButtonBaseStyles = css.raw({
     _hover: 'bg.card.hovered',
   },
   borderColor: 'transparent',
-  color: 'fg.subtle',
+  color: 'fg',
   _disabled: {
     bg: { base: 'transparent', _hover: 'transparent' },
     color: 'fg.muted',

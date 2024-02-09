@@ -22,17 +22,11 @@ export const semanticTokens = defineSemanticTokens({
             _dark: '{colors.mauveDark.3}',
           },
         },
-        active: {
-          value: {
-            base: '{colors.mauve.4}',
-            _dark: '{colors.mauveDark.4}',
-          },
-        },
       },
       disabled: {
         value: {
-          base: '{colors.mauve.5}',
-          _dark: '{colors.mauveDark.5}',
+          base: '{colors.mauve.4}',
+          _dark: '{colors.mauveDark.4}',
         },
       },
       brand: {
@@ -45,17 +39,11 @@ export const semanticTokens = defineSemanticTokens({
         solid: {
           DEFAULT: {
             value: {
-              base: '{colors.violet.4}',
-              _dark: '{colors.violetDark.4}',
-            },
-          },
-          hovered: {
-            value: {
               base: '{colors.violet.5}',
               _dark: '{colors.violetDark.5}',
             },
           },
-          active: {
+          hovered: {
             value: {
               base: '{colors.violet.6}',
               _dark: '{colors.violetDark.6}',
@@ -73,17 +61,11 @@ export const semanticTokens = defineSemanticTokens({
         solid: {
           DEFAULT: {
             value: {
-              base: '{colors.red.4}',
-              _dark: '{colors.redDark.4}',
-            },
-          },
-          hovered: {
-            value: {
               base: '{colors.red.5}',
               _dark: '{colors.redDark.5}',
             },
           },
-          active: {
+          hovered: {
             value: {
               base: '{colors.red.6}',
               _dark: '{colors.redDark.6}',
@@ -101,17 +83,11 @@ export const semanticTokens = defineSemanticTokens({
         solid: {
           DEFAULT: {
             value: {
-              base: '{colors.yellow.4}',
-              _dark: '{colors.yellowDark.4}',
-            },
-          },
-          hovered: {
-            value: {
               base: '{colors.yellow.5}',
               _dark: '{colors.yellowDark.5}',
             },
           },
-          active: {
+          hovered: {
             value: {
               base: '{colors.yellow.6}',
               _dark: '{colors.yellowDark.6}',
@@ -129,17 +105,11 @@ export const semanticTokens = defineSemanticTokens({
         solid: {
           DEFAULT: {
             value: {
-              base: '{colors.green.4}',
-              _dark: '{colors.greenDark.4}',
-            },
-          },
-          hovered: {
-            value: {
               base: '{colors.green.5}',
               _dark: '{colors.greenDark.5}',
             },
           },
-          active: {
+          hovered: {
             value: {
               base: '{colors.green.6}',
               _dark: '{colors.greenDark.6}',
@@ -157,17 +127,11 @@ export const semanticTokens = defineSemanticTokens({
         solid: {
           DEFAULT: {
             value: {
-              base: '{colors.blue.4}',
-              _dark: '{colors.blueDark.4}',
-            },
-          },
-          hovered: {
-            value: {
               base: '{colors.blue.5}',
               _dark: '{colors.blueDark.5}',
             },
           },
-          active: {
+          hovered: {
             value: {
               base: '{colors.blue.6}',
               _dark: '{colors.blueDark.6}',
@@ -280,46 +244,52 @@ export const semanticTokens = defineSemanticTokens({
           _dark: '{colors.mauveDark.5}',
         },
       },
+      disabled: {
+        value: {
+          base: '{colors.mauve.4}',
+          _dark: '{colors.mauveDark.4}',
+        },
+      },
       brand: {
         value: {
-          base: '{colors.violet.2}',
-          _dark: '{colors.violetDark.2}',
+          base: '{colors.violet.3}',
+          _dark: '{colors.violetDark.3}',
         },
       },
       danger: {
         value: {
-          base: '{colors.red.2}',
-          _dark: '{colors.redDark.2}',
+          base: '{colors.red.3}',
+          _dark: '{colors.redDark.3}',
         },
       },
       warning: {
         value: {
-          base: '{colors.yellow.2}',
-          _dark: '{colors.yellowDark.2}',
+          base: '{colors.yellow.3}',
+          _dark: '{colors.yellowDark.3}',
         },
       },
       success: {
         value: {
-          base: '{colors.green.2}',
-          _dark: '{colors.greenDark.2}',
+          base: '{colors.green.3}',
+          _dark: '{colors.greenDark.3}',
         },
       },
       info: {
         value: {
-          base: '{colors.blue.2}',
-          _dark: '{colors.blueDark.2}',
+          base: '{colors.blue.3}',
+          _dark: '{colors.blueDark.3}',
         },
       },
       ring: {
         value: {
-          base: '{colors.blue.4}',
-          _dark: '{colors.blueDark.4}',
+          base: '{colors.blue.5}',
+          _dark: '{colors.blueDark.5}',
         },
       },
       focused: {
         value: {
-          base: '{colors.violet.4}',
-          _dark: '{colors.violetDark.4}',
+          base: '{colors.violet.5}',
+          _dark: '{colors.violetDark.5}',
         },
       },
     },
