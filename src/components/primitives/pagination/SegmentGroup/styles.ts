@@ -35,16 +35,15 @@ export const Root = styled(SegmentGroup.Root, {
 export const Indicator = styled(SegmentGroup.Indicator, {
   base: {
     bg: 'brand',
-    // TODO - remove those importants once ark removes default styles
     _horizontal: {
-      height: '2px !important',
-      bottom: '0 !important',
-      top: 'auto !important',
+      height: '2px',
+      width: 'var(--width)',
+      bottom: '0',
     },
     _vertical: {
-      width: '2px !important',
-      right: '0 !important',
-      left: 'auto !important',
+      width: '2px',
+      height: 'var(--height)',
+      right: '0',
     },
   },
 })
@@ -57,7 +56,6 @@ export const Item = styled(SegmentGroup.Item, {
     color: 'fg.subtle',
     textStyle: 'bodyLg',
     flexShrink: '0',
-    gap: '2',
     px: '2',
     outlineColor: 'brand',
 
