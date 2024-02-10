@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Skeleton>
 
 export const Primary: Story = {
   render: () => (
-    <Box w="96">
+    <Box w="96" p="4" rounded="lg" shadow="md" bg="bg.card">
       <HStack width="full" gap="4">
         <Skeleton borderRadius="full">
           <Circle size="20" />
