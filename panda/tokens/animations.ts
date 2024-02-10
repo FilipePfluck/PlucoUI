@@ -56,4 +56,7 @@ export const animations = {
   swipeOutToast: {
     value: 'swipeOutToast 0.1s',
   },
+  skeletonPulse: {
+    value: 'skeleton-pulse 2s cubic-bezier(.4, 0, .6, 1) infinite',
+  },
 }

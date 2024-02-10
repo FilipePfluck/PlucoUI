@@ -128,4 +128,9 @@ export const keyframes: CssKeyframes = {
       transform: 'translateX(calc(100% + 24px))',
     },
   },
+
+  // skeleton
+  skeletonPulse: {
+    '50%': { opacity: '0.5' },
+  },
 }
