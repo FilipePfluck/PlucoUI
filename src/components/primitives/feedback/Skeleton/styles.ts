@@ -5,7 +5,7 @@ export const Root = styled(ark.div, {
   base: {
     animation: 'skeletonPulse',
     backgroundClip: 'padding-box',
-    backgroundColor: 'bg.card.hovered',
+    backgroundColor: 'border',
     borderRadius: 'lg',
     color: 'transparent',
     cursor: 'default',
