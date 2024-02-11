@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Skeleton } from './index'
-import { Box, Circle, HStack, Stack } from '@/styled-system/jsx'
+import { Box, Circle, HStack, Stack, styled } from '@/styled-system/jsx'
 import { useEffect, useState } from 'react'
 import { Avatar } from '../../media/Avatar'
 
@@ -60,6 +60,49 @@ const WithDataSkeleton = () => {
   )
 }
 
+const TextStyles = () => {
+  const [hasLoaded, setHasLoaded] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHasLoaded(true)
+    }, 2000)
+  }, [])
+
+  return (
+    <Stack gap="3.5" width="full">
+      <Skeleton isLoaded={hasLoaded} variant="headingLg">
+        <styled.p textStyle="headingLg">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="headingMd">
+        <styled.p textStyle="headingMd">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="headingSm">
+        <styled.p textStyle="headingSm">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="headingXs">
+        <styled.p textStyle="headingXs">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="textLg">
+        <styled.p textStyle="textLg">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="textMd">
+        <styled.p textStyle="textMd">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="textSm">
+        <styled.p textStyle="textSm">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="textXs">
+        <styled.p textStyle="textXs">lorem ipsum</styled.p>
+      </Skeleton>
+    </Stack>
+  )
+}
+
 export const WithData: Story = {
   render: WithDataSkeleton,
+}
+
+export const TextStylesStory: Story = {
+  render: TextStyles,
 }

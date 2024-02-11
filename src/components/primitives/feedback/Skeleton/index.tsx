@@ -5,6 +5,15 @@ import { ReactNode, forwardRef } from 'react'
 type SkeletonProps = HTMLStyledProps<'div'> & {
   children?: ReactNode
   isLoaded?: boolean
+  variant?:
+    | 'headingLg'
+    | 'headingMd'
+    | 'headingSm'
+    | 'headingXs'
+    | 'textLg'
+    | 'textMd'
+    | 'textSm'
+    | 'textXs'
 }
 
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
