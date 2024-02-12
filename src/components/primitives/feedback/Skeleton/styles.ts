@@ -1,6 +1,13 @@
 import { styled } from '@/styled-system/jsx'
 import { ark } from '@ark-ui/react'
 
+export const Container = styled(ark.div, {
+  base: {
+    display: 'flex',
+    flexDir: 'column',
+  },
+})
+
 export const Root = styled(ark.div, {
   base: {
     animation: 'skeletonPulse',

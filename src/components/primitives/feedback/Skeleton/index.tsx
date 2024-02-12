@@ -8,15 +8,27 @@ type SkeletonProps = HTMLStyledProps<'div'> & {
   children?: ReactNode
   isLoaded?: boolean
   variant?: HeadingTextStyles | TextTextStyles
+  fallbackNoOfLines?: number
 }
 
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   (props, ref) => {
-    const { isLoaded, children, ...rest } = props
+    const { isLoaded, children, fallbackNoOfLines, ...rest } = props
 
     if (isLoaded) {
       return children
     }
+
+    if (fallbackNoOfLines) {
+      return (
+        <S.Container>
+          {Array.from({ length: fallbackNoOfLines }).map((_, i) => (
+            <S.Root key={i} w={i % 2 === 0 ? '80%' : '70%'} {...rest} />
+          ))}
+        </S.Container>
+      )
+    }
+
     return (
       <S.Root ref={ref} {...rest}>
         {children}

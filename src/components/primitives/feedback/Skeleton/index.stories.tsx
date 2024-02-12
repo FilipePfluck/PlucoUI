@@ -65,12 +65,12 @@ const TextStyles = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setHasLoaded(true)
+      setHasLoaded(false)
     }, 2000)
   }, [])
 
   return (
-    <Stack gap="3.5" width="full">
+    <Stack gap="3.5" width="96">
       <Skeleton isLoaded={hasLoaded} variant="headingXl">
         <styled.p textStyle="headingXl">lorem ipsum</styled.p>
       </Skeleton>
@@ -100,6 +100,10 @@ const TextStyles = () => {
       </Skeleton>
       <Skeleton isLoaded={hasLoaded} variant="textXs">
         <styled.p textStyle="textXs">lorem ipsum</styled.p>
+      </Skeleton>
+
+      <Skeleton isLoaded={false} variant="textMd" fallbackNoOfLines={4}>
+        <styled.p textStyle="textMd">lorem ipsum</styled.p>
       </Skeleton>
     </Stack>
   )
