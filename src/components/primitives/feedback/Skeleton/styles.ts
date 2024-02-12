@@ -18,21 +18,29 @@ export const Root = styled(ark.div, {
   },
   variants: {
     variant: {
+      headingXl: {
+        h: '12',
+        my: '4px',
+      },
       headingLg: {
-        h: '6',
+        h: '8',
         my: '2px',
       },
       headingMd: {
-        h: '5',
+        h: '6',
         my: '2px',
       },
       headingSm: {
-        h: '18px',
+        h: '5',
         my: '2px',
       },
       headingXs: {
-        h: '16px',
+        h: '4',
         my: '2px',
+      },
+      textXl: {
+        h: '5',
+        my: '6px',
       },
       textLg: {
         h: '18px',

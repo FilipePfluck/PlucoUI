@@ -71,6 +71,9 @@ const TextStyles = () => {
 
   return (
     <Stack gap="3.5" width="full">
+      <Skeleton isLoaded={hasLoaded} variant="headingXl">
+        <styled.p textStyle="headingXl">lorem ipsum</styled.p>
+      </Skeleton>
       <Skeleton isLoaded={hasLoaded} variant="headingLg">
         <styled.p textStyle="headingLg">lorem ipsum</styled.p>
       </Skeleton>
@@ -82,6 +85,9 @@ const TextStyles = () => {
       </Skeleton>
       <Skeleton isLoaded={hasLoaded} variant="headingXs">
         <styled.p textStyle="headingXs">lorem ipsum</styled.p>
+      </Skeleton>
+      <Skeleton isLoaded={hasLoaded} variant="textXl">
+        <styled.p textStyle="textXl">lorem ipsum</styled.p>
       </Skeleton>
       <Skeleton isLoaded={hasLoaded} variant="textLg">
         <styled.p textStyle="textLg">lorem ipsum</styled.p>

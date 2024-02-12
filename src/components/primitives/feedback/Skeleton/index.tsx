@@ -1,19 +1,13 @@
 import { HTMLStyledProps } from '@/styled-system/types'
-import * as S from './styles'
+import { HeadingTextStyles, TextTextStyles } from '@/panda/textStyles'
 import { ReactNode, forwardRef } from 'react'
+
+import * as S from './styles'
 
 type SkeletonProps = HTMLStyledProps<'div'> & {
   children?: ReactNode
   isLoaded?: boolean
-  variant?:
-    | 'headingLg'
-    | 'headingMd'
-    | 'headingSm'
-    | 'headingXs'
-    | 'textLg'
-    | 'textMd'
-    | 'textSm'
-    | 'textXs'
+  variant?: HeadingTextStyles | TextTextStyles
 }
 
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(

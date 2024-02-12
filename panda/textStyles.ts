@@ -1,42 +1,79 @@
 import { defineTextStyles } from '@pandacss/dev'
 
+export type HeadingTextStyles =
+  | 'headingXl'
+  | 'headingLg'
+  | 'headingMd'
+  | 'headingSm'
+  | 'headingXs'
+
+export type TextTextStyles =
+  | 'textXl'
+  | 'textLg'
+  | 'textMd'
+  | 'textSm'
+  | 'textXs'
+
+export type ButtonTextStyles = 'buttonLg' | 'buttonMd' | 'buttonSm'
+
+export type TextStylesTypes =
+  | HeadingTextStyles
+  | TextTextStyles
+  | ButtonTextStyles
+
 export const textStyles = defineTextStyles({
+  headingXl: {
+    value: {
+      fontWeight: 'semibold',
+      fontSize: '48px',
+      lineHeight: '56px',
+      fontFamily: 'nunito',
+    },
+  },
   headingLg: {
     value: {
       fontWeight: 'semibold',
-      fontSize: '2xl',
-      lineHeight: '28px',
+      fontSize: '32px',
+      lineHeight: '36px',
       fontFamily: 'nunito',
     },
   },
   headingMd: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'xl',
-      lineHeight: '24px',
+      fontSize: '24px',
+      lineHeight: '28px',
       fontFamily: 'nunito',
     },
   },
   headingSm: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'lg',
-      lineHeight: '22px',
+      fontSize: '20px',
+      lineHeight: '24px',
       fontFamily: 'nunito',
     },
   },
   headingXs: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'md',
+      fontSize: '16px',
       lineHeight: '20px',
       fontFamily: 'nunito',
+    },
+  },
+  textXl: {
+    value: {
+      fontWeight: 'regular',
+      fontSize: '20px',
+      lineHeight: '32px',
+      fontFamily: 'inter',
     },
   },
   textLg: {
     value: {
       fontWeight: 'regular',
-      fontSize: 'lg',
+      fontSize: '18px',
       lineHeight: '28px',
       fontFamily: 'inter',
     },
@@ -44,7 +81,7 @@ export const textStyles = defineTextStyles({
   textMd: {
     value: {
       fontWeight: 'regular',
-      fontSize: 'md',
+      fontSize: '16px',
       lineHeight: '26px',
       fontFamily: 'inter',
     },
@@ -52,7 +89,7 @@ export const textStyles = defineTextStyles({
   textSm: {
     value: {
       fontWeight: 'regular',
-      fontSize: 'sm',
+      fontSize: '14px',
       lineHeight: '22px',
       fontFamily: 'inter',
     },
@@ -60,7 +97,7 @@ export const textStyles = defineTextStyles({
   textXs: {
     value: {
       fontWeight: 'regular',
-      fontSize: 'xs',
+      fontSize: '12px',
       lineHeight: '18px',
       fontFamily: 'inter',
     },
@@ -68,24 +105,24 @@ export const textStyles = defineTextStyles({
   buttonLg: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'lg',
-      lineHeight: '160%',
+      fontSize: '18px',
+      lineHeight: '20px',
       fontFamily: 'inter',
     },
   },
   buttonMd: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'md',
-      lineHeight: '160%',
+      fontSize: '16px',
+      lineHeight: '18px',
       fontFamily: 'inter',
     },
   },
   buttonSm: {
     value: {
       fontWeight: 'semibold',
-      fontSize: 'sm',
-      lineHeight: '160%',
+      fontSize: '14px',
+      lineHeight: '16px',
       fontFamily: 'inter',
     },
   },
