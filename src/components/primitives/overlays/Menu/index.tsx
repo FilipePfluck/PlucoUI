@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import {
-  Menu as ArkMenu,
   MenuProps as ArkMenuProps,
   MenuItemGroupProps as ArkMenuItemGroupProps,
   MenuOptionItemProps as ArkMenuOptionItemProps,
@@ -94,7 +93,7 @@ export const MenuTriggerItem = ({
   ...props
 }: MenuTriggerItemProps) => {
   return (
-    <ArkMenu positioning={{ gutter: 16 }} {...props}>
+    <S.Root positioning={{ gutter: 16 }} {...props}>
       <S.TriggerItem {...triggerProps}>
         {triggerLabel} {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
       </S.TriggerItem>
@@ -103,6 +102,6 @@ export const MenuTriggerItem = ({
           <S.Content>{children}</S.Content>
         </S.Positioner>
       </Portal>
-    </ArkMenu>
+    </S.Root>
   )
 }

@@ -133,12 +133,12 @@ export const Content = styled(
       flexDir: 'column',
       fontSize: '96px',
       color: 'fg.subtle',
-      textStyle: 'bodyMd',
       opacity: 1,
 
       _horizontal: {
         px: '4',
         py: '8',
+        minH: '60',
       },
 
       _vertical: {
