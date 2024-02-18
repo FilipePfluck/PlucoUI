@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react'
-import { RatingGroupProps as ArkRatingGroupProps } from '@ark-ui/react'
+import { RatingGroupRootProps as ArkRatingGroupProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

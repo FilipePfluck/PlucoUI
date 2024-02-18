@@ -1,4 +1,4 @@
-import { AvatarProps as ArkAvatarProps } from '@ark-ui/react'
+import { AvatarRootProps as ArkAvatarProps } from '@ark-ui/react'
 import { User } from 'lucide-react'
 
 import * as S from './styles'

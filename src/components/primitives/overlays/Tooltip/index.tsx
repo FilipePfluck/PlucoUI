@@ -1,6 +1,6 @@
 import {
   Tooltip as ArkTooltip,
-  TooltipProps as ArkTooltipProps,
+  TooltipRootProps as ArkTooltipProps,
   Portal,
 } from '@ark-ui/react'
 import { ReactNode } from 'react'

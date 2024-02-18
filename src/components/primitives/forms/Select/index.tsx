@@ -3,7 +3,7 @@ import * as S from './styles'
 import {
   Portal,
   SelectItemProps as ArkSelectItemProps,
-  SelectProps as ArkSelectProps,
+  SelectRootProps as ArkSelectProps,
   CollectionItem,
 } from '@ark-ui/react'
 

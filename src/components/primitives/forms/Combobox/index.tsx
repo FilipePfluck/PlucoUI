@@ -2,7 +2,7 @@ import { useState } from 'react'
 import {
   ComboboxInputValueChangeDetails,
   Portal,
-  ComboboxProps as ArkComboboxProps,
+  ComboboxRootProps as ArkComboboxProps,
   ComboboxItemProps as ArkComboboxItemProps,
   CollectionItem,
 } from '@ark-ui/react'

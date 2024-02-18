@@ -1,4 +1,4 @@
-import { SliderProps as ArkSliderProps } from '@ark-ui/react'
+import { SliderRootProps as ArkSliderProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

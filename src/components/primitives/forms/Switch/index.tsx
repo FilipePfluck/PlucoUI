@@ -1,4 +1,4 @@
-import { SwitchProps as ArkSwitchProps } from '@ark-ui/react'
+import { SwitchRootProps as ArkSwitchProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

@@ -1,4 +1,4 @@
-import { SegmentGroupProps as ArkSegmentGroupProps } from '@ark-ui/react'
+import { SegmentGroupRootProps as ArkSegmentGroupProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

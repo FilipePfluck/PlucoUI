@@ -1,4 +1,4 @@
-import { PinInputProps as ArkPinInputProps } from '@ark-ui/react'
+import { PinInputRootProps as ArkPinInputProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

@@ -1,4 +1,4 @@
-import { CheckboxProps as ArkCheckboxProps } from '@ark-ui/react'
+import { CheckboxRootProps as ArkCheckboxProps } from '@ark-ui/react'
 import * as S from './styles'
 import { ForwardedRef, forwardRef } from 'react'
 

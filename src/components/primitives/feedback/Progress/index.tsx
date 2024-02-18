@@ -1,4 +1,4 @@
-import { ProgressProps as ArkProgressProps } from '@ark-ui/react'
+import { ProgressRootProps as ArkProgressProps } from '@ark-ui/react'
 
 import * as S from './styles'
 

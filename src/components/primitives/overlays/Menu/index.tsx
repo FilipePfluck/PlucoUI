@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import {
-  MenuProps as ArkMenuProps,
+  MenuRootProps as ArkMenuProps,
   MenuItemGroupProps as ArkMenuItemGroupProps,
   MenuOptionItemProps as ArkMenuOptionItemProps,
   MenuTriggerItemProps as ArkMenuTriggerItemProps,

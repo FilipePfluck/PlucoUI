@@ -1,4 +1,4 @@
-import { TabsProps as ArkTabsProps } from '@ark-ui/react'
+import { TabsRootProps as ArkTabsProps } from '@ark-ui/react'
 import * as S from './styles'
 import { ReactNode, useState } from 'react'
 

@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { AccordionProps as ArkAccordionProps } from '@ark-ui/react'
+import { AccordionRootProps as ArkAccordionProps } from '@ark-ui/react'
 
 import * as S from './styles'
 
