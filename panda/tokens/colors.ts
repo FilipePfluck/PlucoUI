@@ -33,7 +33,7 @@ export const colors = {
     1: { value: '#311C1F' },
     3: { value: '#8C333A' },
     5: { value: '#DD2C32' },
-    6: { value: '#E43A3B' },
+    6: { value: '#E54344' },
     8: { value: '#FFA6A3' },
     9: { value: '#FCD1D9' },
   },
