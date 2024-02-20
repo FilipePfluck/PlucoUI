@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './index'
-import { css } from '@/styled-system/css'
 
-const meta: Meta<typeof Button> = {
+const meta = {
   component: Button,
-}
+} satisfies Meta<typeof Button>
 
 export default meta
 type Story = StoryObj<typeof Button>
@@ -14,77 +13,17 @@ export const ButtonStory: Story = {
   args: {
     children: 'Hello storybook',
   },
-  parameters: {
-    controls: {
-      include: ['size', 'intent', 'disabled'],
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+    intent: {
+      options: ['primary', 'secondary', 'tertiary', 'danger', 'ghost'],
+      control: { type: 'radio' },
+    },
+    size: {
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'radio' },
     },
   },
-}
-
-const className = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '4',
-  p: '4',
-  rounded: 'lg',
-  bg: 'bg.card',
-  boxShadow: 'md',
-})
-
-export const Primary: Story = {
-  render: () => (
-    <div className={className}>
-      <Button intent="primary" size="sm">
-        <p>Hello Storybook</p>
-      </Button>
-      <Button intent="primary" size="md">
-        Hello Storybook
-      </Button>
-      <Button intent="primary" size="lg">
-        Hello Storybook
-      </Button>
-      <Button intent="primary" size="lg" disabled>
-        Hello Storybook
-      </Button>
-    </div>
-  ),
-}
-
-export const Secondary: Story = {
-  render: () => (
-    <div className={className}>
-      <Button intent="secondary" size="sm">
-        <p>Hello Storybook</p>
-      </Button>
-      <Button intent="secondary" size="md">
-        Hello Storybook
-      </Button>
-      <Button intent="secondary" size="lg">
-        Hello Storybook
-      </Button>
-      <Button intent="secondary" size="lg" disabled>
-        Hello Storybook
-      </Button>
-    </div>
-  ),
-}
-
-export const Danger: Story = {
-  render: () => (
-    <div className={className}>
-      <Button intent="danger" size="sm">
-        <p>Hello Storybook</p>
-      </Button>
-      <Button intent="danger" size="md">
-        Hello Storybook
-      </Button>
-      <Button intent="danger" size="lg">
-        Hello Storybook
-      </Button>
-      <Button intent="danger" size="lg" disabled>
-        Hello Storybook
-      </Button>
-    </div>
-  ),
 }

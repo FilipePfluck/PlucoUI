@@ -17,14 +17,7 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  typescript: {
-    reactDocgen: "react-docgen-typescript",
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (!isCssProperty(prop.name)),
-    },
-  },
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     //@ts-ignore
     config.resolve.modules = [
       path.resolve(__dirname, ".."),
