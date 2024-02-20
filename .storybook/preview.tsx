@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import type { Preview } from "@storybook/react";
 import { Inter, Nunito } from 'next/font/google'
 
@@ -21,12 +21,10 @@ const nunito = Nunito({
   variable: '--font-nunito',
 })
 
-const WithBackground = (StoryFn) => {
-  const [isChecked, setIsChecked] = useState(false)
-
+const WithBackground = (StoryFn, context) => {
   const html = document.documentElement
 
-  if(!isChecked) {
+  if(context.globals.theme === 'dark') {
     html.classList.add('dark')
   }else {
     html.classList.remove('dark')
@@ -51,15 +49,24 @@ const WithBackground = (StoryFn) => {
       w: '100vw',
       h: '100vh'
     })) }>
-      <div className={css({position: 'absolute', top: '6', right: '6'})}>
-        <Switch onCheckedChange={({checked})=>{setIsChecked(checked)}}/>
-      </div>
        <StoryFn/>
     </div>
   )
 }
 
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        // The label to show for this toolbar item
+        title: 'Theme',
+        // Array of plain string values or MenuItem shape (see below)
+        items: ['light', 'dark'],      
+      },
+    },
+  },
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
