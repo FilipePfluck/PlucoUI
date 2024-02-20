@@ -12,17 +12,6 @@ const meta: Meta<typeof IconButton> = {
 export default meta
 type Story = StoryObj<typeof IconButton>
 
-export const IconButtonStory: Story = {
-  args: {
-    children: <Plus />,
-  },
-  parameters: {
-    controls: {
-      include: ['size', 'intent'],
-    },
-  },
-}
-
 const StoryWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <Flex

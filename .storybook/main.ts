@@ -18,7 +18,7 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) => (!isCssProperty(prop.name)),
