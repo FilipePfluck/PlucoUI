@@ -38,6 +38,7 @@
     "@types/react-dom": "^18",
     "axe-playwright": "^2.0.1",
     "eslint-plugin-storybook": "^0.6.15",
+    "playwright": "^1.41.2",
     "storybook": "^8.0.0-beta.3",
     "typescript": "^5"
   }

@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { within, userEvent, expect, fn } from '@storybook/test'
+
 // import { Plus } from 'lucide-react'
 
 import { IconButton } from './index'
@@ -14,6 +16,7 @@ export const IconButtonStory: Story = {
   args: {
     // TODO - add Plus icon here
     children: '+',
+    onClick: fn(),
   },
   argTypes: {
     disabled: {
@@ -28,5 +31,10 @@ export const IconButtonStory: Story = {
       options: ['sm', 'md', 'lg'],
       control: { type: 'radio' },
     },
+  },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('button'))
+    await expect(args.onClick).toHaveBeenCalled()
   },
 }
