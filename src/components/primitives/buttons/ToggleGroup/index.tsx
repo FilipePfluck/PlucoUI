@@ -1,5 +1,5 @@
 import {
-  ToggleGroupProps as ArkToggleGroupProps,
+  ToggleGroupRootProps as ArkToggleGroupProps,
   HTMLArkProps,
 } from '@ark-ui/react'
 

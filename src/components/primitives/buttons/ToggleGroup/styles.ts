@@ -31,14 +31,18 @@ export const Toggle = styled(ToggleGroup.Item, {
     ring: '2px',
     p: '2',
     rounded: 'sm',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    borderColor: 'border',
 
     _hover: {
       color: 'fg',
       bg: 'bg.card.hovered',
     },
-    _checked: {
+    _dataOn: {
       bg: { base: 'bg.brand.subtle', _hover: 'bg.brand.subtle' },
       color: 'fg.brand',
+      borderColor: 'border.brand',
     },
     _focusVisible: {
       zIndex: 20,

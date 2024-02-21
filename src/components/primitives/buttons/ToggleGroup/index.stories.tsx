@@ -1,13 +1,39 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { AlignCenter, AlignLeft, AlignRight } from 'lucide-react'
+import {
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  Italic,
+  Underline,
+} from 'lucide-react'
 
 import { ToggleGroup, ToggleProps } from './index'
+import { Flex } from '@/styled-system/jsx'
 
 const meta: Meta<typeof ToggleGroup> = {
   component: ToggleGroup,
 }
 
-const items: ToggleProps[] = [
+const formatItems: ToggleProps[] = [
+  {
+    id: 'bold',
+    'aria-label': 'bold',
+    children: <Bold size={16} />,
+  },
+  {
+    id: 'italic',
+    'aria-label': 'italic',
+    children: <Italic size={16} />,
+  },
+  {
+    id: 'underline',
+    'aria-label': 'underline',
+    children: <Underline size={16} />,
+  },
+]
+
+const alignItems: ToggleProps[] = [
   {
     id: 'align-left',
     'aria-label': 'align left',
@@ -29,9 +55,19 @@ export default meta
 type Story = StoryObj<typeof ToggleGroup>
 
 export const Vertical: Story = {
-  render: () => <ToggleGroup items={items} orientation="vertical" />,
+  render: () => (
+    <Flex direction="column" gap="4">
+      <ToggleGroup items={formatItems} multiple orientation="vertical" />
+      <ToggleGroup items={alignItems} orientation="vertical" />
+    </Flex>
+  ),
 }
 
 export const Horizontal: Story = {
-  render: () => <ToggleGroup items={items} orientation="horizontal" />,
+  render: () => (
+    <Flex gap="4">
+      <ToggleGroup items={formatItems} multiple orientation="horizontal" />
+      <ToggleGroup items={alignItems} orientation="horizontal" />
+    </Flex>
+  ),
 }
