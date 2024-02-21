@@ -128,6 +128,10 @@ export const Multiple: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
+    // FYI: when multiple is true, we don't use role='checkbox'
+    // and therefore we can't use aria-checked
+    // that's why we are checking for data-state instead
+
     // the first item should not start checked
     const firstItem = canvas.getByLabelText('first item')
     await expect(firstItem).toHaveAttribute('data-state', 'off')
