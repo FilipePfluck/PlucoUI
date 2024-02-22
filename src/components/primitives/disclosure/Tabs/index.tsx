@@ -48,6 +48,8 @@ export const Tabs = ({
             '--tab-hidden-distance-y':
               item.index > valueIndex ? '40px' : '-40px',
           }}
+          // this is to enable animations
+          hidden={false}
           data-orientation={orientation}
           key={item.id}
           value={item.id}

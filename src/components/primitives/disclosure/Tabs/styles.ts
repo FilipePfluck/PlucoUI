@@ -132,7 +132,7 @@ export const Content = styled(
       center: 'flex',
       flexDir: 'column',
       fontSize: '96px',
-      color: 'fg.subtle',
+      color: 'fg',
       opacity: 1,
 
       _horizontal: {
