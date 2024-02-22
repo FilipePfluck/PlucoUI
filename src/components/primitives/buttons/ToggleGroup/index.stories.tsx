@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { within, userEvent, expect } from '@storybook/test'
+import { within, userEvent, expect, waitFor } from '@storybook/test'
 
 import {
   AlignCenter,
@@ -121,6 +121,22 @@ export const Single: Story = {
     // click the second element, it should uncheck
     await userEvent.click(secondItem)
     await expect(secondItem).not.toBeChecked()
+
+    // it should return the focus to the second item
+    await expect(secondItem).toHaveFocus()
+
+    // press right arrow, it should focus the next item
+    const thirdItem = canvas.getByLabelText('third item')
+    await userEvent.keyboard('{ArrowRight}')
+    await waitFor(() => expect(thirdItem).toHaveFocus())
+
+    // press space, it should check the item
+    await userEvent.keyboard(' ')
+    await expect(thirdItem).toBeChecked()
+
+    // press space, it should uncheck the item
+    await userEvent.keyboard(' ')
+    await expect(thirdItem).not.toBeChecked()
   },
 }
 
