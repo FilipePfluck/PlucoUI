@@ -10,7 +10,14 @@ const meta: Meta<typeof Badge> = {
 export default meta
 type Story = StoryObj<typeof Badge>
 
-export const Primary: Story = {
+export const BadgeStory: Story = {
+  args: {
+    children: 'Pluco UI',
+    intent: 'secondary',
+  },
+}
+
+export const AllVariants: Story = {
   render: () => (
     <Stack gap="4">
       <HStack gap="4">
