@@ -24,8 +24,7 @@ const data = [
   {
     id: 'item-3',
     title: 'Is it animated?',
-    content:
-      'Yes, it comes with beautifull animations by default. This is possible due to a css variable set using useLayoutEffect',
+    content: 'Yes, it comes with beautifull animations by default.',
   },
 ]
 
@@ -54,10 +53,15 @@ export const Single: Story = {
       'Yes, it comes with beautifull styles by default.',
     )
 
+    const thirdItem = canvas.getByText(
+      'Yes, it comes with beautifull animations by default.',
+    )
+
     await waitFor(() => expect(firstItem).not.toBeVisible())
     await waitFor(() => expect(secondItem).not.toBeVisible())
 
-    const [firstItemTrigger, secondItemTrigger] = canvas.getAllByRole('button')
+    const [firstItemTrigger, secondItemTrigger, thirdItemTrigger] =
+      canvas.getAllByRole('button')
 
     // click the first trigger. The first item should now be visible
     await userEvent.click(firstItemTrigger)
@@ -70,6 +74,14 @@ export const Single: Story = {
     await userEvent.click(secondItemTrigger)
     await waitFor(() => expect(secondItem).toBeVisible())
     await waitFor(() => expect(firstItem).not.toBeVisible())
+
+    // should select the next item when pressing tab
+    // should open it when pressing space
+
+    await userEvent.tab()
+    await expect(thirdItemTrigger).toHaveFocus()
+    await userEvent.keyboard(' ')
+    await expect(thirdItem).toBeVisible()
   },
 }
 
@@ -90,10 +102,15 @@ export const Multiple: Story = {
       'Yes, it comes with beautifull styles by default.',
     )
 
+    const thirdItem = canvas.getByText(
+      'Yes, it comes with beautifull animations by default.',
+    )
+
     await waitFor(() => expect(firstItem).not.toBeVisible())
     await waitFor(() => expect(secondItem).not.toBeVisible())
 
-    const [firstItemTrigger, secondItemTrigger] = canvas.getAllByRole('button')
+    const [firstItemTrigger, secondItemTrigger, thirdItemTrigger] =
+      canvas.getAllByRole('button')
 
     // click the first trigger. The first item should now be visible
     await userEvent.click(firstItemTrigger)
@@ -106,6 +123,14 @@ export const Multiple: Story = {
     await userEvent.click(secondItemTrigger)
     await waitFor(() => expect(secondItem).toBeVisible())
     await waitFor(() => expect(firstItem).toBeVisible())
+
+    // should select the next item when pressing tab
+    // should open it when pressing space
+
+    await userEvent.tab()
+    await expect(thirdItemTrigger).toHaveFocus()
+    await userEvent.keyboard(' ')
+    await expect(thirdItem).toBeVisible()
   },
 }
 
