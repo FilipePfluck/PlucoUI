@@ -15,7 +15,7 @@ const items = [
     id: 'tomato',
     name: (
       <>
-        <p>Tomato</p>
+        <p style={{ color: 'inherit' }}>Tomato</p>
         🍅
       </>
     ),
@@ -26,7 +26,7 @@ const items = [
     id: 'carrot',
     name: (
       <>
-        <p>Carrot</p>
+        <p style={{ color: 'inherit' }}>Carrot</p>
         🥕
       </>
     ),
@@ -37,7 +37,7 @@ const items = [
     id: 'lettuce',
     name: (
       <>
-        <p>Lettuce</p>
+        <p style={{ color: 'inherit' }}>Lettuce</p>
         🥬
       </>
     ),
@@ -48,7 +48,7 @@ const items = [
     id: 'potato',
     name: (
       <>
-        <p>Potato</p>
+        <p style={{ color: 'inherit' }}>Potato</p>
         🥔
       </>
     ),
@@ -78,6 +78,7 @@ export const Horizontal: Story = {
 
     const tomatoTab = canvas.getByRole('tab', { name: 'Tomato 🍅' })
 
+    // should be able to select a panel by clicking
     await userEvent.click(tomatoTab)
     await waitFor(() => {
       const tomatoPanel = canvas.getByRole('tabpanel', { name: 'Tomato 🍅' })
