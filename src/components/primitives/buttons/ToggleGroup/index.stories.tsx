@@ -117,6 +117,10 @@ export const Single: Story = {
 
     // the first item shouldn't be checked anymore
     await expect(firstItem).not.toBeChecked()
+
+    // click the second element, it should uncheck
+    await userEvent.click(secondItem)
+    await expect(secondItem).not.toBeChecked()
   },
 }
 
