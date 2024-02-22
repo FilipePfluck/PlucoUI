@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { within, userEvent, expect, waitFor } from '@storybook/test'
 
 import { Tabs } from './index'
-import { css } from '@/styled-system/css'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -58,17 +58,36 @@ const items = [
 ]
 
 export const Horizontal: Story = {
-  render: () => (
-    <div className={css({ maxW: 'max-content', w: 'full' })}>
-      <Tabs items={items} defaultValue="tomato" />
-    </div>
-  ),
+  render: () => <Tabs items={items} defaultValue="tomato" />,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const tomatoPanel = canvas.getByRole('tabpanel', { name: 'Tomato 🍅' })
+
+    // tomato panel should be visible by default
+    await expect(tomatoPanel).toBeVisible()
+
+    // should be able to select next panel with the keyboard
+    await userEvent.tab()
+    await userEvent.keyboard('{ArrowRight}')
+
+    await waitFor(() => {
+      const carrotPanel = canvas.getByRole('tabpanel', { name: 'Carrot 🥕' })
+      expect(carrotPanel).toBeVisible()
+    })
+
+    const tomatoTab = canvas.getByRole('tab', { name: 'Tomato 🍅' })
+
+    await userEvent.click(tomatoTab)
+    await waitFor(() => {
+      const tomatoPanel = canvas.getByRole('tabpanel', { name: 'Tomato 🍅' })
+      expect(tomatoPanel).toBeVisible()
+    })
+  },
 }
 
 export const Vertical: Story = {
   render: () => (
-    <div className={css({ maxW: 'max-content', w: 'full' })}>
-      <Tabs items={items} defaultValue="tomato" orientation="vertical" />
-    </div>
+    <Tabs items={items} defaultValue="tomato" orientation="vertical" />
   ),
 }

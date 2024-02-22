@@ -12,6 +12,7 @@ export const Root = styled(
       boxShadow: 'lg',
       rounded: 'lg',
       w: 'full',
+      maxW: 'max-content',
       _horizontal: {
         flexDirection: 'column',
       },
