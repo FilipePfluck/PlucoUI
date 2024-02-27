@@ -19,7 +19,8 @@ export const InputContainer = styled('label', {
       _invalidWithin: 'border.danger',
     },
     '&:has(:disabled)': {
-      bg: 'bg.disabled',
+      // bg: 'transparent',
+      borderColor: 'border.disabled',
       cursor: 'not-allowed',
     },
   },
@@ -78,8 +79,9 @@ export const Input = styled('input', {
     color: 'fg',
     fontSize: 'sm',
     outline: 'none',
-    _placeholder: {
+    '&::placeholder': {
       color: {
+        _disabled: 'fg.muted !important',
         base: 'fg.unimportant',
       },
       fontSize: 'sm',
@@ -111,19 +113,20 @@ export const Input = styled('input', {
   },
 })
 
-// ts is complaining about the arbitrary selectors
-// but they are valid and working
-// this is a known issue: https://github.com/chakra-ui/panda/issues/1186
 // @ts-ignore
 export const InputIcon = styled('div', {
   base: {
     fontSize: 'md',
     transition: '0.2s',
-    color: 'fg' /* {
-      base: 'border.brand',
-      '.group:has(:disabled) &': 'fg.muted',
-      '.group:has([aria-invalid="true"]) &': 'border.danger',
-      '.group:has(:focus-within) &': 'border.brand',
-    } */,
+    color: 'fg',
+    '.group:has(:disabled) & svg': {
+      stroke: 'fg.muted',
+    },
+    '.group:has([aria-invalid="true"]) & svg': {
+      stroke: 'border.danger',
+    },
+    '.group:has(:focus-within) & svg': {
+      stroke: 'border.brand',
+    },
   },
 })

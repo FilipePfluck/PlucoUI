@@ -12,6 +12,28 @@ const meta: Meta<typeof Input> = {
 export default meta
 type Story = StoryObj<typeof Input>
 
+export const All: Story = {
+  render: () => (
+    <Box
+      bg="bg.card"
+      p="4"
+      rounded="md"
+      shadow="md"
+      display="flex"
+      flexDir="column"
+      gap="4"
+    >
+      <Input placeholder="This is an input" />
+      <Input placeholder="I am disabled" disabled icon={<Mail size={18} />} />
+      <Input
+        placeholder="I have an error"
+        aria-invalid={true}
+        icon={<Mail strokeWidth={1.5} size={18} />}
+      />
+    </Box>
+  ),
+}
+
 export const Default: Story = {
   render: () => (
     <Box bg="bg.card" p="4" rounded="md" shadow="md">
