@@ -17,13 +17,13 @@ export const keyframes: CssKeyframes = {
       padding: '0px 16px',
     },
     '100%': {
-      height: 'var(--accordion-content-height)',
+      height: 'var(--height)',
       padding: '16px 16px',
     },
   },
   accordionSlideUp: {
     '0%': {
-      height: 'var(--accordion-content-height)',
+      height: 'var(--height)',
       padding: '16px 16px',
     },
     '100%': {
