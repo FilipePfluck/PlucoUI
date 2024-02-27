@@ -1,8 +1,8 @@
 export const colors = {
   mauve: {
-    1: { value: '#F2EFF3' },
+    1: { value: '#EEEBF0' },
     2: { value: '#FDFCFD' },
-    3: { value: '#F5F2F7' },
+    3: { value: '#F7F5F9' },
     4: { value: '#E7E5EB' },
     5: { value: '#CAC6D2' },
     6: { value: '#6F6D78' },
