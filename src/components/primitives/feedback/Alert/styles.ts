@@ -21,18 +21,6 @@ export const Root = styled('div', {
         bg: 'bg.card',
         borderColor: 'border',
       },
-      success: {
-        bg: 'bg.success.subtle',
-        borderColor: 'border.success',
-      },
-      info: {
-        bg: 'bg.info.subtle',
-        borderColor: 'border.info',
-      },
-      warning: {
-        bg: 'bg.warning.subtle',
-        borderColor: 'border.warning',
-      },
       danger: {
         bg: 'bg.danger.subtle',
         borderColor: 'border.danger',
@@ -65,15 +53,6 @@ export const Title = styled('h4', {
       },
       secondary: {
         color: 'fg',
-      },
-      success: {
-        color: 'fg.success',
-      },
-      info: {
-        color: 'fg.info',
-      },
-      warning: {
-        color: 'fg.warning',
       },
       danger: {
         color: 'fg.danger',
@@ -108,21 +87,6 @@ export const Icon = styled(ark.div, {
       secondary: {
         '& svg': {
           stroke: 'fg',
-        },
-      },
-      success: {
-        '& svg': {
-          stroke: 'fg.success',
-        },
-      },
-      info: {
-        '& svg': {
-          stroke: 'fg.info',
-        },
-      },
-      warning: {
-        '& svg': {
-          stroke: 'fg.warning',
         },
       },
       danger: {

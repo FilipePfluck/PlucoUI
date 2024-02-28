@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Alert } from './index'
-import { AlertCircle, CheckCircle, Info, XCircle } from 'lucide-react'
+import { XCircle } from 'lucide-react'
 import { Stack } from '@/styled-system/jsx'
 
 const meta: Meta<typeof Alert> = {
@@ -22,24 +22,6 @@ export const Primary: Story = {
         title="This is a message"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         intent="primary"
-      />
-      <Alert
-        title="This is a success"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        icon={<CheckCircle />}
-        intent="success"
-      />
-      <Alert
-        title="This is an info"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        icon={<Info />}
-        intent="info"
-      />
-      <Alert
-        title="This is a warning"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        icon={<AlertCircle />}
-        intent="warning"
       />
       <Alert
         title="This is an error"
