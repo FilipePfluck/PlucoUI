@@ -31,18 +31,16 @@ export const semanticTokens = defineSemanticTokens({
       },
       brand: {
         subtle: {
-          subtle: {
-            DEFAULT: {
-              value: {
-                base: '{colors.violet.1}',
-                _dark: '{colors.violetDark.1}',
-              },
+          DEFAULT: {
+            value: {
+              base: '{colors.violet.1}',
+              _dark: '{colors.violetDark.1}',
             },
-            hovered: {
-              value: {
-                base: '{colors.violet.2}',
-                _dark: '{colors.violetDark.2}',
-              },
+          },
+          hovered: {
+            value: {
+              base: '{colors.violet.2}',
+              _dark: '{colors.violetDark.2}',
             },
           },
         },
