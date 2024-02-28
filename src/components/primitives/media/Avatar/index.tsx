@@ -9,7 +9,7 @@ export type AvatarProps = {
   src: string
   fallback?: 'initials' | 'icon'
   gradientBorder?: boolean
-  status?: 'online' | 'idle' | 'doNotDisturb' | 'offline'
+  status?: 'doNotDisturb' | 'offline'
 } & ArkAvatarProps
 
 export const Avatar = ({

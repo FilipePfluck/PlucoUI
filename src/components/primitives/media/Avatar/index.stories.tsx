@@ -41,39 +41,3 @@ export const Fallback: Story = {
 export const IconFallback: Story = {
   render: () => <AvatarList src="" fallback="icon" />,
 }
-
-export const Online: Story = {
-  render: () => (
-    <AvatarList
-      src="https://avatars.githubusercontent.com/u/62773200?v=4"
-      status="online"
-    />
-  ),
-}
-
-export const DoNotDisturb: Story = {
-  render: () => (
-    <AvatarList
-      src="https://avatars.githubusercontent.com/u/62773200?v=4"
-      status="doNotDisturb"
-    />
-  ),
-}
-
-export const Idle: Story = {
-  render: () => (
-    <AvatarList
-      src="https://avatars.githubusercontent.com/u/62773200?v=4"
-      status="idle"
-    />
-  ),
-}
-
-export const Offline: Story = {
-  render: () => (
-    <AvatarList
-      src="https://avatars.githubusercontent.com/u/62773200?v=4"
-      status="offline"
-    />
-  ),
-}
