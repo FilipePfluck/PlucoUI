@@ -32,6 +32,7 @@ const ButtonRow = ({ ...props }: Omit<IconButtonProps, 'aria-label'>) => {
 export const IconButtonStory: Story = {
   args: {
     children: 'plus',
+    'aria-label': 'add',
     onClick: fn(),
   },
   argTypes: {
