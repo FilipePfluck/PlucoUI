@@ -6,8 +6,8 @@ import {
   dangerButtonBaseStyles,
   primaryButtonBaseStyles,
   secondaryButtonBaseStyles,
-  tertiaryButtonBaseStyles,
   ghostButtonBaseStyles,
+  linkButtonBaseStyles,
 } from '../css.raw'
 
 const buttonStyles = cva({
@@ -22,14 +22,14 @@ const buttonStyles = cva({
       secondary: {
         ...secondaryButtonBaseStyles,
       },
-      tertiary: {
-        ...tertiaryButtonBaseStyles,
-      },
       danger: {
         ...dangerButtonBaseStyles,
       },
       ghost: {
         ...ghostButtonBaseStyles,
+      },
+      link: {
+        ...linkButtonBaseStyles,
       },
     },
 

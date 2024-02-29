@@ -2,7 +2,7 @@ import { HTMLStyledProps } from '@/styled-system/jsx'
 import * as S from './styles'
 import { ForwardedRef, forwardRef } from 'react'
 
-type IconButtonProps = HTMLStyledProps<'button'> &
+export type IconButtonProps = HTMLStyledProps<'button'> &
   S.IconButtonVariants & {
     // make aria-label required for iconButtons
     'aria-label': string

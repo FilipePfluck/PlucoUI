@@ -6,8 +6,8 @@ import {
   dangerButtonBaseStyles,
   primaryButtonBaseStyles,
   secondaryButtonBaseStyles,
-  tertiaryButtonBaseStyles,
   ghostButtonBaseStyles,
+  linkButtonBaseStyles,
 } from '../css.raw'
 
 const iconButtonStyles = cva({
@@ -22,14 +22,14 @@ const iconButtonStyles = cva({
       secondary: {
         ...secondaryButtonBaseStyles,
       },
-      tertiary: {
-        ...tertiaryButtonBaseStyles,
-      },
       danger: {
         ...dangerButtonBaseStyles,
       },
       ghost: {
         ...ghostButtonBaseStyles,
+      },
+      link: {
+        ...linkButtonBaseStyles,
       },
     },
 
@@ -38,6 +38,7 @@ const iconButtonStyles = cva({
         p: '1',
         gap: '1',
         fontSize: 'xs',
+        '& svg': { h: '4', w: '4' },
         h: '8',
         w: '8',
       },
@@ -45,6 +46,7 @@ const iconButtonStyles = cva({
         p: '2',
         gap: '2',
         fontSize: 'sm',
+        '& svg': { h: '5', w: '5' },
         h: '10',
         w: '10',
       },
@@ -52,6 +54,7 @@ const iconButtonStyles = cva({
         p: '3',
         gap: '3',
         fontSize: 'md',
+        '& svg': { h: '6', w: '6' },
         h: '12',
         w: '12',
       },

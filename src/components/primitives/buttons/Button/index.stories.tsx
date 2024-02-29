@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { within, userEvent, expect, fn } from '@storybook/test'
 
-import { Button } from './index'
+import { Button, ButtonProps } from './index'
+import { Flex } from '@/styled-system/jsx'
 
 const meta = {
   component: Button,
@@ -9,6 +10,22 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof Button>
+
+const ButtonRow = ({ ...props }: ButtonProps) => {
+  return (
+    <Flex align="center" gap="2">
+      <Button {...props} size="lg">
+        Hello storybook
+      </Button>
+      <Button {...props} size="md">
+        Hello storybook
+      </Button>
+      <Button {...props} size="sm">
+        Hello storybook
+      </Button>
+    </Flex>
+  )
+}
 
 export const ButtonStory: Story = {
   args: {
@@ -20,7 +37,7 @@ export const ButtonStory: Story = {
       control: 'boolean',
     },
     intent: {
-      options: ['primary', 'secondary', 'tertiary', 'danger', 'ghost'],
+      options: ['primary', 'secondary', 'danger', 'ghost', 'link'],
       control: { type: 'radio' },
     },
     size: {
@@ -32,5 +49,28 @@ export const ButtonStory: Story = {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByRole('button'))
     await expect(args.onClick).toHaveBeenCalled()
+  },
+}
+
+export const AllVariants: Story = {
+  render: () => {
+    return (
+      <Flex bg="bg.card" p="8" gap="4" rounded="md" direction="column">
+        <ButtonRow />
+        <ButtonRow disabled />
+
+        <ButtonRow intent="danger" />
+        <ButtonRow intent="danger" disabled />
+
+        <ButtonRow intent="secondary" />
+        <ButtonRow intent="secondary" disabled />
+
+        <ButtonRow intent="ghost" />
+        <ButtonRow intent="ghost" disabled />
+
+        <ButtonRow intent="link" />
+        <ButtonRow intent="link" disabled />
+      </Flex>
+    )
   },
 }
