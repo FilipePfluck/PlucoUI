@@ -4,131 +4,108 @@ export const buttonBaseStyles = css.raw({
   display: 'flex',
   center: 'flex',
   rounded: 'md',
-  textStyle: 'buttonMd',
+  h: 'min-content',
 
+  textStyle: 'buttonMd',
   transition: 'background, border-color 0.2s',
   cursor: 'pointer',
 
   borderWidth: '1px',
   borderStyle: 'solid',
 
-  h: 'min-content',
+  // variant dependent below
+
+  bg: {
+    base: 'var(--btn-bg)',
+    _hover: 'var(--btn-bg-hover)',
+  },
+
+  color: 'var(--btn-color)',
+  '& svg': { stroke: 'var(--btn-color)' },
+
+  borderColor: {
+    base: 'var(--btn-border)',
+    _hover: 'var(--btn-border-hover)',
+  },
+
+  _disabled: {
+    bg: {
+      base: 'var(--btn-bg-disabled)',
+      _hover: 'var(--btn-bg-disabled)',
+    },
+
+    color: 'var(--btn-color-muted)',
+    '& svg': { stroke: 'var(--btn-color-muted)' },
+
+    borderColor: {
+      base: 'var(--btn-border-disabled)',
+      _hover: 'var(--btn-border-disabled)',
+    },
+    cursor: 'not-allowed',
+  },
 })
 
 export const primaryButtonBaseStyles = css.raw({
-  bg: {
-    base: 'bg.brand.solid',
-    _hover: 'bg.brand.solid.hovered',
-  },
+  '--btn-bg': 'colors.bg.brand.solid',
+  '--btn-bg-hover': 'colors.bg.brand.solid.hovered',
+  '--btn-bg-disabled': 'colors.bg.disabled',
 
-  color: 'white',
-  '& svg': { stroke: 'white' },
+  '--btn-color': 'white',
+  '--btn-color-muted': 'colors.fg.muted',
 
-  borderColor: {
-    base: 'bg.brand.solid',
-    _hover: 'bg.brand.solid.hovered',
-  },
-
-  _disabled: {
-    bg: {
-      base: 'bg.disabled',
-      _hover: 'bg.disabled',
-    },
-
-    color: 'fg.muted',
-    '& svg': { stroke: 'fg.muted' },
-
-    borderColor: {
-      base: 'bg.disabled',
-      _hover: 'bg.disabled',
-    },
-    cursor: 'not-allowed',
-  },
+  '--btn-border': 'colors.bg.brand.solid',
+  '--btn-border-hover': 'colors.bg.brand.solid.hovered',
+  '--btn-border-disabled': 'colors.bg.disabled',
 })
 
 export const secondaryButtonBaseStyles = css.raw({
-  bg: {
-    base: 'bg.card',
-    _hover: 'bg.card.hovered',
-  },
-  borderColor: 'border',
+  '--btn-bg': 'colors.bg.card',
+  '--btn-bg-hover': 'colors.bg.card.hovered',
+  '--btn-bg-disabled': 'transparent',
 
-  color: 'fg',
-  '& svg': { stroke: 'fg' },
+  '--btn-color': 'colors.fg',
+  '--btn-color-muted': 'colors.fg.muted',
 
-  _disabled: {
-    bg: {
-      base: 'transparent',
-      _hover: 'transparent',
-    },
-
-    color: 'fg.muted',
-    '& svg': { stroke: 'fg.muted' },
-
-    borderColor: {
-      base: 'border.disabled',
-      _hover: 'border.disabled',
-    },
-    cursor: 'not-allowed',
-  },
+  '--btn-border': 'colors.border',
+  '--btn-border-hover': 'colors.border',
+  '--btn-border-disabled': 'colors.border.disabled',
 })
 
 export const dangerButtonBaseStyles = css.raw({
-  bg: {
-    base: 'bg.danger.solid',
-    _hover: 'bg.danger.solid.hovered',
-  },
-  borderColor: {
-    base: 'bg.danger.solid',
-    _hover: 'bg.danger.solid.hovered',
-  },
+  '--btn-bg': 'colors.bg.danger.solid',
+  '--btn-bg-hover': 'colors.bg.danger.solid.hovered',
+  '--btn-bg-disabled': 'colors.bg.disabled',
 
-  color: 'white',
-  '& svg': { stroke: 'white' },
+  '--btn-color': 'white',
+  '--btn-color-muted': 'colors.fg.muted',
 
-  _disabled: {
-    bg: {
-      base: 'bg.disabled',
-      _hover: 'bg.disabled',
-    },
-    color: 'fg.muted',
-    '& svg': { stroke: 'fg.muted' },
-    borderColor: {
-      base: 'bg.disabled',
-      _hover: 'bg.disabled',
-    },
-    cursor: 'not-allowed',
-  },
+  '--btn-border': 'colors.bg.danger.solid',
+  '--btn-border-hover': 'colors.bg.danger.solid.hovered',
+  '--btn-border-disabled': 'colors.bg.disabled',
 })
 
 export const ghostButtonBaseStyles = css.raw({
-  bg: {
-    base: 'transparent',
-    _hover: 'bg.card.hovered',
-  },
-  borderColor: 'transparent',
-  color: 'fg',
-  '& svg': { stroke: 'fg' },
-  _disabled: {
-    bg: { base: 'transparent', _hover: 'transparent' },
-    color: 'fg.muted',
-    '& svg': { stroke: 'fg.muted' },
-    borderColor: 'transparent',
-  },
+  '--btn-bg': 'transparent',
+  '--btn-bg-hover': 'colors.bg.card.hovered',
+  '--btn-bg-disabled': 'transparent',
+
+  '--btn-color': 'colors.fg',
+  '--btn-color-muted': 'colors.fg.muted',
+
+  '--btn-border': 'transparent',
+  '--btn-border-hover': 'colors.bg.card.hovered',
+  '--btn-border-disabled': 'transparent',
 })
 
 export const linkButtonBaseStyles = css.raw({
-  bg: {
-    base: 'transparent',
-    _hover: 'transparent',
-  },
-  borderColor: 'transparent',
-  color: 'fg',
-  '& svg': { stroke: 'fg' },
-  _disabled: {
-    bg: { base: 'transparent', _hover: 'transparent' },
-    color: 'fg.muted',
-    '& svg': { stroke: 'fg.muted' },
-    borderColor: 'transparent',
-  },
+  '--btn-bg': 'transparent',
+  '--btn-bg-hover': 'transparent',
+  '--btn-bg-disabled': 'transparent',
+
+  '--btn-color': 'colors.fg',
+  '--btn-color-muted': 'colors.fg.muted',
+
+  '--btn-border': 'transparent',
+  '--btn-border-hover': 'transparent',
+  '--btn-border-disabled': 'transparent',
 })
