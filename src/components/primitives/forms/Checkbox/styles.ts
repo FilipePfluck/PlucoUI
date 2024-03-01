@@ -4,7 +4,7 @@ import { Checkbox } from '@ark-ui/react'
 export const Root = styled(Checkbox.Root, {
   base: {
     display: 'flex',
-    alignItems: 'center',
+    align: 'center',
     gap: '2',
   },
 })
@@ -48,8 +48,22 @@ export const Control = styled(Checkbox.Control, {
       },
     },
 
-    _ariaInvalid: {
-      borderColor: 'border.danger',
+    '[aria-invalid="true"] &': {
+      borderColor: 'border.invalid',
+
+      _after: {
+        bg: 'bg.danger.solid',
+      },
+    },
+
+    _disabled: {
+      bg: 'bg.disabled',
+      borderColor: 'border.disabled',
+      cursor: 'not-allowed',
+
+      _after: {
+        bg: 'border.disabled',
+      },
     },
 
     _siblingFocusVisible: {
@@ -60,7 +74,7 @@ export const Control = styled(Checkbox.Control, {
 
 export const Label = styled(Checkbox.Label, {
   base: {
-    color: 'fg.important',
+    color: { base: 'fg.important', _disabled: 'fg.muted' },
     textStyle: 'textSm',
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },
