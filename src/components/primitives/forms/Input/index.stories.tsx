@@ -23,11 +23,22 @@ export const All: Story = {
       flexDir="column"
       gap="4"
     >
-      <Input placeholder="This is an input" />
-      <Input placeholder="I am disabled" disabled icon={<Mail size={18} />} />
+      <Input placeholder="I am an input" />
       <Input
+        name="email"
+        placeholder="I have an icon"
+        icon={<Mail strokeWidth={1.5} size={18} />}
+      />
+      <Input
+        name="email"
         placeholder="I have an error"
         aria-invalid={true}
+        icon={<Mail strokeWidth={1.5} size={18} />}
+      />
+      <Input
+        name="email"
+        placeholder="I am disabled"
+        disabled
         icon={<Mail strokeWidth={1.5} size={18} />}
       />
     </Box>

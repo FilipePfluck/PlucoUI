@@ -16,10 +16,10 @@ export const InputContainer = styled('label', {
     borderColor: {
       base: 'border',
       _focusWithin: 'border.focused',
-      _invalidWithin: 'border.danger',
+      _invalidWithin: 'border.invalid',
     },
     '&:has(:disabled)': {
-      // bg: 'transparent',
+      bg: 'bg.disabled',
       borderColor: 'border.disabled',
       cursor: 'not-allowed',
     },
@@ -75,25 +75,50 @@ export const InputContainer = styled('label', {
 export const Input = styled('input', {
   base: {
     maxW: 'full',
+    h: '10',
     bg: 'transparent',
     color: 'fg',
     fontSize: 'sm',
     outline: 'none',
-    '&::placeholder': {
-      color: {
-        _disabled: 'fg.muted !important',
-        base: 'fg.unimportant',
-      },
+    _placeholder: {
+      color: 'fg.unimportant',
       fontSize: 'sm',
     },
     _disabled: {
       cursor: 'not-allowed',
       color: 'fg.muted',
+
+      '&::placeholder': {
+        color: 'fg.muted',
+      },
     },
+
+    // the code below is to prevent the autofill
+    // from changing the background of the input
+    // the reason I am setting borders is because
+    // otherwise the boxShadow would cover the container borders
+
     _autofill: {
-      boxShadow: '0 0 0px 1000px token(colors.bg.component) inset',
+      boxShadow: '0 0 0px 1000px token(colors.bg.card) inset',
       WebkitTextFillColor: 'token(colors.fg)',
       caretColor: 'fg',
+    },
+    transition: 'border-color 0.2s',
+    borderStyle: 'solid',
+    borderYWidth: '1px',
+    borderYColor: {
+      base: 'border',
+      _ariaInvalid: 'border.invalid',
+      _disabled: 'border.disabled',
+    },
+
+    // the reason I am checking for focus-within the label
+    // instead of focus on the input
+    // is because if there is focus inside a button inside the label
+    // the label would have a purple border and the input not
+
+    'label:focus-within &': {
+      borderYColor: 'border.focused !important',
     },
   },
 
@@ -116,17 +141,17 @@ export const Input = styled('input', {
 // @ts-ignore
 export const InputIcon = styled('div', {
   base: {
-    fontSize: 'md',
-    transition: '0.2s',
-    color: 'fg',
+    '& svg': {
+      transition: '0.2s',
+    },
     '.group:has(:disabled) & svg': {
       stroke: 'fg.muted',
     },
     '.group:has([aria-invalid="true"]) & svg': {
-      stroke: 'border.danger',
+      stroke: 'border.invalid',
     },
     '.group:has(:focus-within) & svg': {
-      stroke: 'border.brand',
+      stroke: 'border.focused',
     },
   },
 })
