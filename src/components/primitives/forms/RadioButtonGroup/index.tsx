@@ -23,7 +23,7 @@ export const RadioButtonGroup = ({
     <S.Root orientation={labelOrientation}>
       {label && <S.Label>{label}</S.Label>}
       <S.Group orientation={orientation}>
-        {items.map(({ id, label }) => {
+        {items.map(({ id, label, ...props }) => {
           return (
             <S.Item
               key={id}
@@ -32,6 +32,7 @@ export const RadioButtonGroup = ({
               data-testid={`radio-${id}`}
               aria-labelledby={`label-${id}`}
               className="group"
+              {...props}
             >
               <S.Control>
                 <S.Text id={`label-${id}`}>{label}</S.Text>

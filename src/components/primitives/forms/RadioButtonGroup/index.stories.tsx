@@ -12,7 +12,7 @@ type Story = StoryObj<typeof RadioButtonGroup>
 const items = [
   { id: 'r1', label: 'S' },
   { id: 'r2', label: 'M' },
-  { id: 'r3', label: 'L' },
+  { id: 'r3', label: 'L', disabled: true },
   { id: 'r4', label: 'XL' },
 ]
 

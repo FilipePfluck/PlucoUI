@@ -76,16 +76,17 @@ export const Control = styled(RadioGroup.ItemControl, {
     bg: {
       base: 'transparent',
       _hover: 'bg.card.hovered',
-      _disabled: {
-        _hover: 'transparent',
-      },
       _checked: { base: 'bg.brand.solid', _hover: 'bg.brand.solid.hovered' },
+      _disabled: {
+        base: 'bg.disabled',
+        _hover: 'bg.disabled',
+      },
     },
 
     borderColor: {
       base: 'border',
-      _disabled: 'bg.component',
       _checked: { base: 'bg.brand', _hover: 'bg.brand.hovered' },
+      _disabled: 'border.disabled',
     },
     borderStyle: 'solid',
     borderWidth: '1px',
@@ -96,6 +97,10 @@ export const Control = styled(RadioGroup.ItemControl, {
 
     _siblingFocusVisible: {
       outline: '2px solid token(colors.border.ring)',
+    },
+
+    _disabled: {
+      cursor: 'not-allowed',
     },
   },
 })
