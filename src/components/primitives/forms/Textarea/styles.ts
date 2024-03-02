@@ -16,8 +16,8 @@ export const TextareaContainer = styled('textarea', {
     borderColor: {
       base: 'border',
       _focus: 'border.focused',
+      _ariaInvalid: 'border.invalid',
     },
-    '&[aria-invalid]': { borderColor: 'border.danger' },
 
     color: 'fg',
     fontSize: 'sm',
@@ -37,6 +37,10 @@ export const TextareaContainer = styled('textarea', {
       bg: 'bg.disabled',
       cursor: 'not-allowed',
       color: 'fg.muted',
+
+      _placeholder: {
+        color: 'fg.muted',
+      },
     },
   },
 
