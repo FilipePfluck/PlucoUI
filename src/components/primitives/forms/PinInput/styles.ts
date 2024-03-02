@@ -25,9 +25,9 @@ export const Control = styled(PinInput.Control, {
 
 export const Input = styled(PinInput.Input, {
   base: {
-    h: '12',
-    w: '10',
-    p: '14px',
+    h: '10',
+    w: '9',
+    p: '3',
     bg: 'bg.card',
     boxShadow: 'sm',
     rounded: 'md',
@@ -39,9 +39,7 @@ export const Input = styled(PinInput.Input, {
     gap: '2',
 
     _placeholder: {
-      color: {
-        base: 'fg.unimportant',
-      },
+      color: 'fg.unimportant',
       fontSize: 'sm',
     },
 
@@ -50,12 +48,17 @@ export const Input = styled(PinInput.Input, {
     borderColor: {
       base: 'border',
       _focus: 'border.focused',
-      _invalid: 'border.danger',
     },
+    '[aria-invalid]  &': { borderColor: 'border.danger' },
     _disabled: {
-      bg: 'bg.component.hovered',
+      bg: 'bg.disabled',
+      borderColor: 'border.disabled',
       cursor: 'not-allowed',
       color: 'fg.muted',
+
+      _placeholder: {
+        color: 'fg.muted',
+      },
     },
   },
 })
