@@ -75,6 +75,7 @@ export const InputContainer = styled('label', {
 export const Input = styled('input', {
   base: {
     maxW: 'full',
+    w: 'full',
     h: '10',
     bg: 'transparent',
     color: 'fg',

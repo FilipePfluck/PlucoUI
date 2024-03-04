@@ -37,16 +37,19 @@ const buttonStyles = cva({
       sm: {
         p: '2',
         gap: '2',
+        h: '8',
         fontSize: 'sm',
       },
       md: {
         p: '3',
         gap: '3',
+        h: '10',
         fontSize: 'md',
       },
       lg: {
         p: '4',
         gap: '4',
+        h: '12',
         fontSize: 'lg',
       },
     },
