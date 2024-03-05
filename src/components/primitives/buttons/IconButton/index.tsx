@@ -1,11 +1,12 @@
-import { HTMLStyledProps } from '@/styled-system/jsx'
 import * as S from './styles'
-import { ForwardedRef, forwardRef } from 'react'
+import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react'
+import { SystemStyleObject } from '@pandacss/dev'
 
-export type IconButtonProps = HTMLStyledProps<'button'> &
+export type IconButtonProps = ComponentPropsWithRef<'button'> &
   S.IconButtonVariants & {
     // make aria-label required for iconButtons
     'aria-label': string
+    css?: SystemStyleObject
   }
 
 const IconButtonComponent = (

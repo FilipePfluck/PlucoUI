@@ -26,6 +26,12 @@ const data = [
     title: 'Is it animated?',
     content: 'Yes, it comes with beautifull animations by default.',
   },
+  {
+    id: 'item-4',
+    title: 'Is it disabled?',
+    content: 'Yes, it is disabled',
+    disabled: true,
+  },
 ]
 
 export const AccordionStory: Story = {

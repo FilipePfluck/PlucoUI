@@ -1,14 +1,22 @@
 import { TabsRootProps as ArkTabsProps } from '@ark-ui/react'
 import * as S from './styles'
 import { ReactNode, useState } from 'react'
+import { SystemStyleObject } from '@pandacss/dev'
+
+// todo ponder over the possibility of adding `trigger` and `content`
+// props containing ark props and spreading them on the respective parts
+
+export type TabItem = {
+  id: string
+  name: ReactNode
+  content: ReactNode
+  index: number
+  disabled?: boolean
+}
 
 type TabsProps = ArkTabsProps & {
-  items: {
-    id: string
-    name: ReactNode
-    content: ReactNode
-    index: number
-  }[]
+  items: TabItem[]
+  css?: SystemStyleObject
 }
 
 export const Tabs = ({
@@ -33,7 +41,7 @@ export const Tabs = ({
     >
       <S.List>
         {items.map((item) => (
-          <S.Trigger key={item.id} value={item.id}>
+          <S.Trigger key={item.id} value={item.id} disabled={item.disabled}>
             {item.name}
           </S.Trigger>
         ))}
@@ -53,6 +61,7 @@ export const Tabs = ({
           data-orientation={orientation}
           key={item.id}
           value={item.id}
+          disabled={item.disabled}
         >
           {item.content}
         </S.Content>

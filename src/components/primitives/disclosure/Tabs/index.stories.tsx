@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { within, userEvent, expect, waitFor } from '@storybook/test'
 
-import { Tabs } from './index'
+import { Tabs, TabItem } from './index'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
@@ -10,7 +10,7 @@ const meta: Meta<typeof Tabs> = {
 export default meta
 type Story = StoryObj<typeof Tabs>
 
-const items = [
+const items: TabItem[] = [
   {
     id: 'tomato',
     name: (
@@ -54,6 +54,7 @@ const items = [
     ),
     content: '🥔',
     index: 3,
+    disabled: true,
   },
 ]
 

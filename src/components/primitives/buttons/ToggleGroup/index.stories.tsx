@@ -5,6 +5,7 @@ import {
   AlignCenter,
   AlignLeft,
   AlignRight,
+  AlignJustify,
   Bold,
   Italic,
   Underline,
@@ -68,6 +69,12 @@ const alignItems: ToggleProps[] = [
     id: 'align-right',
     'aria-label': 'align right',
     children: <AlignRight size={16} />,
+  },
+  {
+    id: 'align-justify',
+    'aria-label': 'justify',
+    children: <AlignJustify size={16} />,
+    disabled: true,
   },
 ]
 

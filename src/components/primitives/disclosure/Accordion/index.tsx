@@ -1,24 +1,32 @@
-import { AccordionRootProps as ArkAccordionProps } from '@ark-ui/react'
+import {
+  AccordionRootProps as ArkAccordionProps,
+  AccordionItemProps as ArkAccordionItemProps,
+} from '@ark-ui/react'
 
 import * as S from './styles'
+import { SystemStyleObject } from '@pandacss/dev'
 
-type Item = {
+type Item = Omit<ArkAccordionItemProps, 'value'> & {
   id: string
   title: string
   content: string
+  css?: SystemStyleObject
 }
 
 type AccordionProps = ArkAccordionProps & {
   items: Item[]
 }
 
-type AccordionItemProps = Item & {
-  isOpen?: boolean
-}
+type AccordionItemProps = Item
 
-const AccordionItem = ({ content, id, title }: AccordionItemProps) => {
+const AccordionItem = ({
+  content,
+  id,
+  title,
+  ...props
+}: AccordionItemProps) => {
   return (
-    <S.Item value={id}>
+    <S.Item value={id} {...props}>
       <S.Trigger>{title}</S.Trigger>
       <S.Content>{content}</S.Content>
     </S.Item>

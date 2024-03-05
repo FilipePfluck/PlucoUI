@@ -1,19 +1,19 @@
-import {
-  ToggleGroupRootProps as ArkToggleGroupProps,
-  HTMLArkProps,
-} from '@ark-ui/react'
+import { ToggleGroupRootProps as ArkToggleGroupProps } from '@ark-ui/react'
 
 import * as S from './styles'
+import { ComponentPropsWithRef } from 'react'
+import { SystemStyleObject } from '@pandacss/dev'
 
-export type ToggleProps = HTMLArkProps<'button'> & {
-  disabled?: boolean
+export type ToggleProps = ComponentPropsWithRef<'button'> & {
   id: string
   'aria-label': string
+  css?: SystemStyleObject
 }
 
 interface ToggleGroupProps extends ArkToggleGroupProps {
   orientation?: 'vertical' | 'horizontal'
   items: ToggleProps[]
+  css?: SystemStyleObject
 }
 
 export const ToggleGroup = ({

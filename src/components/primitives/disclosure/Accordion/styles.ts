@@ -47,6 +47,11 @@ export const Trigger = styled(Accordion.ItemTrigger, {
     boxShadow: 'md',
     zIndex: '2',
     outline: 'none',
+
+    _disabled: {
+      bg: 'bg.disabled',
+      color: 'fg.muted',
+    },
   },
 })
 

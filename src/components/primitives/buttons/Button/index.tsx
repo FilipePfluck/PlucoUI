@@ -1,8 +1,11 @@
-import { ForwardedRef, forwardRef } from 'react'
+import { ComponentPropsWithRef, ForwardedRef, forwardRef } from 'react'
 import * as S from './styles'
-import { HTMLStyledProps } from '@/styled-system/jsx'
+import { SystemStyleObject } from '@pandacss/dev'
 
-export type ButtonProps = HTMLStyledProps<'button'> & S.ButtonVariants
+export type ButtonProps = ComponentPropsWithRef<'button'> &
+  S.ButtonVariants & {
+    css?: SystemStyleObject
+  }
 
 const ButtonComponent = (
   { children, ...props }: ButtonProps,

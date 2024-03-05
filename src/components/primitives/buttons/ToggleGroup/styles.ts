@@ -48,5 +48,11 @@ export const Toggle = styled(ToggleGroup.Item, {
       zIndex: 20,
       outline: '2px solid token(colors.border.ring)',
     },
+    _disabled: {
+      bg: { base: 'bg.disabled', _hover: 'bg.disabled' },
+      color: 'fg.muted',
+      borderColor: 'border.disabled',
+      cursor: 'not-allowed',
+    },
   },
 })

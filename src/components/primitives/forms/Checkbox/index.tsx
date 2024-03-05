@@ -1,9 +1,11 @@
 import { CheckboxRootProps as ArkCheckboxProps } from '@ark-ui/react'
 import * as S from './styles'
 import { ForwardedRef, forwardRef } from 'react'
+import { SystemStyleObject } from '@pandacss/dev'
 
 export type CheckboxProps = ArkCheckboxProps & {
   label: string
+  css?: SystemStyleObject
 }
 
 const CheckboxComponent = (
