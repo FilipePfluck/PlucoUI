@@ -108,7 +108,7 @@ export const Control = styled(RadioGroup.ItemControl, {
 
 export const Text = styled(RadioGroup.ItemText, {
   base: {
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
     color: { base: 'fg', _disabled: 'fg.muted' },
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },

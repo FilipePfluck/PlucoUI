@@ -107,7 +107,7 @@ export const Control = styled(RadioGroup.ItemControl, {
 
 export const Text = styled(RadioGroup.ItemText, {
   base: {
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
     color: { base: 'fg', _checked: 'white', _disabled: 'fg.muted' },
     transitionDuration: 'normal',
     transitionProperty: 'color',

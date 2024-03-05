@@ -7,18 +7,18 @@ export type HeadingTextStyles =
   | 'headingSm'
   | 'headingXs'
 
-export type TextTextStyles =
-  | 'textXl'
-  | 'textLg'
-  | 'textMd'
-  | 'textSm'
-  | 'textXs'
+export type BodyTextStyles =
+  | 'bodyXl'
+  | 'bodyLg'
+  | 'bodyMd'
+  | 'bodySm'
+  | 'bodyXs'
 
 export type ButtonTextStyles = 'buttonLg' | 'buttonMd' | 'buttonSm'
 
 export type TextStylesTypes =
   | HeadingTextStyles
-  | TextTextStyles
+  | BodyTextStyles
   | ButtonTextStyles
 
 export const textStyles = defineTextStyles({
@@ -62,7 +62,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'nunito',
     },
   },
-  textXl: {
+  bodyXl: {
     value: {
       fontWeight: 'regular',
       fontSize: '20px',
@@ -70,7 +70,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'inter',
     },
   },
-  textLg: {
+  bodyLg: {
     value: {
       fontWeight: 'regular',
       fontSize: '18px',
@@ -78,7 +78,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'inter',
     },
   },
-  textMd: {
+  bodyMd: {
     value: {
       fontWeight: 'regular',
       fontSize: '16px',
@@ -86,7 +86,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'inter',
     },
   },
-  textSm: {
+  bodySm: {
     value: {
       fontWeight: 'regular',
       fontSize: '14px',
@@ -94,7 +94,7 @@ export const textStyles = defineTextStyles({
       fontFamily: 'inter',
     },
   },
-  textXs: {
+  bodyXs: {
     value: {
       fontWeight: 'regular',
       fontSize: '12px',

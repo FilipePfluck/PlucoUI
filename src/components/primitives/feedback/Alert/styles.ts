@@ -67,7 +67,7 @@ export const Title = styled('h4', {
 export const Description = styled('p', {
   base: {
     color: 'fg',
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
   },
 })
 

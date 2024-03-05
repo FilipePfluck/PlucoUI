@@ -75,7 +75,7 @@ export const Control = styled(Checkbox.Control, {
 export const Label = styled(Checkbox.Label, {
   base: {
     color: { base: 'fg.important', _disabled: 'fg.muted' },
-    textStyle: 'textSm',
+    textStyle: 'bodySm',
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },
 })

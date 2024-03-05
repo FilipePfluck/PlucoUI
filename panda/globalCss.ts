@@ -7,6 +7,10 @@ export const globalCss = defineGlobalStyles({
   },
   '*': {
     color: 'fg',
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
+  },
+  '*::selection': {
+    color: 'fg.brand.important',
+    bg: 'bg.brand.subtle.hovered',
   },
 })

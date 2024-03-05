@@ -51,7 +51,7 @@ export const Thumb = styled(Switch.Thumb, {
 
 export const Label = styled(Switch.Label, {
   base: {
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
     color: { base: 'fg.important', _disabled: 'fg.muted' },
   },
 })

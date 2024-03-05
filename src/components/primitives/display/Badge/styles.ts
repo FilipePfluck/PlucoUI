@@ -11,7 +11,7 @@ export const Root = styled('div', {
     shadow: 'sm',
     borderWidth: '1px',
     borderStyle: 'solid',
-    textStyle: 'textXs',
+    textStyle: 'bodyXs',
   },
   variants: {
     intent: {

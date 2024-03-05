@@ -73,7 +73,7 @@ export const Title = styled(Popover.Title, {
 
 export const Description = styled(Popover.Description, {
   base: {
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
     color: 'fg',
   },
 })

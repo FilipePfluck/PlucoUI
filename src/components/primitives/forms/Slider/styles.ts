@@ -98,7 +98,7 @@ export const MarkerGroup = styled(Slider.MarkerGroup, {
 
 export const Marker = styled(Slider.Marker, {
   base: {
-    textStyle: 'textSm',
+    textStyle: 'bodySm',
     color: 'fg.subtle',
     '--before-background': 'colors.fg',
     _before: {

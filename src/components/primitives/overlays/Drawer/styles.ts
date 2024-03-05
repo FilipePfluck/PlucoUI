@@ -103,7 +103,7 @@ export const Title = styled(Dialog.Title, {
 
 export const Description = styled(Dialog.Description, {
   base: {
-    textStyle: 'textMd',
+    textStyle: 'bodyMd',
     color: 'fg',
   },
 })

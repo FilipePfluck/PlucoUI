@@ -19,7 +19,7 @@ export const Label = styled(Progress.Label, {
 
 export const ValueText = styled(Progress.ValueText, {
   base: {
-    textStyle: 'textSm',
+    textStyle: 'bodySm',
     color: 'fg',
   },
 })

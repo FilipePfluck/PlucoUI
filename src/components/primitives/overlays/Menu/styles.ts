@@ -118,7 +118,7 @@ export const RightSlot = styled('div', {
     right: '2',
     top: '50%',
     transform: 'translateY(-50%)',
-    textStyle: 'textSm',
+    textStyle: 'bodySm',
     color: 'fg',
   },
 })

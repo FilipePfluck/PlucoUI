@@ -30,7 +30,7 @@ export const Title = styled(Toast.Title, {
 export const Description = styled(Toast.Description, {
   base: {
     color: 'fg',
-    textStyle: 'textSm',
+    textStyle: 'bodySm',
   },
 })
 
