@@ -213,12 +213,12 @@ export const Item = styled(Select.Item, {
       color: 'fg.important',
     },
     _hover: {
-      background: 'bg.brand.solid',
-      color: 'white',
+      background: 'bg.brand.subtle.hovered',
+      color: 'fg.brand',
     },
     _highlighted: {
-      background: 'bg.brand.solid',
-      color: 'white',
+      background: 'bg.brand.subtle.hovered',
+      color: 'fg.brand',
     },
     _disabled: {
       bg: 'transparent',
