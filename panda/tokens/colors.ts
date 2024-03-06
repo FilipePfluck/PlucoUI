@@ -43,7 +43,7 @@ export const colors = {
   },
   violet: {
     1: { value: '#F8F5FE' },
-    2: { value: '#EBE2FD' },
+    2: { value: '#F1ECFE' },
     4: { value: '#C2B5F5' },
     6: { value: '#745CD6' },
     7: { value: '#654ACF' },
