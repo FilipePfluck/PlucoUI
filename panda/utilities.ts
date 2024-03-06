@@ -154,5 +154,21 @@ export const utilities = {
         }
       },
     },
+    iconColor: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '& svg': { stroke: value },
+        }
+      },
+    },
+    iconSize: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '& svg': { height: value, width: value },
+        }
+      },
+    },
   },
 }

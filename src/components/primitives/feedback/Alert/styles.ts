@@ -80,19 +80,13 @@ export const Icon = styled(ark.div, {
   variants: {
     intent: {
       primary: {
-        '& svg': {
-          stroke: 'fg.brand',
-        },
+        iconColor: 'fg.brand',
       },
       secondary: {
-        '& svg': {
-          stroke: 'fg',
-        },
+        iconColor: 'fg',
       },
       danger: {
-        '& svg': {
-          stroke: 'fg.danger',
-        },
+        iconColor: 'fg.danger',
       },
     },
   },

@@ -110,38 +110,23 @@ export const Fallback = styled(Avatar.Fallback, {
     size: {
       xs: {
         fontSize: '12px',
-        '& svg': {
-          w: '4',
-          h: '4',
-        },
+        iconSize: '4',
       },
       sm: {
         fontSize: '14px',
-        '& svg': {
-          w: '5',
-          h: '5',
-        },
+        iconSize: '5',
       },
       md: {
         fontSize: '16px',
-        '& svg': {
-          w: '6',
-          h: '6',
-        },
+        iconSize: '5',
       },
       lg: {
         fontSize: '24px',
-        '& svg': {
-          w: '8',
-          h: '8',
-        },
+        iconSize: '8',
       },
       xl: {
         fontSize: '36px',
-        '& svg': {
-          w: '12',
-          h: '12',
-        },
+        iconSize: '12',
       },
     },
   },

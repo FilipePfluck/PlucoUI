@@ -21,7 +21,7 @@ export const buttonBaseStyles = css.raw({
   },
 
   color: 'var(--btn-color)',
-  '& svg': { stroke: 'var(--btn-color)' },
+  iconColor: 'var(--btn-color)',
 
   borderColor: {
     base: 'var(--btn-border)',
@@ -35,7 +35,7 @@ export const buttonBaseStyles = css.raw({
     },
 
     color: 'var(--btn-color-muted)',
-    '& svg': { stroke: 'var(--btn-color-muted)' },
+    iconColor: 'var(--btn-color-muted)',
 
     borderColor: {
       base: 'var(--btn-border-disabled)',

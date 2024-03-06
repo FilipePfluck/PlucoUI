@@ -45,9 +45,7 @@ export const Toggle = styled(ToggleGroup.Item, {
         _hover: 'bg.brand.subtle.hovered',
       },
       color: 'fg.brand',
-      '& svg': {
-        stroke: 'fg.brand',
-      },
+      iconColor: 'fg.brand',
       borderColor: 'border.brand',
     },
     _focusVisible: {
@@ -57,9 +55,7 @@ export const Toggle = styled(ToggleGroup.Item, {
     _disabled: {
       bg: { base: 'bg.disabled', _hover: 'bg.disabled' },
       color: 'fg.muted',
-      '& svg': {
-        stroke: 'fg.muted',
-      },
+      iconColor: 'fg.muted',
       borderColor: 'border.disabled',
       cursor: 'not-allowed',
     },

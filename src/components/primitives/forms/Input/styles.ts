@@ -145,14 +145,14 @@ export const InputIcon = styled('div', {
     '& svg': {
       transition: '0.2s',
     },
-    '.group:has(:disabled) & svg': {
-      stroke: 'fg.muted',
+    '.group:has(:disabled) &': {
+      iconColor: 'fg.muted',
     },
-    '.group:has([aria-invalid="true"]) & svg': {
-      stroke: 'border.invalid',
+    '.group:has([aria-invalid="true"]) &': {
+      iconColor: 'border.invalid',
     },
-    '.group:has(:focus-within) & svg': {
-      stroke: 'border.focused',
+    '.group:has(:focus-within) &': {
+      iconColor: 'border.focused',
     },
   },
 })
