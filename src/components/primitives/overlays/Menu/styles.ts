@@ -8,16 +8,18 @@ const menuItemBaseStyles = css.raw({
   rounded: 'sm',
   cursor: 'pointer',
   _highlighted: {
-    bg: 'bg.brand.subtle.hovered',
-    color: 'fg.brand',
+    bg: 'bg.brand.solid',
+    color: 'white',
+    iconColor: 'white',
   },
   '&[aria-expanded="true"]': {
     bg: 'bg.card.hovered',
     color: 'fg.important',
   },
   _hover: {
-    bg: 'bg.brand.subtle.hovered',
-    color: 'fg.brand',
+    bg: 'bg.brand.solid',
+    color: 'white',
+    iconColor: 'white',
   },
   transition: '0.12s',
   position: 'relative',
