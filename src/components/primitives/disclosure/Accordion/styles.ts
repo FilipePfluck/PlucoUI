@@ -49,8 +49,8 @@ export const Trigger = styled(Accordion.ItemTrigger, {
     outline: 'none',
 
     _disabled: {
-      bg: 'bg.disabled',
       color: 'fg.muted',
+      cursor: 'not-allowed',
     },
   },
 })
