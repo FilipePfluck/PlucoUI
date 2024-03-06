@@ -73,12 +73,12 @@ export const keyframes: CssKeyframes = {
       height: '0px',
     },
     '100%': {
-      height: 'var(--radix-collapsible-content-height);',
+      height: 'var(--height);',
     },
   },
   collapse: {
     '0%': {
-      height: 'var(--radix-collapsible-content-height);',
+      height: 'var(--height);',
     },
     '100%': {
       height: '0px',

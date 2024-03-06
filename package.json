@@ -13,7 +13,7 @@
     "test-storybook": "test-storybook"
   },
   "dependencies": {
-    "@ark-ui/react": "~2.1.1",
+    "@ark-ui/react": "2.2.2",
     "lucide-react": "^0.290.0",
     "next": "14.1.0",
     "react": "^18.2.0",
