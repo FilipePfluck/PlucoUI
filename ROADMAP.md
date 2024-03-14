@@ -1,10 +1,10 @@
 # PRIMITIVES
 
   BUTTONS
-    [x] Button
-    [x] IconButton
-    [x] ToggleGroup
-    [] Affix
+    -[x] Button
+    -[x] IconButton
+    -[x] ToggleGroup
+    -[ ] Affix
 
   FORMS
     [x] Switch
