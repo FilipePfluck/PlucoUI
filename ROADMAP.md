@@ -41,7 +41,7 @@
 ## DISCLOSURE 
 - [x] Tabs
 - [x] Accordion
-- [ ] Collapsible
+- [x] Collapsible
 - [ ] ReadMore
 
 ## NAVIGATION
@@ -54,16 +54,17 @@
 
 ## FEEDBACK
 - [x] Toast
-- [ ] Alert
+- [x] Alert
 - [x] CircularProgress
 - [ ] Spinner
-- [ ] Skeleton
+- [x] Skeleton
   
  ## MEDIA
 - [x] Avatar
 - [ ] Avatar Group
 - [ ] Status (like whatsapp)
 - [ ] Carousel
+- [ ] Clipboard
 
 ## DISPLAY
 - [ ] Badge
