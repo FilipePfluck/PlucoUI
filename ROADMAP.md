@@ -1,95 +1,81 @@
 # PRIMITIVES
 
-  BUTTONS
-    - [x] Button
-    - [x] IconButton
-    - [x] ToggleGroup
-    - [ ] Affix
+## BUTTONS
+- [x] Button
+- [x] IconButton
+- [x] ToggleGroup
+- [ ] Affix
 
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
-- [ ] 
-  FORMS
-    [x] Switch
-    [x] Slider
-    [x] Checkbox
-    [x] RadioGroup
-    [x] RadioButtonGroup
-    [x] RatingGroup
-    [Inputs]
-    [] FormControl
-    [x] Input
-    [x] PasswordInput
-    [] NumberInput
-    [] MaskInput
-    [x] PinInput
-    [x] TextArea
-    [] Editable
-    [] Editor
-    [] Mention
-    [] Upload
-    [Selects]
-    [x] Select
-    [x] ComboBox / AutoComplete
-    [] Tags input
-    [Pickers]
-    [] ColorPicker
-    [-] DatePicker
+## FORMS
+- [x] Switch
+- [x] Slider
+- [x] Checkbox
+- [x] RadioGroup
+- [x] RadioButtonGroup
+- [x] RatingGroup
+- [ ] FormControl
+- [x] Input
+- [x] PasswordInput
+- [ ] NumberInput
+- [ ] MaskInput
+- [x] PinInput
+- [x] TextArea
+- [ ] Editable
+- [ ] Editor
+- [ ] Mention
+- [ ] Upload
+- [x] Select
+- [x] ComboBox / AutoComplete
+- [ ] Tags input
+- [ ] ColorPicker
+- [x] DatePicker
 
-  OVERLAY
-    [x] Dialog
-    [x] Drawer
-    [x] Menu
-    [x] Popover
-    [x] Tooltip
-    [x] HoverCard
+## OVERLAY
+- [x] Dialog
+- [x] Drawer
+- [x] Menu
+- [x] Popover
+- [x] Tooltip
+- [x] HoverCard
   
-  DISCLOSURE 
-    [x] Tabs
-    [x] Accordion
-    [] Collapsible
-    [] ReadMore
+## DISCLOSURE 
+- [x] Tabs
+- [x] Accordion
+- [ ] Collapsible
+- [ ] ReadMore
 
-  NAVIGATION
-    [-] SegmentGroup
-    [] NavigationMenu
-    [] Stepper
-    [] BreadCrumb
-    [x] Pagination
-    [] Tree
+## NAVIGATION
+- [x] SegmentGroup
+- [ ] NavigationMenu
+- [ ] Stepper
+- [ ] BreadCrumb
+- [x] Pagination
+- [ ] Tree
 
-  FEEDBACK
-    [x] Toast
-    [] Alert
-    [x] Progress
-    [x] CircularProgress
-    [] Spinner
-    [] Skeleton
+## FEEDBACK
+- [x] Toast
+- [ ] Alert
+- [x] CircularProgress
+- [ ] Spinner
+- [ ] Skeleton
   
-  MEDIA
-    [x] Avatar
-    [] Avatar Group
-    [] Status (like whatsapp)
-    [] Carousel
+ ## MEDIA
+- [x] Avatar
+- [ ] Avatar Group
+- [ ] Status (like whatsapp)
+- [ ] Carousel
 
-  DISPLAY
-    [] Badge
-    [] Card
-    [] Code
-    [] Divider
-    [] Kbd
-    [] Splitter
-    [] Table
+## DISPLAY
+- [ ] Badge
+- [ ] Card
+- [x] Code
+- [ ] Divider
+- [x] Kbd
+- [ ] Splitter
+- [ ] Table
 
-  LIBS
-    [] Draggable
-    [] Droppable
-    [] Sortable
-    [] Chart
+## LIBS
+- [] Draggable
+- [] Droppable
+- [] Sortable
+- [] Chart
