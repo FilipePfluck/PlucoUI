@@ -75,7 +75,7 @@
 - [ ] Table
 
 ## LIBS
-- [] Draggable
-- [] Droppable
-- [] Sortable
-- [] Chart
+- [ ] Draggable
+- [ ] Droppable
+- [ ] Sortable
+- [ ] Chart
