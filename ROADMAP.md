@@ -50,7 +50,7 @@
 - [ ] Stepper
 - [ ] BreadCrumb
 - [x] Pagination
-- [ ] Tree
+- [x] Tree
 
 ## FEEDBACK
 - [x] Toast
@@ -67,7 +67,7 @@
 - [ ] Clipboard
 
 ## DISPLAY
-- [ ] Badge
+- [x] Badge
 - [ ] Card
 - [x] Code
 - [ ] Divider
