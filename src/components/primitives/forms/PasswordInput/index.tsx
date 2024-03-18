@@ -26,7 +26,7 @@ const PasswordInputComponent = (
           aria-label={buttonAriaLabel}
           onClick={() => setShouldShowPassword((state) => !state)}
           type="button"
-          intent="ghost"
+          intent="link"
           size="sm"
         >
           {shouldShowPassowrd ? (

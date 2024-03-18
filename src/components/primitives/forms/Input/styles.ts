@@ -76,7 +76,7 @@ export const Input = styled('input', {
   base: {
     maxW: 'full',
     w: 'full',
-    h: '10',
+    // h: '10',
     bg: 'transparent',
     color: 'fg',
     fontSize: 'sm',
@@ -105,37 +105,6 @@ export const Input = styled('input', {
       caretColor: 'fg',
     },
     transition: 'border-color 0.2s',
-    borderStyle: 'solid',
-    borderYWidth: '1px',
-    borderYColor: {
-      base: 'border',
-      _ariaInvalid: 'border.invalid',
-      _disabled: 'border.disabled',
-    },
-
-    // the reason I am checking for focus-within the label
-    // instead of focus on the input
-    // is because if there is focus inside a button inside the label
-    // the label would have a purple border and the input not
-
-    'label:focus-within &': {
-      borderYColor: 'border.focused !important',
-    },
-  },
-
-  variants: {
-    size: {
-      sm: {
-        py: '1',
-      },
-      md: {
-        py: '2',
-      },
-    },
-  },
-
-  defaultVariants: {
-    size: 'md',
   },
 })
 

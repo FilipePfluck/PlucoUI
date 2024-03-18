@@ -24,7 +24,7 @@ const InputComponent = (
     <S.InputContainer size={size} width={width} className="group">
       {icon && <S.InputIcon>{icon}</S.InputIcon>}
       {leftElement}
-      <S.Input size={size} ref={ref} {...props} />
+      <S.Input ref={ref} {...props} />
       {rightElement}
     </S.InputContainer>
   )
