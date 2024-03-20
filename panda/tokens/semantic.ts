@@ -44,6 +44,12 @@ export const semanticTokens = defineSemanticTokens({
             },
           },
         },
+        selection: {
+          value: {
+            base: '{colors.violet.4}',
+            _dark: '{colors.violetDark.4}',
+          },
+        },
         solid: {
           DEFAULT: {
             value: {
@@ -55,6 +61,12 @@ export const semanticTokens = defineSemanticTokens({
             value: {
               base: '{colors.violet.7}',
               _dark: '{colors.violetDark.7}',
+            },
+          },
+          disabled: {
+            value: {
+              base: '{colors.violet.5}',
+              _dark: '{colors.violetDark.5}',
             },
           },
         },
@@ -74,6 +86,12 @@ export const semanticTokens = defineSemanticTokens({
             },
           },
         },
+        selection: {
+          value: {
+            base: '{colors.red.4}',
+            _dark: '{colors.redDark.4}',
+          },
+        },
         solid: {
           DEFAULT: {
             value: {
@@ -85,6 +103,12 @@ export const semanticTokens = defineSemanticTokens({
             value: {
               base: '{colors.red.7}',
               _dark: '{colors.redDark.7}',
+            },
+          },
+          disabled: {
+            value: {
+              base: '{colors.red.5}',
+              _dark: '{colors.redDark.5}',
             },
           },
         },
@@ -117,6 +141,12 @@ export const semanticTokens = defineSemanticTokens({
       },
 
       brand: {
+        subtle: {
+          value: {
+            base: '{colors.violet.8}',
+            _dark: '{colors.violetDark.8}',
+          },
+        },
         DEFAULT: {
           value: {
             base: '{colors.violet.9}',
@@ -131,6 +161,12 @@ export const semanticTokens = defineSemanticTokens({
         },
       },
       danger: {
+        subtle: {
+          value: {
+            base: '{colors.red.8}',
+            _dark: '{colors.redDark.8}',
+          },
+        },
         DEFAULT: {
           value: {
             base: '{colors.red.9}',
@@ -160,20 +196,20 @@ export const semanticTokens = defineSemanticTokens({
       },
       brand: {
         value: {
-          base: '{colors.violet.4}',
-          _dark: '{colors.violetDark.4}',
+          base: '{colors.violet.3}',
+          _dark: '{colors.violetDark.3}',
         },
       },
       danger: {
         value: {
-          base: '{colors.red.4}',
-          _dark: '{colors.redDark.4}',
+          base: '{colors.red.3}',
+          _dark: '{colors.redDark.3}',
         },
       },
       ring: {
         value: {
-          base: '#3E63DD',
-          _dark: '#3E63DD',
+          base: '{colors.violet.9}',
+          _dark: '{colors.violetDark.9}',
         },
       },
       focused: {

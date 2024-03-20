@@ -11,7 +11,7 @@ export const utilities = {
           '&:focus-visible': {
             outlineWidth: value,
             outlineStyle: 'solid',
-            outlineColor: 'token(colors.border.ring)',
+            outlineColor: 'var(--colors-border-ring)',
           },
         }
       },
