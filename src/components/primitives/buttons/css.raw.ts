@@ -42,6 +42,7 @@ export const buttonBaseStyles = css.raw({
       _hover: 'var(--btn-border-disabled)',
     },
     cursor: 'not-allowed',
+    userSelect: 'none',
   },
 })
 

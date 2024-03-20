@@ -24,6 +24,10 @@ export const Root = styled('div', {
       danger: {
         bg: 'bg.danger.subtle',
         borderColor: 'border.danger',
+        '& *::selection': {
+          bg: 'bg.danger.selection !important',
+          color: 'fg.danger.important',
+        },
       },
     },
   },
@@ -80,13 +84,13 @@ export const Icon = styled(ark.div, {
   variants: {
     intent: {
       primary: {
-        iconColor: 'fg.brand',
+        iconColor: 'var(--colors-fg-brand)',
       },
       secondary: {
-        iconColor: 'fg',
+        iconColor: 'var(--colors-fg)',
       },
       danger: {
-        iconColor: 'fg.danger',
+        iconColor: 'var(--colors-fg-danger)',
       },
     },
   },
