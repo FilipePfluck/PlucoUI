@@ -48,20 +48,20 @@ export const buttonBaseStyles = css.raw({
 export const primaryButtonBaseStyles = css.raw({
   '--btn-bg': 'colors.bg.brand.solid',
   '--btn-bg-hover': 'colors.bg.brand.solid.hovered',
-  '--btn-bg-disabled': 'colors.bg.disabled',
+  '--btn-bg-disabled': 'colors.bg.brand.solid.disabled',
 
   '--btn-color': 'white',
   '--btn-color-muted': 'colors.fg.muted',
 
   '--btn-border': 'colors.bg.brand.solid',
   '--btn-border-hover': 'colors.bg.brand.solid.hovered',
-  '--btn-border-disabled': 'colors.bg.disabled',
+  '--btn-border-disabled': 'colors.bg.brand.solid.disabled',
 })
 
 export const secondaryButtonBaseStyles = css.raw({
   '--btn-bg': 'colors.bg.card',
   '--btn-bg-hover': 'colors.bg.card.hovered',
-  '--btn-bg-disabled': 'transparent',
+  '--btn-bg-disabled': 'colors.bg.disabled',
 
   '--btn-color': 'colors.fg',
   '--btn-color-muted': 'colors.fg.muted',
@@ -74,14 +74,14 @@ export const secondaryButtonBaseStyles = css.raw({
 export const dangerButtonBaseStyles = css.raw({
   '--btn-bg': 'colors.bg.danger.solid',
   '--btn-bg-hover': 'colors.bg.danger.solid.hovered',
-  '--btn-bg-disabled': 'colors.bg.disabled',
+  '--btn-bg-disabled': 'colors.bg.danger.solid.disabled',
 
   '--btn-color': 'white',
   '--btn-color-muted': 'colors.fg.muted',
 
   '--btn-border': 'colors.bg.danger.solid',
   '--btn-border-hover': 'colors.bg.danger.solid.hovered',
-  '--btn-border-disabled': 'colors.bg.disabled',
+  '--btn-border-disabled': 'colors.bg.danger.solid.disabled',
 })
 
 export const ghostButtonBaseStyles = css.raw({

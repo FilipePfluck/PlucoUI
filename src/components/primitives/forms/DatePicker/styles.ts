@@ -189,6 +189,7 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
     rounded: 'sm',
     _hover: {
       bg: 'bg.card.hovered',
+      boxShadow: 'sm',
     },
     '&[data-in-range]:not([data-selected])': {
       bg: 'bg.brand.subtle.hovered',
@@ -222,7 +223,7 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
     },
     _disabled: {
       color: 'fg.muted',
-      bg: 'bg.card',
+      bg: 'transparent !important',
       cursor: 'not-allowed',
     },
     transition: 'background 0.2s',
