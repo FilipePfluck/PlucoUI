@@ -84,6 +84,7 @@ export const Input = styled('input', {
     _placeholder: {
       color: 'fg.unimportant',
       fontSize: 'sm',
+      userSelect: 'none',
     },
     _disabled: {
       cursor: 'not-allowed',

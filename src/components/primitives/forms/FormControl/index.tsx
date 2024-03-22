@@ -47,18 +47,20 @@ export const FormControl = ({
         {children}
       </ark.div>
 
-      <S.MessageContainer>
-        {showHelperMessage && (
-          <S.HelperMessage id={`${id}-helper-message`}>
-            {helperMessage}
-          </S.HelperMessage>
-        )}
-        {errorMessage && (
-          <S.ErrorMessage id={`${id}-error-message`} role="alert">
-            {errorMessage}
-          </S.ErrorMessage>
-        )}
-      </S.MessageContainer>
+      {(showHelperMessage || errorMessage) && (
+        <S.MessageContainer>
+          {showHelperMessage && (
+            <S.HelperMessage id={`${id}-helper-message`}>
+              {helperMessage}
+            </S.HelperMessage>
+          )}
+          {errorMessage && (
+            <S.ErrorMessage id={`${id}-error-message`} role="alert">
+              {errorMessage}
+            </S.ErrorMessage>
+          )}
+        </S.MessageContainer>
+      )}
     </S.Root>
   )
 }

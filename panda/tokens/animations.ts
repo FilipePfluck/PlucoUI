@@ -1,9 +1,9 @@
 export const animations = {
   fadeIn: {
-    value: 'fadeIn 150ms',
+    value: 'fadeIn 150ms ease-in',
   },
   fadeOut: {
-    value: 'fadeOut 150ms',
+    value: 'fadeOut 150ms ease-out',
   },
   accordionSlideDown: {
     value: 'accordionSlideDown 0.2s',

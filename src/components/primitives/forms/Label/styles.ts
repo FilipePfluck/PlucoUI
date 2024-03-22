@@ -5,7 +5,8 @@ export const Root = styled('div', {
     w: 'full',
     display: 'flex',
     align: 'center',
-    justify: 'space-between',
+    // justify: 'space-between',
+    gap: '1',
   },
 })
 

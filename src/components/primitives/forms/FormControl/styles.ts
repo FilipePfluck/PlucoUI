@@ -12,7 +12,8 @@ export const Root = styled('div', {
 export const MessageContainer = styled('div', {
   base: {
     display: 'flex',
-    h: '18px',
+    '--height': '18px',
+    animation: 'expand',
   },
 })
 
@@ -27,5 +28,8 @@ export const ErrorMessage = styled('p', {
   base: {
     color: 'fg.danger',
     textStyle: 'bodySm',
+    animation: 'fadeIn',
+    opacity: 0,
+    animationFillMode: 'forwards',
   },
 })
