@@ -56,7 +56,7 @@ export const textStyles = defineTextStyles({
   },
   headingXs: {
     value: {
-      fontWeight: 'semibold',
+      fontWeight: 'medium',
       fontSize: '16px',
       lineHeight: '20px',
       fontFamily: 'nunito',
