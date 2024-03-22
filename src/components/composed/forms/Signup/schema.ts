@@ -10,23 +10,26 @@ export const messages = {
   termsRequired: 'You must accept the terms of use',
 }
 
-export const registerFormSchema = z
-  .object({
-    username: z.string().min(1, { message: messages.nameRequired }),
-    email: z.string().min(1, { message: messages.emailRequired }).email({
-      message: messages.emailInvalid,
+export const registerFormSchema = z.object({
+  username: z.string().min(1, { message: messages.nameRequired }),
+  email: z.string().min(1, { message: messages.emailRequired }).email({
+    message: messages.emailInvalid,
+  }),
+  password: z
+    .object({
+      password: z.string().min(8, { message: messages.passwordRequired }),
+      confirmPassword: z
+        .string()
+        .min(1, { message: messages.confirmPasswordRequired }),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      path: ['confirmPassword'],
+      message: messages.confirmPasswordInvalid,
     }),
-    password: z.string().min(8, { message: messages.passwordRequired }),
-    confirmPassword: z
-      .string()
-      .min(1, { message: messages.confirmPasswordRequired }),
-    terms: z.literal(true, {
-      errorMap: () => ({ message: messages.termsRequired }),
-    }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    path: ['confirmPassword'],
-    message: messages.confirmPasswordInvalid,
-  })
+
+  terms: z.literal(true, {
+    errorMap: () => ({ message: messages.termsRequired }),
+  }),
+})
 
 export type RegisterFormData = z.infer<typeof registerFormSchema>

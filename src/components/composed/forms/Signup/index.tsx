@@ -67,18 +67,18 @@ export const Signup = () => {
         id="password"
         label="Password"
         isRequired
-        errorMessage={errors?.password?.message}
+        errorMessage={errors?.password?.password?.message}
       >
-        <PasswordInput {...register('password')} />
+        <PasswordInput {...register('password.password')} />
       </FormControl>
 
       <FormControl
         id="confirm-password"
         label="Confirm password"
         isRequired
-        errorMessage={errors?.confirmPassword?.message}
+        errorMessage={errors?.password?.confirmPassword?.message}
       >
-        <PasswordInput {...register('confirmPassword')} />
+        <PasswordInput {...register('password.confirmPassword')} />
       </FormControl>
 
       <Controller
