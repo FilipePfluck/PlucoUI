@@ -10,19 +10,31 @@ import { RegisterFormData, registerFormSchema } from './schema'
 import { PasswordInput } from '@/components/primitives/forms/PasswordInput'
 import { Checkbox } from '@/components/primitives/forms/Checkbox'
 import { Mail, User } from 'lucide-react'
+import { useEffect } from 'react'
 
 export const Signup = () => {
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors, isSubmitting },
+    watch,
+    trigger,
+    formState: { errors, isSubmitting, dirtyFields },
   } = useForm<RegisterFormData>({
     mode: 'onBlur',
     resolver: zodResolver(registerFormSchema),
   })
 
   const onSubmit: SubmitHandler<RegisterFormData> = (data) => console.log(data)
+
+  const password = watch('password.password')
+  const isConfirmPasswordDirty = dirtyFields.password?.confirmPassword
+
+  useEffect(() => {
+    if (isConfirmPasswordDirty) {
+      trigger('password.confirmPassword')
+    }
+  }, [watch, password, trigger, isConfirmPasswordDirty])
 
   return (
     <form
