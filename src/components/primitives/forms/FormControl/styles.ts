@@ -14,6 +14,8 @@ export const MessageContainer = styled('div', {
     display: 'flex',
     '--height': '18px',
     animation: 'expand',
+    animationDuration: '0.15s',
+    animationTimingFunction: 'ease-out',
   },
 })
 
@@ -31,5 +33,7 @@ export const ErrorMessage = styled('p', {
     animation: 'fadeIn',
     opacity: 0,
     animationFillMode: 'forwards',
+    animationDuration: '0.15s',
+    animationTimingFunction: 'ease-in',
   },
 })

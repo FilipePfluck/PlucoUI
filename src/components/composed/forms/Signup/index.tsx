@@ -43,7 +43,7 @@ export const Signup = () => {
         flexDir: 'column',
         gap: '4',
         bg: 'bg.card',
-        p: '6',
+        p: '8',
         rounded: 'lg',
         shadow: 'lg',
       })}
