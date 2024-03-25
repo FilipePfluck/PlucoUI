@@ -1,4 +1,5 @@
 import { styled } from '@/styled-system/jsx'
+import { Collapsible } from '@ark-ui/react'
 
 export const Root = styled('div', {
   base: {
@@ -9,13 +10,20 @@ export const Root = styled('div', {
   },
 })
 
-export const MessageContainer = styled('div', {
+export const MessageContainer = styled(Collapsible.Content, {
   base: {
     display: 'flex',
-    '--height': '18px',
-    animation: 'expand',
+    '--height': '22px !important',
     animationDuration: '0.15s',
-    animationTimingFunction: 'ease-out',
+
+    _dataOpen: {
+      animation: 'expand',
+      animationTimingFunction: 'ease-out',
+    },
+    _dataClosed: {
+      animation: 'collapse',
+      animationTimingFunction: 'ease-in',
+    },
   },
 })
 

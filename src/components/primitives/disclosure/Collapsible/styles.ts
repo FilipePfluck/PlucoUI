@@ -53,10 +53,10 @@ export const Content = styled(Collapsible.Content, {
   base: {
     pb: '2',
     overflow: 'hidden',
-    "&[data-state='open']": {
+    _dataOpen: {
       animation: 'expand',
     },
-    "&[data-state='closed']": {
+    _dataClosed: {
       animation: 'collapse',
     },
   },

@@ -1,4 +1,4 @@
-import { ark } from '@ark-ui/react'
+import { Collapsible, ark } from '@ark-ui/react'
 
 import * as S from './styles'
 import { ComponentPropsWithRef } from 'react'
@@ -47,7 +47,7 @@ export const FormControl = ({
         {children}
       </ark.div>
 
-      {(showHelperMessage || errorMessage) && (
+      <Collapsible.Root open={!!showHelperMessage || !!errorMessage}>
         <S.MessageContainer>
           {showHelperMessage && (
             <S.HelperMessage id={`${id}-helper-message`}>
@@ -60,7 +60,7 @@ export const FormControl = ({
             </S.ErrorMessage>
           )}
         </S.MessageContainer>
-      )}
+      </Collapsible.Root>
     </S.Root>
   )
 }
