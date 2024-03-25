@@ -1,5 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+import {
+  ChangeHandler,
+  Controller,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form'
 
 import { Button } from '@/components/primitives/buttons/Button'
 import { FormControl } from '@/components/primitives/forms/FormControl'
@@ -26,6 +31,40 @@ export const Signup = () => {
   })
 
   const onSubmit: SubmitHandler<RegisterFormData> = (data) => console.log(data)
+
+  // TODO - create a custom useForm hook that injects this customRegister
+
+  const customRegister = (registerName: Parameters<typeof register>[0]) => {
+    const { name, onChange: onChangeCallback, ...rest } = register(registerName)
+
+    // using any here because nested types are overly complicated
+    // eslint-disable-next-line
+    function getValueByPath(obj: any, path: string): any {
+      const keys = path.split('.')
+      // eslint-disable-next-line
+      return keys.reduce((accumulator: any, currentKey: string) => {
+        return accumulator && accumulator[currentKey] !== undefined
+          ? accumulator[currentKey]
+          : undefined
+      }, obj)
+    }
+
+    const onChange: ChangeHandler = (e) => {
+      const onChangeReturn = onChangeCallback(e)
+
+      if (getValueByPath(errors, name)) {
+        trigger(name)
+      }
+
+      return onChangeReturn
+    }
+
+    return {
+      name,
+      onChange,
+      ...rest,
+    }
+  }
 
   const password = watch('password.password')
   const isConfirmPasswordDirty = dirtyFields.password?.confirmPassword
@@ -58,7 +97,7 @@ export const Signup = () => {
         <Input
           placeholder="JoeDoe"
           icon={<User size={16} />}
-          {...register('username')}
+          {...customRegister('username')}
         />
       </FormControl>
 
@@ -71,7 +110,7 @@ export const Signup = () => {
         <Input
           placeholder="joedoe@gmail.com"
           icon={<Mail size={16} />}
-          {...register('email')}
+          {...customRegister('email')}
         />
       </FormControl>
 
@@ -81,7 +120,7 @@ export const Signup = () => {
         isRequired
         errorMessage={errors?.password?.password?.message}
       >
-        <PasswordInput {...register('password.password')} />
+        <PasswordInput {...customRegister('password.password')} />
       </FormControl>
 
       <FormControl
@@ -90,7 +129,7 @@ export const Signup = () => {
         isRequired
         errorMessage={errors?.password?.confirmPassword?.message}
       >
-        <PasswordInput {...register('password.confirmPassword')} />
+        <PasswordInput {...customRegister('password.confirmPassword')} />
       </FormControl>
 
       <Controller
