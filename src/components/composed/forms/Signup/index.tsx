@@ -1,10 +1,4 @@
-import { zodResolver } from '@hookform/resolvers/zod'
-import {
-  ChangeHandler,
-  Controller,
-  SubmitHandler,
-  useForm,
-} from 'react-hook-form'
+import { Controller, SubmitHandler } from 'react-hook-form'
 
 import { Button } from '@/components/primitives/buttons/Button'
 import { FormControl } from '@/components/primitives/forms/FormControl'
@@ -15,65 +9,23 @@ import { RegisterFormData, registerFormSchema } from './schema'
 import { PasswordInput } from '@/components/primitives/forms/PasswordInput'
 import { Checkbox } from '@/components/primitives/forms/Checkbox'
 import { Mail, User } from 'lucide-react'
-import { useEffect } from 'react'
+import { useForm } from '@/hooks/useForm'
 
 export const Signup = () => {
   const {
     register,
     handleSubmit,
     control,
-    watch,
-    trigger,
-    formState: { errors, isSubmitting, dirtyFields },
+    formState: { errors, isSubmitting, dirtyFields, touchedFields },
   } = useForm<RegisterFormData>({
-    mode: 'onBlur',
-    resolver: zodResolver(registerFormSchema),
+    schema: registerFormSchema,
   })
 
   const onSubmit: SubmitHandler<RegisterFormData> = (data) => console.log(data)
 
-  // TODO - create a custom useForm hook that injects this customRegister
+  // TODO - create a custom useForm hook that injects this register
 
-  const customRegister = (registerName: Parameters<typeof register>[0]) => {
-    const { name, onChange: onChangeCallback, ...rest } = register(registerName)
-
-    // using any here because nested types are overly complicated
-    // eslint-disable-next-line
-    function getValueByPath(obj: any, path: string): any {
-      const keys = path.split('.')
-      // eslint-disable-next-line
-      return keys.reduce((accumulator: any, currentKey: string) => {
-        return accumulator && accumulator[currentKey] !== undefined
-          ? accumulator[currentKey]
-          : undefined
-      }, obj)
-    }
-
-    const onChange: ChangeHandler = (e) => {
-      const onChangeReturn = onChangeCallback(e)
-
-      if (getValueByPath(errors, name)) {
-        trigger(name)
-      }
-
-      return onChangeReturn
-    }
-
-    return {
-      name,
-      onChange,
-      ...rest,
-    }
-  }
-
-  const password = watch('password.password')
-  const isConfirmPasswordDirty = dirtyFields.password?.confirmPassword
-
-  useEffect(() => {
-    if (isConfirmPasswordDirty) {
-      trigger('password.confirmPassword')
-    }
-  }, [watch, password, trigger, isConfirmPasswordDirty])
+  console.log('AAA', dirtyFields, touchedFields)
 
   return (
     <form
@@ -97,7 +49,7 @@ export const Signup = () => {
         <Input
           placeholder="JoeDoe"
           icon={<User size={16} />}
-          {...customRegister('username')}
+          {...register('username')}
         />
       </FormControl>
 
@@ -110,7 +62,7 @@ export const Signup = () => {
         <Input
           placeholder="joedoe@gmail.com"
           icon={<Mail size={16} />}
-          {...customRegister('email')}
+          {...register('email')}
         />
       </FormControl>
 
@@ -120,7 +72,11 @@ export const Signup = () => {
         isRequired
         errorMessage={errors?.password?.password?.message}
       >
-        <PasswordInput {...customRegister('password.password')} />
+        <PasswordInput
+          {...register('password.password', {
+            deps: ['password.confirmPassword'],
+          })}
+        />
       </FormControl>
 
       <FormControl
@@ -129,7 +85,7 @@ export const Signup = () => {
         isRequired
         errorMessage={errors?.password?.confirmPassword?.message}
       >
-        <PasswordInput {...customRegister('password.confirmPassword')} />
+        <PasswordInput {...register('password.confirmPassword')} />
       </FormControl>
 
       <Controller
