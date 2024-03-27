@@ -31,6 +31,7 @@ export const useForm = <F extends FieldValues>({
     ...rest
   } = useHookForm({
     mode: 'onBlur',
+    reValidateMode: 'onBlur',
     resolver: zodResolver(schema),
     ...props,
   })
@@ -42,11 +43,35 @@ export const useForm = <F extends FieldValues>({
   // to remove the error message as soon as the user corrects the data)
 
   const customRegister: UseFormRegister<F> = (registerName, options) => {
+
+    // I will not send deps to hookFormRegister 
+    // because I want to deal myself with deps to achieve a custom behaviour
+
+    const { deps, ...restOptions } = options || {}
+
     const {
       name,
       onChange: onChangeCallback,
+      onBlur: onBlurCallback,
       ...rest
-    } = hookFormRegister(registerName, options)
+    } = hookFormRegister(registerName, restOptions)
+
+    const triggerDeps = (formsStatePath: 'errors' | 'touchedFields') => {
+      if (deps) {
+        // deps can either be a string or an array of strings
+        if (Array.isArray(deps)) {
+          deps.forEach((dep) => {
+            if (getValueByPath(formState[formsStatePath], dep)) {
+              trigger(dep as FieldPath<F>)
+            }
+          })
+        } else {
+          if (getValueByPath(formState[formsStatePath], deps)) {
+            trigger(deps as FieldPath<F>)
+          }
+        }
+      }
+    }
 
     const onChange: ChangeHandler = (e) => {
       const onChangeReturn = onChangeCallback(e)
@@ -58,29 +83,23 @@ export const useForm = <F extends FieldValues>({
       // deps are fields that depend on this field. If any of them have errors,
       // I want to trigger their revalidation as soon as the user fixes this field
 
-      const deps = options?.deps
-
-      if (deps) {
-        // deps can either be a string or an array of strings
-        if (Array.isArray(deps)) {
-          deps.forEach((dep) => {
-            if (getValueByPath(formState.errors, dep)) {
-              trigger(dep as FieldPath<F>)
-            }
-          })
-        } else {
-          if (getValueByPath(formState.errors, deps)) {
-            trigger(deps as FieldPath<F>)
-          }
-        }
-      }
+      triggerDeps('errors')
 
       return onChangeReturn
+    }
+
+    const onBlur: ChangeHandler = (e) => {
+      const onBlurReturn = onBlurCallback(e)
+
+      triggerDeps('touchedFields')
+
+      return onBlurReturn
     }
 
     return {
       name,
       onChange,
+      onBlur,
       ...rest,
     }
   }
