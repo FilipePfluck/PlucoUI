@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 import { getValueByPath } from '@/utils/getValueByPath'
+import { useCallback } from 'react'
 
 type UseFormProps<F extends FieldValues> = {
   schema: z.ZodSchema
@@ -73,7 +74,7 @@ export const useForm = <F extends FieldValues>({
       }
     }
 
-    const onChange: ChangeHandler = (e) => {
+    const onChange: ChangeHandler = useCallback((e) => {
       const onChangeReturn = onChangeCallback(e)
 
       if (getValueByPath(formState.errors, name)) {
@@ -86,15 +87,15 @@ export const useForm = <F extends FieldValues>({
       triggerDeps('errors')
 
       return onChangeReturn
-    }
+    }, [onChangeCallback, getValueByPath, formState.errors, name, triggerDeps])
 
-    const onBlur: ChangeHandler = (e) => {
+    const onBlur: ChangeHandler = useCallback((e) => {
       const onBlurReturn = onBlurCallback(e)
 
       triggerDeps('touchedFields')
 
       return onBlurReturn
-    }
+    }, [onBlurCallback, triggerDeps])
 
     return {
       name,
