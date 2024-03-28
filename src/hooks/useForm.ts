@@ -43,67 +43,69 @@ export const useForm = <F extends FieldValues>({
   // if the field has any errors, I want to revalidate it on change,
   // to remove the error message as soon as the user corrects the data)
 
-  const customRegister: UseFormRegister<F> = (registerName, options) => {
+  const customRegister: UseFormRegister<F> = useCallback(
+    (registerName, options) => {
+      // I will not send deps to hookFormRegister
+      // because I want to deal myself with deps to achieve a custom behaviour
 
-    // I will not send deps to hookFormRegister 
-    // because I want to deal myself with deps to achieve a custom behaviour
+      const { deps, ...restOptions } = options || {}
 
-    const { deps, ...restOptions } = options || {}
+      const {
+        name,
+        onChange: onChangeCallback,
+        onBlur: onBlurCallback,
+        ...rest
+      } = hookFormRegister(registerName, restOptions)
 
-    const {
-      name,
-      onChange: onChangeCallback,
-      onBlur: onBlurCallback,
-      ...rest
-    } = hookFormRegister(registerName, restOptions)
-
-    const triggerDeps = (formsStatePath: 'errors' | 'touchedFields') => {
-      if (deps) {
-        // deps can either be a string or an array of strings
-        if (Array.isArray(deps)) {
-          deps.forEach((dep) => {
-            if (getValueByPath(formState[formsStatePath], dep)) {
-              trigger(dep as FieldPath<F>)
+      const triggerDeps = (formsStatePath: 'errors' | 'touchedFields') => {
+        if (deps) {
+          // deps can either be a string or an array of strings
+          if (Array.isArray(deps)) {
+            deps.forEach((dep) => {
+              if (getValueByPath(formState[formsStatePath], dep)) {
+                trigger(dep as FieldPath<F>)
+              }
+            })
+          } else {
+            if (getValueByPath(formState[formsStatePath], deps)) {
+              trigger(deps as FieldPath<F>)
             }
-          })
-        } else {
-          if (getValueByPath(formState[formsStatePath], deps)) {
-            trigger(deps as FieldPath<F>)
           }
         }
       }
-    }
 
-    const onChange: ChangeHandler = useCallback((e) => {
-      const onChangeReturn = onChangeCallback(e)
+      const onChange: ChangeHandler = (e) => {
+        const onChangeReturn = onChangeCallback(e)
 
-      if (getValueByPath(formState.errors, name)) {
-        trigger(name)
+        if (getValueByPath(formState.errors, name)) {
+          trigger(name)
+        }
+
+        // deps are fields that depend on this field. If any of them have errors,
+        // I want to trigger their revalidation as soon as the user fixes this field
+
+        triggerDeps('errors')
+
+        return onChangeReturn
       }
 
-      // deps are fields that depend on this field. If any of them have errors,
-      // I want to trigger their revalidation as soon as the user fixes this field
+      const onBlur: ChangeHandler = (e) => {
+        const onBlurReturn = onBlurCallback(e)
 
-      triggerDeps('errors')
+        triggerDeps('touchedFields')
 
-      return onChangeReturn
-    }, [onChangeCallback, getValueByPath, formState.errors, name, triggerDeps])
+        return onBlurReturn
+      }
 
-    const onBlur: ChangeHandler = useCallback((e) => {
-      const onBlurReturn = onBlurCallback(e)
-
-      triggerDeps('touchedFields')
-
-      return onBlurReturn
-    }, [onBlurCallback, triggerDeps])
-
-    return {
-      name,
-      onChange,
-      onBlur,
-      ...rest,
-    }
-  }
+      return {
+        name,
+        onChange,
+        onBlur,
+        ...rest,
+      }
+    },
+    [formState, hookFormRegister, trigger],
+  )
 
   return {
     register: customRegister,
