@@ -1,31 +1,26 @@
-import { Controller, SubmitHandler } from 'react-hook-form'
+import { SubmitHandler } from 'react-hook-form'
 
 import { Button } from '@/components/primitives/buttons/Button'
-import { FormControl } from '@/components/primitives/forms/FormControl'
-import { Input } from '@/components/primitives/forms/Input'
 
 import { css } from '@/styled-system/css'
 import { RegisterFormData, registerFormSchema } from './schema'
-import { PasswordInput } from '@/components/primitives/forms/PasswordInput'
-import { Checkbox } from '@/components/primitives/forms/Checkbox'
 import { Mail, User } from 'lucide-react'
 import { useForm } from '@/hooks/useForm'
+import { FormInput } from '@/components/primitives/forms/Input/FormInput'
+import { FormPasswordInput } from '@/components/primitives/forms/PasswordInput/FormPasswordInput'
+import { FormCheckbox } from '@/components/primitives/forms/Checkbox/FormCheckbox'
 
 export const Signup = () => {
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors, isSubmitting, dirtyFields, touchedFields },
+    formState: { errors, isSubmitting },
   } = useForm<RegisterFormData>({
     schema: registerFormSchema,
   })
 
   const onSubmit: SubmitHandler<RegisterFormData> = (data) => console.log(data)
-
-  // TODO - create a custom useForm hook that injects this register
-
-  console.log('AAA', dirtyFields, touchedFields)
 
   return (
     <form
@@ -40,76 +35,47 @@ export const Signup = () => {
       })}
       onSubmit={handleSubmit(onSubmit)}
     >
-      <FormControl
-        id="username"
+      <FormInput
+        errorMessage={errors.username?.message}
+        {...register('username')}
+        icon={<User size={16} />}
+        placeholder="JoeDoe"
         label="Username"
         isRequired
-        errorMessage={errors?.username?.message}
-      >
-        <Input
-          placeholder="JoeDoe"
-          icon={<User size={16} />}
-          {...register('username')}
-        />
-      </FormControl>
+      />
 
-      <FormControl
-        id="email"
+      <FormInput
+        errorMessage={errors.email?.message}
+        {...register('email')}
+        icon={<Mail size={16} />}
+        placeholder="joedoe@gmail.com"
         label="E-mail"
         isRequired
-        errorMessage={errors?.email?.message}
-      >
-        <Input
-          placeholder="joedoe@gmail.com"
-          icon={<Mail size={16} />}
-          {...register('email')}
-        />
-      </FormControl>
+      />
 
-      <FormControl
-        id="password"
+      <FormPasswordInput
+        errorMessage={errors.password?.password?.message}
+        {...register('password.password', {
+          deps: ['password.confirmPassword'],
+        })}
         label="Password"
         isRequired
-        errorMessage={errors?.password?.password?.message}
-      >
-        <PasswordInput
-          {...register('password.password', {
-            deps: ['password.confirmPassword'],
-          })}
-        />
-      </FormControl>
+      />
 
-      <FormControl
-        id="confirm-password"
+      <FormPasswordInput
+        errorMessage={errors.password?.confirmPassword?.message}
+        {...register('password.confirmPassword')}
         label="Confirm password"
         isRequired
-        errorMessage={errors?.password?.confirmPassword?.message}
-      >
-        <PasswordInput {...register('password.confirmPassword')} />
-      </FormControl>
+      />
 
-      <Controller
-        control={control}
+      <FormCheckbox
+        checkboxLabel="I've read and agree with the terms of use"
+        label="Terms of use"
         name="terms"
-        render={({ field }) => {
-          const { onChange, value, ...rest } = field
-
-          return (
-            <FormControl
-              id="terms"
-              label="Terms of use"
-              isRequired
-              errorMessage={errors?.terms?.message}
-            >
-              <Checkbox
-                label="I've read and agree with the terms of use"
-                onCheckedChange={({ checked }) => onChange(checked)}
-                checked={value}
-                {...rest}
-              />
-            </FormControl>
-          )
-        }}
+        control={control}
+        errorMessage={errors?.terms?.message}
+        isRequired
       />
 
       <Button type="submit" disabled={isSubmitting} full>
