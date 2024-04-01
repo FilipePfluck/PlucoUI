@@ -30,6 +30,11 @@ export const Root = styled('div', {
         borderColor: 'border.danger',
         color: 'fg.danger',
       },
+      success: {
+        bg: 'bg.success.subtle',
+        borderColor: 'border.success',
+        color: 'fg.success',
+      },
     },
   },
   defaultVariants: {

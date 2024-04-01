@@ -29,6 +29,14 @@ export const Root = styled('div', {
           color: 'fg.danger.important',
         },
       },
+      success: {
+        bg: 'bg.success.subtle',
+        borderColor: 'border.success',
+        '& *::selection': {
+          bg: 'bg.success.selection !important',
+          color: 'fg.success.important',
+        },
+      },
     },
   },
   defaultVariants: {
@@ -61,6 +69,9 @@ export const Title = styled('h4', {
       danger: {
         color: 'fg.danger',
       },
+      success: {
+        color: 'fg.success',
+      },
     },
   },
   defaultVariants: {
@@ -91,6 +102,9 @@ export const Icon = styled(ark.div, {
       },
       danger: {
         iconColor: 'var(--colors-fg-danger)',
+      },
+      success: {
+        iconColor: 'var(--colors-fg-success)',
       },
     },
   },

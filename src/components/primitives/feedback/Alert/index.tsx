@@ -5,7 +5,7 @@ type AlertProps = {
   title: string
   description?: string
   icon?: ReactNode
-  intent?: 'primary' | 'secondary' | 'danger'
+  intent?: 'primary' | 'secondary' | 'danger' | 'success'
 }
 
 export const Alert = ({ title, description, icon, intent }: AlertProps) => {

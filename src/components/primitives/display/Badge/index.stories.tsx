@@ -24,11 +24,13 @@ export const AllVariants: Story = {
         <Badge intent="secondary">9+</Badge>
         <Badge intent="primary">9+</Badge>
         <Badge intent="danger">9+</Badge>
+        <Badge intent="success">9+</Badge>
       </HStack>
       <HStack gap="4">
         <Badge intent="secondary">Pluco UI</Badge>
         <Badge intent="primary">Pluco UI</Badge>
         <Badge intent="danger">Pluco UI</Badge>
+        <Badge intent="success">Pluco UI</Badge>
       </HStack>
     </Stack>
   ),

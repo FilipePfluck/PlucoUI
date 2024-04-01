@@ -3,7 +3,7 @@ import * as S from './styles'
 
 type BadgeProps = {
   children?: ReactNode
-  intent?: 'primary' | 'secondary' | 'danger'
+  intent?: 'primary' | 'secondary' | 'danger' | 'success'
 }
 
 export const Badge = ({ children, intent }: BadgeProps) => {

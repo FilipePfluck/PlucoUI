@@ -113,6 +113,48 @@ export const semanticTokens = defineSemanticTokens({
           },
         },
       },
+      success: {
+        subtle: {
+          DEFAULT: {
+            value: {
+              base: '{colors.green.1}',
+              _dark: '{colors.greenDark.1}',
+            },
+          },
+          hovered: {
+            value: {
+              base: '{colors.green.2}',
+              _dark: '{colors.greenDark.2}',
+            },
+          },
+        },
+        selection: {
+          value: {
+            base: '{colors.green.4}',
+            _dark: '{colors.greenDark.4}',
+          },
+        },
+        solid: {
+          DEFAULT: {
+            value: {
+              base: '{colors.green.6}',
+              _dark: '{colors.greenDark.6}',
+            },
+          },
+          hovered: {
+            value: {
+              base: '{colors.green.7}',
+              _dark: '{colors.greenDark.7}',
+            },
+          },
+          disabled: {
+            value: {
+              base: '{colors.green.5}',
+              _dark: '{colors.greenDark.5}',
+            },
+          },
+        },
+      },
     },
     fg: {
       DEFAULT: {
@@ -180,6 +222,26 @@ export const semanticTokens = defineSemanticTokens({
           },
         },
       },
+      success: {
+        subtle: {
+          value: {
+            base: '{colors.green.8}',
+            _dark: '{colors.greenDark.8}',
+          },
+        },
+        DEFAULT: {
+          value: {
+            base: '{colors.green.9}',
+            _dark: '{colors.greenDark.9}',
+          },
+        },
+        important: {
+          value: {
+            base: '{colors.green.10}',
+            _dark: '{colors.greenDark.10}',
+          },
+        },
+      },
     },
     border: {
       DEFAULT: {
@@ -204,6 +266,12 @@ export const semanticTokens = defineSemanticTokens({
         value: {
           base: '{colors.red.3}',
           _dark: '{colors.redDark.3}',
+        },
+      },
+      success: {
+        value: {
+          base: '{colors.green.3}',
+          _dark: '{colors.greenDark.3}',
         },
       },
       ring: {

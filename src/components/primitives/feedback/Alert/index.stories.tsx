@@ -30,6 +30,12 @@ export const Primary: Story = {
         icon={<XCircle />}
         intent="danger"
       />
+      <Alert
+        title="This is a success!"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        icon={<XCircle />}
+        intent="success"
+      />
     </Stack>
   ),
 }
