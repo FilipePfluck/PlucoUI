@@ -9,7 +9,7 @@ export const Viewport = styled(Carousel.Viewport, {
   base: {
     overflowX: 'hidden',
     position: 'relative',
-    rounded: 'md',
+    rounded: 'lg',
   },
 })
 
@@ -38,13 +38,29 @@ export const IndicatorGroup = styled(Carousel.IndicatorGroup, {
 
 export const Indicator = styled(Carousel.Indicator, {
   base: {
-    w: '2.5',
-    h: '2.5',
+    w: '3',
+    h: '3',
     rounded: 'full',
     bg: 'border',
     cursor: 'pointer',
     '&[data-current]': {
       bg: 'fg.important',
     },
+  },
+})
+
+export const PrevTrigger = styled(Carousel.PrevTrigger, {})
+
+export const NextTrigger = styled(Carousel.NextTrigger, {})
+
+export const ItemGroup = styled(Carousel.ItemGroup, {})
+
+export const Item = styled(Carousel.Item, {})
+
+export const Image = styled('img', {
+  base: {
+    h: '398px',
+    w: 'full',
+    objectFit: 'cover',
   },
 })
