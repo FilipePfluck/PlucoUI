@@ -1,8 +1,14 @@
 import { styled } from '@/styled-system/jsx'
 import { ColorPicker } from '@ark-ui/react'
 
+import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
+
 export const Root = styled(ColorPicker.Root, {
-  base: {},
+  base: {
+    display: 'flex',
+    flexDir: 'column',
+    gap: '1.5',
+  },
 })
 
 export const Label = styled(ColorPicker.Label, {
@@ -10,7 +16,11 @@ export const Label = styled(ColorPicker.Label, {
 })
 
 export const Control = styled(ColorPicker.Control, {
-  base: {},
+  base: {
+    display: 'flex',
+    flexDir: 'row',
+    gap: '2',
+  },
 })
 
 export const ChannelInput = styled(ColorPicker.ChannelInput, {
@@ -24,11 +34,19 @@ export const Trigger = styled(ColorPicker.Trigger, {
 })
 
 export const TransparencyGrid = styled(ColorPicker.TransparencyGrid, {
-  base: {},
+  base: {
+    rounded: 'md',
+  },
 })
 
 export const Swatch = styled(ColorPicker.Swatch, {
-  base: {},
+  base: {
+    height: '6',
+    width: '6',
+    rounded: 'md',
+    boxShadow:
+      '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
+  },
 })
 
 export const Positioner = styled(ColorPicker.Positioner, {
@@ -36,31 +54,83 @@ export const Positioner = styled(ColorPicker.Positioner, {
 })
 
 export const Content = styled(ColorPicker.Content, {
-  base: {},
+  base: {
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+    gap: '4',
+    p: '6',
+    maxH: '85vh',
+    // TODO - fix this
+    w: '299px',
+
+    ...menuContentBaseStyles,
+    ...slideAnimation,
+
+    '&[hidden]': {
+      opacity: 0,
+      visibility: 'hidden',
+    },
+
+    transition: '0.2s',
+  },
 })
 
 export const Area = styled(ColorPicker.Area, {
-  base: {},
+  base: {
+    h: '36',
+    rounded: 'md',
+    overflow: 'hidden',
+  },
 })
 
-export const AreaBackground = styled(ColorPicker.AreaThumb, {
-  base: {},
+export const AreaBackground = styled(ColorPicker.AreaBackground, {
+  base: {
+    h: 'full',
+  },
+})
+
+export const AreaThumb = styled(ColorPicker.AreaThumb, {
+  base: {
+    rounded: 'full',
+    h: '2.5',
+    w: '2.5',
+    shadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
+    outline: 'none',
+  },
 })
 
 export const ChannelSlider = styled(ColorPicker.ChannelSlider, {
-  base: {},
+  base: {
+    rounded: 'md',
+  },
 })
 
 export const ChannelSliderTrack = styled(ColorPicker.ChannelSliderTrack, {
-  base: {},
+  base: {
+    h: '3',
+    rounded: 'md',
+  },
 })
 
 export const ChannelSliderThumb = styled(ColorPicker.ChannelSliderThumb, {
-  base: {},
+  base: {
+    rounded: 'full',
+    h: '2.5',
+    w: '2.5',
+    shadow: 'white 0px 0px 0px 2px, black 0px 0px 2px 1px',
+    transform: 'translate(-50%, -50%)',
+    outline: 'none',
+  },
 })
 
 export const SwatchGroup = styled(ColorPicker.SwatchGroup, {
-  base: {},
+  base: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(7, 1fr)',
+    gap: '2',
+    bg: 'bg.card',
+  },
 })
 
 export const SwatchTrigger = styled(ColorPicker.SwatchTrigger, {
