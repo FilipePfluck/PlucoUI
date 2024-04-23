@@ -276,8 +276,8 @@ export const semanticTokens = defineSemanticTokens({
       },
       ring: {
         value: {
-          base: '{colors.violet.9}',
-          _dark: '{colors.violetDark.9}',
+          base: '{colors.violet.6}',
+          _dark: '{colors.violetDark.6}',
         },
       },
       focused: {
