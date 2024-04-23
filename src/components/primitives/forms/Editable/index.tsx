@@ -1,6 +1,5 @@
 import { Check, Pencil, X } from 'lucide-react'
 import { IconButton } from '../../buttons/IconButton'
-import { Input } from '../Input'
 import * as S from './styles'
 import { EditableRootProps } from '@ark-ui/react'
 
