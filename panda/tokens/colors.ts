@@ -63,7 +63,7 @@ export const colors = {
     1: { value: '#261F38' },
     2: { value: '#37295B' },
     3: { value: '#4D3C86' },
-    4: { value: '#281F47' },
+    4: { value: '#382B63' },
     5: { value: '#39315A' },
     6: { value: '#745CD6' },
     7: { value: '#654ACF' },
