@@ -1,4 +1,4 @@
-import { Trash2Icon } from 'lucide-react'
+import { Trash2Icon, Upload } from 'lucide-react'
 import * as S from './styles'
 import { IconButton } from '../../buttons/IconButton'
 import { Button } from '../../buttons/Button'
@@ -13,9 +13,10 @@ export const FileUpload = ({ ...props }: FileUploadRootProps) => {
   return (
     <S.Root {...props}>
       <S.Dropzone>
-        <S.Label>Drop your files here</S.Label>
+        <Upload size={96} />
+        <S.Label>Drop your files here or</S.Label>
         <S.Trigger asChild>
-          <Button>Open Dialog</Button>
+          <Button>Search your files</Button>
         </S.Trigger>
       </S.Dropzone>
       <S.ItemGroup>
@@ -28,7 +29,7 @@ export const FileUpload = ({ ...props }: FileUploadRootProps) => {
               <S.ItemName />
               <S.ItemSizeText />
               <S.ItemDeleteTrigger asChild>
-                <IconButton aria-label="Delete file" intent="link">
+                <IconButton aria-label="Delete file" intent="ghost">
                   <Trash2Icon />
                 </IconButton>
               </S.ItemDeleteTrigger>

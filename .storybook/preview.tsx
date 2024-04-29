@@ -5,7 +5,6 @@ import { Inter, Nunito } from 'next/font/google'
 import { css, cx } from '../styled-system/css'
 import '../src/app/globals.css'
 
-import { Switch } from '../src/components/primitives/forms/Switch'
 import { useEffect } from 'react';
 
 const inter = Inter({
