@@ -2,13 +2,18 @@ import { Trash2Icon } from 'lucide-react'
 import * as S from './styles'
 import { IconButton } from '../../buttons/IconButton'
 import { Button } from '../../buttons/Button'
-import { Label } from '../Label'
+import { FileUploadRootProps } from '@ark-ui/react'
+import { SystemStyleObject } from '@pandacss/dev'
 
-export const FileUpload = () => {
+export type FileUploadProps = FileUploadRootProps & {
+  css?: SystemStyleObject
+}
+
+export const FileUpload = ({ ...props }: FileUploadRootProps) => {
   return (
-    <S.Root>
+    <S.Root {...props}>
       <S.Dropzone>
-        <Label>Drop your files here</Label>
+        <S.Label>Drop your files here</S.Label>
         <S.Trigger asChild>
           <Button>Open Dialog</Button>
         </S.Trigger>

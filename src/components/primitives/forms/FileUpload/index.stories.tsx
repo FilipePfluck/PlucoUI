@@ -12,3 +12,9 @@ type Story = StoryObj<typeof FileUpload>
 export const FileUploadStory: Story = {
   args: {},
 }
+
+export const MultipleFileUploadStory: Story = {
+  args: {
+    maxFiles: 4,
+  },
+}
