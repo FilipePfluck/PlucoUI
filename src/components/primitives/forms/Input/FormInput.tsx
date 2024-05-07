@@ -21,8 +21,6 @@ const FormInputComponent = (
   }: FormInputProps,
   ref: ForwardedRef<HTMLInputElement>,
 ) => {
-  console.log({ props })
-
   return (
     <FormControl
       id={name}

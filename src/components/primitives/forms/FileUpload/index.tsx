@@ -1,9 +1,12 @@
+import { FileUploadRootProps } from '@ark-ui/react'
 import { Trash2Icon, Upload } from 'lucide-react'
-import * as S from './styles'
+
+import { SystemStyleObject } from '@pandacss/dev'
+
 import { IconButton } from '../../buttons/IconButton'
 import { Button } from '../../buttons/Button'
-import { FileUploadRootProps } from '@ark-ui/react'
-import { SystemStyleObject } from '@pandacss/dev'
+
+import S from './styles'
 
 export type FileUploadProps = FileUploadRootProps & {
   css?: SystemStyleObject
