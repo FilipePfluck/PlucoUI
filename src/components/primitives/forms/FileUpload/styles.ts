@@ -3,17 +3,20 @@ import { ElementType } from 'react'
 
 import { cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
-import { RecipeRuntimeFn, StyledComponent } from '@/styled-system/types'
+import {
+  RecipeRuntimeFn,
+  RecipeVariantProps,
+  StyledComponent,
+} from '@/styled-system/types'
 import { RecipeVariantRecord } from '@pandacss/dev'
 
-const Pluco = <T extends Record<string, ElementType>>(
+type PlucoConfig<T> = Record<keyof T, RecipeRuntimeFn<RecipeVariantRecord>>
+
+const Pluco = <T extends Record<string, ElementType>, C extends PlucoConfig<T>>(
   ArkComponent: T,
-  config: Record<keyof T, RecipeRuntimeFn<RecipeVariantRecord>>,
+  config: C,
 ): {
-  [P in keyof T]: StyledComponent<
-    T[P]
-    // I want to add the correct variants type here
-  >
+  [P in keyof T]: StyledComponent<T[P], RecipeVariantProps<(typeof config)[P]>>
 } => {
   // eslint-disable-next-line
   const result = {} as { [P in keyof T]: StyledComponent<T[P]> }
@@ -36,9 +39,9 @@ export default Pluco(FileUpload, {
       width: '100%',
     },
     variants: {
-      ligma: {
-        sugma: {},
-        amogus: {},
+      variant: {
+        firstVariant: {},
+        secondVariant: {},
       },
     },
   }),
