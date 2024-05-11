@@ -19,7 +19,7 @@ const Pluco = <T extends Record<string, ElementType>, C extends PlucoConfig<T>>(
   [P in keyof T]: StyledComponent<T[P], RecipeVariantProps<(typeof config)[P]>>
 } => {
   // eslint-disable-next-line
-  const result = {} as { [P in keyof T]: StyledComponent<T[P]> }
+  const result = {} as { [P in keyof T]: StyledComponent<T[P], RecipeVariantProps<(typeof config)[P]>> }
 
   Object.keys(ArkComponent).forEach((key) => {
     Object.assign(result, {
