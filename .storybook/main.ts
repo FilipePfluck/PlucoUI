@@ -34,6 +34,8 @@ const config: StorybookConfig = {
       "@/panda": path.resolve(__dirname, "../panda"),
       "@/components": path.resolve(__dirname, "../src/components"),
       "@/styled-system": path.resolve(__dirname, "../styled-system"),
+      '@/pluco': path.resolve(__dirname, "../src/pluco.ts"),
+      "@/": path.resolve(__dirname, "../src")
     };
 
     return config;
