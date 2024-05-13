@@ -1,34 +1,8 @@
 import { FileUpload } from '@ark-ui/react'
-import { ElementType } from 'react'
 
 import { cva } from '@/styled-system/css'
-import { styled } from '@/styled-system/jsx'
-import {
-  RecipeRuntimeFn,
-  RecipeVariantProps,
-  StyledComponent,
-} from '@/styled-system/types'
-import { RecipeVariantRecord } from '@pandacss/dev'
 
-type PlucoConfig<T> = Record<keyof T, RecipeRuntimeFn<RecipeVariantRecord>>
-
-const Pluco = <T extends Record<string, ElementType>, C extends PlucoConfig<T>>(
-  ArkComponent: T,
-  config: C,
-): {
-  [P in keyof T]: StyledComponent<T[P], RecipeVariantProps<(typeof config)[P]>>
-} => {
-  // eslint-disable-next-line
-  const result = {} as { [P in keyof T]: StyledComponent<T[P], RecipeVariantProps<(typeof config)[P]>> }
-
-  Object.keys(ArkComponent).forEach((key) => {
-    Object.assign(result, {
-      [key]: styled(ArkComponent[key], config[key as keyof T]),
-    })
-  })
-
-  return result
-}
+import { Pluco } from '@/pluco'
 
 export default Pluco(FileUpload, {
   Root: cva({
@@ -125,5 +99,4 @@ export default Pluco(FileUpload, {
       gridArea: 'delete',
     },
   }),
-  Trigger: cva({}),
 })
