@@ -15,7 +15,7 @@ type ArkComponent = Record<string, ElementType>
 type PlucoReturn<A extends ArkComponent, C extends PlucoConfig<A>> = {
   [P in keyof A]: C[P] extends RecipeRuntimeFn<RecipeVariantRecord>
     ? StyledComponent<A[P], RecipeVariantProps<C[P]>>
-    : A[P]
+    : StyledComponent<A[P]>
 }
 
 export const Pluco = <A extends ArkComponent, C extends PlucoConfig<A>>(
@@ -32,7 +32,7 @@ export const Pluco = <A extends ArkComponent, C extends PlucoConfig<A>>(
       })
     } else {
       Object.assign(result, {
-        [key]: ArkComponent[key],
+        [key]: styled(ArkComponent[key]),
       })
     }
   })

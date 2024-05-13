@@ -12,12 +12,6 @@ export default Pluco(FileUpload, {
       gap: '4',
       width: '100%',
     },
-    variants: {
-      variant: {
-        firstVariant: {},
-        secondVariant: {},
-      },
-    },
   }),
   Dropzone: cva({
     base: {
