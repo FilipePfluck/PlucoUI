@@ -47,25 +47,25 @@ export const buttonBaseStyles = css.raw({
 })
 
 export const primaryButtonBaseStyles = css.raw({
-  '--btn-bg': 'colors.bg.brand.solid',
-  '--btn-bg-hover': 'colors.bg.brand.solid.hovered',
-  '--btn-bg-disabled': 'colors.bg.brand.solid.disabled',
+  '--btn-bg': 'colors.bg.brand',
+  '--btn-bg-hover': 'colors.bg.brand.hovered',
+  '--btn-bg-disabled': 'colors.bg.brand.disabled',
 
   '--btn-color': 'white',
-  '--btn-color-muted': 'colors.fg.muted',
+  '--btn-color-muted': 'colors.fg.disabled',
 
-  '--btn-border': 'colors.bg.brand.solid',
-  '--btn-border-hover': 'colors.bg.brand.solid.hovered',
-  '--btn-border-disabled': 'colors.bg.brand.solid.disabled',
+  '--btn-border': 'colors.bg.brand',
+  '--btn-border-hover': 'colors.bg.brand.hovered',
+  '--btn-border-disabled': 'colors.bg.brand.disabled',
 })
 
 export const secondaryButtonBaseStyles = css.raw({
-  '--btn-bg': 'colors.bg.card',
-  '--btn-bg-hover': 'colors.bg.card.hovered',
+  '--btn-bg': 'colors.bg.surface',
+  '--btn-bg-hover': 'colors.bg.surface.hovered',
   '--btn-bg-disabled': 'colors.bg.disabled',
 
   '--btn-color': 'colors.fg',
-  '--btn-color-muted': 'colors.fg.muted',
+  '--btn-color-muted': 'colors.fg.disabled',
 
   '--btn-border': 'colors.border',
   '--btn-border-hover': 'colors.border',
@@ -73,28 +73,28 @@ export const secondaryButtonBaseStyles = css.raw({
 })
 
 export const dangerButtonBaseStyles = css.raw({
-  '--btn-bg': 'colors.bg.danger.solid',
-  '--btn-bg-hover': 'colors.bg.danger.solid.hovered',
-  '--btn-bg-disabled': 'colors.bg.danger.solid.disabled',
+  '--btn-bg': 'colors.bg.danger',
+  '--btn-bg-hover': 'colors.bg.danger.hovered',
+  '--btn-bg-disabled': 'colors.bg.danger.disabled',
 
   '--btn-color': 'white',
-  '--btn-color-muted': 'colors.fg.muted',
+  '--btn-color-muted': 'colors.fg.disabled',
 
-  '--btn-border': 'colors.bg.danger.solid',
-  '--btn-border-hover': 'colors.bg.danger.solid.hovered',
-  '--btn-border-disabled': 'colors.bg.danger.solid.disabled',
+  '--btn-border': 'colors.bg.danger',
+  '--btn-border-hover': 'colors.bg.danger.hovered',
+  '--btn-border-disabled': 'colors.bg.danger.disabled',
 })
 
 export const ghostButtonBaseStyles = css.raw({
   '--btn-bg': 'transparent',
-  '--btn-bg-hover': 'colors.bg.card.hovered',
+  '--btn-bg-hover': 'colors.bg.surface.hovered',
   '--btn-bg-disabled': 'transparent',
 
   '--btn-color': 'colors.fg',
-  '--btn-color-muted': 'colors.fg.muted',
+  '--btn-color-muted': 'colors.fg.disabled',
 
   '--btn-border': 'transparent',
-  '--btn-border-hover': 'colors.bg.card.hovered',
+  '--btn-border-hover': 'colors.bg.surface.hovered',
   '--btn-border-disabled': 'transparent',
 })
 
@@ -104,7 +104,7 @@ export const linkButtonBaseStyles = css.raw({
   '--btn-bg-disabled': 'transparent',
 
   '--btn-color': 'colors.fg',
-  '--btn-color-muted': 'colors.fg.muted',
+  '--btn-color-muted': 'colors.fg.disabled',
 
   '--btn-border': 'transparent',
   '--btn-border-hover': 'transparent',

@@ -20,7 +20,7 @@ export const Content = styled(Dialog.Content, {
     display: 'flex',
     flexDirection: 'column',
     gap: '4',
-    backgroundColor: 'bg.card',
+    backgroundColor: 'bg.surface',
     boxShadow: 'lg',
     position: 'fixed',
     p: '6',

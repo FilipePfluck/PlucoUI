@@ -27,7 +27,7 @@ export const Content = styled(HoverCard.Content, {
 
 export const Arrow = styled(HoverCard.Arrow, {
   base: {
-    '--arrow-background': 'colors.bg.card',
+    '--arrow-background': 'colors.bg.surface',
     '--arrow-size': '10px',
   },
 })

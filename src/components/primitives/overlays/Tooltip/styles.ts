@@ -10,7 +10,7 @@ export const Content = styled(Tooltip.Content, {
     py: '2',
     fontSize: 'sm',
     color: 'fg',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
     userSelect: 'none',
 
@@ -20,7 +20,7 @@ export const Content = styled(Tooltip.Content, {
 
 export const Arrow = styled(Tooltip.Arrow, {
   base: {
-    '--arrow-background': 'colors.bg.card',
+    '--arrow-background': 'colors.bg.surface',
     '--arrow-size': '10px',
   },
 })

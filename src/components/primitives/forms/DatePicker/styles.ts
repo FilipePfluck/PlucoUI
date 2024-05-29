@@ -17,7 +17,7 @@ export const Control = styled(DatePicker.Control, {
 export const Input = styled(DatePicker.Input, {
   base: {
     maxW: 'full',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
     transition: '0.2s',
     outline: 'none',
@@ -30,7 +30,7 @@ export const Input = styled(DatePicker.Input, {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focusWithin: 'border.focused',
+      _focusWithin: 'border.brand',
       _invalidWithin: 'border.danger',
     },
     _disabled: {
@@ -188,11 +188,11 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
     p: '1',
     rounded: 'sm',
     _hover: {
-      bg: 'bg.card.hovered',
+      bg: 'bg.surface.hovered',
       boxShadow: 'sm',
     },
     '&[data-in-range]:not([data-selected])': {
-      bg: 'bg.brand.subtle.hovered',
+      bg: 'bg.brand.subtle',
       color: 'fg.brand.important',
     },
     '&[data-today]': {
@@ -210,10 +210,10 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
       },
     },
     '&[data-selected]': {
-      bg: 'bg.brand.solid',
+      bg: 'bg.brand',
       color: 'white',
       _hover: {
-        bg: 'bg.brand.solid.hovered',
+        bg: 'bg.brand.hovered',
       },
       '&[data-today]': {
         _before: {
@@ -222,7 +222,7 @@ export const TableCellTrigger = styled(DatePicker.TableCellTrigger, {
       },
     },
     _disabled: {
-      color: 'fg.muted',
+      color: 'fg.disabled',
       bg: 'transparent !important',
       cursor: 'not-allowed',
     },

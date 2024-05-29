@@ -19,7 +19,7 @@ export const FruitCard = styled('div', {
     fontSize: '72px',
     p: '8',
     rounded: 'xl',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'lg',
     minH: '32',
     display: 'flex',

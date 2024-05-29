@@ -129,7 +129,7 @@ export const SwatchGroup = styled(ColorPicker.SwatchGroup, {
     display: 'grid',
     gridTemplateColumns: 'repeat(7, 1fr)',
     gap: '2',
-    bg: 'bg.card',
+    bg: 'bg.surface',
   },
 })
 

@@ -12,7 +12,7 @@ export const Root = styled(Checkbox.Root, {
 export const Control = styled(Checkbox.Control, {
   base: {
     cursor: 'pointer',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     h: '6',
     w: '6',
     rounded: 'md',
@@ -30,7 +30,7 @@ export const Control = styled(Checkbox.Control, {
       h: '4',
       w: '4',
       rounded: 'sm',
-      bg: 'border.focused',
+      bg: 'border.brand',
       transition: '0.2s',
       position: 'absolute',
       center: 'absolute',
@@ -40,7 +40,7 @@ export const Control = styled(Checkbox.Control, {
     },
 
     _checked: {
-      borderColor: 'border.focused',
+      borderColor: 'border.brand',
 
       _after: {
         opacity: 1,
@@ -49,10 +49,10 @@ export const Control = styled(Checkbox.Control, {
     },
 
     '[aria-invalid="true"] &': {
-      borderColor: 'border.invalid',
+      borderColor: 'border.danger',
 
       _after: {
-        bg: 'bg.danger.solid',
+        bg: 'bg.danger',
       },
     },
 
@@ -74,7 +74,7 @@ export const Control = styled(Checkbox.Control, {
 
 export const Label = styled(Checkbox.Label, {
   base: {
-    color: { base: 'fg.important', _disabled: 'fg.muted' },
+    color: { base: 'fg.important', _disabled: 'fg.disabled' },
     textStyle: 'bodySm',
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },

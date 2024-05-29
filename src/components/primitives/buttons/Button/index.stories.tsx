@@ -55,7 +55,7 @@ export const ButtonStory: Story = {
 export const AllVariants: Story = {
   render: () => {
     return (
-      <Flex bg="bg.card" p="8" gap="4" rounded="md" direction="column">
+      <Flex bg="bg.surface" p="8" gap="4" rounded="md" direction="column">
         <ButtonRow />
         <ButtonRow disabled />
 

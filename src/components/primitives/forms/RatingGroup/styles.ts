@@ -20,12 +20,14 @@ export const Control = styled(RatingGroup.Control, {
 
 export const Item = styled(RatingGroup.Item, {
   base: {
+    outlineColor: 'border.ring',
     transition: '0.2s',
     '&:not([data-readonly])': {
       cursor: 'pointer',
     },
     '&[data-highlighted="true"]': {
-      color: 'bg.brand.solid',
+      color: 'bg.brand',
+      iconColor: 'bg.brand',
     },
   },
 })

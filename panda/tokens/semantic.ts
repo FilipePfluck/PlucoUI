@@ -24,15 +24,15 @@ export const semanticTokens = defineSemanticTokens({
         },
         disabled: {
           value: {
-            base: '{colors.mauve.2}/40',
-            _dark: '{colors.mauveDark.2}/40',
+            base: '{colors.mauve.2/40}',
+            _dark: '{colors.mauveDark.2/40}',
           },
         },
       },
       subtle: {
         value: {
-          base: '{colors.mauve.6}/6',
-          _dark: '{colors.mauveDark.6}/6',
+          base: '{colors.mauve.6/6}',
+          _dark: '{colors.mauveDark.6/6}',
         },
       },
       danger: {
@@ -50,20 +50,20 @@ export const semanticTokens = defineSemanticTokens({
         },
         disabled: {
           value: {
-            base: '{colors.red.5}/40',
-            _dark: '{colors.redDark.5}/40',
+            base: '{colors.red.5/40}',
+            _dark: '{colors.redDark.5/40}',
           },
         },
         userSelect: {
           value: {
-            base: '{colors.red.5}/20',
-            _dark: '{colors.redDark.5}/20',
+            base: '{colors.red.5/20}',
+            _dark: '{colors.redDark.5/20}',
           },
         },
         subtle: {
           value: {
-            base: '{colors.red.7}/6',
-            _dark: '{colors.redDark.7}/6',
+            base: '{colors.red.7/6}',
+            _dark: '{colors.redDark.7/6}',
           },
         },
       },
@@ -82,20 +82,20 @@ export const semanticTokens = defineSemanticTokens({
         },
         disabled: {
           value: {
-            base: '{colors.green.5}/40',
-            _dark: '{colors.greenDark.5}/40',
+            base: '{colors.green.5/40}',
+            _dark: '{colors.greenDark.5/40}',
           },
         },
         userSelect: {
           value: {
-            base: '{colors.green.5}/20',
-            _dark: '{colors.greenDark.5}/20',
+            base: '{colors.green.5/20}',
+            _dark: '{colors.greenDark.5/20}',
           },
         },
         subtle: {
           value: {
-            base: '{colors.green.7}/6',
-            _dark: '{colors.greenDark.7}/6',
+            base: '{colors.green.7/6}',
+            _dark: '{colors.greenDark.7/6}',
           },
         },
       },
@@ -114,20 +114,20 @@ export const semanticTokens = defineSemanticTokens({
         },
         disabled: {
           value: {
-            base: '{colors.violet.5}/40',
-            _dark: '{colors.violetDark.5}/40',
+            base: '{colors.violet.5/40}',
+            _dark: '{colors.violetDark.5/40}',
           },
         },
         userSelect: {
           value: {
-            base: '{colors.violet.5}/20',
-            _dark: '{colors.violetDark.5}/20',
+            base: '{colors.violet.5/20}',
+            _dark: '{colors.violetDark.5/20}',
           },
         },
         subtle: {
           value: {
-            base: '{colors.violet.7}/6',
-            _dark: '{colors.violetDark.7}/6',
+            base: '{colors.violet.7/6}',
+            _dark: '{colors.violetDark.7/6}',
           },
         },
       },
@@ -153,8 +153,8 @@ export const semanticTokens = defineSemanticTokens({
       },
       disabled: {
         value: {
-          base: '{colors.mauve.7}/40',
-          _dark: '{colors.mauveDark.7}/50',
+          base: '{colors.mauve.7/40}',
+          _dark: '{colors.mauveDark.7/50}',
         },
       },
       danger: {
@@ -183,19 +183,25 @@ export const semanticTokens = defineSemanticTokens({
           _dark: '{colors.mauveDark.4}',
         },
       },
+      ring: {
+        value: {
+          base: '{colors.violet.5/60}',
+          _dark: '{colors.violetDark.5/60}',
+        },
+      },
       subtle: {
         value: {
-          base: '{colors.mauve.7}/12',
-          _dark: '{colors.mauveDark.7}/12',
+          base: '{colors.mauve.7/15}',
+          _dark: '{colors.mauveDark.7/15}',
         },
       },
       disabled: {
         value: {
-          base: '{colors.mauve.4}/40',
-          _dark: '{colors.mauveDark.4}/40',
+          base: '{colors.mauve.4/40}',
+          _dark: '{colors.mauveDark.4/40}',
         },
       },
-      dander: {
+      danger: {
         DEFAULT: {
           value: {
             base: '{colors.red.5}',
@@ -204,8 +210,8 @@ export const semanticTokens = defineSemanticTokens({
         },
         subtle: {
           value: {
-            base: '{colors.red.7}/12',
-            _dark: '{colors.redDark.7}/12',
+            base: '{colors.red.7/15}',
+            _dark: '{colors.redDark.7/15}',
           },
         },
       },
@@ -218,8 +224,8 @@ export const semanticTokens = defineSemanticTokens({
         },
         subtle: {
           value: {
-            base: '{colors.green.7}/12',
-            _dark: '{colors.greenDark.7}/12',
+            base: '{colors.green.7/12}',
+            _dark: '{colors.greenDark.7/12}',
           },
         },
       },
@@ -232,8 +238,8 @@ export const semanticTokens = defineSemanticTokens({
         },
         subtle: {
           value: {
-            base: '{colors.violet.7}/12',
-            _dark: '{colors.violetDark.7}/12',
+            base: '{colors.violet.7/15}',
+            _dark: '{colors.violetDark.7/15}',
           },
         },
       },

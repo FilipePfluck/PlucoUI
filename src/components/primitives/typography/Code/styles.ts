@@ -5,7 +5,7 @@ export const Container = styled('code', {
     display: 'inline-flex',
     align: 'center',
     p: '1',
-    bg: 'bg.card.hovered',
+    bg: 'bg.surface.hovered',
     color: 'fg',
     borderColor: 'border',
     borderWidth: '1px',

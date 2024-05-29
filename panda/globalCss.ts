@@ -11,6 +11,6 @@ export const globalCss = defineGlobalStyles({
   },
   '*::selection': {
     color: 'fg.brand.important',
-    bg: 'bg.brand.selection',
+    bg: 'bg.brand.userSelect',
   },
 })

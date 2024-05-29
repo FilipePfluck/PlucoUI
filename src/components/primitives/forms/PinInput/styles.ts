@@ -28,7 +28,7 @@ export const Input = styled(PinInput.Input, {
     h: '10',
     w: '9',
     p: '3',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
     rounded: 'md',
     transition: '0.2s',
@@ -47,17 +47,17 @@ export const Input = styled(PinInput.Input, {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focus: 'border.focused',
+      _focus: 'border.brand',
     },
     '[aria-invalid]  &': { borderColor: 'border.danger' },
     _disabled: {
       bg: 'bg.disabled',
       borderColor: 'border.disabled',
       cursor: 'not-allowed',
-      color: 'fg.muted',
+      color: 'fg.disabled',
 
       _placeholder: {
-        color: 'fg.muted',
+        color: 'fg.disabled',
       },
     },
   },

@@ -12,6 +12,7 @@ export const utilities = {
             outlineWidth: value,
             outlineStyle: 'solid',
             outlineColor: 'var(--colors-border-ring)',
+            outlineOffset: '2px',
           },
         }
       },

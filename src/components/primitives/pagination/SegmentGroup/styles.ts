@@ -34,7 +34,7 @@ export const Root = styled(SegmentGroup.Root, {
 
 export const Indicator = styled(SegmentGroup.Indicator, {
   base: {
-    bg: 'bg.brand.solid',
+    bg: 'bg.brand',
     _horizontal: {
       height: '2px',
       width: 'var(--width)',
@@ -69,10 +69,10 @@ export const Item = styled(SegmentGroup.Item, {
     },
 
     _disabled: {
-      color: 'fg.muted',
+      color: 'fg.disabled',
       cursor: 'not-allowed',
       _hover: {
-        color: 'fg.muted',
+        color: 'fg.disabled',
       },
     },
 

@@ -32,11 +32,11 @@ export const Input = styled(Combobox.Input, {
 
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderColor: { base: 'border', _focus: 'border.focused' },
+    borderColor: { base: 'border', _focus: 'border.brand' },
     borderRadius: 'md',
     cursor: 'pointer',
 
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
 
     outline: 0,
@@ -100,7 +100,7 @@ export const Positioner = styled(Combobox.Positioner, {})
 export const Content = styled(Combobox.Content, {
   base: {
     outline: 0,
-    bg: 'bg.card',
+    bg: 'bg.surface',
     rounded: 'md',
     shadow: 'lg',
     display: 'flex',
@@ -171,22 +171,22 @@ export const Item = styled(Combobox.Item, {
       color: 'fg.important',
     },
     _hover: {
-      background: 'bg.brand.solid',
+      background: 'bg.brand',
       color: 'white',
       iconColor: 'white',
     },
     _highlighted: {
-      background: 'bg.brand.solid',
+      background: 'bg.brand',
       color: 'white',
       iconColor: 'white',
     },
     _disabled: {
       bg: 'transparent',
-      color: 'fg.muted',
+      color: 'fg.disabled',
       cursor: 'not-allowed',
       _hover: {
         background: 'transparent',
-        color: 'fg.muted',
+        color: 'fg.disabled',
       },
     },
   },

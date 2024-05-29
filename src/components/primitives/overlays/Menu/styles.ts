@@ -8,16 +8,16 @@ const menuItemBaseStyles = css.raw({
   rounded: 'sm',
   cursor: 'pointer',
   _highlighted: {
-    bg: 'bg.brand.solid',
+    bg: 'bg.brand',
     color: 'white',
     iconColor: 'white',
   },
   '&[aria-expanded="true"]': {
-    bg: 'bg.card.hovered',
+    bg: 'bg.surface.hovered',
     color: 'fg.important',
   },
   _hover: {
-    bg: 'bg.brand.solid',
+    bg: 'bg.brand',
     color: 'white',
     iconColor: 'white',
   },
@@ -40,7 +40,7 @@ export const Positioner = styled(Menu.Positioner, {})
 
 export const Content = styled(Menu.Content, {
   base: {
-    bg: 'bg.card',
+    bg: 'bg.surface',
     px: '2',
     py: '4',
     rounded: 'md',
@@ -127,7 +127,7 @@ export const RightSlot = styled('div', {
 
 export const Arrow = styled(Menu.Arrow, {
   base: {
-    '--arrow-background': 'colors.bg.card',
+    '--arrow-background': 'colors.bg.surface',
     '--arrow-size': '10px',
   },
 })

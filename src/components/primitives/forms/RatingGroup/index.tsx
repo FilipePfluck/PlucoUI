@@ -24,8 +24,8 @@ export const RatingGroup = ({
                 if (isHighlighted)
                   return (
                     <Star
-                      fill="var(--colors-border-focused)"
-                      color="var(--colors-border-focused)"
+                      fill="var(--colors-border-brand)"
+                      color="var(--colors-border-brand)"
                     />
                   )
                 return (

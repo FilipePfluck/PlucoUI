@@ -34,7 +34,7 @@ export const Item = styled(Accordion.Item, {
 export const Trigger = styled(Accordion.ItemTrigger, {
   base: {
     cursor: 'pointer',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     p: '4',
     w: 'full',
     h: '10',
@@ -49,7 +49,7 @@ export const Trigger = styled(Accordion.ItemTrigger, {
     outline: 'none',
 
     _disabled: {
-      color: 'fg.muted',
+      color: 'fg.disabled',
       cursor: 'not-allowed',
     },
   },
@@ -58,7 +58,7 @@ export const Trigger = styled(Accordion.ItemTrigger, {
 export const Content = styled(Accordion.ItemContent, {
   base: {
     color: 'fg',
-    bg: 'bg.card.hovered',
+    bg: 'bg.surface.hovered',
     overflow: 'hidden',
     p: '4',
 

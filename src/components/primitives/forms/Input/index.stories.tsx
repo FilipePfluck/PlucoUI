@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Input>
 export const All: Story = {
   render: () => (
     <Box
-      bg="bg.card"
+      bg="bg.surface"
       p="4"
       rounded="md"
       shadow="md"
@@ -47,7 +47,7 @@ export const All: Story = {
 
 export const Default: Story = {
   render: () => (
-    <Box bg="bg.card" p="4" rounded="md" shadow="md">
+    <Box bg="bg.surface" p="4" rounded="md" shadow="md">
       <Input placeholder="This is an input" />
     </Box>
   ),
@@ -61,7 +61,7 @@ export const Disabled: Story = {
 
 export const Error: Story = {
   render: () => (
-    <Box bg="bg.card" p="4" rounded="md" shadow="md">
+    <Box bg="bg.surface" p="4" rounded="md" shadow="md">
       <Input
         placeholder="I have an error"
         aria-invalid={true}

@@ -15,15 +15,15 @@ export const Root = styled('div', {
     intent: {
       primary: {
         bg: 'bg.brand.subtle',
-        borderColor: 'border.brand',
+        borderColor: 'border.brand.subtle',
       },
       secondary: {
-        bg: 'bg.card',
-        borderColor: 'border',
+        bg: 'bg.surface',
+        borderColor: 'border.subtle',
       },
       danger: {
         bg: 'bg.danger.subtle',
-        borderColor: 'border.danger',
+        borderColor: 'border.danger.subtle',
         '& *::selection': {
           bg: 'bg.danger.selection !important',
           color: 'fg.danger.important',
@@ -31,7 +31,7 @@ export const Root = styled('div', {
       },
       success: {
         bg: 'bg.success.subtle',
-        borderColor: 'border.success',
+        borderColor: 'border.success.subtle',
         '& *::selection': {
           bg: 'bg.success.selection !important',
           color: 'fg.success.important',

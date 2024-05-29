@@ -5,7 +5,7 @@ export const InputIconButton = styled(IconButton, {
   base: {
     color: 'fg.subtle',
     '.group:has(:disabled) &': {
-      color: 'fg.muted',
+      color: 'fg.disabled',
     },
     '.group:has([aria-invalid="true"]) &': {
       color: 'border.danger',

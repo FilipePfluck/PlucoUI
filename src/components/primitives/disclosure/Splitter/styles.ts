@@ -12,7 +12,7 @@ export const Panel = styled(Splitter.Panel, {
   base: {
     borderWidth: '1px',
     borderColor: 'border',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     rounded: 'md',
     color: 'fg',
     display: 'flex',

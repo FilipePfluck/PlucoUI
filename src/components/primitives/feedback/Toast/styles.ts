@@ -3,7 +3,7 @@ import { Toast } from '@ark-ui/react'
 
 export const Root = styled(Toast.Root, {
   base: {
-    bg: 'bg.card',
+    bg: 'bg.surface',
     rounded: 'md',
     shadow: 'xl',
     minW: '60',

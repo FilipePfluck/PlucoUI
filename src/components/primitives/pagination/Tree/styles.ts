@@ -40,10 +40,10 @@ export const Item = styled(TreeView.Item, {
       color: 'fg.important',
     },
     _selected: {
-      bg: 'bg.brand.subtle.hovered',
+      bg: 'bg.brand.subtle',
       color: 'fg.brand',
       _hover: {
-        bg: 'bg.brand.subtle.hovered',
+        bg: 'bg.brand.subtle',
         color: 'fg.brand',
       },
     },

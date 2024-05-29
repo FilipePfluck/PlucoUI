@@ -16,7 +16,7 @@ export const slideAnimation = css.raw({
 })
 
 export const menuContentBaseStyles = css.raw({
-  bg: 'bg.card',
+  bg: 'bg.surface',
   rounded: 'md',
   boxShadow: 'lg',
 })

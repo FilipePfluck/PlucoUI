@@ -5,7 +5,7 @@ export const Container = styled('kbd', {
     display: 'inline-flex',
     align: 'center',
     px: '1',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     color: 'fg',
     borderRadius: 'sm',
     boxShadow:

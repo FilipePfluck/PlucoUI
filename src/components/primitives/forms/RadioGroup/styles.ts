@@ -64,9 +64,9 @@ export const Control = styled(RadioGroup.ItemControl, {
   base: {
     display: 'flex',
     center: 'flex',
-    bg: { base: 'bg.card', _disabled: 'bg.component.hovered' },
+    bg: { base: 'bg.surface', _disabled: 'bg.component.hovered' },
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
-    borderColor: { base: 'border', _checked: 'border.focused' },
+    borderColor: { base: 'border', _checked: 'border.brand' },
     borderStyle: 'solid',
     borderWidth: '1px',
     transition: '0.2s border-color',
@@ -82,7 +82,7 @@ export const Control = styled(RadioGroup.ItemControl, {
       h: '4',
       w: '4',
       rounded: 'full',
-      bg: 'bg.brand.solid',
+      bg: 'bg.brand',
       transition: '0.2s',
       position: 'absolute',
       center: 'absolute',
@@ -109,7 +109,7 @@ export const Control = styled(RadioGroup.ItemControl, {
 export const Text = styled(RadioGroup.ItemText, {
   base: {
     textStyle: 'bodyMd',
-    color: { base: 'fg', _disabled: 'fg.muted' },
+    color: { base: 'fg', _disabled: 'fg.disabled' },
     cursor: { base: 'pointer', _disabled: 'not-allowed' },
   },
 })

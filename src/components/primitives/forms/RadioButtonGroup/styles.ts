@@ -74,9 +74,9 @@ export const Control = styled(RadioGroup.ItemControl, {
     position: 'relative',
 
     bg: {
-      base: 'transparent',
-      _hover: 'bg.card.hovered',
-      _checked: { base: 'bg.brand.solid', _hover: 'bg.brand.solid.hovered' },
+      base: 'bg.surface',
+      _hover: 'bg.surface.hovered',
+      _checked: { base: 'bg.brand', _hover: 'bg.brand.hovered' },
       _disabled: {
         base: 'bg.disabled',
         _hover: 'bg.disabled',
@@ -108,7 +108,7 @@ export const Control = styled(RadioGroup.ItemControl, {
 export const Text = styled(RadioGroup.ItemText, {
   base: {
     textStyle: 'bodyMd',
-    color: { base: 'fg', _checked: 'white', _disabled: 'fg.muted' },
+    color: { base: 'fg', _checked: 'white', _disabled: 'fg.disabled' },
     transitionDuration: 'normal',
     transitionProperty: 'color',
   },

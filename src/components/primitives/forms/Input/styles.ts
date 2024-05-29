@@ -4,7 +4,7 @@ export const InputContainer = styled('label', {
   base: {
     maxW: 'full',
     h: '10',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
     transition: '0.2s',
 
@@ -15,8 +15,8 @@ export const InputContainer = styled('label', {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focusWithin: 'border.focused',
-      _invalidWithin: 'border.invalid',
+      _focusWithin: 'border.brand',
+      _invalidWithin: 'border.danger',
     },
     '&:has(:disabled)': {
       bg: 'bg.disabled',
@@ -88,10 +88,10 @@ export const Input = styled('input', {
     },
     _disabled: {
       cursor: 'not-allowed',
-      color: 'fg.muted',
+      color: 'fg.disabled',
 
       '&::placeholder': {
-        color: 'fg.muted',
+        color: 'fg.disabled',
       },
     },
 
@@ -101,7 +101,7 @@ export const Input = styled('input', {
     // otherwise the boxShadow would cover the container borders
 
     _autofill: {
-      boxShadow: '0 0 0px 1000px token(colors.bg.card) inset',
+      boxShadow: '0 0 0px 1000px token(colors.bg.surface) inset',
       WebkitTextFillColor: 'token(colors.fg)',
       caretColor: 'fg',
     },
@@ -116,13 +116,13 @@ export const InputIcon = styled('div', {
       transition: '0.2s',
     },
     '.group:has(:disabled) &': {
-      iconColor: 'fg.muted',
+      iconColor: 'fg.disabled',
     },
     '.group:has([aria-invalid="true"]) &': {
-      iconColor: 'border.invalid',
+      iconColor: 'border.danger',
     },
     '.group:has(:focus-within) &': {
-      iconColor: 'border.focused',
+      iconColor: 'border.brand',
     },
   },
 })

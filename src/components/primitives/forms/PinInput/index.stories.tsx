@@ -17,7 +17,7 @@ export const Primary: Story = {
 export const AllVariants: Story = {
   render: () => (
     <Box
-      bg="bg.card"
+      bg="bg.surface"
       p="4"
       rounded="md"
       shadow="md"

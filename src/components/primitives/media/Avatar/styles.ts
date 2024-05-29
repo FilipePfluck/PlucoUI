@@ -96,7 +96,7 @@ export const Root = styled(Avatar.Root, {
 export const Fallback = styled(Avatar.Fallback, {
   base: {
     align: 'center',
-    background: 'bg.card',
+    background: 'bg.surface',
     display: 'flex',
     fontWeight: 'semibold',
     justifyContent: 'center',
@@ -110,23 +110,23 @@ export const Fallback = styled(Avatar.Fallback, {
     size: {
       xs: {
         fontSize: '12px',
-        iconSize: '4',
+        iconSize: '16px',
       },
       sm: {
         fontSize: '14px',
-        iconSize: '5',
+        iconSize: '20px',
       },
       md: {
         fontSize: '16px',
-        iconSize: '5',
+        iconSize: '24px',
       },
       lg: {
         fontSize: '24px',
-        iconSize: '8',
+        iconSize: '32px',
       },
       xl: {
         fontSize: '36px',
-        iconSize: '12',
+        iconSize: '48px',
       },
     },
   },
@@ -171,7 +171,7 @@ export const Image = styled(Avatar.Image, {
 export const StatusBadge = styled('div', {
   base: {
     rounded: 'full',
-    borderColor: 'bg.card',
+    borderColor: 'bg.surface',
     position: 'absolute',
     bottom: '0',
     right: '0',
@@ -179,7 +179,7 @@ export const StatusBadge = styled('div', {
   variants: {
     status: {
       doNotDisturb: {
-        bg: 'bg.danger.solid',
+        bg: 'bg.danger',
       },
       offline: {
         bg: 'border',

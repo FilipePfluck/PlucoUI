@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Switch>
 
 export const Primary: Story = {
   render: () => (
-    <Box bg="bg.card" p="8" rounded="md">
+    <Box bg="bg.surface" p="8" rounded="md">
       <Switch />
     </Box>
   ),

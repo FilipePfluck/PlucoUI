@@ -24,16 +24,16 @@ export const Item = styled(Pagination.Item, {
     w: '10',
 
     bg: {
-      base: 'bg.card',
-      _hover: 'bg.card.hovered',
+      base: 'bg.surface',
+      _hover: 'bg.surface.hovered',
     },
     _dataSelected: {
       bg: {
-        base: 'bg.brand.solid',
-        _hover: 'bg.brand.solid.hovered',
+        base: 'bg.brand',
+        _hover: 'bg.brand.hovered',
       },
       color: 'white',
-      borderColor: 'border.focused',
+      borderColor: 'border.brand',
     },
     borderColor: 'border',
     borderWidth: '1px',

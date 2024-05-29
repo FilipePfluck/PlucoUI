@@ -55,7 +55,7 @@ export const Track = styled(Slider.Track, {
 
 export const Range = styled(Slider.Range, {
   base: {
-    bg: 'bg.brand.solid',
+    bg: 'bg.brand',
 
     _horizontal: {
       h: 'full',
@@ -68,8 +68,8 @@ export const Range = styled(Slider.Range, {
 
 export const Thumb = styled(Slider.Thumb, {
   base: {
-    bg: 'bg.card',
-    borderColor: 'border.focused',
+    bg: 'bg.surface',
+    borderColor: 'border.brand',
     rounded: 'full',
     borderWidth: '2px',
     shadow: 'sm',

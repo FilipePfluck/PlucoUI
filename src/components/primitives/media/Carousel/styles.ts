@@ -17,7 +17,7 @@ export const Control = styled(Carousel.Control, {
   base: {
     display: 'flex',
     align: 'center',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     rounded: 'md',
     shadow: 'md',
     bottom: '4',
@@ -44,7 +44,7 @@ export const Indicator = styled(Carousel.Indicator, {
     bg: 'border',
     cursor: 'pointer',
     '&[data-current]': {
-      bg: 'fg.important',
+      bg: 'bg.brand',
     },
   },
 })

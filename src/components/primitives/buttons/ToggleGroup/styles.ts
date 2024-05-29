@@ -16,7 +16,7 @@ export const Toggle = styled(ToggleGroup.Item, {
   base: {
     alignItems: 'center',
     appearance: 'none',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     cursor: 'pointer',
     color: 'fg',
     display: 'flex',
@@ -37,7 +37,7 @@ export const Toggle = styled(ToggleGroup.Item, {
 
     _hover: {
       color: 'fg',
-      bg: 'bg.card.hovered',
+      bg: 'bg.surface.hovered',
     },
     _dataOn: {
       bg: {
@@ -54,8 +54,8 @@ export const Toggle = styled(ToggleGroup.Item, {
     },
     _disabled: {
       bg: { base: 'bg.disabled', _hover: 'bg.disabled' },
-      color: 'fg.muted',
-      iconColor: 'fg.muted',
+      color: 'fg.disabled',
+      iconColor: 'fg.disabled',
       borderColor: 'border.disabled',
       cursor: 'not-allowed',
     },

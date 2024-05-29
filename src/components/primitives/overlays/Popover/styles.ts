@@ -43,7 +43,7 @@ export type ContentVariants = RecipeVariantProps<typeof contentStyles>
 
 export const Arrow = styled(Popover.Arrow, {
   base: {
-    '--arrow-background': 'colors.bg.card',
+    '--arrow-background': 'colors.bg.surface',
     '--arrow-size': '10px',
   },
 })

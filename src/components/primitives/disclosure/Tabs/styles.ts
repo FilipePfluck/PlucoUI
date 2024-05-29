@@ -8,7 +8,7 @@ export const Root = styled(
     base: {
       display: 'flex',
       position: 'relative',
-      bg: 'bg.card',
+      bg: 'bg.surface',
       boxShadow: 'lg',
       rounded: 'lg',
       w: 'full',
@@ -79,10 +79,10 @@ export const Trigger = styled(
       },
 
       _disabled: {
-        color: 'fg.muted',
+        color: 'fg.disabled',
         cursor: 'not-allowed',
         _hover: {
-          color: 'fg.muted',
+          color: 'fg.disabled',
         },
       },
 
@@ -109,7 +109,7 @@ export const Indicator = styled(
   Tabs.Indicator,
   cva({
     base: {
-      bg: 'border.focused',
+      bg: 'border.brand',
 
       _horizontal: {
         height: '2px',

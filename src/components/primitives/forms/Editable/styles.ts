@@ -45,7 +45,7 @@ export const Input = styled(Editable.Input, {
   base: {
     maxW: 'full',
     h: '10',
-    bg: 'bg.card',
+    bg: 'bg.surface',
     boxShadow: 'sm',
     rounded: 'md',
     transition: '0.2s',
@@ -57,8 +57,8 @@ export const Input = styled(Editable.Input, {
     borderWidth: '1px',
     borderColor: {
       base: 'border',
-      _focus: 'border.focused',
-      _invalid: 'border.invalid',
+      _focus: 'border.brand',
+      _invalid: 'border.danger',
     },
     outline: 'none',
   },

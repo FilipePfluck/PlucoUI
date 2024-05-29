@@ -16,7 +16,7 @@ export default Pluco(FileUpload, {
   Dropzone: cva({
     base: {
       alignItems: 'center',
-      background: 'bg.card',
+      background: 'bg.surface',
       borderRadius: 'lg',
       borderWidth: '1px',
       borderColor: 'border',
@@ -45,7 +45,7 @@ export default Pluco(FileUpload, {
   Item: cva({
     base: {
       animation: 'fadeIn 0.25s ease-out',
-      background: 'bg.card',
+      background: 'bg.surface',
       borderRadius: 'lg',
       borderWidth: '1px',
       borderColor: 'border',
