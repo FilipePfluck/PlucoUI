@@ -18,7 +18,7 @@ export const Root = styled('div', {
         borderColor: 'border.brand.subtle',
       },
       secondary: {
-        bg: 'bg.surface',
+        bg: 'bg.subtle',
         borderColor: 'border.subtle',
       },
       danger: {

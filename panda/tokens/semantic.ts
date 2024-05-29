@@ -31,8 +31,8 @@ export const semanticTokens = defineSemanticTokens({
       },
       subtle: {
         value: {
-          base: '{colors.mauve.6/6}',
-          _dark: '{colors.mauveDark.6/6}',
+          base: '{colors.mauve.6/3}',
+          _dark: '{colors.mauveDark.6/3}',
         },
       },
       danger: {
@@ -191,8 +191,8 @@ export const semanticTokens = defineSemanticTokens({
       },
       subtle: {
         value: {
-          base: '{colors.mauve.7/15}',
-          _dark: '{colors.mauveDark.7/15}',
+          base: '{colors.mauve.7/12}',
+          _dark: '{colors.mauveDark.7/12}',
         },
       },
       disabled: {
@@ -210,8 +210,8 @@ export const semanticTokens = defineSemanticTokens({
         },
         subtle: {
           value: {
-            base: '{colors.red.7/15}',
-            _dark: '{colors.redDark.7/15}',
+            base: '{colors.red.7/20}',
+            _dark: '{colors.redDark.7/20}',
           },
         },
       },
@@ -224,8 +224,8 @@ export const semanticTokens = defineSemanticTokens({
         },
         subtle: {
           value: {
-            base: '{colors.green.7/12}',
-            _dark: '{colors.greenDark.7/12}',
+            base: '{colors.green.7/20}',
+            _dark: '{colors.greenDark.7/20}',
           },
         },
       },
@@ -239,7 +239,7 @@ export const semanticTokens = defineSemanticTokens({
         subtle: {
           value: {
             base: '{colors.violet.7/15}',
-            _dark: '{colors.violetDark.7/15}',
+            _dark: '{colors.violetDark.7/20}',
           },
         },
       },
