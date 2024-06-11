@@ -2,9 +2,9 @@ import { styled } from '@/styled-system/jsx'
 import {
   RecipeRuntimeFn,
   RecipeVariantProps,
+  RecipeVariantRecord,
   StyledComponent,
 } from '@/styled-system/types'
-import { RecipeVariantRecord } from '@pandacss/dev'
 import { ElementType } from 'react'
 
 type PlucoConfig<T> = Partial<
