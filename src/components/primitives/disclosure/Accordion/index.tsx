@@ -3,8 +3,8 @@ import {
   AccordionItemProps as ArkAccordionItemProps,
 } from '@ark-ui/react'
 
-import * as S from './styles'
-import { SystemStyleObject } from '@pandacss/dev'
+import S from './styles'
+import { SystemStyleObject } from '@/styled-system/types'
 
 type Item = Omit<ArkAccordionItemProps, 'value'> & {
   id: string
@@ -27,8 +27,8 @@ const AccordionItem = ({
 }: AccordionItemProps) => {
   return (
     <S.Item value={id} {...props}>
-      <S.Trigger>{title}</S.Trigger>
-      <S.Content>{content}</S.Content>
+      <S.ItemTrigger>{title}</S.ItemTrigger>
+      <S.ItemContent>{content}</S.ItemContent>
     </S.Item>
   )
 }

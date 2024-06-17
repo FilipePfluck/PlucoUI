@@ -1,6 +1,23 @@
 import { Collapsible } from '@ark-ui/react'
 
 import { styled } from '@/styled-system/jsx'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
+
+export default Pluco(Collapsible, {
+  Content: cva({
+    base: {
+      pb: '2',
+      overflow: 'hidden',
+      _dataOpen: {
+        animation: 'expand',
+      },
+      _dataClosed: {
+        animation: 'collapse',
+      },
+    },
+  }),
+})
 
 export const FruitGrid = styled('div', {
   base: {
@@ -42,22 +59,5 @@ export const Divider = styled('div', {
     h: '2px',
     w: 'full',
     bg: 'border',
-  },
-})
-
-export const Root = styled(Collapsible.Root, {})
-
-export const Trigger = styled(Collapsible.Trigger, {})
-
-export const Content = styled(Collapsible.Content, {
-  base: {
-    pb: '2',
-    overflow: 'hidden',
-    _dataOpen: {
-      animation: 'expand',
-    },
-    _dataClosed: {
-      animation: 'collapse',
-    },
   },
 })

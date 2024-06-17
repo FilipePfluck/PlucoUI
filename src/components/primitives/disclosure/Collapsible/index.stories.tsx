@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { FruitGrid } from './implementations/FruitGrid'
+import { Fruits } from './implementations/FruitGrid'
 
-const meta: Meta<typeof FruitGrid> = {
-  component: FruitGrid,
+const meta: Meta<typeof Fruits> = {
+  component: Fruits,
 }
 
 export default meta
-type Story = StoryObj<typeof FruitGrid>
+type Story = StoryObj<typeof Fruits>
 
 export const CollapsibleStory: Story = {
-  render: () => <FruitGrid />,
+  render: () => <Fruits />,
 }

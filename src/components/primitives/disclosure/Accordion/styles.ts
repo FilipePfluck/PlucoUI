@@ -1,75 +1,75 @@
 import { Accordion } from '@ark-ui/react'
-import { styled } from '@/styled-system/jsx'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 
-export const Root = styled(Accordion.Root, {
-  base: {
-    rounded: 'md',
-    width: '80',
-    bg: 'border',
-    boxShadow: 'lg',
-  },
-})
-
-export const Item = styled(Accordion.Item, {
-  base: {
-    display: 'flex',
-    flexDir: 'column',
-    overflow: 'hidden',
-    position: 'relative',
-    mt: '1px',
-    _first: {
-      roundedTop: 'md',
-      mt: '0px',
+export default Pluco(Accordion, {
+  Root: cva({
+    base: {
+      rounded: 'md',
+      width: '80',
+      bg: 'border',
+      boxShadow: 'lg',
     },
-    _last: {
-      roundedBottom: 'md',
+  }),
+  Item: cva({
+    base: {
+      display: 'flex',
+      flexDir: 'column',
+      overflow: 'hidden',
+      position: 'relative',
+      mt: '1px',
+      _first: {
+        roundedTop: 'md',
+        mt: '0px',
+      },
+      _last: {
+        roundedBottom: 'md',
+      },
+      _focusVisibleWithin: {
+        zIndex: '5',
+        outline: '2px solid token(colors.border.ring)',
+      },
     },
-    _focusVisibleWithin: {
-      zIndex: '5',
-      outline: '2px solid token(colors.border.ring)',
+  }),
+  ItemTrigger: cva({
+    base: {
+      cursor: 'pointer',
+      bg: 'bg.surface',
+      p: '4',
+      w: 'full',
+      h: '10',
+      flex: 1,
+      display: 'flex',
+      align: 'center',
+      justify: 'space-between',
+      color: 'fg.important',
+      textStyle: 'headingXS',
+      boxShadow: 'md',
+      zIndex: '2',
+      outline: 'none',
+
+      _disabled: {
+        color: 'fg.disabled',
+        cursor: 'not-allowed',
+      },
     },
-  },
-})
+  }),
+  ItemContent: cva({
+    base: {
+      color: 'fg',
+      bg: 'bg.surface.hovered',
+      overflow: 'hidden',
+      p: '4',
 
-export const Trigger = styled(Accordion.ItemTrigger, {
-  base: {
-    cursor: 'pointer',
-    bg: 'bg.surface',
-    p: '4',
-    w: 'full',
-    h: '10',
-    flex: 1,
-    display: 'flex',
-    align: 'center',
-    justify: 'space-between',
-    color: 'fg.important',
-    textStyle: 'headingXS',
-    boxShadow: 'md',
-    zIndex: '2',
-    outline: 'none',
+      transitionProperty: 'height, padding',
 
-    _disabled: {
-      color: 'fg.disabled',
-      cursor: 'not-allowed',
+      _dataOpen: {
+        animation: 'accordionSlideDown',
+      },
+
+      _dataClosed: {
+        animation: 'accordionSlideUp',
+      },
     },
-  },
-})
-
-export const Content = styled(Accordion.ItemContent, {
-  base: {
-    color: 'fg',
-    bg: 'bg.surface.hovered',
-    overflow: 'hidden',
-    p: '4',
-
-    transitionProperty: 'height, padding',
-
-    _dataOpen: {
-      animation: 'accordionSlideDown',
-    },
-
-    _dataClosed: {
-      animation: 'accordionSlideUp',
-    },
-  },
+  }),
 })

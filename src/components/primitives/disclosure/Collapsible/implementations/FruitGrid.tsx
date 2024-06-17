@@ -1,4 +1,4 @@
-import * as S from '../styles'
+import S, { Divider, FruitCard, FruitGrid } from '../styles'
 import { Flex } from '@/styled-system/jsx'
 import { IconButton } from '@/components/primitives/buttons/IconButton'
 import { FoldVertical } from 'lucide-react'
@@ -33,13 +33,13 @@ const positionsDelays = hiddenFruits.map((_, index) => {
   }
 })
 
-export const FruitGrid = () => {
+export const Fruits = () => {
   return (
     <S.Root>
       <Flex direction="column" gap="4">
-        <S.FruitGrid>
+        <FruitGrid>
           {visibleFruits.map((fruit, index) => (
-            <S.FruitCard
+            <FruitCard
               style={{
                 // @ts-ignore
                 '--delay-base': `${positionsDelays[index].base}s`,
@@ -49,14 +49,14 @@ export const FruitGrid = () => {
               key={fruit}
             >
               {fruit}
-            </S.FruitCard>
+            </FruitCard>
           ))}
-        </S.FruitGrid>
+        </FruitGrid>
 
         <S.Content>
-          <S.FruitGrid>
+          <FruitGrid>
             {hiddenFruits.map((fruit, index) => (
-              <S.FruitCard
+              <FruitCard
                 key={fruit}
                 style={{
                   // @ts-ignore
@@ -66,19 +66,19 @@ export const FruitGrid = () => {
                 }}
               >
                 {fruit}
-              </S.FruitCard>
+              </FruitCard>
             ))}
-          </S.FruitGrid>
+          </FruitGrid>
         </S.Content>
 
         <Flex gap="2" align="center">
-          <S.Divider />
+          <Divider />
           <S.Trigger asChild>
             <IconButton size="md" aria-label="Toggle">
               <FoldVertical size={16} />
             </IconButton>
           </S.Trigger>
-          <S.Divider />
+          <Divider />
         </Flex>
       </Flex>
     </S.Root>
