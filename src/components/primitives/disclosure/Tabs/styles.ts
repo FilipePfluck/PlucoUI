@@ -1,10 +1,9 @@
+import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
-import { styled } from '@/styled-system/jsx'
 import { Tabs } from '@ark-ui/react'
 
-export const Root = styled(
-  Tabs.Root,
-  cva({
+export default Pluco(Tabs, {
+  Root: cva({
     base: {
       display: 'flex',
       position: 'relative',
@@ -21,11 +20,7 @@ export const Root = styled(
       },
     },
   }),
-)
-
-export const List = styled(
-  Tabs.List,
-  cva({
+  List: cva({
     base: {
       display: 'flex',
       justify: 'center',
@@ -53,11 +48,7 @@ export const List = styled(
       zIndex: '3',
     },
   }),
-)
-
-export const Trigger = styled(
-  Tabs.Trigger,
-  cva({
+  Trigger: cva({
     base: {
       display: 'flex',
       center: 'flex',
@@ -103,11 +94,7 @@ export const Trigger = styled(
       },
     },
   }),
-)
-
-export const Indicator = styled(
-  Tabs.Indicator,
-  cva({
+  Indicator: cva({
     base: {
       bg: 'border.brand',
 
@@ -123,11 +110,7 @@ export const Indicator = styled(
       },
     },
   }),
-)
-
-export const Content = styled(
-  Tabs.Content,
-  cva({
+  Content: cva({
     base: {
       display: 'flex',
       center: 'flex',
@@ -167,4 +150,4 @@ export const Content = styled(
       },
     },
   }),
-)
+})

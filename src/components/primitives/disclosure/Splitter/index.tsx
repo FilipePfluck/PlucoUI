@@ -1,5 +1,5 @@
 import { SplitterRootProps } from '@ark-ui/react'
-import * as S from './styles'
+import S from './styles'
 
 export const Splitter = ({ ...props }: SplitterRootProps) => {
   return (
