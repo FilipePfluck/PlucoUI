@@ -6,7 +6,7 @@ import {
   ComboboxItemProps as ArkComboboxItemProps,
   CollectionItem,
 } from '@ark-ui/react'
-import * as S from './styles'
+import S from './styles'
 import { ChevronsUpDown } from 'lucide-react'
 
 interface ComboboxItemProps extends Partial<ArkComboboxItemProps> {

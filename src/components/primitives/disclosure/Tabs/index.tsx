@@ -1,7 +1,7 @@
 import { TabsRootProps as ArkTabsProps } from '@ark-ui/react'
-import * as S from './styles'
+import S from './styles'
 import { ReactNode, useState } from 'react'
-import { SystemStyleObject } from '@pandacss/dev'
+import { SystemStyleObject } from '@/styled-system/types'
 
 // todo ponder over the possibility of adding `trigger` and `content`
 // props containing ark props and spreading them on the respective parts

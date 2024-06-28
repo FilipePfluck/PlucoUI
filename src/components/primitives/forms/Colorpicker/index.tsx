@@ -1,7 +1,8 @@
 import { PipetteIcon } from 'lucide-react'
 import { HStack, Stack } from '@/styled-system/jsx'
 
-import * as S from './styles'
+import S from './styles'
+
 import { IconButton } from '../../buttons/IconButton'
 import { Input } from '../Input'
 import { Text } from '../../typography/Text'
@@ -29,72 +30,68 @@ export const Demo = (props: ColorPickerRootProps) => {
       }}
       {...props}
     >
-      {(api) => (
-        <>
-          <Label>Color Picker</Label>
-          <S.Control>
-            <S.ChannelInput channel="hex" asChild>
-              <Input />
-            </S.ChannelInput>
-            <S.Trigger asChild>
-              <IconButton aria-label="Open color picker" intent="secondary">
-                <S.Swatch value={api.value} />
-              </IconButton>
-            </S.Trigger>
-          </S.Control>
-          <Portal>
-            <S.Positioner>
-              <S.Content>
-                <Stack gap="3">
-                  <S.Area>
-                    <S.AreaBackground />
-                    <S.AreaThumb />
-                  </S.Area>
-                  <HStack gap="3">
-                    <S.EyeDropperTrigger asChild>
-                      <IconButton
-                        intent="secondary"
-                        aria-label="Pick a color from screen"
-                      >
-                        <PipetteIcon />
-                      </IconButton>
-                    </S.EyeDropperTrigger>
-                    <Stack gap="2" flex="1">
-                      <S.ChannelSlider channel="hue">
-                        <S.ChannelSliderTrack />
-                        <S.ChannelSliderThumb />
-                      </S.ChannelSlider>
-                      <S.ChannelSlider channel="alpha">
-                        <S.TransparencyGrid size="8px" />
-                        <S.ChannelSliderTrack />
-                        <S.ChannelSliderThumb />
-                      </S.ChannelSlider>
-                    </Stack>
-                  </HStack>
-                  <HStack>
-                    <S.ChannelInput channel="hex" asChild>
-                      <Input />
-                    </S.ChannelInput>
-                    <S.ChannelInput channel="alpha" asChild>
-                      <Input />
-                    </S.ChannelInput>
-                  </HStack>
-                  <Stack gap="1.5">
-                    <Text>Saved Colors</Text>
-                    <S.SwatchGroup>
-                      {presets.map((color, id) => (
-                        <S.SwatchTrigger key={id} value={color}>
-                          <S.Swatch value={color} />
-                        </S.SwatchTrigger>
-                      ))}
-                    </S.SwatchGroup>
-                  </Stack>
+      <Label>Color Picker</Label>
+      <S.Control>
+        <S.ChannelInput channel="hex" asChild>
+          <Input />
+        </S.ChannelInput>
+        <S.Trigger asChild>
+          <IconButton aria-label="Open color picker" intent="secondary">
+            <S.Swatch value="" />
+          </IconButton>
+        </S.Trigger>
+      </S.Control>
+      <Portal>
+        <S.Positioner>
+          <S.Content>
+            <Stack gap="3">
+              <S.Area>
+                <S.AreaBackground />
+                <S.AreaThumb />
+              </S.Area>
+              <HStack gap="3">
+                <S.EyeDropperTrigger asChild>
+                  <IconButton
+                    intent="secondary"
+                    aria-label="Pick a color from screen"
+                  >
+                    <PipetteIcon />
+                  </IconButton>
+                </S.EyeDropperTrigger>
+                <Stack gap="2" flex="1">
+                  <S.ChannelSlider channel="hue">
+                    <S.ChannelSliderTrack />
+                    <S.ChannelSliderThumb />
+                  </S.ChannelSlider>
+                  <S.ChannelSlider channel="alpha">
+                    <S.TransparencyGrid size="8px" />
+                    <S.ChannelSliderTrack />
+                    <S.ChannelSliderThumb />
+                  </S.ChannelSlider>
                 </Stack>
-              </S.Content>
-            </S.Positioner>
-          </Portal>
-        </>
-      )}
+              </HStack>
+              <HStack>
+                <S.ChannelInput channel="hex" asChild>
+                  <Input />
+                </S.ChannelInput>
+                <S.ChannelInput channel="alpha" asChild>
+                  <Input />
+                </S.ChannelInput>
+              </HStack>
+              <Stack gap="1.5">
+                <Text>Saved Colors</Text>
+                <S.SwatchGroup>
+                  {presets.map((color, id) => (
+                    <S.SwatchTrigger key={id} value={color}>
+                      <S.Swatch value={color} />
+                    </S.SwatchTrigger>
+                  ))}
+                </S.SwatchGroup>
+              </Stack>
+            </Stack>
+          </S.Content>
+        </S.Positioner>
+      </Portal>
     </S.Root>
   )
 }
