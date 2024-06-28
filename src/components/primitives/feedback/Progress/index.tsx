@@ -1,6 +1,6 @@
 import { ProgressRootProps as ArkProgressProps } from '@ark-ui/react'
 
-import * as S from './styles'
+import S from './styles'
 
 type ProgressProps = ArkProgressProps & {
   type?: 'circular' | 'linear'
