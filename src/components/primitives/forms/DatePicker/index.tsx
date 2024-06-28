@@ -4,7 +4,7 @@ import {
 } from '@ark-ui/react'
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { IconButton } from '../../buttons/IconButton'
-import * as S from './styles'
+import S from './styles'
 import { Button } from '../../buttons/Button'
 
 const PrevTrigger = ({ label }: { label: string }) => {
