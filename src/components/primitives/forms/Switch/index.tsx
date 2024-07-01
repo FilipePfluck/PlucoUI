@@ -1,6 +1,6 @@
 import { SwitchRootProps as ArkSwitchProps } from '@ark-ui/react'
 
-import * as S from './styles'
+import S from './styles'
 
 interface SwitchProps extends ArkSwitchProps {
   label?: string

@@ -1,6 +1,6 @@
 import { SliderRootProps as ArkSliderProps } from '@ark-ui/react'
 
-import * as S from './styles'
+import S from './styles'
 
 type SliderProps = ArkSliderProps & {
   label?: string

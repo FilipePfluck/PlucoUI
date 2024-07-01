@@ -1,5 +1,5 @@
 import { Check, ChevronsUpDown, X } from 'lucide-react'
-import * as S from './styles'
+import S, { Separator } from './styles'
 import {
   Portal,
   SelectItemProps as ArkSelectItemProps,
@@ -91,7 +91,7 @@ export const Select = ({
                     </S.Item>
                   ))}
                 </S.ItemGroup>
-                {index + 1 !== groups.length && <S.Separator />}
+                {index + 1 !== groups.length && <Separator />}
               </>
             ))}
           </S.Content>
