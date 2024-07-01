@@ -1,6 +1,6 @@
 import { PinInputRootProps as ArkPinInputProps } from '@ark-ui/react'
 
-import * as S from './styles'
+import S from './styles'
 
 type PinInputProps = ArkPinInputProps & {
   label?: string

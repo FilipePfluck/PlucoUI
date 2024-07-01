@@ -1,64 +1,65 @@
-import { styled } from '@/styled-system/jsx'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 import { PinInput } from '@ark-ui/react'
 
-export const Root = styled(PinInput.Root, {
-  base: {
-    display: 'flex',
-    flexDir: 'column',
-    gap: '3',
-  },
-})
-
-export const Label = styled(PinInput.Label, {
-  base: {
-    textStyle: 'headingXs',
-    color: 'fg.important',
-  },
-})
-
-export const Control = styled(PinInput.Control, {
-  base: {
-    display: 'flex',
-    gap: '2',
-  },
-})
-
-export const Input = styled(PinInput.Input, {
-  base: {
-    h: '10',
-    w: '9',
-    p: '3',
-    bg: 'bg.surface',
-    boxShadow: 'sm',
-    rounded: 'md',
-    transition: '0.2s',
-    color: 'fg',
-
-    display: 'flex',
-    align: 'center',
-    gap: '2',
-
-    _placeholder: {
-      color: 'fg.unimportant',
-      fontSize: 'sm',
+export default Pluco(PinInput, {
+  Root: cva({
+    base: {
+      display: 'flex',
+      flexDir: 'column',
+      gap: '3',
     },
-
-    outline: 'none',
-    borderWidth: '1px',
-    borderColor: {
-      base: 'border',
-      _focus: 'border.brand',
+  }),
+  Label: cva({
+    base: {
+      display: 'flex',
+      flexDir: 'column',
+      gap: '3',
     },
-    '[aria-invalid]  &': { borderColor: 'border.danger' },
-    _disabled: {
-      bg: 'bg.disabled',
-      borderColor: 'border.disabled',
-      cursor: 'not-allowed',
-      color: 'fg.disabled',
+  }),
+  Control: cva({
+    base: {
+      display: 'flex',
+      gap: '2',
+    },
+  }),
+  Input: cva({
+    base: {
+      h: '10',
+      w: '9',
+      p: '3',
+      bg: 'bg.surface',
+      boxShadow: 'sm',
+      rounded: 'md',
+      transition: '0.2s',
+      color: 'fg',
+
+      display: 'flex',
+      align: 'center',
+      gap: '2',
 
       _placeholder: {
+        color: 'fg.unimportant',
+        fontSize: 'sm',
+      },
+
+      outline: 'none',
+      borderWidth: '1px',
+      borderColor: {
+        base: 'border',
+        _focus: 'border.brand',
+      },
+      '[aria-invalid]  &': { borderColor: 'border.danger' },
+      _disabled: {
+        bg: 'bg.disabled',
+        borderColor: 'border.disabled',
+        cursor: 'not-allowed',
         color: 'fg.disabled',
+
+        _placeholder: {
+          color: 'fg.disabled',
+        },
       },
     },
-  },
+  }),
 })

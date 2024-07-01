@@ -1,5 +1,5 @@
 import { HTMLArkProps } from '@ark-ui/react'
-import * as S from './styles'
+import S, { Group } from './styles'
 
 type RadioItemProps = HTMLArkProps<'label'> & {
   id: string
@@ -22,7 +22,7 @@ export const RadioGroup = ({
   return (
     <S.Root orientation={labelOrientation}>
       {label && <S.Label>{label}</S.Label>}
-      <S.Group orientation={orientation}>
+      <Group orientation={orientation}>
         {items.map(({ id, label }) => {
           return (
             <S.Item
@@ -33,12 +33,12 @@ export const RadioGroup = ({
               aria-labelledby={`label-${id}`}
               className="group"
             >
-              <S.Control />
-              <S.Text id={`label-${id}`}>{label}</S.Text>
+              <S.ItemControl />
+              <S.ItemText id={`label-${id}`}>{label}</S.ItemText>
             </S.Item>
           )
         })}
-      </S.Group>
+      </Group>
     </S.Root>
   )
 }

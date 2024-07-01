@@ -1,6 +1,6 @@
 import { Check, Pencil, X } from 'lucide-react'
 import { IconButton } from '../../buttons/IconButton'
-import * as S from './styles'
+import S from './styles'
 import { EditableRootProps } from '@ark-ui/react'
 
 export const Editable = (props: EditableRootProps) => {

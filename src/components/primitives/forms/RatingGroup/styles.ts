@@ -1,33 +1,32 @@
-import { styled } from '@/styled-system/jsx'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 import { RatingGroup } from '@ark-ui/react'
 
-export const Root = styled(RatingGroup.Root, {
-  base: {
-    display: 'flex',
-    flexDir: 'column',
-    gap: '2',
-  },
-})
-
-export const Label = styled(RatingGroup.Label, {})
-
-export const Control = styled(RatingGroup.Control, {
-  base: {
-    display: 'flex',
-    gap: '1',
-  },
-})
-
-export const Item = styled(RatingGroup.Item, {
-  base: {
-    outlineColor: 'border.ring',
-    transition: '0.2s',
-    '&:not([data-readonly])': {
-      cursor: 'pointer',
+export default Pluco(RatingGroup, {
+  Root: cva({
+    base: {
+      display: 'flex',
+      flexDir: 'column',
+      gap: '2',
     },
-    '&[data-highlighted="true"]': {
-      color: 'bg.brand',
-      iconColor: 'bg.brand',
+  }),
+  Control: cva({
+    base: {
+      display: 'flex',
+      gap: '1',
     },
-  },
+  }),
+  Item: cva({
+    base: {
+      outlineColor: 'border.ring',
+      transition: '0.2s',
+      '&:not([data-readonly])': {
+        cursor: 'pointer',
+      },
+      '&[data-highlighted="true"]': {
+        color: 'bg.brand',
+        iconColor: 'bg.brand',
+      },
+    },
+  }),
 })
