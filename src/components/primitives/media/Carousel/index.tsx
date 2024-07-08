@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 import { IconButton } from '../../buttons/IconButton'
 
-import * as S from './styles'
+import S, { Image } from './styles'
 
 type CarouselProps = CarouselRootProps & {
   images: string[]
@@ -16,7 +16,7 @@ export const Carousel = ({ images }: CarouselProps) => {
         <S.ItemGroup>
           {images.map((image, index) => (
             <S.Item key={index} index={index}>
-              <S.Image alt="" src={image} />
+              <Image alt="" src={image} />
             </S.Item>
           ))}
         </S.ItemGroup>

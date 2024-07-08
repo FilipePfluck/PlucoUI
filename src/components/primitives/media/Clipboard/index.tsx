@@ -4,7 +4,7 @@ import { Label } from '../../forms/Label'
 import { Input } from '../../forms/Input'
 import { IconButton } from '../../buttons/IconButton'
 
-import * as S from './styles'
+import S from './styles'
 
 export const Demo = (props: ClipboardRootProps) => {
   return (

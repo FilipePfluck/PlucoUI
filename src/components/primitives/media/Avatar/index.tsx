@@ -1,7 +1,7 @@
 import { AvatarRootProps as ArkAvatarProps } from '@ark-ui/react'
 import { User } from 'lucide-react'
 
-import * as S from './styles'
+import S, { Background, StatusBadge } from './styles'
 
 export type AvatarProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
@@ -24,10 +24,7 @@ export const Avatar = ({
   const initials = firstName.split('')[0] + surname.split('')[0]
 
   return (
-    <S.Background
-      size={size}
-      colorScheme={gradientBorder ? 'gradient' : 'gray'}
-    >
+    <Background size={size} colorScheme={gradientBorder ? 'gradient' : 'gray'}>
       <S.Root size={size} gradientBorder={gradientBorder}>
         <S.Fallback size={size}>
           {fallback === 'initials' && !!name && initials}
@@ -35,7 +32,7 @@ export const Avatar = ({
         </S.Fallback>
         <S.Image size={size} src={src} alt={name} />
       </S.Root>
-      {!!status && <S.StatusBadge status={status} size={size} />}
-    </S.Background>
+      {!!status && <StatusBadge status={status} size={size} />}
+    </Background>
   )
 }

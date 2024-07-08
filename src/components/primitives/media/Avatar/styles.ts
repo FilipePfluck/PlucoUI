@@ -1,3 +1,5 @@
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { Avatar } from '@ark-ui/react'
 
@@ -44,128 +46,128 @@ export const Background = styled('div', {
   },
 })
 
-export const Root = styled(Avatar.Root, {
-  base: {
-    borderRadius: 'full',
-    borderStyle: 'solid',
-    shadow: 'md',
-    display: 'flex',
-    center: 'flex',
-    position: 'relative',
-  },
-  variants: {
-    size: {
-      xs: {
-        h: '8',
-        w: '8',
+export default Pluco(Avatar, {
+  Root: cva({
+    base: {
+      borderRadius: 'full',
+      borderStyle: 'solid',
+      shadow: 'md',
+      display: 'flex',
+      center: 'flex',
+      position: 'relative',
+    },
+    variants: {
+      size: {
+        xs: {
+          h: '8',
+          w: '8',
+        },
+        sm: {
+          h: '10',
+          w: '10',
+        },
+        md: {
+          h: '12',
+          w: '12',
+        },
+        lg: {
+          h: '16',
+          w: '16',
+        },
+        xl: {
+          h: '24',
+          w: '24',
+        },
       },
-      sm: {
-        h: '10',
-        w: '10',
-      },
-      md: {
-        h: '12',
-        w: '12',
-      },
-      lg: {
-        h: '16',
-        w: '16',
-      },
-      xl: {
-        h: '24',
-        w: '24',
+      gradientBorder: {
+        true: {
+          borderWidth: '2px',
+          borderColor: 'transparent',
+        },
+        false: {
+          borderWidth: '1px',
+          borderColor: 'border',
+        },
       },
     },
-    gradientBorder: {
-      true: {
-        borderWidth: '2px',
-        borderColor: 'transparent',
-      },
-      false: {
-        borderWidth: '1px',
-        borderColor: 'border',
+    defaultVariants: {
+      size: 'md',
+      gradientBorder: false,
+    },
+  }),
+  Fallback: cva({
+    base: {
+      align: 'center',
+      background: 'bg.surface',
+      display: 'flex',
+      fontWeight: 'semibold',
+      justifyContent: 'center',
+      height: 'full',
+      width: 'full',
+      _hidden: {
+        display: 'none',
       },
     },
-  },
-  defaultVariants: {
-    size: 'md',
-    gradientBorder: false,
-  },
-})
-
-export const Fallback = styled(Avatar.Fallback, {
-  base: {
-    align: 'center',
-    background: 'bg.surface',
-    display: 'flex',
-    fontWeight: 'semibold',
-    justifyContent: 'center',
-    height: 'full',
-    width: 'full',
-    _hidden: {
-      display: 'none',
-    },
-  },
-  variants: {
-    size: {
-      xs: {
-        fontSize: '12px',
-        iconSize: '16px',
-      },
-      sm: {
-        fontSize: '14px',
-        iconSize: '20px',
-      },
-      md: {
-        fontSize: '16px',
-        iconSize: '24px',
-      },
-      lg: {
-        fontSize: '24px',
-        iconSize: '32px',
-      },
-      xl: {
-        fontSize: '36px',
-        iconSize: '48px',
+    variants: {
+      size: {
+        xs: {
+          fontSize: '12px',
+          iconSize: '16px',
+        },
+        sm: {
+          fontSize: '14px',
+          iconSize: '20px',
+        },
+        md: {
+          fontSize: '16px',
+          iconSize: '24px',
+        },
+        lg: {
+          fontSize: '24px',
+          iconSize: '32px',
+        },
+        xl: {
+          fontSize: '36px',
+          iconSize: '48px',
+        },
       },
     },
-  },
-  defaultVariants: {
-    size: 'md',
-  },
-})
-
-export const Image = styled(Avatar.Image, {
-  base: {
-    objectFit: 'cover',
-  },
-  variants: {
-    size: {
-      xs: {
-        h: '8',
-        w: '8',
-      },
-      sm: {
-        h: '10',
-        w: '10',
-      },
-      md: {
-        h: '12',
-        w: '12',
-      },
-      lg: {
-        h: '16',
-        w: '16',
-      },
-      xl: {
-        h: '24',
-        w: '24',
+    defaultVariants: {
+      size: 'md',
+    },
+  }),
+  Image: cva({
+    base: {
+      objectFit: 'cover',
+    },
+    variants: {
+      size: {
+        xs: {
+          h: '8',
+          w: '8',
+        },
+        sm: {
+          h: '10',
+          w: '10',
+        },
+        md: {
+          h: '12',
+          w: '12',
+        },
+        lg: {
+          h: '16',
+          w: '16',
+        },
+        xl: {
+          h: '24',
+          w: '24',
+        },
       },
     },
-  },
-  defaultVariants: {
-    size: 'md',
-  },
+    defaultVariants: {
+      size: 'md',
+    },
+  }),
 })
 
 export const StatusBadge = styled('div', {
