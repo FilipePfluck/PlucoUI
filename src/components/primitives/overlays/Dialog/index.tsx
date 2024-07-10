@@ -4,7 +4,7 @@ import {
   DialogContentProps as ArkDialogProps,
 } from '@ark-ui/react'
 
-import * as S from './styles'
+import S, { Header } from './styles'
 import { X } from 'lucide-react'
 import { ReactNode } from 'react'
 import { IconButton } from '../../buttons/IconButton'
@@ -25,10 +25,10 @@ const DialogHeader = ({
   return (
     <>
       {(title || description) && (
-        <S.Header>
+        <Header>
           {title && <S.Title>{title}</S.Title>}
           {description && <S.Description>{description}</S.Description>}
-        </S.Header>
+        </Header>
       )}
     </>
   )
@@ -42,16 +42,16 @@ export const DialogContent = ({
 }: DialogContentProps) => {
   return (
     <Portal>
-      <S.Overlay />
+      <S.Backdrop />
       <Dialog.Positioner>
         <S.Content {...props}>
           <DialogHeader title={title} description={description} />
           {children}
-          <S.CloseButton asChild>
+          <S.CloseTrigger asChild>
             <IconButton aria-label="Close" intent="ghost" size="sm">
               <X size={16} />
             </IconButton>
-          </S.CloseButton>
+          </S.CloseTrigger>
         </S.Content>
       </Dialog.Positioner>
     </Portal>

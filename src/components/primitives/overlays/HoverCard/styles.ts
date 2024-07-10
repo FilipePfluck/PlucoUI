@@ -1,33 +1,35 @@
-import { styled } from '@/styled-system/jsx'
 import { HoverCard } from '@ark-ui/react'
 
 import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 
-export const Content = styled(HoverCard.Content, {
-  base: {
-    display: 'flex',
-    position: 'relative',
-    flexDirection: 'column',
-    gap: '4',
-    p: '6',
-    maxH: '85vh',
-    w: '64',
+export default Pluco(HoverCard, {
+  Content: cva({
+    base: {
+      display: 'flex',
+      position: 'relative',
+      flexDirection: 'column',
+      gap: '4',
+      p: '6',
+      maxH: '85vh',
+      w: '64',
 
-    ...menuContentBaseStyles,
-    ...slideAnimation,
+      ...menuContentBaseStyles,
+      ...slideAnimation,
 
-    '&[hidden]': {
-      opacity: 0,
-      visibility: 'hidden',
+      '&[hidden]': {
+        opacity: 0,
+        visibility: 'hidden',
+      },
+
+      transition: '0.2s',
     },
-
-    transition: '0.2s',
-  },
-})
-
-export const Arrow = styled(HoverCard.Arrow, {
-  base: {
-    '--arrow-background': 'colors.bg.surface',
-    '--arrow-size': '10px',
-  },
+  }),
+  Arrow: cva({
+    base: {
+      '--arrow-background': 'colors.bg.surface',
+      '--arrow-size': '10px',
+    },
+  }),
 })

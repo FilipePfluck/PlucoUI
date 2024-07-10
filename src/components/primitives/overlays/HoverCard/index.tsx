@@ -4,7 +4,7 @@ import {
   HoverCardPositioner,
   Portal,
 } from '@ark-ui/react'
-import * as S from './styles'
+import S from './styles'
 
 export const HoverCardContent = ({
   children,

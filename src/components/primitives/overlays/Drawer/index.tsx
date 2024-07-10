@@ -1,6 +1,6 @@
 import { DialogContentProps, Portal } from '@ark-ui/react'
 
-import * as S from './styles'
+import S, { Header } from './styles'
 import { IconButton } from '../../buttons/IconButton'
 import { X } from 'lucide-react'
 
@@ -22,10 +22,10 @@ const DrawerHeader = ({
   return (
     <>
       {(title || description) && (
-        <S.Header>
+        <Header>
           {title && <S.Title>{title}</S.Title>}
           {description && <S.Description>{description}</S.Description>}
-        </S.Header>
+        </Header>
       )}
     </>
   )
@@ -42,7 +42,7 @@ export const DrawerContent = ({
 }: DrawerProps) => {
   return (
     <Portal>
-      {mode === 'modal' && <S.Overlay />}
+      {mode === 'modal' && <S.Backdrop />}
       <S.Content
         {...(!description ? { 'aria-labeledby': undefined } : {})}
         side={side}
@@ -51,11 +51,11 @@ export const DrawerContent = ({
       >
         <DrawerHeader title={title} description={description} />
         {children}
-        <S.CloseButton asChild>
+        <S.CloseTrigger asChild>
           <IconButton aria-label="close" intent="ghost">
             <X size={16} />
           </IconButton>
-        </S.CloseButton>
+        </S.CloseTrigger>
       </S.Content>
     </Portal>
   )
