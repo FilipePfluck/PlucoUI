@@ -1,6 +1,6 @@
 import { SegmentGroupRootProps as ArkSegmentGroupProps } from '@ark-ui/react'
 
-import * as S from './styles'
+import S from './styles'
 
 type SegmentGroupProps = ArkSegmentGroupProps & {
   items: string[]

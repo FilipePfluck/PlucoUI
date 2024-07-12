@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { IconButton } from '../../buttons/IconButton'
-import * as S from './styles'
+import S from './styles'
 
 export const Pagination = () => {
   return (

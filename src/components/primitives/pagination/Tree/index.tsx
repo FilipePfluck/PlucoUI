@@ -1,6 +1,6 @@
 import { type TreeViewRootProps } from '@ark-ui/react/tree-view'
 
-import * as S from './styles'
+import S from './styles'
 import { forwardRef } from 'react'
 import { ChevronRightIcon } from 'lucide-react'
 

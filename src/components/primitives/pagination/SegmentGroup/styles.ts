@@ -1,99 +1,96 @@
-import { styled } from '@/styled-system/jsx'
+import { Pluco } from '@/pluco'
+import { cva } from '@/styled-system/css'
 import { SegmentGroup } from '@ark-ui/react'
 
 // TODO - unify styles with tab component
 
-export const Root = styled(SegmentGroup.Root, {
-  base: {
-    display: 'flex',
-    justify: 'center',
-    flexShrink: '0',
-    _horizontal: {
-      flexDirection: 'row',
-      boxShadow: '0 -1px 0 0 inset token(colors.border)',
-      gap: '4',
-      px: '4',
-      pt: '4',
+export default Pluco(SegmentGroup, {
+  Root: cva({
+    base: {
+      display: 'flex',
+      justify: 'center',
+      flexShrink: '0',
+      _horizontal: {
+        flexDirection: 'row',
+        boxShadow: '0 -1px 0 0 inset token(colors.border)',
+        gap: '4',
+        px: '4',
+        pt: '4',
+      },
+      _vertical: {
+        flexDirection: 'column',
+        boxShadow: '-1px 0 0 0 inset token(colors.border)',
+        gap: '1',
+        py: '4',
+        pl: '4',
+      },
+      overflow: 'auto',
+      position: 'relative',
+      scrollbarWidth: 'none',
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      zIndex: '3',
     },
-    _vertical: {
-      flexDirection: 'column',
-      boxShadow: '-1px 0 0 0 inset token(colors.border)',
-      gap: '1',
-      py: '4',
-      pl: '4',
+  }),
+  Indicator: cva({
+    base: {
+      bg: 'bg.brand',
+      _horizontal: {
+        height: '2px',
+        width: 'var(--width)',
+        bottom: '0',
+      },
+      _vertical: {
+        width: '2px',
+        height: 'var(--height)',
+        right: '0',
+      },
     },
-    overflow: 'auto',
-    position: 'relative',
-    scrollbarWidth: 'none',
-    '&::-webkit-scrollbar': {
-      display: 'none',
-    },
-    zIndex: '3',
-  },
-})
-
-export const Indicator = styled(SegmentGroup.Indicator, {
-  base: {
-    bg: 'bg.brand',
-    _horizontal: {
-      height: '2px',
-      width: 'var(--width)',
-      bottom: '0',
-    },
-    _vertical: {
-      width: '2px',
-      height: 'var(--height)',
-      right: '0',
-    },
-  },
-})
-
-export const Item = styled(SegmentGroup.Item, {
-  base: {
-    display: 'flex',
-    center: 'flex',
-    cursor: 'pointer',
-    color: 'fg',
-    textStyle: 'bodyLg',
-    flexShrink: '0',
-    px: '2',
-    outlineColor: 'border.ring',
-
-    transitionDuration: 'normal',
-    transitionProperty: 'color, background, border-color',
-    transitionTimingFunction: 'default',
-    whiteSpace: 'nowrap',
-
-    _hover: {
+  }),
+  Item: cva({
+    base: {
+      display: 'flex',
+      center: 'flex',
+      cursor: 'pointer',
       color: 'fg',
-    },
+      textStyle: 'bodyLg',
+      flexShrink: '0',
+      px: '2',
+      outlineColor: 'border.ring',
 
-    _disabled: {
-      color: 'fg.disabled',
-      cursor: 'not-allowed',
+      transitionDuration: 'normal',
+      transitionProperty: 'color, background, border-color',
+      transitionTimingFunction: 'default',
+      whiteSpace: 'nowrap',
+
       _hover: {
+        color: 'fg',
+      },
+
+      _disabled: {
         color: 'fg.disabled',
+        cursor: 'not-allowed',
+        _hover: {
+          color: 'fg.disabled',
+        },
       },
-    },
 
-    _selected: {
-      color: 'fg.brand',
-      _hover: {
+      _selected: {
         color: 'fg.brand',
+        _hover: {
+          color: 'fg.brand',
+        },
+      },
+
+      _vertical: {
+        justify: 'space-between',
+        w: 'full',
+      },
+
+      _horizontal: {
+        pb: '2',
       },
     },
-
-    _vertical: {
-      justify: 'space-between',
-      w: 'full',
-    },
-
-    _horizontal: {
-      pb: '2',
-    },
-  },
+  }),
 })
-
-export const ItemText = styled(SegmentGroup.ItemText, {})
-
-export const ItemControl = styled(SegmentGroup.ItemControl, {})
