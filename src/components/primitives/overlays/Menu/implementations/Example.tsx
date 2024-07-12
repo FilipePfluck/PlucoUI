@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import * as S from '../styles'
+import S from '../styles'
 import {
   MenuCheckboxItem,
   MenuItemGroup,

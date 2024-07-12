@@ -7,7 +7,7 @@ import {
   Portal,
 } from '@ark-ui/react'
 
-import * as S from './styles'
+import S, { OptionIndicator, RightSlot } from './styles'
 import { Check, Dot } from 'lucide-react'
 
 export type MenuItemGroupProps = ArkMenuItemGroupProps & {
@@ -51,12 +51,12 @@ export const MenuCheckboxItem = ({
       {({ isChecked }) => (
         <>
           {isChecked && (
-            <S.OptionIndicator>
+            <OptionIndicator>
               <Check size={14} />
-            </S.OptionIndicator>
+            </OptionIndicator>
           )}
           {children}
-          {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
+          {rightSlot && <RightSlot>{rightSlot}</RightSlot>}
         </>
       )}
     </S.OptionItem>
@@ -73,12 +73,12 @@ export const MenuRadioItem = ({
       {({ isChecked }) => (
         <>
           {isChecked && (
-            <S.OptionIndicator>
+            <OptionIndicator>
               <Dot />
-            </S.OptionIndicator>
+            </OptionIndicator>
           )}
           {children}
-          {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
+          {rightSlot && <RightSlot>{rightSlot}</RightSlot>}
         </>
       )}
     </S.OptionItem>
@@ -95,7 +95,7 @@ export const MenuTriggerItem = ({
   return (
     <S.Root positioning={{ gutter: 16 }} {...props}>
       <S.TriggerItem {...triggerProps}>
-        {triggerLabel} {rightSlot && <S.RightSlot>{rightSlot}</S.RightSlot>}
+        {triggerLabel} {rightSlot && <RightSlot>{rightSlot}</RightSlot>}
       </S.TriggerItem>
       <Portal>
         <S.Positioner>

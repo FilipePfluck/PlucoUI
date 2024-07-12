@@ -3,6 +3,7 @@ import { Popover } from '@ark-ui/react'
 import { RecipeVariantProps, cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
+import { Pluco } from '@/pluco'
 
 const contentStyles = cva({
   base: {
@@ -37,23 +38,35 @@ const contentStyles = cva({
   },
 })
 
-export const Content = styled(Popover.Content, contentStyles)
-
 export type ContentVariants = RecipeVariantProps<typeof contentStyles>
 
-export const Arrow = styled(Popover.Arrow, {
-  base: {
-    '--arrow-background': 'colors.bg.surface',
-    '--arrow-size': '10px',
-  },
-})
-
-export const CloseButton = styled(Popover.CloseTrigger, {
-  base: {
-    position: 'absolute',
-    top: '16px',
-    right: '16px',
-  },
+export default Pluco(Popover, {
+  Content: contentStyles,
+  Arrow: cva({
+    base: {
+      '--arrow-background': 'colors.bg.surface',
+      '--arrow-size': '10px',
+    },
+  }),
+  CloseTrigger: cva({
+    base: {
+      position: 'absolute',
+      top: '16px',
+      right: '16px',
+    },
+  }),
+  Title: cva({
+    base: {
+      textStyle: 'headingSm',
+      color: 'fg.important',
+    },
+  }),
+  Description: cva({
+    base: {
+      textStyle: 'bodyMd',
+      color: 'fg',
+    },
+  }),
 })
 
 export const Header = styled('header', {
@@ -61,19 +74,5 @@ export const Header = styled('header', {
     display: 'flex',
     flexDir: 'column',
     gap: '2',
-  },
-})
-
-export const Title = styled(Popover.Title, {
-  base: {
-    textStyle: 'headingSm',
-    color: 'fg.important',
-  },
-})
-
-export const Description = styled(Popover.Description, {
-  base: {
-    textStyle: 'bodyMd',
-    color: 'fg',
   },
 })

@@ -5,12 +5,12 @@ import {
   Portal,
 } from '@ark-ui/react'
 
-import * as S from './styles'
+import S, { ContentVariants, Header } from './styles'
 import { IconButton } from '../../buttons/IconButton'
 import { X } from 'lucide-react'
 
 type PopoverProps = PopoverContentProps &
-  S.ContentVariants & {
+  ContentVariants & {
     title?: string
     description?: string
   }
@@ -25,10 +25,10 @@ const PopoverHeader = ({
   return (
     <>
       {(title || description) && (
-        <S.Header>
+        <Header>
           {title && <S.Title>{title}</S.Title>}
           {description && <S.Description>{description}</S.Description>}
-        </S.Header>
+        </Header>
       )}
     </>
   )
@@ -47,11 +47,11 @@ export const PopoverContent = ({
         <S.Content width={width} {...props}>
           <PopoverHeader title={title} description={description} />
           {children}
-          <S.CloseButton asChild>
+          <S.CloseTrigger asChild>
             <IconButton intent="ghost" aria-label="close">
               <X size={16} />
             </IconButton>
-          </S.CloseButton>
+          </S.CloseTrigger>
           <S.Arrow>
             <PopoverArrowTip />
           </S.Arrow>

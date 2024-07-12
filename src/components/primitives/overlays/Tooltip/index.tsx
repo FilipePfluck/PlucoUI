@@ -5,7 +5,7 @@ import {
 } from '@ark-ui/react'
 import { ReactNode } from 'react'
 
-import * as S from './styles'
+import S from './styles'
 
 type TooltipProps = ArkTooltipProps & {
   message: string

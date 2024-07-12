@@ -1,4 +1,5 @@
-import { css } from '@/styled-system/css'
+import { Pluco } from '@/pluco'
+import { css, cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { Menu } from '@ark-ui/react'
 
@@ -30,58 +31,69 @@ const menuItemBaseStyles = css.raw({
   gap: '2',
 })
 
-export const Root = styled(Menu.Root, {})
+export default Pluco(Menu, {
+  Content: cva({
+    base: {
+      bg: 'bg.surface',
+      px: '2',
+      py: '4',
+      rounded: 'md',
+      shadow: 'md',
+      outline: 'none',
 
-export const Trigger = styled(Menu.Trigger, {})
+      display: 'flex',
+      '&[hidden]': { display: 'none' },
+      flexDir: 'column',
+      gap: '2',
 
-export const ContextTrigger = styled(Menu.ContextTrigger, {})
-
-export const Positioner = styled(Menu.Positioner, {})
-
-export const Content = styled(Menu.Content, {
-  base: {
-    bg: 'bg.surface',
-    px: '2',
-    py: '4',
-    rounded: 'md',
-    shadow: 'md',
-    outline: 'none',
-
-    display: 'flex',
-    '&[hidden]': { display: 'none' },
-    flexDir: 'column',
-    gap: '2',
-
-    _dataOpen: {
-      _top: { animation: 'slideDownAndFadeIn' },
-      _right: { animation: 'slideLeftAndFadeIn' },
-      _bottom: { animation: 'slideUpAndFadeIn' },
-      _left: { animation: 'slideRightAndFadeIn' },
+      _dataOpen: {
+        _top: { animation: 'slideDownAndFadeIn' },
+        _right: { animation: 'slideLeftAndFadeIn' },
+        _bottom: { animation: 'slideUpAndFadeIn' },
+        _left: { animation: 'slideRightAndFadeIn' },
+      },
+      _dataClosed: {
+        _top: { animation: 'slideDownAndFadeOut' },
+        _right: { animation: 'slideLeftAndFadeOut' },
+        _bottom: { animation: 'slideUpAndFadeOut' },
+        _left: { animation: 'slideRightAndFadeOut' },
+      },
     },
-    _dataClosed: {
-      _top: { animation: 'slideDownAndFadeOut' },
-      _right: { animation: 'slideLeftAndFadeOut' },
-      _bottom: { animation: 'slideUpAndFadeOut' },
-      _left: { animation: 'slideRightAndFadeOut' },
+  }),
+  ItemGroupLabel: cva({
+    base: {
+      textStyle: 'headingXs',
+      color: 'fg.important',
+      pl: '8',
+      mb: '1',
     },
-  },
-})
-
-export const ItemGroup = styled(Menu.ItemGroup, {})
-
-export const ItemGroupLabel = styled(Menu.ItemGroupLabel, {
-  base: {
-    textStyle: 'headingXs',
-    color: 'fg.important',
-    pl: '8',
-    mb: '1',
-  },
-})
-
-export const Item = styled(Menu.Item, {
-  base: {
-    ...menuItemBaseStyles,
-  },
+  }),
+  Item: cva({
+    base: {
+      ...menuItemBaseStyles,
+    },
+  }),
+  TriggerItem: cva({
+    base: {
+      ...menuItemBaseStyles,
+    },
+  }),
+  OptionItem: cva({
+    base: {
+      ...menuItemBaseStyles,
+    },
+  }),
+  Arrow: cva({
+    base: {
+      '--arrow-background': 'colors.bg.surface',
+      '--arrow-size': '10px',
+    },
+  }),
+  ArrowTip: cva({
+    base: {
+      rounded: 'xs',
+    },
+  }),
 })
 
 export const Separator = styled(Menu.Separator, {
@@ -89,18 +101,6 @@ export const Separator = styled(Menu.Separator, {
     h: '1px',
     w: 'full',
     color: 'border',
-  },
-})
-
-export const TriggerItem = styled(Menu.TriggerItem, {
-  base: {
-    ...menuItemBaseStyles,
-  },
-})
-
-export const OptionItem = styled(Menu.OptionItem, {
-  base: {
-    ...menuItemBaseStyles,
   },
 })
 
@@ -122,18 +122,5 @@ export const RightSlot = styled('div', {
     transform: 'translateY(-50%)',
     textStyle: 'bodySm',
     color: 'fg',
-  },
-})
-
-export const Arrow = styled(Menu.Arrow, {
-  base: {
-    '--arrow-background': 'colors.bg.surface',
-    '--arrow-size': '10px',
-  },
-})
-
-export const ArrowTip = styled(Menu.ArrowTip, {
-  base: {
-    rounded: 'xs',
   },
 })
