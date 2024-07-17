@@ -1,6 +1,7 @@
 import {
   Portal,
   DatePickerRootProps as ArkDatePickerProps,
+  UseDatePickerReturn,
 } from '@ark-ui/react'
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { IconButton } from '../../buttons/IconButton'
@@ -37,6 +38,85 @@ const ViewTrigger = () => {
   )
 }
 
+type ViewControlProps = {
+  view: 'day' | 'month' | 'year'
+}
+
+const ViewControl = ({ view }: ViewControlProps) => {
+  const viewControlLabelSubject = {
+    day: 'month',
+    month: 'year',
+    year: 'decade',
+  }
+  const prevTriggerLabel = `Previous ${viewControlLabelSubject[view]}`
+  const nextTriggerLabel = `Next ${viewControlLabelSubject[view]}`
+
+  return (
+    <S.ViewControl>
+      <PrevTrigger label={prevTriggerLabel} />
+      <ViewTrigger />
+      <NextTrigger label={nextTriggerLabel} />
+    </S.ViewControl>
+  )
+}
+
+type ViewTableProps = {
+  api: UseDatePickerReturn
+  view: 'day' | 'month' | 'year'
+}
+
+interface Cell {
+  label: string
+  value: number
+}
+
+const ViewTable = ({ api, view }: ViewTableProps) => {
+  const tableBodyData = {
+    day: api.weeks,
+    month: api.getMonthsGrid({ columns: 4, format: 'short' }),
+    year: api.getYearsGrid({ columns: 4 }),
+  }
+
+  // variable can be Cell | DateValue
+  // I am using any here because I won't bother to install a lib
+  // just to import the `DateValue` type
+
+  // eslint-disable-next-line
+  function isCell(variable: Cell | any): variable is Cell {
+    return (variable as Cell).value !== undefined
+  }
+
+  return (
+    <S.Table>
+      {view === 'day' && (
+        <S.TableHead>
+          <S.TableRow>
+            {api.weekDays.map((weekDay, id) => (
+              <S.TableHeader key={id}>{weekDay.narrow}</S.TableHeader>
+            ))}
+          </S.TableRow>
+        </S.TableHead>
+      )}
+      <S.TableBody>
+        {tableBodyData[view].map((timeUnits, id) => (
+          <S.TableRow key={id}>
+            {timeUnits.map((timeUnit, id) => (
+              <S.TableCell
+                key={id}
+                value={isCell(timeUnit) ? timeUnit.value : timeUnit}
+              >
+                <S.TableCellTrigger>
+                  {isCell(timeUnit) ? timeUnit.label : timeUnit.day}
+                </S.TableCellTrigger>
+              </S.TableCell>
+            ))}
+          </S.TableRow>
+        ))}
+      </S.TableBody>
+    </S.Table>
+  )
+}
+
 export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
   return (
     <S.Root {...props}>
@@ -52,97 +132,37 @@ export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
       <Portal>
         <S.Positioner>
           <S.Content>
-            {/* DAY  */}
             <S.View view="day">
-              {(api) => (
-                <>
-                  <S.ViewControl>
-                    <PrevTrigger label="Previous month" />
-                    <ViewTrigger />
-                    <NextTrigger label="Next month" />
-                  </S.ViewControl>
-                  <S.Table>
-                    <S.TableHead>
-                      <S.TableRow>
-                        {api.weekDays.map((weekDay, id) => (
-                          <S.TableHeader key={id}>
-                            {weekDay.narrow}
-                          </S.TableHeader>
-                        ))}
-                      </S.TableRow>
-                    </S.TableHead>
-                    <S.TableBody>
-                      {api.weeks.map((week, id) => (
-                        <S.TableRow key={id}>
-                          {week.map((day, id) => (
-                            <S.TableCell key={id} value={day}>
-                              <S.TableCellTrigger>{day.day}</S.TableCellTrigger>
-                            </S.TableCell>
-                          ))}
-                        </S.TableRow>
-                      ))}
-                    </S.TableBody>
-                  </S.Table>
-                </>
-              )}
+              <S.Context>
+                {(api) => (
+                  <>
+                    <ViewControl view="day" />
+                    <ViewTable api={api} view="day" />
+                  </>
+                )}
+              </S.Context>
             </S.View>
 
-            {/* MONTH  */}
             <S.View view="month">
-              {(api) => (
-                <>
-                  <S.ViewControl>
-                    <PrevTrigger label="Previous year" />
-                    <ViewTrigger />
-                    <NextTrigger label="Next year" />
-                  </S.ViewControl>
-                  <S.Table>
-                    <S.TableBody>
-                      {api
-                        .getMonthsGrid({ columns: 4, format: 'short' })
-                        .map((months, id) => (
-                          <S.TableRow key={id} fewerColumns>
-                            {months.map((month, id) => (
-                              <S.TableCell key={id} value={month.value}>
-                                <S.TableCellTrigger>
-                                  {month.label}
-                                </S.TableCellTrigger>
-                              </S.TableCell>
-                            ))}
-                          </S.TableRow>
-                        ))}
-                    </S.TableBody>
-                  </S.Table>
-                </>
-              )}
+              <S.Context>
+                {(api) => (
+                  <>
+                    <ViewControl view="month" />
+                    <ViewTable api={api} view="month" />
+                  </>
+                )}
+              </S.Context>
             </S.View>
 
-            {/* YEAR  */}
             <S.View view="year">
-              {(api) => (
-                <>
-                  <S.ViewControl>
-                    <PrevTrigger label="Previous decade" />
-                    <ViewTrigger />
-                    <NextTrigger label="Next decade" />
-                  </S.ViewControl>
-                  <S.Table>
-                    <S.TableBody>
-                      {api.getYearsGrid({ columns: 4 }).map((years, id) => (
-                        <S.TableRow key={id} fewerColumns>
-                          {years.map((year, id) => (
-                            <S.TableCell key={id} value={year.value}>
-                              <S.TableCellTrigger>
-                                {year.label}
-                              </S.TableCellTrigger>
-                            </S.TableCell>
-                          ))}
-                        </S.TableRow>
-                      ))}
-                    </S.TableBody>
-                  </S.Table>
-                </>
-              )}
+              <S.Context>
+                {(api) => (
+                  <>
+                    <ViewControl view="year" />
+                    <ViewTable api={api} view="year" />
+                  </>
+                )}
+              </S.Context>
             </S.View>
           </S.Content>
         </S.Positioner>

@@ -37,7 +37,8 @@ export const Demo = (props: ColorPickerRootProps) => {
         </S.ChannelInput>
         <S.Trigger asChild>
           <IconButton aria-label="Open color picker" intent="secondary">
-            <S.Swatch value="" />
+            {/* TODO look at this */}
+            {/* <S.Swatch value="" /> */}
           </IconButton>
         </S.Trigger>
       </S.Control>

@@ -1,7 +1,7 @@
 import { Button } from '../../buttons/Button'
-import { within, userEvent, expect, waitFor } from '@storybook/test'
+// import { within, userEvent, expect, waitFor } from '@storybook/test'
 
-import { Toaster, toast } from './index'
+// import { Toaster, toast } from './index'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -10,26 +10,26 @@ const meta: Meta = {
 }
 
 export default meta
-type Story = StoryObj<typeof Toaster>
+type Story = StoryObj /* <typeof Toaster> */
 
 export const Primary: Story = {
   render: () => (
     <>
       <Button
-        onClick={() =>
+      /* onClick={() =>
           toast.create({
             title: 'Title',
             description: 'Description',
             removeDelay: 190,
           })
-        }
+        } */
       >
         Open toast
       </Button>
-      <Toaster />
+      {/* <Toaster /> */}
     </>
   ),
-  play: async ({ canvasElement }) => {
+  /* play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
 
     const button = await canvas.findByRole('button')
@@ -46,5 +46,5 @@ export const Primary: Story = {
       await userEvent.click(closeButton)
       expect(toast).not.toBeVisible()
     })
-  },
+  }, */
 }

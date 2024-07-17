@@ -1,12 +1,15 @@
-import { createToaster } from '@ark-ui/react'
-import * as S from './styles'
+/* import { Toaster } from '@ark-ui/react'
+import S from './styles'
 import { IconButton } from '../../buttons/IconButton'
 import { X } from 'lucide-react'
 
-const [Toaster, toast] = createToaster({
-  placement: 'bottom-end',
-  render(toast) {
-    return (
+type ToastProps = {
+  toaster: CreateToasterReturn
+}
+
+const Toast = () => (
+  <Toaster toaster={toaster}>
+    {(toast) => (
       <S.Root>
         <S.Title>{toast.title}</S.Title>
         <S.Description>{toast.description}</S.Description>
@@ -16,8 +19,9 @@ const [Toaster, toast] = createToaster({
           </IconButton>
         </S.CloseTrigger>
       </S.Root>
-    )
-  },
-})
+    )}
+  </Toaster>
+)
 
-export { Toaster, toast }
+export { Toast }
+ */
