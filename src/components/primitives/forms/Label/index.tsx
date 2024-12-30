@@ -1,9 +1,7 @@
-import { ComponentProps } from '@/styled-system/types'
 import * as S from './styles'
-import { SystemStyleObject } from '@pandacss/dev'
+import { StyledElement } from '@/types/withCss'
 
-type LabelProps = ComponentProps<'label'> & {
-  css?: SystemStyleObject
+type LabelProps = StyledElement<'label'> & {
   isRequired?: boolean
 }
 

@@ -1,7 +1,7 @@
 import { CarouselRootProps } from '@ark-ui/react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-import { IconButton } from '../../buttons/IconButton'
+import { IconButton } from '../../forms/buttons/IconButton'
 
 import S, { Image } from './styles'
 

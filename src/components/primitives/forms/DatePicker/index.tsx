@@ -4,9 +4,10 @@ import {
   UseDatePickerReturn,
 } from '@ark-ui/react'
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
-import { IconButton } from '../../buttons/IconButton'
+import { IconButton } from '../buttons/IconButton'
 import S from './styles'
-import { Button } from '../../buttons/Button'
+import { Button } from '../buttons/Button'
+import { ReactNode } from 'react'
 
 const PrevTrigger = ({ label }: { label: string }) => {
   return (
@@ -99,7 +100,7 @@ const ViewTable = ({ api, view }: ViewTableProps) => {
       )}
       <S.TableBody>
         {tableBodyData[view].map((timeUnits, id) => (
-          <S.TableRow key={id}>
+          <S.TableRow fewerColumns={view !== 'day'} key={id}>
             {timeUnits.map((timeUnit, id) => (
               <S.TableCell
                 key={id}
@@ -117,56 +118,72 @@ const ViewTable = ({ api, view }: ViewTableProps) => {
   )
 }
 
-export const DatePicker = ({ ...props }: ArkDatePickerProps) => {
+type ContentProps = {
+  standalone?: boolean
+  children: ReactNode
+}
+
+export const Content = ({ standalone = false, children }: ContentProps) => {
+  if (standalone) {
+    return children
+  }
+
   return (
-    <S.Root {...props}>
-      <S.Label>Date Picker</S.Label>
-      <S.Control>
-        <S.Input />
-        <S.Trigger asChild>
-          <IconButton intent="secondary" aria-label="Open date picker">
-            <Calendar />
-          </IconButton>
-        </S.Trigger>
-      </S.Control>
-      <Portal>
-        <S.Positioner>
-          <S.Content>
-            <S.View view="day">
-              <S.Context>
-                {(api) => (
-                  <>
-                    <ViewControl view="day" />
-                    <ViewTable api={api} view="day" />
-                  </>
-                )}
-              </S.Context>
-            </S.View>
+    <Portal>
+      <S.Positioner>{children}</S.Positioner>
+    </Portal>
+  )
+}
 
-            <S.View view="month">
-              <S.Context>
-                {(api) => (
-                  <>
-                    <ViewControl view="month" />
-                    <ViewTable api={api} view="month" />
-                  </>
-                )}
-              </S.Context>
-            </S.View>
+export const DatePicker = ({ open, ...props }: ArkDatePickerProps) => {
+  return (
+    <S.Root open={open} {...props}>
+      {!open && (
+        <S.Control>
+          <S.Input />
+          <S.Trigger asChild>
+            <IconButton intent="secondary" aria-label="Open date picker">
+              <Calendar />
+            </IconButton>
+          </S.Trigger>
+        </S.Control>
+      )}
+      <Content standalone={open}>
+        <S.Content>
+          <S.View view="day">
+            <S.Context>
+              {(api) => (
+                <>
+                  <ViewControl view="day" />
+                  <ViewTable api={api} view="day" />
+                </>
+              )}
+            </S.Context>
+          </S.View>
 
-            <S.View view="year">
-              <S.Context>
-                {(api) => (
-                  <>
-                    <ViewControl view="year" />
-                    <ViewTable api={api} view="year" />
-                  </>
-                )}
-              </S.Context>
-            </S.View>
-          </S.Content>
-        </S.Positioner>
-      </Portal>
+          <S.View view="month">
+            <S.Context>
+              {(api) => (
+                <>
+                  <ViewControl view="month" />
+                  <ViewTable api={api} view="month" />
+                </>
+              )}
+            </S.Context>
+          </S.View>
+
+          <S.View view="year">
+            <S.Context>
+              {(api) => (
+                <>
+                  <ViewControl view="year" />
+                  <ViewTable api={api} view="year" />
+                </>
+              )}
+            </S.Context>
+          </S.View>
+        </S.Content>
+      </Content>
     </S.Root>
   )
 }

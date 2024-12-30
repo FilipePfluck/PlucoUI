@@ -163,6 +163,7 @@ export default Pluco(DatePicker, {
       w: 'full',
       p: '1',
       rounded: 'sm',
+      cursor: 'pointer',
       _hover: {
         bg: 'bg.surface.hovered',
         boxShadow: 'sm',

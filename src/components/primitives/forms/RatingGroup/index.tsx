@@ -17,27 +17,32 @@ export const RatingGroup = ({
     <S.Root count={count} {...props}>
       {label && <S.Label>{label}</S.Label>}
       <S.Control>
-        {({ items }) =>
-          items.map((item) => (
-            <S.Item key={item} index={item}>
-              {({ isHighlighted }) => {
-                if (isHighlighted)
-                  return (
-                    <Star
-                      fill="var(--colors-border-brand)"
-                      color="var(--colors-border-brand)"
-                    />
-                  )
-                return (
-                  <Star
-                    fill="var(--colors-border)"
-                    color="var(--colors-border)"
-                  />
-                )
-              }}
-            </S.Item>
-          ))
-        }
+        <S.Context>
+          {({ items }) =>
+            items.map((item) => (
+              <S.Item key={item} index={item}>
+                <S.ItemContext>
+                  {({ highlighted }) => {
+                    if (highlighted)
+                      return (
+                        <Star
+                          fill="var(--colors-border-brand)"
+                          color="var(--colors-border-brand)"
+                        />
+                      )
+                    return (
+                      <Star
+                        fill="var(--colors-border)"
+                        color="var(--colors-border)"
+                      />
+                    )
+                  }}
+                </S.ItemContext>
+              </S.Item>
+            ))
+          }
+        </S.Context>
+        <S.HiddenInput />
       </S.Control>
     </S.Root>
   )

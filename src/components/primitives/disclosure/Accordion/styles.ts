@@ -63,11 +63,11 @@ export default Pluco(Accordion, {
 
       transitionProperty: 'height, padding',
 
-      _dataOpen: {
+      _open: {
         animation: 'accordionSlideDown',
       },
 
-      _dataClosed: {
+      _closed: {
         animation: 'accordionSlideUp',
       },
     },

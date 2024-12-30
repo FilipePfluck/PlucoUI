@@ -1,6 +1,6 @@
 import S, { Divider, FruitCard, FruitGrid } from '../styles'
 import { Flex } from '@/styled-system/jsx'
-import { IconButton } from '@/components/primitives/buttons/IconButton'
+import { IconButton } from '@/components/primitives/forms/buttons/IconButton'
 import { FoldVertical } from 'lucide-react'
 
 export const visibleFruits = ['🍎', '🍐', '🍊', '🍋']

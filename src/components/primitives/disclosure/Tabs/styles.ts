@@ -132,7 +132,7 @@ export default Pluco(Tabs, {
 
       transitionDuration: 'slow',
 
-      _dataClosed: {
+      _closed: {
         position: 'absolute',
         opacity: 0,
         visibility: 'hidden',

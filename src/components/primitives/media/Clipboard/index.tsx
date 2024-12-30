@@ -1,8 +1,8 @@
 import { ClipboardRootProps } from '@ark-ui/react'
 import { CheckIcon, ClipboardCopyIcon } from 'lucide-react'
 import { Label } from '../../forms/Label'
-import { Input } from '../../forms/Input'
-import { IconButton } from '../../buttons/IconButton'
+import { Input } from '../../forms/inputs/Input'
+import { IconButton } from '../../forms/buttons/IconButton'
 
 import S from './styles'
 

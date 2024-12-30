@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { DialogContent } from './index'
 import { Dialog } from '@ark-ui/react'
-import { Button } from '../../buttons/Button'
+import { Button } from '../../forms/buttons/Button'
 import { Flex } from '@/styled-system/jsx'
 
 const meta: Meta<typeof DialogContent> = {

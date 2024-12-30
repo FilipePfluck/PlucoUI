@@ -1,7 +1,7 @@
 import { Popover } from '@ark-ui/react'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Button } from '../../buttons/Button'
+import { Button } from '../../forms/buttons/Button'
 import { PopoverContent } from '.'
 
 const ExamplePopover = () => {

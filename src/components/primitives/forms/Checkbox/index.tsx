@@ -1,20 +1,32 @@
 import { CheckboxRootProps as ArkCheckboxProps } from '@ark-ui/react'
 import S from './styles'
 import { ForwardedRef, forwardRef } from 'react'
-import { SystemStyleObject } from '@/styled-system/types'
+import { WithCss } from '@/types/withCss'
 
-export type CheckboxProps = ArkCheckboxProps & {
+export type CheckboxProps = WithCss<ArkCheckboxProps> & {
   label: string
-  css?: SystemStyleObject
 }
 
 const CheckboxComponent = (
-  { label, ...props }: CheckboxProps,
+  {
+    label,
+    'aria-invalid': ariaInvalid,
+    'aria-required': ariaRequired,
+    'aria-describedby': ariaDescribedBy,
+    ...props
+  }: CheckboxProps,
   ref: ForwardedRef<HTMLLabelElement>,
 ) => {
   return (
     <S.Root ref={ref} {...props}>
-      <S.Control />
+      <S.Control aria-hidden={false}>
+        <S.Indicator />
+        <S.HiddenInput
+          aria-invalid={ariaInvalid}
+          aria-required={ariaRequired}
+          aria-describedby={ariaDescribedBy}
+        />
+      </S.Control>
       <S.Label>{label}</S.Label>
     </S.Root>
   )

@@ -10,5 +10,5 @@ export default meta
 type Story = StoryObj<typeof Signup>
 
 export const Primary: Story = {
-  render: () => <Signup />,
+  render: () => <Signup onSubmit={() => console.log('Test')} />,
 }

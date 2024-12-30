@@ -78,7 +78,7 @@ export default Pluco(RadioGroup, {
         },
       },
 
-      _siblingFocusVisible: {
+      _focusVisibleWithin: {
         outline: '2px solid token(colors.border.ring)',
       },
     },

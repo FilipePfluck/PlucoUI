@@ -1,5 +1,6 @@
 import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
+import { styled } from '@/styled-system/jsx'
 import { Combobox } from '@ark-ui/react'
 
 export default Pluco(Combobox, {
@@ -18,76 +19,16 @@ export default Pluco(Combobox, {
   }),
   Control: cva({
     base: {
-      position: 'relative',
+      height: 'min-content',
     },
   }),
   Input: cva({
-    base: {
-      display: 'inline-flex',
-      justify: 'space-between',
-      align: 'center',
-      gap: '4',
-      minH: '10',
-
-      borderWidth: '1px',
-      borderStyle: 'solid',
-      borderColor: { base: 'border', _focus: 'border.brand' },
-      borderRadius: 'md',
-      cursor: 'pointer',
-
-      bg: 'bg.surface',
-      boxShadow: 'sm',
-
-      outline: 0,
-      position: 'relative',
-      transitionDuration: 'normal',
-      transitionProperty: 'background, box-shadow, border-color',
-      transitionTimingFunction: 'default',
-      color: 'fg',
-      width: 'full',
-      _placeholder: {
-        color: 'fg',
-      },
-      '& :where(svg)': {
-        color: 'fg',
-      },
-    },
-    variants: {
-      width: {
-        auto: {},
-        sm: {
-          w: '24',
-          p: '1',
-        },
-        md: {
-          w: '40',
-          px: '2',
-          py: '1',
-        },
-        lg: {
-          w: '64',
-          px: '4',
-          py: '2',
-        },
-        full: {
-          w: 'full',
-          px: '4',
-          py: '2',
-        },
-      },
-    },
-    defaultVariants: {
-      width: 'md',
-    },
+    base: {},
   }),
   Trigger: cva({
     base: {
-      bottom: '0',
-      color: 'fg',
-      position: 'absolute',
-      // TODO - improve this later
-      right: '2',
-      top: '0',
+      iconColor: 'fg!',
+      zIndex: '10',
     },
   }),
   Content: cva({
@@ -101,6 +42,8 @@ export default Pluco(Combobox, {
       gap: 2,
       p: 2,
       w: 'full',
+      h: 'calc(14px + 32px * var(--n-of-results))',
+      transition: '0.1s',
 
       zIndex: '10',
       '&[hidden]': {
@@ -154,8 +97,9 @@ export default Pluco(Combobox, {
       cursor: 'pointer',
 
       transitionDuration: 'fast',
-      transitionProperty: 'background, color',
+      transitionProperty: 'background, color, height, padding',
       transitionTimingFunction: 'default',
+      animation: 'comboboxItemAppear',
 
       _selected: {
         color: 'fg.important',
@@ -197,4 +141,18 @@ export default Pluco(Combobox, {
       color: 'inherit',
     },
   }),
+})
+
+export const EmptyState = styled('div', {
+  base: {
+    display: 'flex',
+    align: 'center',
+    justify: 'space-between',
+    px: 1,
+    py: '0.5',
+    position: 'relative',
+
+    borderRadius: 'sm',
+    cursor: 'pointer',
+  },
 })

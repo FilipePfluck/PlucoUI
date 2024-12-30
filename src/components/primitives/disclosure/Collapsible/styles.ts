@@ -9,10 +9,10 @@ export default Pluco(Collapsible, {
     base: {
       pb: '2',
       overflow: 'hidden',
-      _dataOpen: {
+      _open: {
         animation: 'expand',
       },
-      _dataClosed: {
+      _closed: {
         animation: 'collapse',
       },
     },

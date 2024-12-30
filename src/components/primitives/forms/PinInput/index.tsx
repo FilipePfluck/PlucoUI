@@ -1,13 +1,19 @@
 import { PinInputRootProps as ArkPinInputProps } from '@ark-ui/react'
 
 import S from './styles'
+import { WithCss } from '@/types/withCss'
 
-type PinInputProps = ArkPinInputProps & {
-  label?: string
+type PinInputProps = WithCss<ArkPinInputProps> & {
+  size?: 'xs' | 'sm' | 'md' | 'lg'
   length?: number
 }
 
-export const PinInput = ({ label, length = 5, ...props }: PinInputProps) => {
+export const PinInput = ({
+  length = 5,
+  size,
+  'aria-invalid': ariaIvalid,
+  ...props
+}: PinInputProps) => {
   function range(N: number) {
     return Array.from({ length: N }, (_, index) => index)
   }
@@ -17,10 +23,9 @@ export const PinInput = ({ label, length = 5, ...props }: PinInputProps) => {
     // with property mask from styled component
     // @ts-ignore
     <S.Root {...props}>
-      {label && <S.Label>{label}</S.Label>}
       <S.Control>
         {range(length).map((id) => (
-          <S.Input key={id} index={id} />
+          <S.Input aria-invalid={ariaIvalid} size={size} key={id} index={id} />
         ))}
       </S.Control>
     </S.Root>

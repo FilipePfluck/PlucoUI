@@ -1,18 +1,14 @@
 'use client'
 
 import { Combobox } from '@/components/primitives/forms/Combobox'
-import { Box } from '@/styled-system/jsx'
+
+const data = [
+  { label: 'React', value: 'react' },
+  { label: 'Solid', value: 'solid' },
+  { label: 'Svelte', value: 'svelte', disabled: true },
+  { label: 'Vue', value: 'vue' },
+]
 
 export default function Home() {
-  return (
-    <Box
-      w="full"
-      h="100vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-    >
-      <Combobox />
-    </Box>
-  )
+  return <Combobox data={data} />
 }

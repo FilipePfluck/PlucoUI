@@ -156,7 +156,7 @@ export const utilities = {
       },
     },
     iconColor: {
-      values: { type: 'string' },
+      values: 'colors',
       transform(value: string) {
         return {
           '& svg': { stroke: value },

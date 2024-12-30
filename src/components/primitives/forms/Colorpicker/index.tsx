@@ -3,9 +3,8 @@ import { HStack, Stack } from '@/styled-system/jsx'
 
 import S from './styles'
 
-import { IconButton } from '../../buttons/IconButton'
-import { Input } from '../Input'
-import { Text } from '../../typography/Text'
+import { IconButton } from '../buttons/IconButton'
+import { Input } from '../inputs/Input'
 import { ColorPickerRootProps, Portal } from '@ark-ui/react'
 import { Label } from '../Label'
 
@@ -80,7 +79,6 @@ export const Demo = (props: ColorPickerRootProps) => {
                 </S.ChannelInput>
               </HStack>
               <Stack gap="1.5">
-                <Text>Saved Colors</Text>
                 <S.SwatchGroup>
                   {presets.map((color, id) => (
                     <S.SwatchTrigger key={id} value={color}>
