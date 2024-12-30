@@ -1,8 +1,9 @@
-import { Control, Controller } from 'react-hook-form'
-import { FormControl } from '../FormControl'
-import { Checkbox } from '.'
+import { Control, Controller, useFormContext } from 'react-hook-form'
+import { Field } from '../Field'
+import { Checkbox, CheckboxProps } from '.'
+import { getValueByPath } from '@/utils/getValueByPath'
 
-type FormCheckboxProps = {
+type FormCheckboxProps = CheckboxProps & {
   // eslint-disable-next-line
   control: Control<any>
   errorMessage?: string
@@ -20,15 +21,17 @@ export const FormCheckbox = ({
   checkboxLabel,
   isRequired,
 }: FormCheckboxProps) => {
+  const { trigger } = useFormContext()
+
   return (
     <Controller
       control={control}
       name={name}
-      render={({ field }) => {
-        const { onChange, value, ...rest } = field
+      render={({ field, formState }) => {
+        const { onChange: onFieldChange, value, ...rest } = field
 
         return (
-          <FormControl
+          <Field
             id={name}
             label={label}
             isRequired={isRequired}
@@ -36,11 +39,17 @@ export const FormCheckbox = ({
           >
             <Checkbox
               label={checkboxLabel}
-              onCheckedChange={({ checked }) => onChange(checked)}
+              onCheckedChange={({ checked }) => {
+                onFieldChange(checked)
+
+                if (getValueByPath(formState.errors, name)) {
+                  trigger(name)
+                }
+              }}
               checked={value}
               {...rest}
             />
-          </FormControl>
+          </Field>
         )
       }}
     />

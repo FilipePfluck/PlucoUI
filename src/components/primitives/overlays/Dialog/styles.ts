@@ -9,10 +9,10 @@ export default Pluco(Dialog, {
       bg: 'rgb(0, 0, 0, 0.4)',
       position: 'fixed',
       inset: '0px',
-      _dataOpen: {
+      _open: {
         animation: 'fadeIn',
       },
-      _dataClosed: {
+      _closed: {
         animation: 'fadeOut',
       },
     },
@@ -21,6 +21,7 @@ export default Pluco(Dialog, {
     base: {
       position: 'fixed',
       center: 'absolute',
+      zIndex: 999,
 
       display: 'flex',
       flexDirection: 'column',
@@ -41,11 +42,11 @@ export default Pluco(Dialog, {
 
       transition: '0.2s',
 
-      "&[data-state='open']": {
+      _open: {
         opacity: '1',
         transform: 'translate(-50%, -50%) scale(1)',
       },
-      "&[data-state='closed']": {
+      _closed: {
         opacity: '0',
         transform: 'translate(-50%, -48%) scale(.96)',
       },

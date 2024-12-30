@@ -7,7 +7,7 @@ import {
 import S, { Header } from './styles'
 import { X } from 'lucide-react'
 import { ReactNode } from 'react'
-import { IconButton } from '../../buttons/IconButton'
+import { IconButton } from '../../forms/buttons/IconButton'
 
 type DialogContentProps = ArkDialogProps & {
   title?: string

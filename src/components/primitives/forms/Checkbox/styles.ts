@@ -49,7 +49,7 @@ export default Pluco(Checkbox, {
         },
       },
 
-      '[aria-invalid="true"] &': {
+      _invalidWithin: {
         borderColor: 'border.danger',
 
         _after: {
@@ -67,7 +67,7 @@ export default Pluco(Checkbox, {
         },
       },
 
-      _siblingFocusVisible: {
+      _focusVisibleWithin: {
         outline: '2px solid token(colors.border.ring)',
       },
     },

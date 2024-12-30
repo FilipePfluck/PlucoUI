@@ -10,8 +10,28 @@ const meta: Meta<typeof PinInput> = {
 export default meta
 type Story = StoryObj<typeof PinInput>
 
-export const Primary: Story = {
-  render: () => <PinInput placeholder="0" />,
+export const PinInputStory: Story = {
+  args: {
+    placeholder: '0',
+    length: 5,
+    disabled: false,
+    mask: false,
+  },
+  decorators: [
+    (Story) => (
+      <Box bg="bg.surface" p="8" rounded="md" shadow="md">
+        <Story />
+      </Box>
+    ),
+  ],
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+    'aria-invalid': {
+      control: 'boolean',
+    },
+  },
 }
 
 export const AllVariants: Story = {
@@ -25,9 +45,21 @@ export const AllVariants: Story = {
       flexDir="column"
       gap="4"
     >
+      <PinInput placeholder="0" size="xs" />
+      <PinInput placeholder="0" aria-invalid size="xs" />
+      <PinInput placeholder="0" disabled size="xs" />
+
+      <PinInput placeholder="0" size="sm" />
+      <PinInput placeholder="0" aria-invalid size="sm" />
+      <PinInput placeholder="0" disabled size="sm" />
+
       <PinInput placeholder="0" />
       <PinInput placeholder="0" aria-invalid />
       <PinInput placeholder="0" disabled />
+
+      <PinInput placeholder="0" size="lg" />
+      <PinInput placeholder="0" aria-invalid size="lg" />
+      <PinInput placeholder="0" disabled size="lg" />
     </Box>
   ),
 }

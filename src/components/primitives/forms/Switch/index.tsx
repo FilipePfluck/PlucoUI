@@ -13,6 +13,7 @@ export const Switch = ({ label, ...props }: SwitchProps) => {
         <S.Thumb />
       </S.Control>
       {label && <S.Label>{label}</S.Label>}
+      <S.HiddenInput role="switch" />
     </S.Root>
   )
 }

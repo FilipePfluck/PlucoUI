@@ -73,7 +73,7 @@ export default Pluco(RadioGroup, {
       transitionProperty: 'background, border-color, color, box-shadow',
       transitionTimingFunction: 'default',
 
-      _siblingFocusVisible: {
+      _focusVisibleWithin: {
         outline: '2px solid token(colors.border.ring)',
       },
 

@@ -9,10 +9,10 @@ export default Pluco(Dialog, {
       bg: 'rgb(0, 0, 0, 0.4)',
       position: 'fixed',
       inset: '0px',
-      _dataOpen: {
+      _open: {
         animation: 'fadeIn',
       },
-      _dataClosed: {
+      _closed: {
         animation: 'fadeOut',
       },
     },
@@ -34,11 +34,11 @@ export default Pluco(Dialog, {
       _focus: {
         outline: 'none',
       },
-      _dataOpen: {
+      _open: {
         transform: 'translate3d(0,0,0)',
         opacity: 1,
       },
-      _dataClosed: {
+      _closed: {
         transform: 'var(--drawer-transform)',
         opacity: 0,
       },

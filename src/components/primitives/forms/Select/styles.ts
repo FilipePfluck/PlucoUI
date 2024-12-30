@@ -88,9 +88,28 @@ export default Pluco(Select, {
           },
         },
       },
+      size: {
+        xs: {
+          px: '1',
+          h: '8',
+        },
+        sm: {
+          px: '2',
+          h: '9',
+        },
+        md: {
+          px: '3',
+          h: '10',
+        },
+        lg: {
+          px: '4',
+          h: '11',
+        },
+      },
     },
     defaultVariants: {
       width: 'md',
+      size: 'md',
     },
   }),
   ClearTrigger: cva({

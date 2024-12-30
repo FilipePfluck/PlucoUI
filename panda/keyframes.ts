@@ -32,6 +32,17 @@ export const keyframes: CssKeyframes = {
     },
   },
 
+  // checkbox
+
+  check: {
+    '0%': { opacity: '0', transform: 'translate(-50%, -50%) scale(50%)' },
+    '100%': { opacity: '1', transform: 'translate(-50%, -50%) scale(100%)' },
+  },
+  unCheck: {
+    '0%': { opacity: '1', transform: 'translate(-50%, -50%) scale(100%)' },
+    '100%': { opacity: '0', transform: 'translate(-50%, -50%) scale(50%)' },
+  },
+
   // slide and fade
   slideUpAndFadeIn: {
     '0%': { opacity: 0, transform: 'translateY(2px)' },
@@ -132,5 +143,24 @@ export const keyframes: CssKeyframes = {
   // skeleton
   skeletonPulse: {
     '50%': { opacity: '0.5' },
+  },
+
+  // combobox item
+  comboboxItemAppear: {
+    '0%': {
+      height: '0px',
+      padding: '0px 4px',
+      opacity: 0,
+    },
+    '50%': {
+      height: '30px',
+      padding: '2px 4px',
+      opacity: 0,
+    },
+    '100%': {
+      height: '30px',
+      padding: '2px 4px',
+      opacity: 1,
+    },
   },
 }

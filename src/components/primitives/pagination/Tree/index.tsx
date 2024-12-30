@@ -1,8 +1,7 @@
-import { type TreeViewRootProps } from '@ark-ui/react/tree-view'
+// import { type TreeViewRootProps } from '@ark-ui/react/tree-view'
 
-import S from './styles'
-import { forwardRef } from 'react'
-import { ChevronRightIcon } from 'lucide-react'
+// import S from './styles'
+// import { ChevronRightIcon } from 'lucide-react'
 
 interface Child {
   id: string
@@ -15,13 +14,14 @@ export interface TreeViewData {
   children: Child[]
 }
 
-export interface TreeViewProps extends TreeViewRootProps {
-  data: TreeViewData
-}
+// TODO - update tree componente to new ark version
 
-export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
-  ({ data, ...props }, ref) => {
-    const renderChild = (child: Child) => (
+/* export interface TreeViewProps extends TreeViewRootProps {
+  data: TreeViewData
+} */
+
+export const TreeView = (/* { data, ...props } */) => {
+  /* const renderChild = (child: Child) => (
       <S.Branch key={child.id} id={child.id}>
         <S.BranchControl>
           <S.BranchIndicator>
@@ -47,8 +47,7 @@ export const TreeView = forwardRef<HTMLDivElement, TreeViewProps>(
       <S.Root ref={ref} aria-label={data.label} {...props}>
         <S.Tree>{data.children.map(renderChild)}</S.Tree>
       </S.Root>
-    )
-  },
-)
+    ) */
 
-TreeView.displayName = 'TreeView'
+  return <p>Coming soon</p>
+}

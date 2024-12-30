@@ -6,7 +6,7 @@ import {
 } from '@ark-ui/react'
 
 import S, { ContentVariants, Header } from './styles'
-import { IconButton } from '../../buttons/IconButton'
+import { IconButton } from '../../forms/buttons/IconButton'
 import { X } from 'lucide-react'
 
 type PopoverProps = PopoverContentProps &

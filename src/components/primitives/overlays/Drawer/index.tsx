@@ -1,7 +1,7 @@
 import { DialogContentProps, Portal } from '@ark-ui/react'
 
 import S, { Header } from './styles'
-import { IconButton } from '../../buttons/IconButton'
+import { IconButton } from '../../forms/buttons/IconButton'
 import { X } from 'lucide-react'
 
 export interface DrawerProps extends DialogContentProps {

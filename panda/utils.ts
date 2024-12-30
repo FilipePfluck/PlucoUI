@@ -1,13 +1,13 @@
 import { css } from '@/styled-system/css'
 
 export const slideAnimation = css.raw({
-  _dataOpen: {
+  _open: {
     _top: { animation: 'slideDownAndFadeIn' },
     _right: { animation: 'slideLeftAndFadeIn' },
     _bottom: { animation: 'slideUpAndFadeIn' },
     _left: { animation: 'slideRightAndFadeIn' },
   },
-  _dataClosed: {
+  _closed: {
     _top: { animation: 'slideDownAndFadeOut' },
     _right: { animation: 'slideLeftAndFadeOut' },
     _bottom: { animation: 'slideUpAndFadeOut' },

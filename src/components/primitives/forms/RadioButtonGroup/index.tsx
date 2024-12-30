@@ -34,7 +34,8 @@ export const RadioButtonGroup = ({
               className="group"
               {...props}
             >
-              <S.ItemControl>
+              <S.ItemControl aria-hidden={false}>
+                <S.ItemHiddenInput />
                 <S.ItemText id={`label-${id}`}>{label}</S.ItemText>
               </S.ItemControl>
             </S.Item>

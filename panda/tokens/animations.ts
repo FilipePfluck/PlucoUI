@@ -59,4 +59,7 @@ export const animations = {
   skeletonPulse: {
     value: 'skeletonPulse 2s cubic-bezier(.4, 0, .6, 1) infinite',
   },
+  comboboxItemAppear: {
+    value: 'comboboxItemAppear 0.2s',
+  },
 }

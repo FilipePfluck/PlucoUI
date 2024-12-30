@@ -24,7 +24,7 @@ export default Pluco(Pagination, {
         base: 'bg.surface',
         _hover: 'bg.surface.hovered',
       },
-      _dataSelected: {
+      _selected: {
         bg: {
           base: 'bg.brand',
           _hover: 'bg.brand.hovered',

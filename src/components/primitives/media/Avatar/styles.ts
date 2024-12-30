@@ -98,6 +98,7 @@ export default Pluco(Avatar, {
   Fallback: cva({
     base: {
       align: 'center',
+      borderRadius: 'full',
       background: 'bg.surface',
       display: 'flex',
       fontWeight: 'semibold',
@@ -139,6 +140,7 @@ export default Pluco(Avatar, {
   Image: cva({
     base: {
       objectFit: 'cover',
+      borderRadius: 'full',
     },
     variants: {
       size: {

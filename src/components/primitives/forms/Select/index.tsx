@@ -5,7 +5,9 @@ import {
   SelectItemProps as ArkSelectItemProps,
   SelectRootProps as ArkSelectProps,
   CollectionItem,
+  createListCollection,
 } from '@ark-ui/react'
+import { useMemo } from 'react'
 
 interface SelectItemProps extends Partial<ArkSelectItemProps> {
   label: string
@@ -23,10 +25,14 @@ type BaseSelectProps = {
   clearable?: boolean
   showIndicator?: boolean
   width?: 'auto' | 'sm' | 'md' | 'lg' | 'full'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
 type SelectProps = BaseSelectProps &
-  Omit<ArkSelectProps<CollectionItem>, keyof BaseSelectProps>
+  Omit<
+    Omit<ArkSelectProps<CollectionItem>, keyof BaseSelectProps>,
+    'collection'
+  >
 
 // TODO - revise this whole component
 
@@ -35,21 +41,29 @@ export const Select = ({
   label,
   placeholder,
   width,
+  size,
   clearable = false,
   showIndicator = false,
   ...props
 }: SelectProps) => {
-  let items: SelectItemProps[] = []
+  const items = useMemo(() => {
+    let items: SelectItemProps[] = []
 
-  groups.forEach((group) => {
-    items = items.concat(group.items)
-  })
+    groups.forEach((group) => {
+      items = items.concat(group.items)
+    })
+
+    return items
+  }, [groups])
+
+  const collection = useMemo(() => createListCollection({ items }), [items])
 
   return (
-    <S.Root {...props} items={items}>
+    <S.Root {...props} collection={collection}>
       {label && <S.Label>{label}</S.Label>}
+      <S.HiddenSelect />
       <S.Control>
-        <S.Trigger width={width} data-clearable={clearable}>
+        <S.Trigger size={size} width={width} data-clearable={clearable}>
           <S.ValueText placeholder={placeholder} />
           <S.Indicator>
             <ChevronsUpDown strokeWidth={1.5} size={18} />
@@ -68,10 +82,7 @@ export const Select = ({
               <>
                 <S.ItemGroup id={id} key={id}>
                   {groupLabel && (
-                    <S.ItemGroupLabel
-                      showIndicator={showIndicator}
-                      htmlFor={id}
-                    >
+                    <S.ItemGroupLabel showIndicator={showIndicator}>
                       {groupLabel}
                     </S.ItemGroupLabel>
                   )}
@@ -91,6 +102,7 @@ export const Select = ({
                     </S.Item>
                   ))}
                 </S.ItemGroup>
+
                 {index + 1 !== groups.length && <Separator />}
               </>
             ))}

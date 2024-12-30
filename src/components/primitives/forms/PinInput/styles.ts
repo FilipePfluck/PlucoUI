@@ -10,13 +10,6 @@ export default Pluco(PinInput, {
       gap: '3',
     },
   }),
-  Label: cva({
-    base: {
-      display: 'flex',
-      flexDir: 'column',
-      gap: '3',
-    },
-  }),
   Control: cva({
     base: {
       display: 'flex',
@@ -25,9 +18,6 @@ export default Pluco(PinInput, {
   }),
   Input: cva({
     base: {
-      h: '10',
-      w: '9',
-      p: '3',
       bg: 'bg.surface',
       boxShadow: 'sm',
       rounded: 'md',
@@ -36,6 +26,7 @@ export default Pluco(PinInput, {
 
       display: 'flex',
       align: 'center',
+      justify: 'center',
       gap: '2',
 
       _placeholder: {
@@ -49,7 +40,7 @@ export default Pluco(PinInput, {
         base: 'border',
         _focus: 'border.brand',
       },
-      '[aria-invalid]  &': { borderColor: 'border.danger' },
+      _invalid: { borderColor: 'border.danger' },
       _disabled: {
         bg: 'bg.disabled',
         borderColor: 'border.disabled',
@@ -60,6 +51,33 @@ export default Pluco(PinInput, {
           color: 'fg.disabled',
         },
       },
+    },
+    variants: {
+      size: {
+        xs: {
+          px: '2',
+          h: '8',
+          w: '7',
+        },
+        sm: {
+          px: '2.5',
+          h: '9',
+          w: '8',
+        },
+        md: {
+          px: '3',
+          h: '10',
+          w: '9',
+        },
+        lg: {
+          px: '3.5',
+          h: '11',
+          w: '10',
+        },
+      },
+    },
+    defaultVariants: {
+      size: 'md',
     },
   }),
 })

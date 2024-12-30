@@ -11,9 +11,11 @@ export default meta
 type Story = StoryObj<typeof Switch>
 
 export const Primary: Story = {
-  render: () => (
-    <Box bg="bg.surface" p="8" rounded="md">
-      <Switch />
-    </Box>
-  ),
+  decorators: [
+    (Story) => (
+      <Box bg="bg.surface" p="8" rounded="md" shadow="md">
+        <Story />
+      </Box>
+    ),
+  ],
 }

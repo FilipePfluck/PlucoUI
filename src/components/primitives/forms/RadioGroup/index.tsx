@@ -33,7 +33,9 @@ export const RadioGroup = ({
               aria-labelledby={`label-${id}`}
               className="group"
             >
-              <S.ItemControl />
+              <S.ItemControl aria-hidden="false">
+                <S.ItemHiddenInput />
+              </S.ItemControl>
               <S.ItemText id={`label-${id}`}>{label}</S.ItemText>
             </S.Item>
           )
