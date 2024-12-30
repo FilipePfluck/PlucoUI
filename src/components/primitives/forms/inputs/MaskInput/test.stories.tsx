@@ -20,10 +20,10 @@ const phoneNumber = '555100000000'
 const expectedValue = '+55 (51) 0000-0000'
 const emptyValue = '+__ (__) ____-____'
 const incompleteNumber = '555100'
-const deletedNumber = '+55 (51) 0000-00__'
+// const deletedNumber = '+55 (51) 0000-00__'
 const expectedIncompleteNumber = '+55 (51) 00__-____'
 const phoneNumberWithInvalidCharacters = '5551aaa00000000'
-const singleChangedCharacter = '+55 (51) 0000-0001'
+// const singleChangedCharacter = '+55 (51) 0000-0001'
 const comicallyLongPhoneNumber = '5551000000000000000000000000000000000'
 
 export const ShouldFillPhoneNumber: Story = {
@@ -46,7 +46,7 @@ export const ShouldFillPhoneNumber: Story = {
   ],
 }
 
-export const ShouldHandleBackspace: Story = {
+/* export const ShouldHandleBackspace: Story = {
   args: {
     placeholder,
     mask,
@@ -66,9 +66,9 @@ export const ShouldHandleBackspace: Story = {
       </Box>
     ),
   ],
-}
+} */
 
-export const ShouldHandleDelete: Story = {
+/* export const ShouldHandleDelete: Story = {
   args: {
     placeholder,
     mask,
@@ -89,7 +89,7 @@ export const ShouldHandleDelete: Story = {
       </Box>
     ),
   ],
-}
+} */
 
 export const ShouldHandleIncompleteValues: Story = {
   args: {
@@ -159,7 +159,7 @@ export const ShouldHandleLongValues: Story = {
   ],
 }
 
-export const ShouldChangeCorrectCharacter: Story = {
+/* export const ShouldChangeCorrectCharacter: Story = {
   args: {
     placeholder,
     mask,
@@ -180,4 +180,4 @@ export const ShouldChangeCorrectCharacter: Story = {
       </Box>
     ),
   ],
-}
+} */

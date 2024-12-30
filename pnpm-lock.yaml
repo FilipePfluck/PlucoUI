@@ -79,6 +79,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18
     version: 18.3.1
+  chromatic:
+    specifier: ^11.20.2
+    version: 11.20.2
   eslint-plugin-storybook:
     specifier: ^0.10.1
     version: 0.10.1(eslint@8.57.1)(typescript@5.6.3)
@@ -1487,7 +1490,7 @@ packages:
     resolution: {integrity: sha512-vYQ+TcfktEE3GHnLZXHCzXF/sN9dw+KivH8a5cmPyd9YtQs7fZtHrEgsIjWpYycXiweKMo1Lm1RZsjxk8DH3rA==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
     dependencies:
-      chromatic: 11.14.0
+      chromatic: 11.20.2
       filesize: 10.1.6
       jsonfile: 6.1.0
       react-confetti: 6.1.0(react@19.0.0-rc-65a56d0e-20241020)
@@ -5872,8 +5875,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /chromatic@11.14.0:
-    resolution: {integrity: sha512-qt7xXpdrwssBtXWv30aW46HAK10bF4Ep7SMjtMQhD61Fg4IS9aImT0WFeig7utpXYHOx0eSysjwhz0cgYz9SDg==}
+  /chromatic@11.20.2:
+    resolution: {integrity: sha512-c+M3HVl5Y60c7ipGTZTyeWzWubRW70YsJ7PPDpO1D735ib8+Lu3yGF90j61pvgkXGngpkTPHZyBw83lcu2JMxA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
