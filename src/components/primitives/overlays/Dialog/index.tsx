@@ -44,7 +44,7 @@ export const DialogContent = ({
     <Portal>
       <S.Backdrop />
       <Dialog.Positioner>
-        <S.Content {...props}>
+        <S.Content hidden={false} {...props}>
           <DialogHeader title={title} description={description} />
           {children}
           <S.CloseTrigger asChild>

@@ -39,7 +39,7 @@ export default Pluco(Dialog, {
         opacity: 1,
       },
       _closed: {
-        transform: 'var(--drawer-transform)',
+        transform: 'translate3d(100%,0,0)',
         opacity: 0,
       },
     },

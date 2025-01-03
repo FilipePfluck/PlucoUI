@@ -44,6 +44,7 @@ export const DrawerContent = ({
     <Portal>
       {mode === 'modal' && <S.Backdrop />}
       <S.Content
+        hidden={false}
         {...(!description ? { 'aria-labeledby': undefined } : {})}
         side={side}
         size={size}
