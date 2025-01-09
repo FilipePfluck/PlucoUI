@@ -13,5 +13,9 @@ export const conditions = {
       '&:has(:is(:invalid, [data-invalid], [aria-invalid="true"]))',
 
     hidden: '&:is([hidden], [data-state="hidden"])',
+
+    complete: '&:[data-complete="true"]',
+    incomplete: '&:[data-complete="false"]',
+    current: '&:[data-current="true"]',
   },
 }
