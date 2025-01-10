@@ -14,8 +14,8 @@ export const conditions = {
 
     hidden: '&:is([hidden], [data-state="hidden"])',
 
-    complete: '&:[data-complete="true"]',
-    incomplete: '&:[data-complete="false"]',
-    current: '&:[data-current="true"]',
+    complete: '&[data-complete]',
+    incomplete: '&:is(:not([data-complete]), [data-complete="false"])',
+    current: '&[data-current]',
   },
 }

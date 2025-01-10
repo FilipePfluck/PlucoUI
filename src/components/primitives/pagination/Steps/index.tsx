@@ -1,3 +1,5 @@
+import { Flex } from '@/styled-system/jsx'
+import { Button } from '../../forms/buttons/Button'
 import S from './styles'
 
 const items = [
@@ -6,7 +8,17 @@ const items = [
   { value: 'third', title: 'Third', description: 'Select Rooms' },
 ]
 
-export const Steps = () => {
+type StepsItems = {
+  value: string
+  title: string
+  description: string
+}[]
+
+// TODO - Reflect on what is the best approach
+// to dynamically change the content of each step
+// from a DX standpoint
+
+export const Steps = ({ items }: { items: StepsItems }) => {
   return (
     <S.Root count={items.length}>
       <S.List>
@@ -31,10 +43,14 @@ export const Steps = () => {
         Steps Complete - Thank you for filling out the form!
       </S.CompletedContent>
 
-      <div>
-        <S.PrevTrigger>Back</S.PrevTrigger>
-        <S.NextTrigger>Next</S.NextTrigger>
-      </div>
+      <Flex gap="4">
+        <S.PrevTrigger asChild>
+          <Button intent="secondary">Back</Button>
+        </S.PrevTrigger>
+        <S.NextTrigger asChild>
+          <Button intent="secondary">Next</Button>
+        </S.NextTrigger>
+      </Flex>
     </S.Root>
   )
 }

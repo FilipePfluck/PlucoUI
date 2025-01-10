@@ -8,6 +8,7 @@ export default Pluco(Steps, {
       display: 'flex',
       w: 'full',
       flexDir: 'column',
+      gap: '8',
     },
   }),
   List: cva({
@@ -49,6 +50,23 @@ export default Pluco(Steps, {
       fontWeight: 'medium',
       width: '10',
       height: '10',
+      borderWidth: '1px',
+      transition: '0.2s',
+
+      _incomplete: {
+        bg: 'bg.surface',
+        borderColor: 'border',
+      },
+      _current: {
+        bg: 'bg.brand.subtle',
+        borderColor: 'border.brand.subtle',
+        color: 'fg',
+      },
+      _complete: {
+        bg: 'bg.brand',
+        color: 'white',
+        borderColor: 'border.brand',
+      },
     },
   }),
   Separator: cva({
@@ -56,8 +74,17 @@ export default Pluco(Steps, {
       bg: 'border',
       flex: '1',
       h: '0.5',
+      transition: '0.2s',
+
+      _complete: {
+        bg: 'border.brand',
+      },
     },
   }),
-  Content: cva({}),
+  Content: cva({
+    base: {
+      display: 'flex',
+    },
+  }),
   CompletedContent: cva({}),
 })
