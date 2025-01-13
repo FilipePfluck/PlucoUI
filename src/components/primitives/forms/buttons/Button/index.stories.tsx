@@ -72,5 +72,3 @@ export const AllVariants: Story = {
     )
   },
 }
-
-export { ButtonTests } from './index.test'
