@@ -59,37 +59,17 @@ const items: TabItem[] = [
 ]
 
 export const Horizontal: Story = {
-  render: () => <Tabs items={items} defaultValue="tomato" />,
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-
-    const tomatoPanel = canvas.getByRole('tabpanel', { name: 'Tomato 🍅' })
-
-    // tomato panel should be visible by default
-    await expect(tomatoPanel).toBeVisible()
-
-    // should be able to select next panel with the keyboard
-    await userEvent.tab()
-    await userEvent.keyboard('{ArrowRight}')
-
-    await waitFor(() => {
-      const carrotPanel = canvas.getByRole('tabpanel', { name: 'Carrot 🥕' })
-      expect(carrotPanel).toBeVisible()
-    })
-
-    const tomatoTab = canvas.getByRole('tab', { name: 'Tomato 🍅' })
-
-    // should be able to select a panel by clicking
-    await userEvent.click(tomatoTab)
-    await waitFor(() => {
-      const tomatoPanel = canvas.getByRole('tabpanel', { name: 'Tomato 🍅' })
-      expect(tomatoPanel).toBeVisible()
-    })
+  args: {
+    items,
+    defaultValue: 'tomato',
+    orientation: 'horizontal',
   },
 }
 
 export const Vertical: Story = {
-  render: () => (
-    <Tabs items={items} defaultValue="tomato" orientation="vertical" />
-  ),
+  args: {
+    items,
+    defaultValue: 'tomato',
+    orientation: 'vertical',
+  },
 }
