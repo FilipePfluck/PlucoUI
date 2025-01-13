@@ -2,12 +2,6 @@ import { Flex } from '@/styled-system/jsx'
 import { Button } from '../../forms/buttons/Button'
 import S from './styles'
 
-const items = [
-  { value: 'first', title: 'First', description: 'Contact Info' },
-  { value: 'second', title: 'Second', description: 'Date & Time' },
-  { value: 'third', title: 'Third', description: 'Select Rooms' },
-]
-
 type StepsItems = {
   value: string
   title: string
