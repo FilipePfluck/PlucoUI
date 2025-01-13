@@ -6,7 +6,6 @@ import S from './styles'
 import { IconButton } from '../buttons/IconButton'
 import { Input } from '../inputs/Input'
 import { ColorPickerRootProps, Portal } from '@ark-ui/react'
-import { Label } from '../Label'
 
 const presets = [
   'hsl(10, 81%, 59%)',
@@ -29,15 +28,13 @@ export const Demo = (props: ColorPickerRootProps) => {
       }}
       {...props}
     >
-      <Label>Color Picker</Label>
       <S.Control>
         <S.ChannelInput channel="hex" asChild>
           <Input />
         </S.ChannelInput>
         <S.Trigger asChild>
           <IconButton aria-label="Open color picker" intent="secondary">
-            {/* TODO look at this */}
-            {/* <S.Swatch value="" /> */}
+            <S.ValueSwatch />
           </IconButton>
         </S.Trigger>
       </S.Control>

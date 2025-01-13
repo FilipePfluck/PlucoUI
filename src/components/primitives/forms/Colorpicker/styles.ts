@@ -33,6 +33,15 @@ export default Pluco(ColorPicker, {
         '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
     },
   }),
+  ValueSwatch: cva({
+    base: {
+      height: '6',
+      width: '6',
+      rounded: 'md',
+      boxShadow:
+        '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
+    },
+  }),
   Content: cva({
     base: {
       display: 'flex',
