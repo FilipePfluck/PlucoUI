@@ -20,7 +20,7 @@ const presets = [
   'hsl(350, 81%, 59%)',
 ]
 
-export const Demo = (props: ColorPickerRootProps) => {
+export const Colorpicker = (props: ColorPickerRootProps) => {
   return (
     <S.Root
       positioning={{
@@ -40,7 +40,7 @@ export const Demo = (props: ColorPickerRootProps) => {
       </S.Control>
       <Portal>
         <S.Positioner>
-          <S.Content>
+          <S.Content data-testid="color-picker-content">
             <Stack gap="3">
               <S.Area>
                 <S.AreaBackground />

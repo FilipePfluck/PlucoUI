@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Demo } from './index'
+import { Colorpicker } from './index'
 
 const meta = {
-  component: Demo,
-} satisfies Meta<typeof Demo>
+  component: Colorpicker,
+} satisfies Meta<typeof Colorpicker>
 
 export default meta
-type Story = StoryObj<typeof Demo>
+type Story = StoryObj<typeof Colorpicker>
 
-export const DemoStory: Story = {
+export const ColorpickerStory: Story = {
   args: {},
 }

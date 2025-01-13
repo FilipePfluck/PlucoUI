@@ -51,7 +51,7 @@ export default Pluco(ColorPicker, {
       p: '6',
       maxH: '85vh',
       // TODO - fix this
-      w: '299px',
+      w: '284px',
 
       ...menuContentBaseStyles,
       ...slideAnimation,
