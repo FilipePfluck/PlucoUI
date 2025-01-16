@@ -3,6 +3,8 @@ import { DatePicker } from '@ark-ui/react'
 import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
 import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
+import { styled } from '@/styled-system/jsx'
+import { Input } from '../inputs/Input'
 
 export default Pluco(DatePicker, {
   Control: cva({
@@ -12,62 +14,7 @@ export default Pluco(DatePicker, {
     },
   }),
 
-  Input: cva({
-    base: {
-      maxW: 'full',
-      bg: 'bg.surface',
-      boxShadow: 'sm',
-      transition: '0.2s',
-      outline: 'none',
-      rounded: 'md',
-
-      display: 'flex',
-      align: 'center',
-      gap: '2',
-
-      borderWidth: '1px',
-      borderColor: {
-        base: 'border',
-        _focusWithin: 'border.brand',
-        _invalidWithin: 'border.danger',
-      },
-      _disabled: {
-        bg: 'bg.disabled',
-        cursor: 'not-allowed',
-      },
-    },
-
-    variants: {
-      size: {
-        sm: {
-          px: '2',
-        },
-        md: {
-          px: '4',
-        },
-      },
-
-      width: {
-        auto: {},
-        sm: {
-          w: '24',
-        },
-        md: {
-          w: '48',
-        },
-        lg: {
-          w: '64',
-        },
-        full: {
-          w: 'full',
-        },
-      },
-    },
-    defaultVariants: {
-      size: 'md',
-      width: 'lg',
-    },
-  }),
+  Input: cva({}),
 
   Content: cva({
     base: {
@@ -78,7 +25,7 @@ export default Pluco(DatePicker, {
       p: '6',
       maxH: '85vh',
       // TODO - fix this
-      w: '304px',
+      w: '310px',
 
       ...menuContentBaseStyles,
       ...slideAnimation,
@@ -181,8 +128,7 @@ export default Pluco(DatePicker, {
           transform: 'translateX(-50%)',
           rounded: 'full',
 
-          // TODO - fix this
-          w: '8.285px',
+          w: '2',
           h: '0.5',
           bg: 'fg',
         },
@@ -211,4 +157,27 @@ export default Pluco(DatePicker, {
       transition: 'background 0.2s',
     },
   }),
+})
+
+export const CustomInput = styled(Input, {
+  base: {
+    '& input': {
+      w: '105px',
+    },
+  },
+  variants: {
+    side: {
+      start: {
+        borderEndWidth: '0.5px',
+        borderEndRadius: '0',
+      },
+      end: {
+        borderStartWidth: '0.5px',
+        borderStartRadius: '0',
+      },
+    },
+  },
+  defaultVariants: {
+    side: 'start',
+  },
 })

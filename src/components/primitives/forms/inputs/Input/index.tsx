@@ -3,6 +3,7 @@ import { Fragment, ReactNode } from 'react'
 
 import * as S from './styles'
 import { SimpleSpread } from '@/types/simpleSpread'
+import { cx } from '@/styled-system/css'
 
 export type InputProps = SimpleSpread<
   StyledElement<'input'>,
@@ -23,6 +24,8 @@ export const Input = ({
   endAddon,
   startElement,
   endElement,
+  className,
+  css,
   ...props
 }: InputProps) => {
   const OuterContainer =
@@ -33,7 +36,12 @@ export const Input = ({
       {...((startAddon || endAddon) && { className: 'input-outer-container' })}
     >
       {startAddon && <S.InputAddon side="start">{startAddon}</S.InputAddon>}
-      <S.InputContainer size={size} full={full} className="group">
+      <S.InputContainer
+        size={size}
+        full={full}
+        className={cx(className, 'group')}
+        css={css}
+      >
         {startElement && (
           <S.InputAditionalElement>{startElement}</S.InputAditionalElement>
         )}

@@ -5,9 +5,11 @@ import {
 } from '@ark-ui/react'
 import { Calendar, ChevronLeft, ChevronRight } from 'lucide-react'
 import { IconButton } from '../buttons/IconButton'
-import S from './styles'
+import S, { CustomInput } from './styles'
 import { Button } from '../buttons/Button'
 import { ReactNode } from 'react'
+import { Input } from '../inputs/Input'
+import { Flex } from '@/styled-system/jsx'
 
 const PrevTrigger = ({ label }: { label: string }) => {
   return (
@@ -135,12 +137,30 @@ export const Content = ({ standalone = false, children }: ContentProps) => {
   )
 }
 
-export const DatePicker = ({ open, ...props }: ArkDatePickerProps) => {
+export const DatePicker = ({
+  open,
+  selectionMode,
+  ...props
+}: ArkDatePickerProps) => {
+  const DateInput = selectionMode === 'range' ? CustomInput : Input
+
   return (
-    <S.Root open={open} {...props}>
+    <S.Root open={open} selectionMode={selectionMode} {...props}>
       {!open && (
         <S.Control>
-          <S.Input />
+          <Flex>
+            <S.Input asChild>
+              <DateInput
+                // TODO - fix this
+                css={selectionMode !== 'range' ? { w: '262px' } : {}}
+              />
+            </S.Input>
+            {selectionMode === 'range' && (
+              <S.Input index={1} asChild>
+                <DateInput side="end" />
+              </S.Input>
+            )}
+          </Flex>
           <S.Trigger asChild>
             <IconButton intent="secondary" aria-label="Open date picker">
               <Calendar />
