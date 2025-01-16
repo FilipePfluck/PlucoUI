@@ -78,7 +78,7 @@ export default Pluco(DatePicker, {
       p: '6',
       maxH: '85vh',
       // TODO - fix this
-      w: '306px',
+      w: '304px',
 
       ...menuContentBaseStyles,
       ...slideAnimation,
@@ -181,7 +181,8 @@ export default Pluco(DatePicker, {
           transform: 'translateX(-50%)',
           rounded: 'full',
 
-          w: '2',
+          // TODO - fix this
+          w: '8.285px',
           h: '0.5',
           bg: 'fg',
         },
@@ -202,6 +203,10 @@ export default Pluco(DatePicker, {
         color: 'fg.disabled',
         bg: 'transparent !important',
         cursor: 'not-allowed',
+
+        _hover: {
+          boxShadow: 'none',
+        },
       },
       transition: 'background 0.2s',
     },
