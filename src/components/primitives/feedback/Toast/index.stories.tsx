@@ -1,7 +1,7 @@
+import { createToaster } from '@ark-ui/react'
 import { Button } from '../../forms/buttons/Button'
-// import { within, userEvent, expect, waitFor } from '@storybook/test'
 
-// import { Toaster, toast } from './index'
+import { Toast } from './index'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -12,41 +12,27 @@ const meta: Meta = {
 export default meta
 type Story = StoryObj /* <typeof Toaster> */
 
-// todo - update Toast to new Ark version
+const toaster = createToaster({
+  placement: 'bottom-end',
+  overlap: true,
+  gap: 24,
+})
 
 export const Primary: Story = {
   render: () => (
     <>
       <Button
-      /* onClick={() =>
-          toast.create({
+        onClick={() =>
+          toaster.create({
             title: 'Title',
             description: 'Description',
             removeDelay: 190,
           })
-        } */
+        }
       >
         Open toast
       </Button>
-      {/* <Toaster /> */}
+      <Toast toaster={toaster} />
     </>
   ),
-  /* play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
-
-    const button = await canvas.findByRole('button')
-
-    await userEvent.click(button)
-
-    await waitFor(async () => {
-      // should open a toast when clicking the trigger
-      const toast = await canvas.findByRole('status')
-      expect(toast).toBeVisible()
-
-      // should close the toast when clicking the close button
-      const closeButton = await within(toast).findByRole('button')
-      await userEvent.click(closeButton)
-      expect(toast).not.toBeVisible()
-    })
-  }, */
 }

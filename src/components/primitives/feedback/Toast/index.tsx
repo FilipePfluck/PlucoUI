@@ -1,13 +1,13 @@
-/* import { Toaster } from '@ark-ui/react'
+import { CreateToasterReturn, Toaster } from '@ark-ui/react'
 import S from './styles'
-import { IconButton } from '../../buttons/IconButton'
 import { X } from 'lucide-react'
+import { IconButton } from '../../forms/buttons/IconButton'
 
 type ToastProps = {
   toaster: CreateToasterReturn
 }
 
-const Toast = () => (
+const Toast = ({ toaster }: ToastProps) => (
   <Toaster toaster={toaster}>
     {(toast) => (
       <S.Root>
@@ -24,4 +24,3 @@ const Toast = () => (
 )
 
 export { Toast }
- */

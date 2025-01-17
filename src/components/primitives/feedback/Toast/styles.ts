@@ -11,6 +11,10 @@ export default Pluco(Toast, {
       minW: '60',
       p: '4',
       position: 'relative',
+      translate: 'var(--x) var(--y)',
+      willChange: 'translate, opacity, scale',
+      transition:
+        'translate 400ms, scale 400ms, opacity 400ms, height 400ms, box-shadow 200ms',
 
       _open: {
         animation: 'slideInToast',
