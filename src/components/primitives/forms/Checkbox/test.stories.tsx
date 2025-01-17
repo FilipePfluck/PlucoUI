@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { within, userEvent, fn, expect } from '@storybook/test'
+import { within, userEvent, expect } from '@storybook/test'
 
 import { Checkbox } from '.'
 
@@ -8,9 +8,7 @@ type Story = StoryObj<typeof Checkbox>
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   title: 'components/primitives/forms/Checkbox/test',
-  args: {
-    onSubmit: fn(),
-  },
+  args: {},
 }
 
 export default meta
