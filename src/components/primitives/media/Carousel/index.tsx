@@ -5,8 +5,13 @@ import { IconButton } from '../../forms/buttons/IconButton'
 
 import S, { Image } from './styles'
 
+type Image = {
+  src: string
+  alt?: string
+}
+
 type CarouselProps = CarouselRootProps & {
-  images: string[]
+  images: Image[]
 }
 
 export const Carousel = ({ images }: CarouselProps) => {
@@ -16,7 +21,7 @@ export const Carousel = ({ images }: CarouselProps) => {
         <S.ItemGroup>
           {images.map((image, index) => (
             <S.Item key={index} index={index}>
-              <Image alt="" src={image} />
+              <Image alt={image.alt || ''} src={image.src} />
             </S.Item>
           ))}
         </S.ItemGroup>
@@ -28,7 +33,11 @@ export const Carousel = ({ images }: CarouselProps) => {
           </S.PrevTrigger>
           <S.IndicatorGroup>
             {images.map((_, index) => (
-              <S.Indicator key={index} index={index} />
+              <S.Indicator
+                key={index}
+                index={index}
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </S.IndicatorGroup>
           <S.NextTrigger asChild>

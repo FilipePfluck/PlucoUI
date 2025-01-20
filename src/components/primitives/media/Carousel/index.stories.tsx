@@ -12,11 +12,11 @@ type Story = StoryObj<typeof Carousel>
 export const CarouselStory: Story = {
   args: {
     images: [
-      'https://tinyurl.com/5b6ka8jd',
-      'https://tinyurl.com/7rmccdn5',
-      'https://tinyurl.com/59jxz9uu',
-      'https://tinyurl.com/6jurv23t',
-      'https://tinyurl.com/yp4rfum7',
+      { src: 'https://tinyurl.com/5b6ka8jd', alt: 'Sea at sunset' },
+      { src: 'https://tinyurl.com/7rmccdn5', alt: 'Top view of a beach' },
+      { src: 'https://tinyurl.com/59jxz9uu', alt: 'Beautiful island' },
+      { src: 'https://tinyurl.com/6jurv23t', alt: 'Shore' },
+      { src: 'https://tinyurl.com/yp4rfum7', alt: 'Coastal vegetation' },
     ],
   },
 }
