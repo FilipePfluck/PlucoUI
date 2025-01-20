@@ -25,7 +25,7 @@ export const Pagination = () => {
               ),
             )}
             <S.NextTrigger asChild>
-              <IconButton intent="ghost" aria-label="Previous page">
+              <IconButton intent="ghost" aria-label="Next page">
                 <ChevronRight size={16} />
               </IconButton>
             </S.NextTrigger>

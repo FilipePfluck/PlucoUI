@@ -9,6 +9,6 @@ const meta: Meta<typeof Pagination> = {
 export default meta
 type Story = StoryObj<typeof Pagination>
 
-export const Vertical: Story = {
+export const PaginationStory: Story = {
   render: () => <Pagination />,
 }
