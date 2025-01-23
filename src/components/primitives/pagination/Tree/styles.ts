@@ -7,7 +7,7 @@ export default Pluco(TreeView, {
     base: {
       w: '80',
       bg: 'bg.card',
-      p: '3',
+      p: '4',
       rounded: 'md',
       shadow: 'md',
     },
@@ -21,6 +21,8 @@ export default Pluco(TreeView, {
   }),
   Item: cva({
     base: {
+      display: 'flex',
+      gap: '2',
       rounded: 'md',
       color: 'fg',
       cursor: 'pointer',

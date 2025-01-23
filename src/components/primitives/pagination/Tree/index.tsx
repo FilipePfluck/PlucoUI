@@ -1,12 +1,22 @@
-// import { type TreeViewRootProps } from '@ark-ui/react/tree-view'
+import {
+  TreeViewNodeProviderProps,
+  type TreeViewRootProps,
+} from '@ark-ui/react/tree-view'
 
-// import S from './styles'
-// import { ChevronRightIcon } from 'lucide-react'
+import S from './styles'
+import { ChevronRightIcon, FileIcon, FolderIcon } from 'lucide-react'
+import { TreeCollection } from '@ark-ui/react/collection'
 
 interface Child {
   id: string
   name: string
   children?: Child[]
+}
+
+interface Node {
+  id: string
+  name: string
+  children?: Node[]
 }
 
 export interface TreeViewData {
@@ -16,38 +26,52 @@ export interface TreeViewData {
 
 // TODO - update tree componente to new ark version
 
-/* export interface TreeViewProps extends TreeViewRootProps {
-  data: TreeViewData
-} */
+export interface TreeViewProps extends TreeViewRootProps<Node> {
+  data: TreeCollection<Node>
+}
 
-export const TreeView = (/* { data, ...props } */) => {
-  /* const renderChild = (child: Child) => (
-      <S.Branch key={child.id} id={child.id}>
-        <S.BranchControl>
-          <S.BranchIndicator>
-            <ChevronRightIcon />
-          </S.BranchIndicator>
-          <S.BranchText>{child.name}</S.BranchText>
-        </S.BranchControl>
-        <S.BranchContent>
-          {child.children?.map((child) =>
-            child.children ? (
-              renderChild(child)
-            ) : (
-              <S.Item key={child.id} id={child.id}>
-                <S.ItemText>{child.name}</S.ItemText>
-              </S.Item>
-            ),
-          )}
-        </S.BranchContent>
-      </S.Branch>
-    )
+export const Tree = ({ data }: TreeViewProps) => {
+  return (
+    <S.Root collection={data as TreeCollection<unknown>}>
+      <S.Tree>
+        {data.rootNode.children?.map((node, index) => (
+          <TreeNode key={node.id} node={node} indexPath={[index]} />
+        ))}
+      </S.Tree>
+    </S.Root>
+  )
+}
 
-    return (
-      <S.Root ref={ref} aria-label={data.label} {...props}>
-        <S.Tree>{data.children.map(renderChild)}</S.Tree>
-      </S.Root>
-    ) */
-
-  return <p>Coming soon</p>
+const TreeNode = (props: TreeViewNodeProviderProps<Node>) => {
+  const { node, indexPath } = props
+  return (
+    <S.NodeProvider key={node.id} node={node} indexPath={indexPath}>
+      {node.children ? (
+        <S.Branch>
+          <S.BranchControl>
+            <FolderIcon />
+            <S.BranchText>{node.name}</S.BranchText>
+            <S.BranchIndicator>
+              <ChevronRightIcon />
+            </S.BranchIndicator>
+          </S.BranchControl>
+          <S.BranchContent>
+            <S.BranchIndentGuide />
+            {node.children.map((child, index) => (
+              <TreeNode
+                key={child.id}
+                node={child}
+                indexPath={[...indexPath, index]}
+              />
+            ))}
+          </S.BranchContent>
+        </S.Branch>
+      ) : (
+        <S.Item>
+          <FileIcon />
+          <S.ItemText>{node.name}</S.ItemText>
+        </S.Item>
+      )}
+    </S.NodeProvider>
+  )
 }
