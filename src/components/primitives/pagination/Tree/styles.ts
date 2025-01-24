@@ -27,14 +27,13 @@ export default Pluco(TreeView, {
       color: 'fg',
       cursor: 'pointer',
       position: 'relative',
-      ps: 'calc(((var(--depth) - 1) * 22px) + 22px)',
+      ps: 'calc(((var(--depth) - 1) * 22px + 12px))',
       py: '1.5',
       textStyle: 'sm',
       transitionDuration: 'normal',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
       "&[data-depth='1']": {
-        ps: '6',
         color: 'fg.important',
       },
       _hover: {
@@ -67,14 +66,14 @@ export default Pluco(TreeView, {
       display: 'flex',
       fontWeight: 'medium',
       gap: '1.5',
-      ps: 'calc((var(--depth) - 1) * 22px)',
+      ps: 'calc((var(--depth) - 1) * 22px + 12px)',
       py: '1.5',
       textStyle: 'bodySm',
       transitionDuration: 'normal',
       transitionProperty: 'background, color',
       transitionTimingFunction: 'default',
       "&[data-depth='1']": {
-        ps: '1',
+        ps: '12px',
       },
       "&[data-depth='1'] > [data-part='branch-text'] ": {
         fontWeight: 'semibold',
