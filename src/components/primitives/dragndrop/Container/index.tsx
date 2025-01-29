@@ -20,7 +20,7 @@ export const ContainerComponent = (
       <S.Header>
         {label}
         <S.Handle {...handleProps}>
-          <GripVertical />
+          <GripVertical size={16} />
         </S.Handle>
       </S.Header>
       <S.Grid>{children}</S.Grid>

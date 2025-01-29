@@ -74,7 +74,7 @@ export const Handle = styled(
       rounded: 'md',
       cursor: 'pointer',
       px: '2',
-      py: '4',
+      py: '3',
       transition: '0.2s',
       _hover: {
         bg: 'bg.surface.hovered',
