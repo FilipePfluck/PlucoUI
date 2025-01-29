@@ -28,12 +28,12 @@ export const Wrapper = styled(
           '--scale': 1.1,
           '--box-shadow': `
             0 0 0 calc(1px / var(--scale-x, 1)) rgba(63, 63, 68, 0.05), 
-            0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 81, 0.15)
+            0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 34, 0.15)
           `,
           '--box-shadow-picked-up': `
             0 0 0 calc(1px / var(--scale-x, 1)) rgba(63, 63, 68, 0.05),
-            -1px 0 15px 0 rgba(34, 33, 81, 0.01),
-            0px 15px 15px 0 rgba(34, 33, 81, 0.25)
+            -1px 0 15px 0 rgba(34, 33, 34, 0.01),
+            0px 15px 15px 0 rgba(34, 33, 34, 0.25)
           `,
           zIndex: 999,
         },
@@ -53,10 +53,10 @@ export const Item = styled(
       alignItems: 'center',
       paddingX: '5',
       paddingY: '4',
-      bg: 'white',
+      bg: 'bg.surface',
       boxShadow: `
         0 0 0 calc(1px / var(--scale-x, 1)) rgba(63, 63, 68, 0.05), 
-        0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 81, 0.15)
+        0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 34, 0.15)
       `,
       outline: 'none',
       borderRadius: 'calc(4px / var(--scale-x, 1))',
@@ -67,7 +67,7 @@ export const Item = styled(
       touchAction: 'manipulation',
       cursor: 'grab',
 
-      color: 'gray.800',
+      color: 'fg',
       fontWeight: '400',
       fontSize: '1rem',
       whiteSpace: 'nowrap',
@@ -105,7 +105,7 @@ export const Item = styled(
 
           _focus: {
             boxShadow:
-              '0 0 0 calc(1px / var(--scale-x, 1)) rgba(63, 63, 68, 0.05), 0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 81, 0.15)',
+              '0 0 0 calc(1px / var(--scale-x, 1)) rgba(63, 63, 68, 0.05), 0 1px calc(3px / var(--scale-x, 1)) 0 rgba(34, 33, 34, 0.15)',
           },
         },
       },
