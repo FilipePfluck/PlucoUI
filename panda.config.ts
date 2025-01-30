@@ -9,6 +9,7 @@ export default defineConfig({
     './pages/**/*.{js,jsx,ts,tsx}',
     './stories/**/*.{js,jsx,ts,tsx}',
     './.storybook/**/*.{js,jsx,ts,tsx}',
+    './panda/**/*.{js,jsx,ts,tsx}',
   ],
   exclude: [],
   jsxFramework: 'react',

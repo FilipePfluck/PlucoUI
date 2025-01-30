@@ -1,3 +1,4 @@
+import { slideAnimation } from '@/panda/utils'
 import { Pluco } from '@/pluco'
 import { css, cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
@@ -46,18 +47,7 @@ export default Pluco(Menu, {
       flexDir: 'column',
       gap: '2',
 
-      _open: {
-        _top: { animation: 'slideDownAndFadeIn' },
-        _right: { animation: 'slideLeftAndFadeIn' },
-        _bottom: { animation: 'slideUpAndFadeIn' },
-        _left: { animation: 'slideRightAndFadeIn' },
-      },
-      _closed: {
-        _top: { animation: 'slideDownAndFadeOut' },
-        _right: { animation: 'slideLeftAndFadeOut' },
-        _bottom: { animation: 'slideUpAndFadeOut' },
-        _left: { animation: 'slideRightAndFadeOut' },
-      },
+      ...slideAnimation,
     },
   }),
   ItemGroupLabel: cva({

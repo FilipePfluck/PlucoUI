@@ -61,3 +61,9 @@ export const TableCell = styled('td', {
     },
   },
 })
+
+export const Test = styled('div', {
+  base: {
+    textAlign: 'end',
+  },
+})
