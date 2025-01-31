@@ -44,7 +44,7 @@ export default Pluco(RadioGroup, {
       h: '10',
       rounded: 'md',
       boxShadow: 'sm',
-      ring: '2px',
+      focusRing: 'inside',
       cursor: 'pointer',
 
       display: 'flex',

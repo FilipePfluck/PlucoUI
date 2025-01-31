@@ -17,7 +17,7 @@ export const Link = styled('a', {
     gap: '2',
     transition: '0.2s',
     transitionProperty: 'color',
-    ring: '2px',
+    focusRing: 'inside',
     color: 'fg.unimportant',
 
     _hover: {

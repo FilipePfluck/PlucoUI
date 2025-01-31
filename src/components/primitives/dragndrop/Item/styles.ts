@@ -75,9 +75,7 @@ export const Item = styled(
       transform: 'scale(var(--scale, 1))',
       transition: 'box-shadow 200ms cubic-bezier(0.18, 0.67, 0.6, 1.22)',
 
-      _focusVisible: {
-        ring: '2px',
-      },
+      focusRing: 'inside',
     },
     variants: {
       overlay: {

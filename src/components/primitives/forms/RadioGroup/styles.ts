@@ -52,7 +52,7 @@ export default Pluco(RadioGroup, {
       h: '6',
       rounded: 'full',
       boxShadow: 'sm',
-      ring: '2px',
+      focusRing: 'inside',
       position: 'relative',
 
       _after: {

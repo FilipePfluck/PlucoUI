@@ -29,6 +29,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
     "@pandacss/dev": "^0.47.0",
+    "@pandacss/types": "^0.51.1",
     "@rocketseat/eslint-config": "^1.2.0",
     "@storybook/addon-a11y": "^8.3.6",
     "@storybook/addon-essentials": "^8.3.6",

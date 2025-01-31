@@ -1,14 +1,22 @@
 'use client'
 
-import { Combobox } from '@/components/primitives/forms/Combobox'
-
-const data = [
-  { label: 'React', value: 'react' },
-  { label: 'Solid', value: 'solid' },
-  { label: 'Svelte', value: 'svelte', disabled: true },
-  { label: 'Vue', value: 'vue' },
-]
+import { css } from '@/styled-system/css'
 
 export default function Home() {
-  return <Combobox data={data} />
+  return (
+    <div
+      className={css({
+        position: 'absolute',
+        center: 'absolute',
+        p: '4',
+        rounded: 'md',
+        borderWidth: '1px',
+        borderColor: 'border',
+
+        focusRing: 'outside',
+      })}
+    >
+      Hello
+    </div>
+  )
 }

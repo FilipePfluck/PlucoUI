@@ -1,22 +1,132 @@
+import { UtilityConfig } from '@pandacss/types'
 import { alignItemsValues, justifyContentValues } from './values'
 
-export const utilities = {
+type UtilityType = {
+  extend: UtilityConfig
+}
+
+export const utilities: UtilityType = {
   extend: {
     focusRing: {
-      values: ['1px', '2px', '4px'],
-      shorthand: 'ring',
-      transform(value: string) {
-        return {
-          outline: 'none',
-          '&:focus-visible': {
-            outlineWidth: value,
-            outlineStyle: 'solid',
-            outlineColor: 'var(--colors-border-ring)',
-            outlineOffset: '2px',
+      values: ['outside', 'inside', 'mixed', 'none'],
+      transform(value, { token }) {
+        const focusRingColor = token('colors.border.ring')
+        // eslint-disable-next-line
+        const styles: Record<string, any> = {
+          inside: {
+            '--focus-ring-color': focusRingColor,
+            '&:focus-visible': {
+              outlineOffset: '0px',
+              outlineWidth: 'var(--focus-ring-width, 1px)',
+              outlineColor: 'var(--focus-ring-color)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              borderColor: 'var(--focus-ring-color)',
+            },
           },
+          outside: {
+            '--focus-ring-color': focusRingColor,
+            '&:focus-visible': {
+              outlineWidth: 'var(--focus-ring-width, 2px)',
+              outlineOffset: 'var(--focus-ring-offset, 2px)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              outlineColor: 'var(--focus-ring-color)',
+            },
+          },
+          mixed: {
+            '--focus-ring-color': focusRingColor,
+            '&:focus-visible': {
+              outlineWidth: 'var(--focus-ring-width, 3px)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              outlineColor:
+                'color-mix(in srgb, var(--focus-ring-color), transparent 60%)',
+              borderColor: 'var(--focus-ring-color)',
+            },
+          },
+          none: {
+            '&:focus-visible': {
+              outline: 'none',
+            },
+          },
+        }
+
+        return styles[value] ?? {}
+      },
+    },
+    focusWithingRing: {
+      values: ['outside', 'inside', 'mixed', 'none'],
+      transform(value, { token }) {
+        const focusRingColor = token('colors.border.ring')
+        // eslint-disable-next-line
+        const styles: Record<string, any> = {
+          inside: {
+            '--focus-ring-color': focusRingColor,
+            '&:has(:focus-visible)': {
+              outlineOffset: '0px',
+              outlineWidth: 'var(--focus-ring-width, 1px)',
+              outlineColor: 'var(--focus-ring-color)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              borderColor: 'var(--focus-ring-color)',
+            },
+          },
+          outside: {
+            '--focus-ring-color': focusRingColor,
+            '&:has(:focus-visible)': {
+              outlineWidth: 'var(--focus-ring-width, 2px)',
+              outlineOffset: 'var(--focus-ring-offset, 2px)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              outlineColor: 'var(--focus-ring-color)',
+            },
+          },
+          mixed: {
+            '--focus-ring-color': focusRingColor,
+            '&:has(:focus-visible)': {
+              outlineWidth: 'var(--focus-ring-width, 3px)',
+              outlineStyle: 'var(--focus-ring-style, solid)',
+              outlineColor:
+                'color-mix(in srgb, var(--focus-ring-color), transparent 60%)',
+              borderColor: 'var(--focus-ring-color)',
+            },
+          },
+          none: {
+            '&:has(:focus-visible)': {
+              outline: 'none',
+            },
+          },
+        }
+
+        return styles[value] ?? {}
+      },
+    },
+
+    focusRingColor: {
+      values: 'colors',
+      // eslint-disable-next-line
+      transform(value, { utils }: any) {
+        const prop = '--focus-ring-color'
+        const mix = utils.colorMix(value)
+        if (mix.invalid) return { [prop]: value }
+        const cssVar = '--mix-' + prop
+        return {
+          [cssVar]: mix.value,
+          [prop]: `var(${cssVar}, ${mix.color})`,
         }
       },
     },
+    focusRingOffset: {
+      values: 'spacing',
+      transform: (v) => ({ '--focus-ring-offset': v }),
+    },
+    focusRingWidth: {
+      values: 'borderWidths',
+      property: 'outlineWidth',
+      transform: (v) => ({ '--focus-ring-width': v }),
+    },
+    focusRingStyle: {
+      values: 'borderStyles',
+      property: 'outlineStyle',
+      transform: (v) => ({ '--focus-ring-style': v }),
+    },
+
     truncate: {
       className: 'truncate',
       values: { type: 'boolean' },

@@ -8,7 +8,7 @@ export const A = styled('a', {
     textDecorationColor: 'currentColor/20',
 
     cursor: 'pointer',
-    ring: '2px',
+    focusRing: 'inside',
     display: 'inline-flex',
     align: 'center',
   },
