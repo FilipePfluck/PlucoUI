@@ -72,4 +72,15 @@ export default Pluco(Accordion, {
       },
     },
   }),
+  ItemIndicator: cva({
+    base: {
+      transition: 'rotate 0.2s',
+      transformOrigin: 'center',
+      color: 'fg.subtle',
+      _open: {
+        rotate: '180deg',
+      },
+      iconColor: 'fg.unimportant',
+    },
+  }),
 })

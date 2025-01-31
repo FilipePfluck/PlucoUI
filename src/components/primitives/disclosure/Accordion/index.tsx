@@ -5,6 +5,7 @@ import {
 
 import S from './styles'
 import { SystemStyleObject } from '@/styled-system/types'
+import { ChevronDown } from 'lucide-react'
 
 type Item = Omit<ArkAccordionItemProps, 'value'> & {
   id: string
@@ -27,7 +28,12 @@ const AccordionItem = ({
 }: AccordionItemProps) => {
   return (
     <S.Item value={id} {...props}>
-      <S.ItemTrigger>{title}</S.ItemTrigger>
+      <S.ItemTrigger>
+        {title}
+        <S.ItemIndicator>
+          <ChevronDown size={16} />
+        </S.ItemIndicator>
+      </S.ItemTrigger>
       <S.ItemContent>{content}</S.ItemContent>
     </S.Item>
   )
