@@ -27,7 +27,46 @@ export const Primary: Story = {
             title: 'Title',
             description: 'Description',
             removeDelay: 190,
+          })
+        }
+      >
+        Open toast
+      </Button>
+      <Toast toaster={toaster} />
+    </>
+  ),
+}
+
+export const Success: Story = {
+  render: () => (
+    <>
+      <Button
+        onClick={() =>
+          toaster.create({
+            title: 'Title',
+            description: 'Description',
+            removeDelay: 190,
             type: 'success',
+          })
+        }
+      >
+        Open toast
+      </Button>
+      <Toast toaster={toaster} />
+    </>
+  ),
+}
+
+export const Danger: Story = {
+  render: () => (
+    <>
+      <Button
+        onClick={() =>
+          toaster.create({
+            title: 'Title',
+            description: 'Description',
+            removeDelay: 190,
+            type: 'error',
           })
         }
       >
