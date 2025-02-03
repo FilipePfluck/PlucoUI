@@ -27,6 +27,7 @@ export const Primary: Story = {
             title: 'Title',
             description: 'Description',
             removeDelay: 190,
+            type: 'success',
           })
         }
       >

@@ -14,7 +14,7 @@ const Toast = ({ toaster }: ToastProps) => (
         <S.Title>{toast.title}</S.Title>
         <S.Description>{toast.description}</S.Description>
         <S.CloseTrigger asChild>
-          <IconButton size="sm" intent="ghost" aria-label="close">
+          <IconButton size="sm" intent="link" aria-label="close">
             <X size={18} strokeWidth={1.5} />
           </IconButton>
         </S.CloseTrigger>
