@@ -1,7 +1,9 @@
+import { cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { ark } from '@ark-ui/react'
+import { RecipeVariantProps } from '@pandacss/types'
 
-export const Root = styled('div', {
+const rootStyles = cva({
   base: {
     display: 'flex',
     align: 'center',
@@ -24,18 +26,10 @@ export const Root = styled('div', {
       danger: {
         bg: 'bg.danger.subtle',
         borderColor: 'border.danger.subtle',
-        '& *::selection': {
-          bg: 'bg.danger.selection !important',
-          color: 'fg.danger.important',
-        },
       },
       success: {
         bg: 'bg.success.subtle',
         borderColor: 'border.success.subtle',
-        '& *::selection': {
-          bg: 'bg.success.selection !important',
-          color: 'fg.success.important',
-        },
       },
     },
   },
@@ -43,6 +37,8 @@ export const Root = styled('div', {
     intent: 'secondary',
   },
 })
+
+export const Root = styled('div', rootStyles)
 
 export const Content = styled('div', {
   base: {
@@ -112,3 +108,5 @@ export const Icon = styled(ark.div, {
     intent: 'secondary',
   },
 })
+
+export type AlertVariants = RecipeVariantProps<typeof rootStyles>

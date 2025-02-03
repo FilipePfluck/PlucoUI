@@ -45,23 +45,23 @@ export const Root = styled(ark.div, {
         h: '4',
         my: '2px',
       },
-      textXl: {
+      bodyXl: {
         h: '5',
         my: '6px',
       },
-      textLg: {
+      bodyLg: {
         h: '18px',
         my: '5px',
       },
-      textMd: {
+      bodyMd: {
         h: '16px',
         my: '5px',
       },
-      textSm: {
+      bodySm: {
         h: '14px',
         my: '4px',
       },
-      textXs: {
+      bodyXs: {
         h: '12px',
         my: '3px',
       },

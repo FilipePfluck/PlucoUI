@@ -5,8 +5,7 @@ type AlertProps = {
   title: string
   description?: string
   icon?: ReactNode
-  intent?: 'primary' | 'secondary' | 'danger' | 'success'
-}
+} & S.AlertVariants
 
 export const Alert = ({ title, description, icon, intent }: AlertProps) => {
   return (

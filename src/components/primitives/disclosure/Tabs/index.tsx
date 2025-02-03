@@ -1,7 +1,7 @@
 import { TabsRootProps as ArkTabsProps } from '@ark-ui/react'
 import S from './styles'
 import { ReactNode, useState } from 'react'
-import { SystemStyleObject } from '@/styled-system/types'
+import { WithCss } from '@/types/withCss'
 
 // todo ponder over the possibility of adding `trigger` and `content`
 // props containing ark props and spreading them on the respective parts
@@ -14,10 +14,10 @@ export type TabItem = {
   disabled?: boolean
 }
 
-type TabsProps = ArkTabsProps & {
-  items: TabItem[]
-  css?: SystemStyleObject
-}
+type TabsProps = ArkTabsProps &
+  WithCss<{
+    items: TabItem[]
+  }>
 
 export const Tabs = ({
   orientation = 'horizontal',

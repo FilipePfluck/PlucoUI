@@ -4,15 +4,15 @@ import {
 } from '@ark-ui/react'
 
 import S from './styles'
-import { SystemStyleObject } from '@/styled-system/types'
 import { ChevronDown } from 'lucide-react'
+import { WithCss } from '@/types/withCss'
 
-type Item = Omit<ArkAccordionItemProps, 'value'> & {
-  id: string
-  title: string
-  content: string
-  css?: SystemStyleObject
-}
+type Item = Omit<ArkAccordionItemProps, 'value'> &
+  WithCss<{
+    id: string
+    title: string
+    content: string
+  }>
 
 type AccordionProps = ArkAccordionProps & {
   items: Item[]

@@ -1,11 +1,13 @@
 import { ProgressRootProps as ArkProgressProps } from '@ark-ui/react'
 
 import S from './styles'
+import { WithCss } from '@/types/withCss'
 
-type ProgressProps = ArkProgressProps & {
-  type?: 'circular' | 'linear'
-  label?: string
-}
+type ProgressProps = ArkProgressProps &
+  WithCss<{
+    type?: 'circular' | 'linear'
+    label?: string
+  }>
 
 export const Progress = ({
   type = 'linear',
