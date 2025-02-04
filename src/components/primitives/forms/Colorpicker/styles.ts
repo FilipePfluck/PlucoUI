@@ -4,6 +4,16 @@ import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
 import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
 
+const swatchStyles = cva({
+  base: {
+    height: '6',
+    width: '6',
+    rounded: 'md',
+    boxShadow:
+      '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
+  },
+})
+
 export default Pluco(ColorPicker, {
   Root: cva({
     base: {
@@ -24,24 +34,8 @@ export default Pluco(ColorPicker, {
       rounded: 'md',
     },
   }),
-  Swatch: cva({
-    base: {
-      height: '6',
-      width: '6',
-      rounded: 'md',
-      boxShadow:
-        '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
-    },
-  }),
-  ValueSwatch: cva({
-    base: {
-      height: '6',
-      width: '6',
-      rounded: 'md',
-      boxShadow:
-        '0 0 0 1px var(--colors-border), 0 0 0 2px var(--colors-bg-card) inset',
-    },
-  }),
+  Swatch: swatchStyles,
+  ValueSwatch: swatchStyles,
   Content: cva({
     base: {
       display: 'flex',
@@ -50,13 +44,12 @@ export default Pluco(ColorPicker, {
       gap: '4',
       p: '6',
       maxH: '85vh',
-      // TODO - fix this
-      w: '284px',
+      w: 'var(--color-picker-content-width, 284px)',
 
       ...menuContentBaseStyles,
       ...slideAnimation,
 
-      '&[hidden]': {
+      _hidden: {
         opacity: 0,
         visibility: 'hidden',
       },
@@ -112,6 +105,13 @@ export default Pluco(ColorPicker, {
       gridTemplateColumns: 'repeat(7, 1fr)',
       gap: '2',
       bg: 'bg.surface',
+    },
+  }),
+  SwatchTrigger: cva({
+    base: {
+      w: 'min-content',
+      rounded: 'md',
+      focusRing: 'outside',
     },
   }),
 })

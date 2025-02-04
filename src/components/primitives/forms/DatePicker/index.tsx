@@ -142,23 +142,25 @@ export const DatePicker = ({
   selectionMode,
   ...props
 }: ArkDatePickerProps) => {
-  const DateInput = selectionMode === 'range' ? CustomInput : Input
-
   return (
     <S.Root open={open} selectionMode={selectionMode} {...props}>
       {!open && (
         <S.Control>
           <Flex>
-            <S.Input asChild>
-              <DateInput
-                // TODO - fix this
-                css={selectionMode !== 'range' ? { w: '262px' } : {}}
-              />
-            </S.Input>
-            {selectionMode === 'range' && (
-              <S.Input index={1} asChild>
-                <DateInput side="end" />
+            {selectionMode !== 'range' && (
+              <S.Input asChild>
+                <Input css={{ w: '262px' }} />
               </S.Input>
+            )}
+            {selectionMode === 'range' && (
+              <>
+                <S.Input asChild>
+                  <CustomInput />
+                </S.Input>
+                <S.Input index={1} asChild>
+                  <CustomInput side="end" />
+                </S.Input>
+              </>
             )}
           </Flex>
           <S.Trigger asChild>

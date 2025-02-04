@@ -97,11 +97,7 @@ export const Combobox = ({
           >
             <S.ItemGroup>
               {items.map((item) => (
-                <S.Item
-                  onClick={() => console.log('Click!')}
-                  item={item}
-                  key={item.label}
-                >
+                <S.Item item={item} key={item.label}>
                   <S.ItemText>{item.label}</S.ItemText>
                 </S.Item>
               ))}

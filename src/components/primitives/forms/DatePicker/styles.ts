@@ -111,6 +111,8 @@ export default Pluco(DatePicker, {
       p: '1',
       rounded: 'sm',
       cursor: 'pointer',
+      focusRing: 'inside',
+      focusRingWidth: '2px',
       _hover: {
         bg: 'bg.surface.hovered',
         boxShadow: 'sm',
