@@ -1,6 +1,6 @@
 import { Tooltip } from '@ark-ui/react'
 
-import { slideAnimation } from '@/panda/utils'
+import { slideAnimation } from '@/panda/common/menus'
 import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
 

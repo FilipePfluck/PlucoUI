@@ -1,6 +1,6 @@
 import { ColorPicker } from '@ark-ui/react'
 
-import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
+import { menuContentBaseStyles, slideAnimation } from '@/panda/common/menus'
 import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
 

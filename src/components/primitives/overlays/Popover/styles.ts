@@ -2,7 +2,7 @@ import { Popover } from '@ark-ui/react'
 
 import { RecipeVariantProps, cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
-import { menuContentBaseStyles, slideAnimation } from '@/panda/utils'
+import { menuContentBaseStyles, slideAnimation } from '@/panda/common/menus'
 import { Pluco } from '@/pluco'
 
 const contentStyles = cva({

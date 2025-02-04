@@ -1,4 +1,4 @@
-import { slideAnimation } from '@/panda/utils'
+import { slideAnimation } from '@/panda/common/menus'
 import { Pluco } from '@/pluco'
 import { css, cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
