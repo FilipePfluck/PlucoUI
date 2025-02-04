@@ -17,5 +17,7 @@ export const conditions = {
     complete: '&[data-complete]',
     incomplete: '&:is(:not([data-complete]), [data-complete="false"])',
     current: '&[data-current]',
+
+    on: '&[data-state="on"]',
   },
 }
