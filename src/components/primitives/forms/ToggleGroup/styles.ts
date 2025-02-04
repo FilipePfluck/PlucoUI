@@ -28,7 +28,7 @@ export const Toggle = styled(ToggleGroup.Item, {
     transitionProperty: 'background, border-color, color, box-shadow',
     transitionTimingFunction: 'default',
     userSelect: 'none',
-    ring: '2px',
+    focusRing: 'mixed',
     p: '2',
     rounded: 'sm',
     borderStyle: 'solid',
@@ -41,8 +41,8 @@ export const Toggle = styled(ToggleGroup.Item, {
     },
     _on: {
       bg: {
-        base: 'bg.brand.subtle.hovered',
-        _hover: 'bg.brand.subtle.hovered',
+        base: 'bg.brand.subtle',
+        _hover: 'bg.brand.subtle',
       },
       color: 'fg.brand',
       iconColor: 'fg.brand',
@@ -53,7 +53,7 @@ export const Toggle = styled(ToggleGroup.Item, {
       outline: '2px solid token(colors.border.ring)',
     },
     _disabled: {
-      bg: { base: 'bg.disabled', _hover: 'bg.disabled' },
+      bg: { base: 'bg.surface.disabled', _hover: 'bg.surface.disabled' },
       color: 'fg.disabled',
       iconColor: 'fg.disabled',
       borderColor: 'border.disabled',
