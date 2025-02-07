@@ -281,5 +281,52 @@ export const utilities: UtilityType = {
         }
       },
     },
+
+    gradientBorder: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '--after-inset':
+            'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px))',
+          '--gradient-border-start':
+            'calc(var(--parent-h, 48px) / 2 + var(--gradient-border-offset, 0px) - 1px)',
+          '--gradient-border-end':
+            'calc(var(--gradient-border-start) + var(--gradient-border-width, 2px))',
+
+          '&::after': {
+            content: '""',
+            display: 'inline-block',
+            position: 'absolute',
+            inset: 'calc(var(--after-inset) * -1)',
+            pointerEvents: 'none',
+
+            backgroundImage: value,
+            // TODO figure out how to handle non-circle shapes
+            maskImage: `radial-gradient(transparent calc(var(--gradient-border-start) - 1px), black var(--gradient-border-start), black var(--gradient-border-end), transparent calc(var(--gradient-border-end) + 1px))`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+          },
+        }
+      },
+    },
+
+    gradientBorderWidth: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '--gradient-border-width': value,
+        }
+      },
+    },
+
+    gradientBorderOffset: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '--gradient-border-offset': value,
+        }
+      },
+    },
   },
 }

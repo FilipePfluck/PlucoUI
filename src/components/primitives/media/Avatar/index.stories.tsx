@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Avatar, AvatarProps } from './index'
 import { Flex } from '@/styled-system/jsx'
 
+import { Teste } from './styles'
+
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
 }
@@ -40,4 +42,12 @@ export const Fallback: Story = {
 
 export const IconFallback: Story = {
   render: () => <AvatarList src="" fallback="icon" />,
+}
+
+export const Test: Story = {
+  render: () => (
+    <Teste>
+      <img src="https://avatars.githubusercontent.com/u/62773200?v=4" alt="" />
+    </Teste>
+  ),
 }

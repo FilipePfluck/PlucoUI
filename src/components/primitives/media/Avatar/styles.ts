@@ -218,3 +218,23 @@ export const StatusBadge = styled('div', {
     },
   },
 })
+
+export const Teste = styled('div', {
+  base: {
+    h: '12',
+    w: '12',
+    rounded: '50%',
+    position: 'relative',
+    '& img': {
+      rounded: '50%',
+    },
+
+    '--parent-w': '48px',
+    '--parent-h': '48px',
+    '--parent-border-radius': '50%',
+
+    gradientBorder: `linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))`,
+    gradientBorderWidth: '2px',
+    gradientBorderOffset: '4px',
+  },
+})
