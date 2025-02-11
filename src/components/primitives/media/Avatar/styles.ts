@@ -229,12 +229,8 @@ export const Teste = styled('div', {
       rounded: '50%',
     },
 
-    '--parent-w': '48px',
-    '--parent-h': '48px',
-    '--parent-border-radius': '50%',
-
     gradientBorder: `linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))`,
     gradientBorderWidth: '2px',
-    gradientBorderOffset: '4px',
+    gradientBorderOffset: '3px',
   },
 })

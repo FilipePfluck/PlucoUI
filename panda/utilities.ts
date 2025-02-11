@@ -286,10 +286,11 @@ export const utilities: UtilityType = {
       values: { type: 'string' },
       transform(value: string) {
         return {
+          '--gradient-border-background-image': value,
           '--after-inset':
-            'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px))',
+            'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px) + 1px)',
           '--gradient-border-start':
-            'calc(var(--parent-h, 48px) / 2 + var(--gradient-border-offset, 0px) - 1px)',
+            'calc(var(--parent-h, 48px) / 2 + var(--gradient-border-offset, 0px))',
           '--gradient-border-end':
             'calc(var(--gradient-border-start) + var(--gradient-border-width, 2px))',
 
@@ -300,8 +301,7 @@ export const utilities: UtilityType = {
             inset: 'calc(var(--after-inset) * -1)',
             pointerEvents: 'none',
 
-            backgroundImage: value,
-            // TODO figure out how to handle non-circle shapes
+            backgroundImage: 'var(--gradient-border-background-image)',
             maskImage: `radial-gradient(transparent calc(var(--gradient-border-start) - 1px), black var(--gradient-border-start), black var(--gradient-border-end), transparent calc(var(--gradient-border-end) + 1px))`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
