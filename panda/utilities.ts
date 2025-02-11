@@ -289,10 +289,6 @@ export const utilities: UtilityType = {
           '--gradient-border-background-image': value,
           '--after-inset':
             'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px) + 1px)',
-          '--gradient-border-start':
-            'calc(var(--parent-h, 48px) / 2 + var(--gradient-border-offset, 0px))',
-          '--gradient-border-end':
-            'calc(var(--gradient-border-start) + var(--gradient-border-width, 2px))',
 
           '&::after': {
             content: '""',
@@ -300,9 +296,11 @@ export const utilities: UtilityType = {
             position: 'absolute',
             inset: 'calc(var(--after-inset) * -1)',
             pointerEvents: 'none',
+            padding: 'var(--gradient-border-width)',
+            borderRadius: 'var(--gradient-border-radius, inherit)',
 
             backgroundImage: 'var(--gradient-border-background-image)',
-            maskImage: `radial-gradient(transparent calc(var(--gradient-border-start) - 1px), black var(--gradient-border-start), black var(--gradient-border-end), transparent calc(var(--gradient-border-end) + 1px))`,
+            mask: 'linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
@@ -325,6 +323,15 @@ export const utilities: UtilityType = {
       transform(value: string) {
         return {
           '--gradient-border-offset': value,
+        }
+      },
+    },
+
+    gradientBorderRadius: {
+      values: { type: 'string' },
+      transform(value: string) {
+        return {
+          '--gradient-border-radius': value,
         }
       },
     },

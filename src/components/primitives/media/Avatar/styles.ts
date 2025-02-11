@@ -231,6 +231,6 @@ export const Teste = styled('div', {
 
     gradientBorder: `linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))`,
     gradientBorderWidth: '2px',
-    gradientBorderOffset: '3px',
+    gradientBorderOffset: '1px',
   },
 })
