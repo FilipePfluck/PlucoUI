@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Avatar, AvatarProps } from './index'
 import { Flex } from '@/styled-system/jsx'
 
-import { Teste } from './styles'
 import { css } from '@/styled-system/css'
+import { AvatarGroup } from './styles'
 
 const meta: Meta<typeof Avatar> = {
   component: Avatar,
@@ -49,10 +49,36 @@ export const WithGradientBorder: Story = {
   ),
 }
 
-export const Test: Story = {
+export const WithGroup: Story = {
   render: () => (
-    <Teste>
-      <img src="https://avatars.githubusercontent.com/u/62773200?v=4" alt="" />
-    </Teste>
+    <AvatarGroup>
+      <Avatar
+        src="https://avatars.githubusercontent.com/u/62773200?v=4"
+        size="md"
+        name="Filipe Pfluck"
+        fallback="initials"
+      />
+      <Avatar
+        src="https://avatars.githubusercontent.com/u/62773200?v=4"
+        size="md"
+        name="Filipe Pfluck"
+        fallback="initials"
+        className={css({ outline: '2px solid var(--colors-bg-app)' })}
+      />
+      <Avatar
+        src="https://avatars.githubusercontent.com/u/62773200?v=4"
+        size="md"
+        name="Filipe Pfluck"
+        fallback="initials"
+        className={css({ outline: '2px solid var(--colors-bg-app)' })}
+      />
+      <Avatar
+        src="https://avatars.githubusercontent.com/u/62773200?v=4"
+        size="md"
+        name="Filipe Pfluck"
+        fallback="initials"
+        className={css({ outline: '2px solid var(--colors-bg-app)' })}
+      />
+    </AvatarGroup>
   ),
 }

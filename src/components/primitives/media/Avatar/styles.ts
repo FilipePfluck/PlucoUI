@@ -2,6 +2,7 @@ import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { Avatar } from '@ark-ui/react'
+import { Group } from '../../layout/Group'
 
 export default Pluco(Avatar, {
   Root: cva({
@@ -165,18 +166,14 @@ export const StatusBadge = styled('div', {
   },
 })
 
-export const Teste = styled('div', {
+export const AvatarGroup = styled(Group, {
   base: {
-    h: '12',
-    w: '12',
-    rounded: 'full',
-    position: 'relative',
-    '& img': {
-      rounded: 'full',
-    },
+    display: 'flex',
+    flexDir: 'row',
+    gap: '0',
 
-    gradientBorder: `linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))`,
-    gradientBorderWidth: '2px',
-    gradientBorderOffset: '2px',
+    '& > [data-group-item]:not(:first-child)': {
+      ml: '-12px',
+    },
   },
 })
