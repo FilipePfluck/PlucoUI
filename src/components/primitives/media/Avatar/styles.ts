@@ -3,49 +3,6 @@ import { cva } from '@/styled-system/css'
 import { styled } from '@/styled-system/jsx'
 import { Avatar } from '@ark-ui/react'
 
-export const Background = styled('div', {
-  base: {
-    rounded: 'full',
-    position: 'relative',
-  },
-  variants: {
-    size: {
-      xs: {
-        h: '8',
-        w: '8',
-      },
-      sm: {
-        h: '10',
-        w: '10',
-      },
-      md: {
-        h: '12',
-        w: '12',
-      },
-      lg: {
-        h: '16',
-        w: '16',
-      },
-      xl: {
-        h: '24',
-        w: '24',
-      },
-    },
-    colorScheme: {
-      gray: {
-        bg: 'border',
-      },
-      gradient: {
-        bg: 'linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))',
-      },
-    },
-  },
-  defaultVariants: {
-    size: 'md',
-    colorScheme: 'gradient',
-  },
-})
-
 export default Pluco(Avatar, {
   Root: cva({
     base: {
@@ -79,20 +36,9 @@ export default Pluco(Avatar, {
           w: '24',
         },
       },
-      gradientBorder: {
-        true: {
-          borderWidth: '2px',
-          borderColor: 'transparent',
-        },
-        false: {
-          borderWidth: '1px',
-          borderColor: 'border',
-        },
-      },
     },
     defaultVariants: {
       size: 'md',
-      gradientBorder: false,
     },
   }),
   Fallback: cva({
