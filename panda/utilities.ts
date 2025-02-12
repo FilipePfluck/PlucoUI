@@ -288,7 +288,7 @@ export const utilities: UtilityType = {
         return {
           '--gradient-border-background-image': value,
           '--after-inset':
-            'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px) + 1px)',
+            'calc(var(--gradient-border-width, 2px) + var(--gradient-border-offset, 0px))',
 
           '&::after': {
             content: '""',

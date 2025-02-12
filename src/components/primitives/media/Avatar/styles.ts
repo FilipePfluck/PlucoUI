@@ -223,14 +223,14 @@ export const Teste = styled('div', {
   base: {
     h: '12',
     w: '12',
-    rounded: '50%',
+    rounded: 'full',
     position: 'relative',
     '& img': {
-      rounded: '50%',
+      rounded: 'full',
     },
 
     gradientBorder: `linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))`,
     gradientBorderWidth: '2px',
-    gradientBorderOffset: '1px',
+    gradientBorderOffset: '2px',
   },
 })
