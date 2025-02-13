@@ -119,53 +119,6 @@ export default Pluco(Avatar, {
   }),
 })
 
-export const StatusBadge = styled('div', {
-  base: {
-    rounded: 'full',
-    borderColor: 'bg.surface',
-    position: 'absolute',
-    bottom: '0',
-    right: '0',
-  },
-  variants: {
-    status: {
-      doNotDisturb: {
-        bg: 'bg.danger',
-      },
-      offline: {
-        bg: 'border',
-      },
-    },
-    size: {
-      xs: {
-        h: '3',
-        w: '3',
-        borderWidth: '2px',
-      },
-      sm: {
-        h: '4',
-        w: '4',
-        borderWidth: '2px',
-      },
-      md: {
-        h: '5',
-        w: '5',
-        borderWidth: '2px',
-      },
-      lg: {
-        h: '6',
-        w: '6',
-        borderWidth: '3px',
-      },
-      xl: {
-        h: '7',
-        w: '7',
-        borderWidth: '3px',
-      },
-    },
-  },
-})
-
 export const AvatarGroup = styled(Group, {
   base: {
     display: 'flex',

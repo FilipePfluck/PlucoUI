@@ -1,14 +1,13 @@
 import { AvatarRootProps as ArkAvatarProps } from '@ark-ui/react'
 import { User } from 'lucide-react'
 
-import S, { StatusBadge } from './styles'
+import S from './styles'
 
 export type AvatarProps = {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   name?: string
   src: string
   fallback?: 'initials' | 'icon'
-  status?: 'doNotDisturb' | 'offline'
 } & ArkAvatarProps
 
 export const Avatar = ({
@@ -16,7 +15,6 @@ export const Avatar = ({
   size = 'md',
   name = '',
   fallback = 'initials',
-  status,
   ...props
 }: AvatarProps) => {
   const [firstName, surname] = name?.split(' ')
@@ -29,7 +27,6 @@ export const Avatar = ({
         {(fallback === 'icon' || !name) && <User />}
       </S.Fallback>
       <S.Image size={size} src={src} alt={name} />
-      {!!status && <StatusBadge status={status} size={size} />}
     </S.Root>
   )
 }
