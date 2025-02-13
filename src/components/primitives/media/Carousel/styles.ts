@@ -4,7 +4,7 @@ import { styled } from '@/styled-system/jsx'
 import { Carousel } from '@ark-ui/react'
 
 export default Pluco(Carousel, {
-  Viewport: cva({
+  Root: cva({
     base: {
       overflowX: 'hidden',
       position: 'relative',
@@ -41,6 +41,14 @@ export default Pluco(Carousel, {
       cursor: 'pointer',
       '&[data-current]': {
         bg: 'bg.brand',
+      },
+    },
+  }),
+  Item: cva({
+    base: {
+      '&[data-separated="true"]': {
+        rounded: 'lg',
+        overflowX: 'hidden',
       },
     },
   }),
