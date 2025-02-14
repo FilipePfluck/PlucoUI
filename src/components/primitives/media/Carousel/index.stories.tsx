@@ -40,11 +40,23 @@ export const OnePerMove: Story = {
   },
 }
 
-export const ThreePerPage: Story = {
+export const WithLoop: Story = {
   args: {
     slidesPerPage: 3,
     slidesPerMove: 1,
     spacing: '16px',
+    loop: true,
+    images,
+  },
+}
+
+export const AutoPlay: Story = {
+  args: {
+    slidesPerPage: 3,
+    slidesPerMove: 1,
+    spacing: '16px',
+    loop: true,
+    autoplay: true,
     images,
   },
 }
