@@ -24,6 +24,7 @@
     "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
     "react-hook-form": "^7.53.2",
+    "react-icons": "^5.4.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
