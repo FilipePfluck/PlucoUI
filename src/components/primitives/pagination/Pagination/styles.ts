@@ -42,6 +42,10 @@ export default Pluco(Pagination, {
   }),
   Ellipsis: cva({
     base: {
+      w: '10',
+      textAlign: 'center',
+      alignSelf: 'center',
+      px: '3',
       lineHeight: '10px',
       display: 'flex',
       align: 'center',
