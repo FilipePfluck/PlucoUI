@@ -12,9 +12,14 @@ type TooltipProps = ArkTooltipProps & {
   children: ReactNode
 }
 
-export const Tooltip = ({ children, message, ...props }: TooltipProps) => {
+export const Tooltip = ({
+  children,
+  openDelay = 300,
+  message,
+  ...props
+}: TooltipProps) => {
   return (
-    <ArkTooltip.Root {...props}>
+    <ArkTooltip.Root openDelay={openDelay} {...props}>
       <ArkTooltip.Trigger>{children}</ArkTooltip.Trigger>
       <Portal>
         <ArkTooltip.Positioner>

@@ -19,6 +19,7 @@ const data = [
 export const Primary: Story = {
   args: {
     data,
+    placeholder: 'Select a framework',
   },
 }
 
