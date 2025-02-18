@@ -1,14 +1,19 @@
-import S from '../styles'
 import {
+  Menu,
+  MenuArrow,
   MenuCheckboxItem,
+  MenuContent,
+  MenuItem,
   MenuItemGroup,
   MenuRadioItemGroup,
+  MenuSeparator,
+  MenuTrigger,
   MenuTriggerItem,
 } from '../index'
 import { ChevronRight } from 'lucide-react'
 import { Button } from '@/components/primitives/forms/buttons/Button'
 
-export const Menu = () => {
+export const ExampleMenu = () => {
   const languages = [
     {
       name: 'English',
@@ -53,44 +58,40 @@ export const Menu = () => {
   ]
 
   return (
-    <S.Root positioning={{ gutter: 16 }}>
-      <S.Trigger asChild>
+    <Menu positioning={{ gutter: 16, placement: 'bottom' }}>
+      <MenuTrigger asChild>
         <Button>Open Menu</Button>
-      </S.Trigger>
-      <S.Positioner>
-        <S.Content>
-          <MenuItemGroup id="userSettings" label="User settings">
-            <MenuCheckboxItem value="login">Remember Login</MenuCheckboxItem>
-            <MenuCheckboxItem value="darkMode">Dark Mode</MenuCheckboxItem>
-            <MenuCheckboxItem value="notifications">
-              Enable Notifications
-            </MenuCheckboxItem>
-          </MenuItemGroup>
-          <S.Separator />
+      </MenuTrigger>
+      <MenuContent>
+        <MenuItemGroup id="userSettings" label="User settings">
+          <MenuCheckboxItem value="login">Remember Login</MenuCheckboxItem>
+          <MenuCheckboxItem value="darkMode">Dark Mode</MenuCheckboxItem>
+          <MenuCheckboxItem value="notifications">
+            Enable Notifications
+          </MenuCheckboxItem>
+        </MenuItemGroup>
+        <MenuSeparator />
 
-          <MenuRadioItemGroup label="Plan settings" radioItems={subscription} />
-          <S.Separator />
+        <MenuRadioItemGroup label="Plan settings" radioItems={subscription} />
+        <MenuSeparator />
 
-          <MenuItemGroup id="profile" label="Profile Options">
-            <S.Item value="edit-profile" id="editProfile">
-              Edit Profile
-            </S.Item>
-            <S.Item value="friend-list" id="friendList">
-              Friend List
-            </S.Item>
-            <MenuTriggerItem
-              triggerLabel="Languages"
-              rightSlot={<ChevronRight size={14} />}
-            >
-              <MenuRadioItemGroup radioItems={languages} />
-            </MenuTriggerItem>
-          </MenuItemGroup>
+        <MenuItemGroup id="profile" label="Profile Options">
+          <MenuItem value="edit-profile" id="editProfile">
+            Edit Profile
+          </MenuItem>
+          <MenuItem value="friend-list" id="friendList">
+            Friend List
+          </MenuItem>
+          <MenuTriggerItem
+            triggerLabel="Languages"
+            rightSlot={<ChevronRight size={14} />}
+          >
+            <MenuRadioItemGroup radioItems={languages} />
+          </MenuTriggerItem>
+        </MenuItemGroup>
 
-          <S.Arrow>
-            <S.ArrowTip />
-          </S.Arrow>
-        </S.Content>
-      </S.Positioner>
-    </S.Root>
+        <MenuArrow />
+      </MenuContent>
+    </Menu>
   )
 }

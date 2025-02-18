@@ -7,6 +7,7 @@ import {
   MenuCheckboxItemProps as ArkMenuCheckboxItemProps,
   MenuRadioItemProps as ArkMenuRadioItemProps,
   MenuRadioItemGroupProps as ArkMenuRadioItemGroupProps,
+  MenuContentProps,
 } from '@ark-ui/react'
 
 import S, { OptionIndicator, RightSlot } from './styles'
@@ -137,3 +138,23 @@ export const MenuTriggerItem = ({
     </S.Root>
   )
 }
+
+export const MenuContent = ({ children, ...props }: MenuContentProps) => (
+  <S.Positioner>
+    <S.Content {...props}>{children}</S.Content>
+  </S.Positioner>
+)
+
+export const MenuArrow = () => (
+  <S.Arrow>
+    <S.ArrowTip />
+  </S.Arrow>
+)
+
+export const Menu = S.Root
+
+export const MenuItem = S.Item
+
+export const MenuSeparator = S.Separator
+
+export const MenuTrigger = S.Trigger
