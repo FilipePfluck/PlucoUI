@@ -1,15 +1,40 @@
 'use client'
 
-import { Button } from '@/components/primitives/forms/buttons/Button'
+import {
+  Button,
+  ButtonProps,
+} from '@/components/primitives/forms/buttons/Button'
 import { css } from '@/styled-system/css'
-import { ColumnDef } from '@tanstack/react-table'
-import { ArrowUpDown } from 'lucide-react'
+import { Column, ColumnDef } from '@tanstack/react-table'
+import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react'
 
 export type Payment = {
   id: string
   amount: number
   status: 'pending' | 'processing' | 'success' | 'failed'
   email: string
+}
+
+type SortingButtonProps = ButtonProps & {
+  column: Column<Payment>
+}
+
+const SortingButton = ({ column, children, ...props }: SortingButtonProps) => {
+  const columnSorting = column.getIsSorted()
+
+  return (
+    <Button
+      intent="link"
+      aria-label="Sort by alphabetic order"
+      onClick={() => column.toggleSorting(columnSorting === 'asc')}
+      {...props}
+    >
+      {children}
+      {columnSorting === 'asc' && <ArrowUp size={16} />}
+      {columnSorting === 'desc' && <ArrowDown size={16} />}
+      {!columnSorting && <ArrowUpDown size={16} />}
+    </Button>
+  )
 }
 
 export const columns: ColumnDef<Payment>[] = [
@@ -21,15 +46,9 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: 'email',
     header: ({ column }) => {
       return (
-        <Button
-          css={{ pl: '0px' }}
-          intent="link"
-          aria-label="Sort by alphabetic order"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        >
+        <SortingButton css={{ pl: '0px' }} column={column}>
           Email
-          <ArrowUpDown size={16} />
-        </Button>
+        </SortingButton>
       )
     },
   },
@@ -37,15 +56,9 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: 'amount',
     header: ({ column }) => {
       return (
-        <Button
-          css={{ pr: '0px', ml: 'auto' }}
-          intent="link"
-          aria-label="Sort by alphabetic order"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        >
+        <SortingButton css={{ ml: 'auto', pr: '0px' }} column={column}>
           Amount
-          <ArrowUpDown size={16} />
-        </Button>
+        </SortingButton>
       )
     },
     cell: ({ row }) => {
