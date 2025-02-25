@@ -2,11 +2,7 @@ import { Pluco } from '@/pluco'
 import { cva } from '@/styled-system/css'
 import { Tabs } from '@ark-ui/react'
 
-import {
-  tabsIndicatorBaseStyles,
-  tabsListBaseStyles,
-  tabsListItemBaseStyles,
-} from '@/panda/common/tabs'
+import { tabsListBaseStyles, tabsListItemBaseStyles } from '@/panda/common/tabs'
 
 export default Pluco(Tabs, {
   Root: cva({
@@ -38,7 +34,18 @@ export default Pluco(Tabs, {
   }),
   Indicator: cva({
     base: {
-      ...tabsIndicatorBaseStyles,
+      bg: 'border.brand',
+
+      _horizontal: {
+        height: '2px',
+        width: 'var(--width)',
+        bottom: '0',
+      },
+      _vertical: {
+        width: '2px',
+        height: 'var(--height)',
+        right: '0',
+      },
     },
   }),
   Content: cva({
