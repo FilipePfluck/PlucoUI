@@ -14,7 +14,6 @@ type Story = StoryObj /* <typeof Toaster> */
 
 const toaster = createToaster({
   placement: 'bottom-end',
-  overlap: true,
   gap: 24,
 })
 
@@ -26,7 +25,6 @@ export const Primary: Story = {
           toaster.create({
             title: 'Title',
             description: 'Description',
-            removeDelay: 190,
           })
         }
       >
@@ -45,7 +43,6 @@ export const Success: Story = {
           toaster.create({
             title: 'Title',
             description: 'Description',
-            removeDelay: 190,
             type: 'success',
           })
         }
@@ -65,7 +62,6 @@ export const Danger: Story = {
           toaster.create({
             title: 'Title',
             description: 'Description',
-            removeDelay: 190,
             type: 'error',
           })
         }

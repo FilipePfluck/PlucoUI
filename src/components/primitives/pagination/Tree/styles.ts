@@ -6,7 +6,7 @@ export default Pluco(TreeView, {
   Root: cva({
     base: {
       w: '80',
-      bg: 'bg.card',
+      bg: 'bg.surface',
       p: '4',
       rounded: 'md',
       shadow: 'md',
